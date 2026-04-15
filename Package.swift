@@ -10,6 +10,7 @@ let package = Package(
 		.tvOS(.v12),
 	],
 	products: [
+        .library(name: "FMCore", targets: ["FMCore"]),
 		.library(name: "ModelsDSTU2", targets: ["ModelsDSTU2"]),
 		.library(name: "ModelsSTU3", targets: ["ModelsSTU3"]),
 		.library(name: "ModelsR4", targets: ["ModelsR4"]),

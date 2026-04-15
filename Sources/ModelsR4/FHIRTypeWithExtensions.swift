@@ -18,7 +18,7 @@
 
 import FMCore
 
-
+/// A FHIR Type that supports extensions.
 public protocol _FHIRTypeWithExtensions: FHIRType {
     /// Additional content defined by implementations
     var `extension`: [Extension]? { get set }
