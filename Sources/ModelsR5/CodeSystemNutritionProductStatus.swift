@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/nutritionproduct-status
  ValueSet: http://hl7.org/fhir/ValueSet/nutritionproduct-status
  */
-public enum NutritionProductStatus: String, FHIRPrimitiveType {
+public indirect enum NutritionProductStatus: String, FHIRPrimitiveType {
 	
 	/// The product can be used.
 	case active

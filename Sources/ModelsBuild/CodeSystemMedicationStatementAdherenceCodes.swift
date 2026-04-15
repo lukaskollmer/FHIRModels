@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medication-statement-adherence
  ValueSet: http://hl7.org/fhir/ValueSet/medication-statement-adherence
  */
-public enum MedicationStatementAdherenceCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationStatementAdherenceCodes: String, FHIRPrimitiveType {
 	
 	/// The medication is not being taken.
 	case notTaking = "not-taking"

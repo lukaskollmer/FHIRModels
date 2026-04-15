@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/adverse-event-severity
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-severity
  */
-public enum AdverseEventSeverity: String, FHIRPrimitiveType {
+public indirect enum AdverseEventSeverity: String, FHIRPrimitiveType {
 	
 	/// mild
 	case mild

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/history-not-done-reason
  ValueSet: http://hl7.org/fhir/ValueSet/history-not-done-reason
  */
-public enum FamilyHistoryNotDoneReason: String, FHIRPrimitiveType {
+public indirect enum FamilyHistoryNotDoneReason: String, FHIRPrimitiveType {
 	
 	/// Patient does not have the information now, but can provide the information at a later date.
 	case deferred

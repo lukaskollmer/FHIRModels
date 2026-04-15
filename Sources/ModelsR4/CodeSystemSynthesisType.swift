@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/synthesis-type
  ValueSet: http://hl7.org/fhir/ValueSet/synthesis-type
  */
-public enum SynthesisType: String, FHIRPrimitiveType {
+public indirect enum SynthesisType: String, FHIRPrimitiveType {
 	
 	/// A meta-analysis of the individual participant data from individual studies or data sets.
 	case IPDMA = "IPD-MA"

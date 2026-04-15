@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/device-productidentifierinudi
  */
-public enum DeviceProductionIdentifierInUDI: String, FHIRPrimitiveType {
+public indirect enum DeviceProductionIdentifierInUDI: String, FHIRPrimitiveType {
 	
 	/// The label includes the biological source identifier.
 	case biologicalSource = "biological-source"

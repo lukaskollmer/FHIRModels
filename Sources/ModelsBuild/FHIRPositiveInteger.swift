@@ -68,7 +68,7 @@ extension FHIRPositiveInteger: Codable {
 
 // MARK: -
 
-public enum FHIRPositiveIntegerError: Error {
+public indirect enum FHIRPositiveIntegerError: Error {
 	case valueIsLessThanOne
 }
 

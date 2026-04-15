@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/assert-direction-codes
  ValueSet: http://hl7.org/fhir/ValueSet/assert-direction-codes
  */
-public enum AssertionDirectionType: String, FHIRPrimitiveType {
+public indirect enum AssertionDirectionType: String, FHIRPrimitiveType {
 	
 	/// The assertion is evaluated on the request.
 	case request

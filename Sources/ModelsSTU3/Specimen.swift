@@ -228,7 +228,7 @@ public struct Specimen: DomainResource {
 public struct SpecimenCollection: BackboneElement {
 	
 	/// All possible types for "collected[x]"
-	public enum CollectedX: Equatable, Hashable, Sendable {
+	public indirect enum CollectedX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -357,7 +357,7 @@ public struct SpecimenCollection: BackboneElement {
 public struct SpecimenContainer: BackboneElement {
 	
 	/// All possible types for "additive[x]"
-	public enum AdditiveX: Equatable, Hashable, Sendable {
+	public indirect enum AdditiveX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -493,7 +493,7 @@ public struct SpecimenContainer: BackboneElement {
 public struct SpecimenProcessing: BackboneElement {
 	
 	/// All possible types for "time[x]"
-	public enum TimeX: Equatable, Hashable, Sendable {
+	public indirect enum TimeX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}

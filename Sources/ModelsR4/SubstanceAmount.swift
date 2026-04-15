@@ -28,7 +28,7 @@ import FMCore
 public struct SubstanceAmount: BackboneElement {
 	
 	/// All possible types for "amount[x]"
-	public enum AmountX: Equatable, Hashable, Sendable {
+	public indirect enum AmountX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case range(Range)
 		case string(FHIRPrimitive<FHIRString>)

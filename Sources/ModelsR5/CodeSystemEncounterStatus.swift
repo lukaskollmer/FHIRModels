@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-status
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-status
  */
-public enum EncounterStatus: String, FHIRPrimitiveType {
+public indirect enum EncounterStatus: String, FHIRPrimitiveType {
 	
 	/// The Encounter has ended before it has begun.
 	case cancelled

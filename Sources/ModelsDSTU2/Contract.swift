@@ -29,7 +29,7 @@ public struct Contract: DomainResource {
 	public static let resourceType: ResourceType = .contract
 	
 	/// All possible types for "binding[x]"
-	public enum BindingX: Equatable, Hashable, Sendable {
+	public indirect enum BindingX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case reference(Reference)
 	}

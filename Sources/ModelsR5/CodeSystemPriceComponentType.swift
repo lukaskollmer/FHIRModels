@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/price-component-type
  ValueSet: http://hl7.org/fhir/ValueSet/price-component-type
  */
-public enum PriceComponentType: String, FHIRPrimitiveType {
+public indirect enum PriceComponentType: String, FHIRPrimitiveType {
 	
 	/// the amount is the base price used for calculating the total price before applying surcharges, discount or taxes.
 	case base

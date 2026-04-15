@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/namingsystem-identifier-type
  ValueSet: http://hl7.org/fhir/ValueSet/namingsystem-identifier-type
  */
-public enum NamingSystemIdentifierType: String, FHIRPrimitiveType {
+public indirect enum NamingSystemIdentifierType: String, FHIRPrimitiveType {
 	
 	/// An ISO object identifier; e.g. 1.2.3.4.5.
 	case oid

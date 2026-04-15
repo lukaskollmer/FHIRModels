@@ -34,13 +34,13 @@ public struct NutritionIntake: DomainResource {
 	public static let resourceType: ResourceType = .nutritionIntake
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
 	
 	/// All possible types for "reported[x]"
-	public enum ReportedX: Equatable, Hashable, Sendable {
+	public indirect enum ReportedX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case reference(Reference)
 	}

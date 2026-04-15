@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/udi-entry-type
  ValueSet: http://hl7.org/fhir/ValueSet/udi-entry-type
  */
-public enum UDIEntryType: String, FHIRPrimitiveType {
+public indirect enum UDIEntryType: String, FHIRPrimitiveType {
 	
 	/// a barcodescanner captured the data from the device label.
 	case barcode

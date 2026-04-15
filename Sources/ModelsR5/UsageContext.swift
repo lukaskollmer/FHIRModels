@@ -29,7 +29,7 @@ import FMCore
 public struct UsageContext: DataType {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case range(Range)

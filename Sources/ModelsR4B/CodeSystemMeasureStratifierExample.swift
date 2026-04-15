@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/measure-stratifier-example
  ValueSet: http://hl7.org/fhir/ValueSet/measure-stratifier-example
  */
-public enum MeasureStratifierExample: String, FHIRPrimitiveType {
+public indirect enum MeasureStratifierExample: String, FHIRPrimitiveType {
 	
 	/// Age Stratification.
 	case age

@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/CodeSystem/nutritionintake-status-reason
  */
-public enum NutritionIntakeStatusReason: String, FHIRPrimitiveType {
+public indirect enum NutritionIntakeStatusReason: String, FHIRPrimitiveType {
 	
 	/// The patient/subject is believed to be allergic to a substance that is part of the therapy and the therapy is
 	/// being temporarily withdrawn to confirm.

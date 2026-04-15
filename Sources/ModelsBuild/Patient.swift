@@ -30,13 +30,13 @@ public struct Patient: DomainResource {
 	public static let resourceType: ResourceType = .patient
 	
 	/// All possible types for "deceased[x]"
-	public enum DeceasedX: Equatable, Hashable, Sendable {
+	public indirect enum DeceasedX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case dateTime(FHIRPrimitive<DateTime>)
 	}
 	
 	/// All possible types for "multipleBirth[x]"
-	public enum MultipleBirthX: Equatable, Hashable, Sendable {
+	public indirect enum MultipleBirthX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case integer(FHIRPrimitive<FHIRInteger>)
 	}

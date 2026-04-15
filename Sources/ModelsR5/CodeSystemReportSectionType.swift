@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-report-section
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-report-section
  */
-public enum ReportSectionType: String, FHIRPrimitiveType {
+public indirect enum ReportSectionType: String, FHIRPrimitiveType {
 	
 	/// Assertion.
 	case assertion = "Assertion"

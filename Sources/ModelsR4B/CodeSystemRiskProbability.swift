@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/risk-probability
  */
-public enum RiskProbability: String, FHIRPrimitiveType {
+public indirect enum RiskProbability: String, FHIRPrimitiveType {
 	
 	/// The specified outcome is effectively guaranteed.
 	case certain

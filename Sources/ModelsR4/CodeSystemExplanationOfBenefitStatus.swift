@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/explanationofbenefit-status
  ValueSet: http://hl7.org/fhir/ValueSet/explanationofbenefit-status
  */
-public enum ExplanationOfBenefitStatus: String, FHIRPrimitiveType {
+public indirect enum ExplanationOfBenefitStatus: String, FHIRPrimitiveType {
 	
 	/// The resource instance is currently in-force.
 	case active

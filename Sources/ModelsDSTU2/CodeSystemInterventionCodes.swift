@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/intervention
  ValueSet: http://hl7.org/fhir/ValueSet/intervention
  */
-public enum InterventionCodes: String, FHIRPrimitiveType {
+public indirect enum InterventionCodes: String, FHIRPrimitiveType {
 	
 	/// Other
 	case other

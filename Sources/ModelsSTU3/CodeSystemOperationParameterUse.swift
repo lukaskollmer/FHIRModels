@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/operation-parameter-use
  ValueSet: http://hl7.org/fhir/ValueSet/operation-parameter-use
  */
-public enum OperationParameterUse: String, FHIRPrimitiveType {
+public indirect enum OperationParameterUse: String, FHIRPrimitiveType {
 	
 	/// This is an input parameter.
 	case `in`

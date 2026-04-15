@@ -25,7 +25,7 @@ import FMCore
  URL: http://cds-hooks.hl7.org/CodeSystem/indicator
  ValueSet: http://hl7.org/fhir/ValueSet/cdshooks-indicator
  */
-public enum Indicator: String, FHIRPrimitiveType {
+public indirect enum Indicator: String, FHIRPrimitiveType {
 	
 	/// critical
 	case critical

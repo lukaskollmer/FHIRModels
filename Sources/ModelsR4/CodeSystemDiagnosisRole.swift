@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/diagnosis-role
  ValueSet: http://hl7.org/fhir/ValueSet/diagnosis-role
  */
-public enum DiagnosisRole: String, FHIRPrimitiveType {
+public indirect enum DiagnosisRole: String, FHIRPrimitiveType {
 	
 	/// AD
 	case AD

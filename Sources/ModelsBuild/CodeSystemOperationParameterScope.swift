@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/operation-parameter-scope
  ValueSet: http://hl7.org/fhir/ValueSet/operation-parameter-scope
  */
-public enum OperationParameterScope: String, FHIRPrimitiveType {
+public indirect enum OperationParameterScope: String, FHIRPrimitiveType {
 	
 	/// This is a parameter that can be used at the instance level.
 	case instance

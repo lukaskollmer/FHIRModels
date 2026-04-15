@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-target-list-mode
  ValueSet: http://hl7.org/fhir/ValueSet/map-target-list-mode
  */
-public enum StructureMapTargetListMode: String, FHIRPrimitiveType {
+public indirect enum StructureMapTargetListMode: String, FHIRPrimitiveType {
 	
 	/// when the target list is being assembled, the items for this rule go first. If more than one rule defines a first
 	/// item (for a given instance of mapping) then this is an error.

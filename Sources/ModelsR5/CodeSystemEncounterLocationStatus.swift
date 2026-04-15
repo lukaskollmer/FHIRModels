@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-location-status
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-location-status
  */
-public enum EncounterLocationStatus: String, FHIRPrimitiveType {
+public indirect enum EncounterLocationStatus: String, FHIRPrimitiveType {
 	
 	/// The patient is currently at this location, or was between the period specified.
 	/// 

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/concept-property-type
  ValueSet: http://hl7.org/fhir/ValueSet/concept-property-type
  */
-public enum PropertyType: String, FHIRPrimitiveType {
+public indirect enum PropertyType: String, FHIRPrimitiveType {
 	
 	/// The property value is a boolean true | false.
 	case boolean

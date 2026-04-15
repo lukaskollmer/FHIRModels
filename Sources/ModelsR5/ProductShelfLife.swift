@@ -25,7 +25,7 @@ import FMCore
 public struct ProductShelfLife: BackboneType {
 	
 	/// All possible types for "period[x]"
-	public enum PeriodX: Equatable, Hashable, Sendable {
+	public indirect enum PeriodX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case string(FHIRPrimitive<FHIRString>)
 	}

@@ -30,14 +30,14 @@ public struct ServiceRequest: DomainResource {
 	public static let resourceType: ResourceType = .serviceRequest
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
 	}
 	
 	/// All possible types for "quantity[x]"
-	public enum QuantityX: Equatable, Hashable, Sendable {
+	public indirect enum QuantityX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case range(Range)
 		case ratio(Ratio)
@@ -460,7 +460,7 @@ public struct ServiceRequest: DomainResource {
 public struct ServiceRequestOrderDetail: BackboneElement {
 	
 	/// All possible types for "parameterFocus[x]"
-	public enum ParameterFocusX: Equatable, Hashable, Sendable {
+	public indirect enum ParameterFocusX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
@@ -572,7 +572,7 @@ public struct ServiceRequestOrderDetail: BackboneElement {
 public struct ServiceRequestOrderDetailParameter: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case period(Period)
@@ -731,7 +731,7 @@ public struct ServiceRequestOrderDetailParameter: BackboneElement {
 public struct ServiceRequestPatientInstruction: BackboneElement {
 	
 	/// All possible types for "instruction[x]"
-	public enum InstructionX: Equatable, Hashable, Sendable {
+	public indirect enum InstructionX: Equatable, Hashable, Sendable {
 		case markdown(FHIRPrimitive<FHIRString>)
 		case reference(Reference)
 	}

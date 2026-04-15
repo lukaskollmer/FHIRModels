@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contributor-type
  ValueSet: http://hl7.org/fhir/ValueSet/contributor-type
  */
-public enum ContributorType: String, FHIRPrimitiveType {
+public indirect enum ContributorType: String, FHIRPrimitiveType {
 	
 	/// An author of the content of the module.
 	case author

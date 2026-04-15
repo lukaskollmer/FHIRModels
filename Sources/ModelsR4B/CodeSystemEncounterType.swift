@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/encounter-type
  */
-public enum EncounterType: String, FHIRPrimitiveType {
+public indirect enum EncounterType: String, FHIRPrimitiveType {
 	
 	/// ADMS
 	case ADMS

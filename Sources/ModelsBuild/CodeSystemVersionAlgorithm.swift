@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/version-algorithm
  ValueSet: http://hl7.org/fhir/ValueSet/version-algorithm
  */
-public enum VersionAlgorithm: String, FHIRPrimitiveType {
+public indirect enum VersionAlgorithm: String, FHIRPrimitiveType {
 	
 	/// Simple alphabetic sort on a case-insensitive and accent-insensitive basis.  (Sorting of different cases or
 	/// accented versions of a character is indeterminate)

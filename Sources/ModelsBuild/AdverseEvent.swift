@@ -36,7 +36,7 @@ public struct AdverseEvent: DomainResource {
 	public static let resourceType: ResourceType = .adverseEvent
 	
 	/// All possible types for "effect[x]"
-	public enum EffectX: Equatable, Hashable, Sendable {
+	public indirect enum EffectX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -438,7 +438,7 @@ public struct AdverseEventParticipant: BackboneElement {
 public struct AdverseEventSuspectEntity: BackboneElement {
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}

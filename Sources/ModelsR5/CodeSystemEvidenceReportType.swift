@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-report-type
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-report-type
  */
-public enum EvidenceReportType: String, FHIRPrimitiveType {
+public indirect enum EvidenceReportType: String, FHIRPrimitiveType {
 	
 	/// The report is primarily a listing of classifiers about the report subject.
 	case classification

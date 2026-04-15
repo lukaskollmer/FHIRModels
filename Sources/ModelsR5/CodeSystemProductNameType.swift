@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-name-type
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-name-type
  */
-public enum ProductNameType: String, FHIRPrimitiveType {
+public indirect enum ProductNameType: String, FHIRPrimitiveType {
 	
 	/// BAN
 	case BAN

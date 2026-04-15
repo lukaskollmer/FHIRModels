@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/patient-contact-relationship
  ValueSet: http://hl7.org/fhir/ValueSet/patient-contact-relationship
  */
-public enum PatientContactRelationship: String, FHIRPrimitiveType {
+public indirect enum PatientContactRelationship: String, FHIRPrimitiveType {
 	
 	/// Contact that acts on behalf of the patient
 	case agent

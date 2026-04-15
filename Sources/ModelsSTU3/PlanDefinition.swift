@@ -342,7 +342,7 @@ public struct PlanDefinition: DomainResource {
 public struct PlanDefinitionAction: BackboneElement {
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
 		case period(Period)
@@ -922,7 +922,7 @@ public struct PlanDefinitionActionParticipant: BackboneElement {
 public struct PlanDefinitionActionRelatedAction: BackboneElement {
 	
 	/// All possible types for "offset[x]"
-	public enum OffsetX: Equatable, Hashable, Sendable {
+	public indirect enum OffsetX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case range(Range)
 	}
@@ -1151,7 +1151,7 @@ public struct PlanDefinitionGoal: BackboneElement {
 public struct PlanDefinitionGoalTarget: BackboneElement {
 	
 	/// All possible types for "detail[x]"
-	public enum DetailX: Equatable, Hashable, Sendable {
+	public indirect enum DetailX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case range(Range)

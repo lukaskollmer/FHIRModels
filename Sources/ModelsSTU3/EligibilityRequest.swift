@@ -31,7 +31,7 @@ public struct EligibilityRequest: DomainResource {
 	public static let resourceType: ResourceType = .eligibilityRequest
 	
 	/// All possible types for "serviced[x]"
-	public enum ServicedX: Equatable, Hashable, Sendable {
+	public indirect enum ServicedX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}

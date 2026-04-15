@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/operation-outcome
  ValueSet: http://hl7.org/fhir/ValueSet/operation-outcome
  */
-public enum OperationOutcomeCodes: String, FHIRPrimitiveType {
+public indirect enum OperationOutcomeCodes: String, FHIRPrimitiveType {
 	
 	/// DELETE_MULTIPLE_MATCHES
 	case DELETE_MULTIPLE_MATCHES

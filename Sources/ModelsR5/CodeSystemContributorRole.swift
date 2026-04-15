@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contributor-role
  ValueSet: http://hl7.org/fhir/ValueSet/contributor-role
  */
-public enum ContributorRole: String, FHIRPrimitiveType {
+public indirect enum ContributorRole: String, FHIRPrimitiveType {
 	
 	/// An entity primarily responsible for making the resource, often called author or creator
 	case author

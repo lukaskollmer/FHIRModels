@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/measure-aggregate-method
  ValueSet: http://hl7.org/fhir/ValueSet/aggregate-method
  */
-public enum MeasureAggregateMethod: String, FHIRPrimitiveType {
+public indirect enum MeasureAggregateMethod: String, FHIRPrimitiveType {
 	
 	/// The measure score is determined by taking the average of the observations derived from the measure population.
 	case average

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/name-use
  ValueSet: http://hl7.org/fhir/ValueSet/name-use
  */
-public enum NameUse: String, FHIRPrimitiveType {
+public indirect enum NameUse: String, FHIRPrimitiveType {
 	
 	/// Anonymous assigned name, alias, or pseudonym (used to protect a person's identity for privacy reasons)
 	case anonymous

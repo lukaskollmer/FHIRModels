@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/procedure-request-priority
  ValueSet: http://hl7.org/fhir/ValueSet/procedure-request-priority
  */
-public enum ProcedureRequestPriority: String, FHIRPrimitiveType {
+public indirect enum ProcedureRequestPriority: String, FHIRPrimitiveType {
 	
 	/// The request should be acted on as soon as possible.
 	case asap

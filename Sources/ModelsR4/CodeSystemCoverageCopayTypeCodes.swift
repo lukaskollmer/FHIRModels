@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/coverage-copay-type
  ValueSet: http://hl7.org/fhir/ValueSet/coverage-copay-type
  */
-public enum CoverageCopayTypeCodes: String, FHIRPrimitiveType {
+public indirect enum CoverageCopayTypeCodes: String, FHIRPrimitiveType {
 	
 	/// A standard fixed currency amount applied to all classes or service or product not otherwise specified.
 	case copay

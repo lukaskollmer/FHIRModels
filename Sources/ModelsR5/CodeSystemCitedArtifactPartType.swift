@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/cited-artifact-part-type
  ValueSet: http://hl7.org/fhir/ValueSet/cited-artifact-part-type
  */
-public enum CitedArtifactPartType: String, FHIRPrimitiveType {
+public indirect enum CitedArtifactPartType: String, FHIRPrimitiveType {
 	
 	/// Used to distinguish an individual article within an article set where the article set is a base citation.
 	case articleSet = "article-set"

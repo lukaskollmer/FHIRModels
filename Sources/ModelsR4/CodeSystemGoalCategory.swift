@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/goal-category
  ValueSet: http://hl7.org/fhir/ValueSet/goal-category
  */
-public enum GoalCategory: String, FHIRPrimitiveType {
+public indirect enum GoalCategory: String, FHIRPrimitiveType {
 	
 	/// Goals related to the manner in which the subject acts.
 	case behavioral

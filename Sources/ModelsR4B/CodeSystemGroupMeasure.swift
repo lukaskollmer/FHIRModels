@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/group-measure
  ValueSet: http://hl7.org/fhir/ValueSet/group-measure
  */
-public enum GroupMeasure: String, FHIRPrimitiveType {
+public indirect enum GroupMeasure: String, FHIRPrimitiveType {
 	
 	/// Aggregated using Mean of participant values.
 	case mean

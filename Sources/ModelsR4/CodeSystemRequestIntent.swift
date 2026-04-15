@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/request-intent
  ValueSet: http://hl7.org/fhir/ValueSet/request-intent
  */
-public enum RequestIntent: String, FHIRPrimitiveType {
+public indirect enum RequestIntent: String, FHIRPrimitiveType {
 	
 	/// The request represents a legally binding instruction authored by a Patient or RelatedPerson.
 	case directive

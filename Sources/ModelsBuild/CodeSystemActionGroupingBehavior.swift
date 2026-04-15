@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-grouping-behavior
  ValueSet: http://hl7.org/fhir/ValueSet/action-grouping-behavior
  */
-public enum ActionGroupingBehavior: String, FHIRPrimitiveType {
+public indirect enum ActionGroupingBehavior: String, FHIRPrimitiveType {
 	
 	/// A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end
 	/// user, but it is not required to do so.

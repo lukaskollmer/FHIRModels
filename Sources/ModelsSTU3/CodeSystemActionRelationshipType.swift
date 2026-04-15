@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/action-relationship-type
  */
-public enum ActionRelationshipType: String, FHIRPrimitiveType {
+public indirect enum ActionRelationshipType: String, FHIRPrimitiveType {
 	
 	/// The action must be performed after the related action
 	case after

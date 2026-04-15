@@ -28,7 +28,7 @@ import FMCore
  URL: http://cds-hooks.hl7.org/CodeSystem/indicator
  ValueSet: http://hl7.org/fhir/ValueSet/cdshooks-indicator
  */
-public enum Indicator: String, FHIRPrimitiveType {
+public indirect enum Indicator: String, FHIRPrimitiveType {
 	
 	/// The response is critical and indicates that it contains information or activities that have high urgency and
 	/// importance that should be immediately addressed

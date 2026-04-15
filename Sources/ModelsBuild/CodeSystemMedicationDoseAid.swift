@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medication-dose-aid
  ValueSet: http://hl7.org/fhir/ValueSet/medication-dose-aid
  */
-public enum MedicationDoseAid: String, FHIRPrimitiveType {
+public indirect enum MedicationDoseAid: String, FHIRPrimitiveType {
 	
 	/// A type of packaging in which a medication is sealed in plastic, often with a cardboard backing.
 	case blisterpack

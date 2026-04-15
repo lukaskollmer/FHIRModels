@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/message-transport
  ValueSet: http://hl7.org/fhir/ValueSet/message-transport
  */
-public enum MessageTransport: String, FHIRPrimitiveType {
+public indirect enum MessageTransport: String, FHIRPrimitiveType {
 	
 	/// The application sends or receives messages using File Transfer Protocol.
 	case ftp

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/formularyitem-status
  ValueSet: http://hl7.org/fhir/ValueSet/formularyitem-status
  */
-public enum FormularyItemStatusCodes: String, FHIRPrimitiveType {
+public indirect enum FormularyItemStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The service or product referred to by this FormularyItem is in active use within the drug database or inventory
 	/// system.

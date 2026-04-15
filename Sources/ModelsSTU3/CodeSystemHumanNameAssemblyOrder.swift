@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/name-assembly-order
  ValueSet: http://hl7.org/fhir/ValueSet/name-assembly-order
  */
-public enum HumanNameAssemblyOrder: String, FHIRPrimitiveType {
+public indirect enum HumanNameAssemblyOrder: String, FHIRPrimitiveType {
 	
 	/// NL1
 	case NL1

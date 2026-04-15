@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/claim-type-link
  ValueSet: http://hl7.org/fhir/ValueSet/claim-type-link
  */
-public enum ClaimType: String, FHIRPrimitiveType {
+public indirect enum ClaimType: String, FHIRPrimitiveType {
 	
 	/// A claim for Institution based, typically in-patient, goods and services.
 	case institutional

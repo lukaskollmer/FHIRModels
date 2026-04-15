@@ -31,20 +31,20 @@ public struct PlanDefinition: DomainResource {
 	public static let resourceType: ResourceType = .planDefinition
 	
 	/// All possible types for "asNeeded[x]"
-	public enum AsNeededX: Equatable, Hashable, Sendable {
+	public indirect enum AsNeededX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 	}
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -511,20 +511,20 @@ public struct PlanDefinition: DomainResource {
 public struct PlanDefinitionAction: BackboneElement {
 	
 	/// All possible types for "definition[x]"
-	public enum DefinitionX: Equatable, Hashable, Sendable {
+	public indirect enum DefinitionX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case duration(Duration)
 		case range(Range)
@@ -1368,7 +1368,7 @@ public struct PlanDefinitionActionParticipant: BackboneElement {
 public struct PlanDefinitionActionRelatedAction: BackboneElement {
 	
 	/// All possible types for "offset[x]"
-	public enum OffsetX: Equatable, Hashable, Sendable {
+	public indirect enum OffsetX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case range(Range)
 	}
@@ -1782,7 +1782,7 @@ public struct PlanDefinitionGoal: BackboneElement {
 public struct PlanDefinitionGoalTarget: BackboneElement {
 	
 	/// All possible types for "detail[x]"
-	public enum DetailX: Equatable, Hashable, Sendable {
+	public indirect enum DetailX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case integer(FHIRPrimitive<FHIRInteger>)

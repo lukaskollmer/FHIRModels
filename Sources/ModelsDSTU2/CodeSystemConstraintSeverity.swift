@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/constraint-severity
  ValueSet: http://hl7.org/fhir/ValueSet/constraint-severity
  */
-public enum ConstraintSeverity: String, FHIRPrimitiveType {
+public indirect enum ConstraintSeverity: String, FHIRPrimitiveType {
 	
 	/// If the constraint is violated, the resource is not conformant.
 	case error

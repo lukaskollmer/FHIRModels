@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/conceptmap-attribute-type
  ValueSet: http://hl7.org/fhir/ValueSet/conceptmap-attribute-type
  */
-public enum ConceptMapAttributeType: String, FHIRPrimitiveType {
+public indirect enum ConceptMapAttributeType: String, FHIRPrimitiveType {
 	
 	/// The attribute value is a boolean true | false.
 	case boolean

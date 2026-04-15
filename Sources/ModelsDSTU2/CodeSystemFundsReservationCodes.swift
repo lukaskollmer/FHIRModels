@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/fundsreserve
  ValueSet: http://hl7.org/fhir/ValueSet/fundsreserve
  */
-public enum FundsReservationCodes: String, FHIRPrimitiveType {
+public indirect enum FundsReservationCodes: String, FHIRPrimitiveType {
 	
 	/// none
 	case none

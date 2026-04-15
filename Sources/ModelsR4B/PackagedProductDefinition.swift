@@ -537,7 +537,7 @@ public struct PackagedProductDefinitionPackageContainedItem: BackboneElement {
 public struct PackagedProductDefinitionPackageProperty: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
@@ -669,7 +669,7 @@ public struct PackagedProductDefinitionPackageProperty: BackboneElement {
 public struct PackagedProductDefinitionPackageShelfLifeStorage: BackboneElement {
 	
 	/// All possible types for "period[x]"
-	public enum PeriodX: Equatable, Hashable, Sendable {
+	public indirect enum PeriodX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case string(FHIRPrimitive<FHIRString>)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/document-mode
  ValueSet: http://hl7.org/fhir/ValueSet/document-mode
  */
-public enum DocumentMode: String, FHIRPrimitiveType {
+public indirect enum DocumentMode: String, FHIRPrimitiveType {
 	
 	/// The application consumes documents of the specified type.
 	case consumer

@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/claim-decision
  */
-public enum ClaimAdjudicationDecisionCodes: String, FHIRPrimitiveType {
+public indirect enum ClaimAdjudicationDecisionCodes: String, FHIRPrimitiveType {
 	
 	/// The claim, or individual services, are approved as submitted.
 	case approved

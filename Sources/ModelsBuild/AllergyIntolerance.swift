@@ -30,7 +30,7 @@ public struct AllergyIntolerance: DomainResource {
 	public static let resourceType: ResourceType = .allergyIntolerance
 	
 	/// All possible types for "onset[x]"
-	public enum OnsetX: Equatable, Hashable, Sendable {
+	public indirect enum OnsetX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)

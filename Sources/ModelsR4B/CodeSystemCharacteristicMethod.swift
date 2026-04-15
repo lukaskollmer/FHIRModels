@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/characteristic-method
  ValueSet: http://hl7.org/fhir/ValueSet/characteristic-method
  */
-public enum CharacteristicMethod: String, FHIRPrimitiveType {
+public indirect enum CharacteristicMethod: String, FHIRPrimitiveType {
 	
 	/// Default.
 	case `default` = "Default"

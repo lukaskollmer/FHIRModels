@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/adjudication-error
  ValueSet: http://hl7.org/fhir/ValueSet/adjudication-error
  */
-public enum AdjudicationErrorCodes: String, FHIRPrimitiveType {
+public indirect enum AdjudicationErrorCodes: String, FHIRPrimitiveType {
 	
 	/// A001
 	case A001

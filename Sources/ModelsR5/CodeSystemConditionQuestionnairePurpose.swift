@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/condition-questionnaire-purpose
  ValueSet: http://hl7.org/fhir/ValueSet/condition-questionnaire-purpose
  */
-public enum ConditionQuestionnairePurpose: String, FHIRPrimitiveType {
+public indirect enum ConditionQuestionnairePurpose: String, FHIRPrimitiveType {
 	
 	/// A questionnaire that helps with diferential diagnosis.
 	case diffDiagnosis = "diff-diagnosis"

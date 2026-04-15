@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-source-material-genus
  ValueSet: http://hl7.org/fhir/ValueSet/substance-source-material-genus
  */
-public enum SubstanceSourceMaterialGenus: String, FHIRPrimitiveType {
+public indirect enum SubstanceSourceMaterialGenus: String, FHIRPrimitiveType {
 	
 	/// ginkgo
 	case ginkgo = "Ginkgo"

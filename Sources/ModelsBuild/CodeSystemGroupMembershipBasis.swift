@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/group-membership-basis
  ValueSet: http://hl7.org/fhir/ValueSet/group-membership-basis
  */
-public enum GroupMembershipBasis: String, FHIRPrimitiveType {
+public indirect enum GroupMembershipBasis: String, FHIRPrimitiveType {
 	
 	/// The Group.characteristics specified are both necessary and sufficient to determine membership. The 'conceptual'
 	/// Group is a 'definitional' Group in which the Group.type is not bound to FHIR types.

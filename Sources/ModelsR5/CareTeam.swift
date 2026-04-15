@@ -221,7 +221,7 @@ public struct CareTeam: DomainResource {
 public struct CareTeamParticipant: BackboneElement {
 	
 	/// All possible types for "coverage[x]"
-	public enum CoverageX: Equatable, Hashable, Sendable {
+	public indirect enum CoverageX: Equatable, Hashable, Sendable {
 		case period(Period)
 		case timing(Timing)
 	}

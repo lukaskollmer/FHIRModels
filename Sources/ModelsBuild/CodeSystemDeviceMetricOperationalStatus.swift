@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/metric-operational-status
  ValueSet: http://hl7.org/fhir/ValueSet/metric-operational-status
  */
-public enum DeviceMetricOperationalStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceMetricOperationalStatus: String, FHIRPrimitiveType {
 	
 	/// The metric is not operating.
 	case off

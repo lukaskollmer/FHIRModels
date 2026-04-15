@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/action-reason-code
  ValueSet: http://hl7.org/fhir/ValueSet/action-reason-code
  */
-public enum ActionReasonCode: String, FHIRPrimitiveType {
+public indirect enum ActionReasonCode: String, FHIRPrimitiveType {
 	
 	/// The action should be performed to address a detected care gap.
 	case careGap = "care-gap"

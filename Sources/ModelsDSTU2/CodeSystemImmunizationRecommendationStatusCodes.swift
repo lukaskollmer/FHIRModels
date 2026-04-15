@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/immunization-recommendation-status
  ValueSet: http://hl7.org/fhir/ValueSet/immunization-recommendation-status
  */
-public enum ImmunizationRecommendationStatusCodes: String, FHIRPrimitiveType {
+public indirect enum ImmunizationRecommendationStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The patient is due for their next vaccination.
 	case due

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/transport-code
  ValueSet: http://hl7.org/fhir/ValueSet/transport-code.html
  */
-public enum TransportCode: String, FHIRPrimitiveType {
+public indirect enum TransportCode: String, FHIRPrimitiveType {
 	
 	/// Abort, cancel or withdraw the focal resource, as appropriate for the type of resource.
 	case abort

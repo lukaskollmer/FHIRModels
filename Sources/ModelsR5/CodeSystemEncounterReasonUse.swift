@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-reason-use
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-reason-use
  */
-public enum EncounterReasonUse: String, FHIRPrimitiveType {
+public indirect enum EncounterReasonUse: String, FHIRPrimitiveType {
 	
 	/// AD
 	case AD

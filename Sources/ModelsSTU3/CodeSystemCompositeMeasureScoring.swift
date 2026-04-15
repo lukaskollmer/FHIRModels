@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/composite-measure-scoring
  ValueSet: http://hl7.org/fhir/ValueSet/composite-measure-scoring
  */
-public enum CompositeMeasureScoring: String, FHIRPrimitiveType {
+public indirect enum CompositeMeasureScoring: String, FHIRPrimitiveType {
 	
 	/// All-or-nothing scoring includes an individual in the numerator of the composite measure if they are in the
 	/// numerators of all of the component measures in which they are in the denominator

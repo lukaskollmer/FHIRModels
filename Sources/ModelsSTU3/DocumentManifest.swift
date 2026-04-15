@@ -228,7 +228,7 @@ public struct DocumentManifest: DomainResource {
 public struct DocumentManifestContent: BackboneElement {
 	
 	/// All possible types for "p[x]"
-	public enum PX: Equatable, Hashable, Sendable {
+	public indirect enum PX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case reference(Reference)
 	}

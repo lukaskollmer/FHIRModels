@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-decision-mode
  ValueSet: http://hl7.org/fhir/ValueSet/contract-decision-mode
  */
-public enum ContractResourceDecisionModeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceDecisionModeCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case policy

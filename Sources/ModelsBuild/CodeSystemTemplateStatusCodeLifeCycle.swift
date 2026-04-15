@@ -25,7 +25,7 @@ import FMCore
  URL: urn:oid:2.16.840.1.113883.3.1937.98.5.8
  ValueSet: urn:oid:2.16.840.1.113883.3.1937.98.11.8
  */
-public enum TemplateStatusCodeLifeCycle: String, FHIRPrimitiveType {
+public indirect enum TemplateStatusCodeLifeCycle: String, FHIRPrimitiveType {
 	
 	/// Design has been deemed fit for the intended purpose and is published by the governance group.
 	case active

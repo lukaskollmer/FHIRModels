@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/http-operations
  ValueSet: http://hl7.org/fhir/ValueSet/http-operations
  */
-public enum TestScriptRequestMethodCode: String, FHIRPrimitiveType {
+public indirect enum TestScriptRequestMethodCode: String, FHIRPrimitiveType {
 	
 	/// HTTP DELETE operation.
 	case delete

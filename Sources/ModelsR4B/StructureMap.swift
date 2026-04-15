@@ -652,7 +652,7 @@ public struct StructureMapGroupRuleDependent: BackboneElement {
 public struct StructureMapGroupRuleSource: BackboneElement {
 	
 	/// All possible types for "defaultValue[x]"
-	public enum DefaultValueX: Equatable, Hashable, Sendable {
+	public indirect enum DefaultValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)
@@ -1428,7 +1428,7 @@ public struct StructureMapGroupRuleTarget: BackboneElement {
 public struct StructureMapGroupRuleTargetParameter: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case decimal(FHIRPrimitive<FHIRDecimal>)
 		case id(FHIRPrimitive<FHIRString>)

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-annunciation
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-annunciation
  */
-public enum DeviceAlertAnnunciation: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertAnnunciation: String, FHIRPrimitiveType {
 	
 	/// The signal is annunciated on or adjacent to the detecting device (e.g., at the bedside)
 	case local

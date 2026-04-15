@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/conformance-expectation
  ValueSet: http://hl7.org/fhir/ValueSet/conformance-expectation
  */
-public enum ConformanceExpectation: String, FHIRPrimitiveType {
+public indirect enum ConformanceExpectation: String, FHIRPrimitiveType {
 	
 	/// Support for the specified capability/requirement is not necessary to be considered conformant, and the
 	/// requirement should be considered strictly optional.

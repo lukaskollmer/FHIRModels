@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/deviceassociation-relationship
  ValueSet: http://hl7.org/fhir/ValueSet/deviceassociation-relationship
  */
-public enum DeviceAssociationRelationship: String, FHIRPrimitiveType {
+public indirect enum DeviceAssociationRelationship: String, FHIRPrimitiveType {
 	
 	/// The person operating the device.
 	case `operator`

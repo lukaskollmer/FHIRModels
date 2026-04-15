@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/handling-condition
  ValueSet: http://hl7.org/fhir/ValueSet/handling-condition
  */
-public enum HandlingConditionSet: String, FHIRPrimitiveType {
+public indirect enum HandlingConditionSet: String, FHIRPrimitiveType {
 	
 	/// frozen temperature.
 	case frozen

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/nutrition-order-status
  ValueSet: http://hl7.org/fhir/ValueSet/nutrition-order-status
  */
-public enum NutritionOrderStatus: String, FHIRPrimitiveType {
+public indirect enum NutritionOrderStatus: String, FHIRPrimitiveType {
 	
 	/// The request is 'actionable', but not all actions that are implied by it have occurred yet.
 	case active

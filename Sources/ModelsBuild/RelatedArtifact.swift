@@ -28,7 +28,7 @@ import FMCore
 public struct RelatedArtifact: DataType {
 	
 	/// All possible types for "artifact[x]"
-	public enum ArtifactX: Equatable, Hashable, Sendable {
+	public indirect enum ArtifactX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case canonical(FHIRPrimitive<Canonical>)
 		case markdown(FHIRPrimitive<FHIRString>)

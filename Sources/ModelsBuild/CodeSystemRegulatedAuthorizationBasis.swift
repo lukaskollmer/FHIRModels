@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/regulated-authorization-basis
  ValueSet: http://hl7.org/fhir/ValueSet/regulated-authorization-basis
  */
-public enum RegulatedAuthorizationBasis: String, FHIRPrimitiveType {
+public indirect enum RegulatedAuthorizationBasis: String, FHIRPrimitiveType {
 	
 	/// bibliographical
 	case bibliographical = "Bibliographical"

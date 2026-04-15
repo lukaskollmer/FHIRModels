@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-signalType
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-signalType
  */
-public enum DeviceAlertSignalType: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertSignalType: String, FHIRPrimitiveType {
 	
 	/// A rapid intermittent (alternating) vibration
 	case fastPulse = "fast-pulse"

@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/ex-programcode
  */
-public enum ExampleProgramCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleProgramCodes: String, FHIRPrimitiveType {
 	
 	/// Child Asthma Program
 	case `as`

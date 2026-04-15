@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/data-types
  */
-public enum DataType: String, FHIRPrimitiveType {
+public indirect enum DataType: String, FHIRPrimitiveType {
 	
 	/// Optional Extension Element - found in all resources.
 	case `extension` = "Extension"

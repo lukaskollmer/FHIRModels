@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contributor-summary-type
  ValueSet: http://hl7.org/fhir/ValueSet/contributor-summary-type
  */
-public enum ContributorSummaryType: String, FHIRPrimitiveType {
+public indirect enum ContributorSummaryType: String, FHIRPrimitiveType {
 	
 	/// Display of the list of acknowledged parties as a complete string.
 	case acknowledgementList = "acknowledgement-list"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/administrative-gender
  ValueSet: http://hl7.org/fhir/ValueSet/administrative-gender
  */
-public enum AdministrativeGender: String, FHIRPrimitiveType {
+public indirect enum AdministrativeGender: String, FHIRPrimitiveType {
 	
 	/// Female.
 	case female

@@ -29,13 +29,13 @@ public struct SpecimenDefinition: DomainResource {
 	public static let resourceType: ResourceType = .specimenDefinition
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -550,7 +550,7 @@ public struct SpecimenDefinitionTypeTested: BackboneElement {
 public struct SpecimenDefinitionTypeTestedContainer: BackboneElement {
 	
 	/// All possible types for "minimumVolume[x]"
-	public enum MinimumVolumeX: Equatable, Hashable, Sendable {
+	public indirect enum MinimumVolumeX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -703,7 +703,7 @@ public struct SpecimenDefinitionTypeTestedContainer: BackboneElement {
 public struct SpecimenDefinitionTypeTestedContainerAdditive: BackboneElement {
 	
 	/// All possible types for "additive[x]"
-	public enum AdditiveX: Equatable, Hashable, Sendable {
+	public indirect enum AdditiveX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

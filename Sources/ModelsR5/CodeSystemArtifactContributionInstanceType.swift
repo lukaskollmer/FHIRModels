@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/artifact-contribution-instance-type
  ValueSet: http://hl7.org/fhir/ValueSet/artifact-contribution-instance-type
  */
-public enum ArtifactContributionInstanceType: String, FHIRPrimitiveType {
+public indirect enum ArtifactContributionInstanceType: String, FHIRPrimitiveType {
 	
 	/// Approved
 	case approved

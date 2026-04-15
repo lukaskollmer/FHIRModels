@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/condition-category
  ValueSet: http://hl7.org/fhir/ValueSet/condition-category
  */
-public enum ConditionCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum ConditionCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// The patient considers the condition an issue to be addressed.
 	case complaint

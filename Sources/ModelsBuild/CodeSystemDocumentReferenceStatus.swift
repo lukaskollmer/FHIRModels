@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/document-reference-status
  ValueSet: http://hl7.org/fhir/ValueSet/document-reference-status
  */
-public enum DocumentReferenceStatus: String, FHIRPrimitiveType {
+public indirect enum DocumentReferenceStatus: String, FHIRPrimitiveType {
 	
 	/// This is the current reference for this document.
 	case current

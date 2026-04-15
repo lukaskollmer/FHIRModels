@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-grade
  ValueSet: http://hl7.org/fhir/ValueSet/substance-grade
  */
-public enum SubstanceGrade: String, FHIRPrimitiveType {
+public indirect enum SubstanceGrade: String, FHIRPrimitiveType {
 	
 	/// BP
 	case BP

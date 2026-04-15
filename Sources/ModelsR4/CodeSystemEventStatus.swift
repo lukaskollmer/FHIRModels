@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/event-status
  ValueSet: http://hl7.org/fhir/ValueSet/event-status
  */
-public enum EventStatus: String, FHIRPrimitiveType {
+public indirect enum EventStatus: String, FHIRPrimitiveType {
 	
 	/// The event has now concluded.
 	case completed

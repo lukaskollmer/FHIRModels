@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/processoutcomecodes
  ValueSet: http://hl7.org/fhir/ValueSet/process-outcome
  */
-public enum ProcessOutcomeCodes: String, FHIRPrimitiveType {
+public indirect enum ProcessOutcomeCodes: String, FHIRPrimitiveType {
 	
 	/// complete
 	case complete

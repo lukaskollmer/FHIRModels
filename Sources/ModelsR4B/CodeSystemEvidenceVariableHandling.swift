@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/variable-handling
  ValueSet: http://hl7.org/fhir/ValueSet/variable-handling
  */
-public enum EvidenceVariableHandling: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableHandling: String, FHIRPrimitiveType {
 	
 	/// A continuous variable is one for which, within the limits the variable ranges, any value is possible (from STATO
 	/// http://purl.obolibrary.org/obo/STATO_0000251).

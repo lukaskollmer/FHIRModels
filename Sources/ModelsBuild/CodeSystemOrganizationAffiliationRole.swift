@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/organization-role
  */
-public enum OrganizationAffiliationRole: String, FHIRPrimitiveType {
+public indirect enum OrganizationAffiliationRole: String, FHIRPrimitiveType {
 	
 	/// An organization that facilitates electronic clinical data exchange between entities
 	case HIEHIO = "HIE/HIO"

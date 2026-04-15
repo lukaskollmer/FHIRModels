@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/fhirpath-types
  ValueSet: http://hl7.org/fhir/ValueSet/fhirpath-types
  */
-public enum FHIRPathTypes: String, FHIRPrimitiveType {
+public indirect enum FHIRPathTypes: String, FHIRPrimitiveType {
 	
 	/// httpHl7OrgFhirpathSystemBoolean
 	case httpHl7OrgFhirpathSystemBoolean = "http://hl7.org/fhirpath/System.Boolean"

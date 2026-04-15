@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/knowledge-resource-types
  ValueSet: http://hl7.org/fhir/ValueSet/knowledge-resource-types
  */
-public enum KnowledgeResourceType: String, FHIRPrimitiveType {
+public indirect enum KnowledgeResourceType: String, FHIRPrimitiveType {
 	
 	/// The definition of a specific activity to be taken, independent of any particular patient or context.
 	case activityDefinition = "ActivityDefinition"

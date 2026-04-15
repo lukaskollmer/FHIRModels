@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason
  */
-public enum ImmunizationEventSubpotentReason: String, FHIRPrimitiveType {
+public indirect enum ImmunizationEventSubpotentReason: String, FHIRPrimitiveType {
 	
 	/// The vaccine experienced a cold chain break.
 	case coldchainbreak

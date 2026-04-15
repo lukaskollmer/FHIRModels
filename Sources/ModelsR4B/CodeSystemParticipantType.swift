@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/participant-type
  */
-public enum ParticipantType: String, FHIRPrimitiveType {
+public indirect enum ParticipantType: String, FHIRPrimitiveType {
 	
 	/// A person to be contacted in case of an emergency during the encounter.
 	case emergency

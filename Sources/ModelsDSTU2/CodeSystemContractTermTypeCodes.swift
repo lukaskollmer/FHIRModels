@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contracttermtypecodes
  ValueSet: http://hl7.org/fhir/ValueSet/contract-term-type
  */
-public enum ContractTermTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractTermTypeCodes: String, FHIRPrimitiveType {
 	
 	/// oralHealth
 	case oralHealth = "OralHealth"

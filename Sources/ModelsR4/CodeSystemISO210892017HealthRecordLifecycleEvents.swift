@@ -27,7 +27,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle
  */
-public enum ISO210892017HealthRecordLifecycleEvents: String, FHIRPrimitiveType {
+public indirect enum ISO210892017HealthRecordLifecycleEvents: String, FHIRPrimitiveType {
 	
 	/// Occurs when an agent causes the system to obtain and open a record entry for inspection or review.
 	case access

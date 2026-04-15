@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/contract-data-meaning
  ValueSet: http://hl7.org/fhir/ValueSet/contract-data-meaning
  */
-public enum ContractDataMeaning: String, FHIRPrimitiveType {
+public indirect enum ContractDataMeaning: String, FHIRPrimitiveType {
 	
 	/// The consent applies to instances of resources that are authored by.
 	case authoredby

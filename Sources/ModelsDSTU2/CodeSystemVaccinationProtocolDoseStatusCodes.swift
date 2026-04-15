@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/vaccination-protocol-dose-status
  ValueSet: http://hl7.org/fhir/ValueSet/vaccination-protocol-dose-status
  */
-public enum VaccinationProtocolDoseStatusCodes: String, FHIRPrimitiveType {
+public indirect enum VaccinationProtocolDoseStatusCodes: String, FHIRPrimitiveType {
 	
 	/// count
 	case count

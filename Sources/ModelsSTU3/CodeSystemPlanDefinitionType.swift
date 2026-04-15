@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/plan-definition-type
  ValueSet: http://hl7.org/fhir/ValueSet/plan-definition-type
  */
-public enum PlanDefinitionType: String, FHIRPrimitiveType {
+public indirect enum PlanDefinitionType: String, FHIRPrimitiveType {
 	
 	/// A set of activities that can be performed that have relationships in terms of order, pre-conditions, etc.
 	case `protocol`

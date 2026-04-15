@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/strand-type
  ValueSet: http://hl7.org/fhir/ValueSet/strand-type
  */
-public enum StrandType: String, FHIRPrimitiveType {
+public indirect enum StrandType: String, FHIRPrimitiveType {
 	
 	/// Crick strand of starting sequence.
 	case crick

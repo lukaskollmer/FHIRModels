@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/communication-topic
  ValueSet: http://hl7.org/fhir/ValueSet/communication-topic
  */
-public enum CommunicationTopic: String, FHIRPrimitiveType {
+public indirect enum CommunicationTopic: String, FHIRPrimitiveType {
 	
 	/// The purpose or content of the communication is an appointment reminder.
 	case appointmentReminder = "appointment-reminder"

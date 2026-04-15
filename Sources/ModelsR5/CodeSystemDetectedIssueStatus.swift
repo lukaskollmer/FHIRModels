@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/detectedissue-status
  */
-public enum DetectedIssueStatus: String, FHIRPrimitiveType {
+public indirect enum DetectedIssueStatus: String, FHIRPrimitiveType {
 	
 	/// Indicates the detected issue has been mitigated
 	case mitigated

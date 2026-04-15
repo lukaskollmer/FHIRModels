@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/dose-rate-type
  ValueSet: http://hl7.org/fhir/ValueSet/dose-rate-type
  */
-public enum DoseAndRateType: String, FHIRPrimitiveType {
+public indirect enum DoseAndRateType: String, FHIRPrimitiveType {
 	
 	/// The dose specified is calculated by the prescriber or the system.
 	case calculated

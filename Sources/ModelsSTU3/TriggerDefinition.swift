@@ -27,7 +27,7 @@ import FMCore
 public struct TriggerDefinition: Element {
 	
 	/// All possible types for "eventTiming[x]"
-	public enum EventTimingX: Equatable, Hashable, Sendable {
+	public indirect enum EventTimingX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case reference(Reference)

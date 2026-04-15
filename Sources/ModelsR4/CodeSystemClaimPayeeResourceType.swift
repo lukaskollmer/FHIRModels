@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/ex-payee-resource-type
  ValueSet: http://hl7.org/fhir/ValueSet/ex-payee-resource-type
  */
-public enum ClaimPayeeResourceType: String, FHIRPrimitiveType {
+public indirect enum ClaimPayeeResourceType: String, FHIRPrimitiveType {
 	
 	/// Organization resource.
 	case organization

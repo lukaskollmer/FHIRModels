@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-selection-behavior
  ValueSet: http://hl7.org/fhir/ValueSet/action-selection-behavior
  */
-public enum ActionSelectionBehavior: String, FHIRPrimitiveType {
+public indirect enum ActionSelectionBehavior: String, FHIRPrimitiveType {
 	
 	/// All the actions in the group must be selected as a single unit
 	case all

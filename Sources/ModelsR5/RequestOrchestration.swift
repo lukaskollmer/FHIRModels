@@ -277,13 +277,13 @@ public struct RequestOrchestration: DomainResource {
 public struct RequestOrchestrationAction: BackboneElement {
 	
 	/// All possible types for "definition[x]"
-	public enum DefinitionX: Equatable, Hashable, Sendable {
+	public indirect enum DefinitionX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
@@ -971,7 +971,7 @@ public struct RequestOrchestrationActionOutput: BackboneElement {
 public struct RequestOrchestrationActionParticipant: BackboneElement {
 	
 	/// All possible types for "actor[x]"
-	public enum ActorX: Equatable, Hashable, Sendable {
+	public indirect enum ActorX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case reference(Reference)
 	}
@@ -1107,7 +1107,7 @@ public struct RequestOrchestrationActionParticipant: BackboneElement {
 public struct RequestOrchestrationActionRelatedAction: BackboneElement {
 	
 	/// All possible types for "offset[x]"
-	public enum OffsetX: Equatable, Hashable, Sendable {
+	public indirect enum OffsetX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case range(Range)
 	}

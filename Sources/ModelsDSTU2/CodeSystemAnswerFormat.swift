@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/answer-format
  ValueSet: http://hl7.org/fhir/ValueSet/answer-format
  */
-public enum AnswerFormat: String, FHIRPrimitiveType {
+public indirect enum AnswerFormat: String, FHIRPrimitiveType {
 	
 	/// Answer is binary content such as a image, PDF, etc.
 	case attachment

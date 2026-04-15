@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/undesirable-effect-frequency
  ValueSet: http://hl7.org/fhir/ValueSet/undesirable-effect-frequency
  */
-public enum UndesirablEffectFrequency: String, FHIRPrimitiveType {
+public indirect enum UndesirablEffectFrequency: String, FHIRPrimitiveType {
 	
 	/// common
 	case common = "Common"

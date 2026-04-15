@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-cross-reference-type
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-cross-reference-type
  */
-public enum ProductCrossReferenceType: String, FHIRPrimitiveType {
+public indirect enum ProductCrossReferenceType: String, FHIRPrimitiveType {
 	
 	/// Link Virtual to Actual Product
 	case actualProduct = "ActualProduct"

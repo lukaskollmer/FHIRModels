@@ -30,7 +30,7 @@ public struct DetectedIssue: DomainResource {
 	public static let resourceType: ResourceType = .detectedIssue
 	
 	/// All possible types for "identified[x]"
-	public enum IdentifiedX: Equatable, Hashable, Sendable {
+	public indirect enum IdentifiedX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)

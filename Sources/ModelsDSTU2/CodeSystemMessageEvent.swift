@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/message-events
  ValueSet: http://hl7.org/fhir/ValueSet/message-events
  */
-public enum MessageEvent: String, FHIRPrimitiveType {
+public indirect enum MessageEvent: String, FHIRPrimitiveType {
 	
 	/// Notification of a change to an administrative resource (either create or update). Note that there is no delete,
 	/// though some administrative resources have status or period elements for this use.

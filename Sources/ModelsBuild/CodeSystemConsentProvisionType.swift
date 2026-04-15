@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/consent-provision-type
  ValueSet: http://hl7.org/fhir/ValueSet/consent-provision-type
  */
-public enum ConsentProvisionType: String, FHIRPrimitiveType {
+public indirect enum ConsentProvisionType: String, FHIRPrimitiveType {
 	
 	/// Consent is denied for actions meeting these rules.
 	case deny

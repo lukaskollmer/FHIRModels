@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/expansion-parameter-source
  ValueSet: http://hl7.org/fhir/ValueSet/expansion-parameter-source
  */
-public enum ExpansionParameterSource: String, FHIRPrimitiveType {
+public indirect enum ExpansionParameterSource: String, FHIRPrimitiveType {
 	
 	/// The parameter was added from one the code systems used in the $expand operation.
 	case codesystem

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/adjudication
  ValueSet: http://hl7.org/fhir/ValueSet/adjudication
  */
-public enum AdjudicationCodes: String, FHIRPrimitiveType {
+public indirect enum AdjudicationCodes: String, FHIRPrimitiveType {
 	
 	/// benefit
 	case benefit

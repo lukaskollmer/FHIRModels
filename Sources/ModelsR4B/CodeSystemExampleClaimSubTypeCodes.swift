@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/ex-claimsubtype
  */
-public enum ExampleClaimSubTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleClaimSubTypeCodes: String, FHIRPrimitiveType {
 	
 	/// A claim for emergency services.
 	case emergency

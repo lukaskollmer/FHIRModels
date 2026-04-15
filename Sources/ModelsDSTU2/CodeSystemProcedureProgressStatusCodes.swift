@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/procedure-progress-status-code
  ValueSet: http://hl7.org/fhir/ValueSet/procedure-progress-status-codes
  */
-public enum ProcedureProgressStatusCodes: String, FHIRPrimitiveType {
+public indirect enum ProcedureProgressStatusCodes: String, FHIRPrimitiveType {
 	
 	/// A patient is in the Operating Room.
 	case A = "a"

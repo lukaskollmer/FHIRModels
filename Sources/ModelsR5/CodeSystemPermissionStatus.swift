@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/permission-status
  ValueSet: http://hl7.org/fhir/ValueSet/permission-status
  */
-public enum PermissionStatus: String, FHIRPrimitiveType {
+public indirect enum PermissionStatus: String, FHIRPrimitiveType {
 	
 	/// Permission is given.
 	case active

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/address-use
  ValueSet: http://hl7.org/fhir/ValueSet/address-use
  */
-public enum AddressUse: String, FHIRPrimitiveType {
+public indirect enum AddressUse: String, FHIRPrimitiveType {
 	
 	/// An address to be used to send bills, invoices, receipts etc.
 	case billing

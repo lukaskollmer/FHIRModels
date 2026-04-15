@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/task-inputoutput-parameter-type
  ValueSet: http://hl7.org/fhir/ValueSet/task-inputoutput-parameter-type
  */
-public enum TaskInputOutputParameterType: String, FHIRPrimitiveType {
+public indirect enum TaskInputOutputParameterType: String, FHIRPrimitiveType {
 	
 	/// A specimen that has been collected.
 	case collectedSpecimen = "collected-specimen"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-participant-function
  ValueSet: http://hl7.org/fhir/ValueSet/action-participant-function
  */
-public enum ActionParticipantFunction: String, FHIRPrimitiveType {
+public indirect enum ActionParticipantFunction: String, FHIRPrimitiveType {
 	
 	/// The participant is the author of the result of the action.
 	case author

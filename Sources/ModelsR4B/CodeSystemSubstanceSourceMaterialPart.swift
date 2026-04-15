@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-source-material-part
  ValueSet: http://hl7.org/fhir/ValueSet/substance-source-material-part
  */
-public enum SubstanceSourceMaterialPart: String, FHIRPrimitiveType {
+public indirect enum SubstanceSourceMaterialPart: String, FHIRPrimitiveType {
 	
 	/// animal
 	case animal = "Animal"

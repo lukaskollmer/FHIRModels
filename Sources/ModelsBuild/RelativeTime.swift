@@ -28,7 +28,7 @@ import FMCore
 public struct RelativeTime: BackboneType {
 	
 	/// All possible types for "offset[x]"
-	public enum OffsetX: Equatable, Hashable, Sendable {
+	public indirect enum OffsetX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case range(Range)
 	}

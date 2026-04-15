@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-cardinality-behavior
  ValueSet: http://hl7.org/fhir/ValueSet/action-cardinality-behavior
  */
-public enum ActionCardinalityBehavior: String, FHIRPrimitiveType {
+public indirect enum ActionCardinalityBehavior: String, FHIRPrimitiveType {
 	
 	/// The action may be selected multiple times
 	case multiple

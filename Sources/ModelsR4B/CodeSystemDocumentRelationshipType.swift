@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/document-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/document-relationship-type
  */
-public enum DocumentRelationshipType: String, FHIRPrimitiveType {
+public indirect enum DocumentRelationshipType: String, FHIRPrimitiveType {
 	
 	/// This document adds additional information to the target document.
 	case appends

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/invoice-status
  ValueSet: http://hl7.org/fhir/ValueSet/invoice-status
  */
-public enum InvoiceStatus: String, FHIRPrimitiveType {
+public indirect enum InvoiceStatus: String, FHIRPrimitiveType {
 	
 	/// the invoice has been balaced / completely paid.
 	case balanced

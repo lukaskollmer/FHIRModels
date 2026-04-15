@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/medication-statement-category
  ValueSet: http://hl7.org/fhir/ValueSet/medication-statement-category
  */
-public enum MedicationStatementCategory: String, FHIRPrimitiveType {
+public indirect enum MedicationStatementCategory: String, FHIRPrimitiveType {
 	
 	/// Includes orders for medications to be administered or consumed by the patient in their home (this would include
 	/// long term care or nursing homes, hospices, etc)

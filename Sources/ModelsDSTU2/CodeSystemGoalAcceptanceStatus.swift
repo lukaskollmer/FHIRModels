@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/goal-acceptance-status
  ValueSet: http://hl7.org/fhir/ValueSet/goal-acceptance-status
  */
-public enum GoalAcceptanceStatus: String, FHIRPrimitiveType {
+public indirect enum GoalAcceptanceStatus: String, FHIRPrimitiveType {
 	
 	/// Stakeholder supports pursuit of the goal
 	case agree

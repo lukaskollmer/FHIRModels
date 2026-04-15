@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/report-relation-type
  ValueSet: http://hl7.org/fhir/ValueSet/report-relation-type
  */
-public enum ReportRelationshipType: String, FHIRPrimitiveType {
+public indirect enum ReportRelationshipType: String, FHIRPrimitiveType {
 	
 	/// This document was.
 	case amendedWith

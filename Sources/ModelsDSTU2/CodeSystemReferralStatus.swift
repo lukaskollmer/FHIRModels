@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/referralstatus
  ValueSet: http://hl7.org/fhir/ValueSet/referralstatus
  */
-public enum ReferralStatus: String, FHIRPrimitiveType {
+public indirect enum ReferralStatus: String, FHIRPrimitiveType {
 	
 	/// The recipient has agreed to deliver the care requested by the referral.
 	case accepted

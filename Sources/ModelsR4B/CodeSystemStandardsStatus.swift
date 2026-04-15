@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/standards-status
  */
-public enum StandardsStatus: String, FHIRPrimitiveType {
+public indirect enum StandardsStatus: String, FHIRPrimitiveType {
 	
 	/// This portion of the specification is provided for implementer assistance, and does not make rules that
 	/// implementers are required to follow. Typical examples of this content in the FHIR specification are tables of

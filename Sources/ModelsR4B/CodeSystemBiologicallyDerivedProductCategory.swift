@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/product-category
  ValueSet: http://hl7.org/fhir/ValueSet/product-category
  */
-public enum BiologicallyDerivedProductCategory: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductCategory: String, FHIRPrimitiveType {
 	
 	/// Biological agent of unspecified type.
 	case biologicalAgent

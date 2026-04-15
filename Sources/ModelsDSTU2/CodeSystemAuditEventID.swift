@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/audit-event-type
  ValueSet: http://hl7.org/fhir/ValueSet/audit-event-type
  */
-public enum AuditEventID: String, FHIRPrimitiveType {
+public indirect enum AuditEventID: String, FHIRPrimitiveType {
 	
 	/// Audit Event: Execution of a RESTful operation as defined by FHIR.
 	case rest

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/codesystem-hierarchy-meaning
  ValueSet: http://hl7.org/fhir/ValueSet/codesystem-hierarchy-meaning
  */
-public enum CodeSystemHierarchyMeaning: String, FHIRPrimitiveType {
+public indirect enum CodeSystemHierarchyMeaning: String, FHIRPrimitiveType {
 	
 	/// Child concepts in the hierarchy may have only one parent, and there is a presumption that the code system is a
 	/// "closed world" meaning all things must be in the hierarchy. This results in concepts such as "not otherwise

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-type
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-type
  */
-public enum MedicinalProductType: String, FHIRPrimitiveType {
+public indirect enum MedicinalProductType: String, FHIRPrimitiveType {
 	
 	/// An investigational medicinal product.
 	case investigationalProduct = "InvestigationalProduct"

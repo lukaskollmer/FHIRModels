@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contracttypecodes
  ValueSet: http://hl7.org/fhir/ValueSet/contract-type
  */
-public enum ContractTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractTypeCodes: String, FHIRPrimitiveType {
 	
 	/// disclosure
 	case disclosure

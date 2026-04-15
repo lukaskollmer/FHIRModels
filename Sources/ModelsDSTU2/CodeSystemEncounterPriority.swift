@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-priority
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-priority
  */
-public enum EncounterPriority: String, FHIRPrimitiveType {
+public indirect enum EncounterPriority: String, FHIRPrimitiveType {
 	
 	/// Within 10 minutes.
 	case emg

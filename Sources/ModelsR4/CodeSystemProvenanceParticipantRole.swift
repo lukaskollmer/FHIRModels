@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/provenance-participant-role
  ValueSet: http://hl7.org/fhir/ValueSet/provenance-agent-role
  */
-public enum ProvenanceParticipantRole: String, FHIRPrimitiveType {
+public indirect enum ProvenanceParticipantRole: String, FHIRPrimitiveType {
 	
 	/// A device that operates independently of an author on custodian's algorithms for data extraction of existing
 	/// information for purpose of generating a new artifact.

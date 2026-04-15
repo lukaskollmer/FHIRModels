@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/list-mode
  ValueSet: http://hl7.org/fhir/ValueSet/list-mode
  */
-public enum ListMode: String, FHIRPrimitiveType {
+public indirect enum ListMode: String, FHIRPrimitiveType {
 	
 	/// A list that indicates where changes have been made or recommended
 	case changes

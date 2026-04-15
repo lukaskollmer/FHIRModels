@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-type
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-type
  */
-public enum EncounterType: String, FHIRPrimitiveType {
+public indirect enum EncounterType: String, FHIRPrimitiveType {
 	
 	/// ADMS
 	case ADMS

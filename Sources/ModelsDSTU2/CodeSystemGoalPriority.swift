@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/goal-priority
  ValueSet: http://hl7.org/fhir/ValueSet/goal-priority
  */
-public enum GoalPriority: String, FHIRPrimitiveType {
+public indirect enum GoalPriority: String, FHIRPrimitiveType {
 	
 	/// Indicates that the goal is of considerable importance and should be a primary focus of care delivery.
 	case high

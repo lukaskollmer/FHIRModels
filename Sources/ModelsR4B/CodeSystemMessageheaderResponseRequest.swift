@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/messageheader-response-request
  ValueSet: http://hl7.org/fhir/ValueSet/messageheader-response-request
  */
-public enum MessageheaderResponseRequest: String, FHIRPrimitiveType {
+public indirect enum MessageheaderResponseRequest: String, FHIRPrimitiveType {
 	
 	/// initiator expects a response for this message.
 	case always

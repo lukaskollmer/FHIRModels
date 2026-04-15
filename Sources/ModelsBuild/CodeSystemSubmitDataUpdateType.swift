@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/submit-data-update-type
  ValueSet: http://hl7.org/fhir/ValueSet/submit-data-update-type
  */
-public enum SubmitDataUpdateType: String, FHIRPrimitiveType {
+public indirect enum SubmitDataUpdateType: String, FHIRPrimitiveType {
 	
 	/// In contrast to the Snapshot Update, the FHIR Parameters resource used in a Submit Data or the Collect Data
 	/// scenario contains only the new and updated DEQM and QI Core Profiles since the last transaction. If the Consumer

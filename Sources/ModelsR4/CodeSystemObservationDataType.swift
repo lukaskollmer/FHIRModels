@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/permitted-data-type
  ValueSet: http://hl7.org/fhir/ValueSet/permitted-data-type
  */
-public enum ObservationDataType: String, FHIRPrimitiveType {
+public indirect enum ObservationDataType: String, FHIRPrimitiveType {
 	
 	/// true or false.
 	case boolean

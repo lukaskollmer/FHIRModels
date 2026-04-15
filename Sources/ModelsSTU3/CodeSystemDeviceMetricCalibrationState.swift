@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/metric-calibration-state
  ValueSet: http://hl7.org/fhir/ValueSet/metric-calibration-state
  */
-public enum DeviceMetricCalibrationState: String, FHIRPrimitiveType {
+public indirect enum DeviceMetricCalibrationState: String, FHIRPrimitiveType {
 	
 	/// The metric has been calibrated.
 	case calibrated

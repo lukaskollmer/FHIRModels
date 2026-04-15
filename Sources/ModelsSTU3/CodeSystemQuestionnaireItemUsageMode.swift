@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/questionnaire-usage-mode
  ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-usage-mode
  */
-public enum QuestionnaireItemUsageMode: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireItemUsageMode: String, FHIRPrimitiveType {
 	
 	/// Render the item only when capturing data
 	case capture

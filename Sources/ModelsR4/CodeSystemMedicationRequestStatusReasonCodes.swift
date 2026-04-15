@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/medicationrequest-status-reason
  */
-public enum MedicationRequestStatusReasonCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationRequestStatusReasonCodes: String, FHIRPrimitiveType {
 	
 	/// This therapy has been ordered as a backup to a preferred therapy. This order will be released when and if the
 	/// preferred therapy is unsuccessful.

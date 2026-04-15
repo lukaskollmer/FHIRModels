@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/fm-status
  */
-public enum FinancialResourceStatusCodes: String, FHIRPrimitiveType {
+public indirect enum FinancialResourceStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The instance is currently in-force.
 	case active

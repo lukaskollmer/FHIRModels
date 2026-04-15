@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/medication-admin-status
  ValueSet: http://hl7.org/fhir/ValueSet/medication-admin-status
  */
-public enum MedicationAdministrationStatusCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationAdministrationStatusCodes: String, FHIRPrimitiveType {
 	
 	/// All actions that are implied by the administration have occurred.
 	case completed

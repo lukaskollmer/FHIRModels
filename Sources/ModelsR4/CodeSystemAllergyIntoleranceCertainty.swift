@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/reaction-event-certainty
  ValueSet: http://hl7.org/fhir/ValueSet/reaction-event-certainty
  */
-public enum AllergyIntoleranceCertainty: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceCertainty: String, FHIRPrimitiveType {
 	
 	/// There is a very high level of clinical certainty that the reaction was due to the identified substance, which
 	/// may include clinical evidence by testing or rechallenge.

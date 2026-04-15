@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-asset-scope
  ValueSet: http://hl7.org/fhir/ValueSet/contract-assetscope
  */
-public enum ContractResourceAssetScopeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceAssetScopeCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case thing

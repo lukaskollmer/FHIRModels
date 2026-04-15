@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/ex-udi
  ValueSet: http://hl7.org/fhir/ValueSet/udi
  */
-public enum UDICodes: String, FHIRPrimitiveType {
+public indirect enum UDICodes: String, FHIRPrimitiveType {
 	
 	/// GUDID (FDA) US Repository
 	case gudid

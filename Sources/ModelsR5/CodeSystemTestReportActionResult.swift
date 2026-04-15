@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/report-action-result-codes
  ValueSet: http://hl7.org/fhir/ValueSet/report-action-result-codes
  */
-public enum TestReportActionResult: String, FHIRPrimitiveType {
+public indirect enum TestReportActionResult: String, FHIRPrimitiveType {
 	
 	/// The action encountered a fatal error and the engine was unable to process.
 	case error

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-businessstatus-type
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-businessstatus-type
  */
-public enum EncounterBusinessStatusType: String, FHIRPrimitiveType {
+public indirect enum EncounterBusinessStatusType: String, FHIRPrimitiveType {
 	
 	/// The business status is tracking an emergency workflow.
 	case emergency

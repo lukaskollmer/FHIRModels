@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-status
  ValueSet: http://hl7.org/fhir/ValueSet/device-status
  */
-public enum FHIRDeviceStatus: String, FHIRPrimitiveType {
+public indirect enum FHIRDeviceStatus: String, FHIRPrimitiveType {
 	
 	/// The Device is available for use.  Note: This means for *implanted devices*  the device is implanted in the
 	/// patient.

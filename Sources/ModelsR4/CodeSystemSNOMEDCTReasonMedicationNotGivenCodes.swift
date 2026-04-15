@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/reason-medication-not-given
  */
-public enum SNOMEDCTReasonMedicationNotGivenCodes: String, FHIRPrimitiveType {
+public indirect enum SNOMEDCTReasonMedicationNotGivenCodes: String, FHIRPrimitiveType {
 	
 	/// No reason known.
 	case A = "a"

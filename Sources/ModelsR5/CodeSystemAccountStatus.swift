@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/account-status
  ValueSet: http://hl7.org/fhir/ValueSet/account-status
  */
-public enum AccountStatus: String, FHIRPrimitiveType {
+public indirect enum AccountStatus: String, FHIRPrimitiveType {
 	
 	/// This account is active and may be used.
 	case active

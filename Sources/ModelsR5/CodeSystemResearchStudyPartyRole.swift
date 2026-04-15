@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-party-role
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-party-role
  */
-public enum ResearchStudyPartyRole: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyPartyRole: String, FHIRPrimitiveType {
 	
 	/// collaborator
 	case collaborator

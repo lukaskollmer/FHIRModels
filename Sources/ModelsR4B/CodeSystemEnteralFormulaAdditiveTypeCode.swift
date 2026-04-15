@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/entformula-additive
  */
-public enum EnteralFormulaAdditiveTypeCode: String, FHIRPrimitiveType {
+public indirect enum EnteralFormulaAdditiveTypeCode: String, FHIRPrimitiveType {
 	
 	/// Modular carbohydrate enteral formula component
 	case carbohydrate

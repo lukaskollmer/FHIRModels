@@ -31,7 +31,7 @@ public struct MessageHeader: DomainResource {
 	public static let resourceType: ResourceType = .messageHeader
 	
 	/// All possible types for "event[x]"
-	public enum EventX: Equatable, Hashable, Sendable {
+	public indirect enum EventX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case coding(Coding)
 		case uri(FHIRPrimitive<FHIRURI>)
@@ -233,7 +233,7 @@ public struct MessageHeader: DomainResource {
 public struct MessageHeaderDestination: BackboneElement {
 	
 	/// All possible types for "endpoint[x]"
-	public enum EndpointX: Equatable, Hashable, Sendable {
+	public indirect enum EndpointX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case url(FHIRPrimitive<FHIRURI>)
 	}
@@ -430,7 +430,7 @@ public struct MessageHeaderResponse: BackboneElement {
 public struct MessageHeaderSource: BackboneElement {
 	
 	/// All possible types for "endpoint[x]"
-	public enum EndpointX: Equatable, Hashable, Sendable {
+	public indirect enum EndpointX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case url(FHIRPrimitive<FHIRURI>)
 	}

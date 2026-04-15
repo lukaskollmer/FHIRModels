@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/resource-aggregation-mode
  ValueSet: http://hl7.org/fhir/ValueSet/resource-aggregation-mode
  */
-public enum AggregationMode: String, FHIRPrimitiveType {
+public indirect enum AggregationMode: String, FHIRPrimitiveType {
 	
 	/// The resource the reference points to will be found in the same bundle as the resource that includes the
 	/// reference.

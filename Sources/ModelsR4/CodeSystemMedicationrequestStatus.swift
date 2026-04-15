@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medicationrequest-status
  ValueSet: http://hl7.org/fhir/ValueSet/medicationrequest-status
  */
-public enum MedicationrequestStatus: String, FHIRPrimitiveType {
+public indirect enum MedicationrequestStatus: String, FHIRPrimitiveType {
 	
 	/// The prescription is 'actionable', but not all actions that are implied by it have occurred yet.
 	case active

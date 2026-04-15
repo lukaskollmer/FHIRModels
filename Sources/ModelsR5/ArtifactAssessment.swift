@@ -30,14 +30,14 @@ public struct ArtifactAssessment: DomainResource {
 	public static let resourceType: ResourceType = .artifactAssessment
 	
 	/// All possible types for "artifact[x]"
-	public enum ArtifactX: Equatable, Hashable, Sendable {
+	public indirect enum ArtifactX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case reference(Reference)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
 	
 	/// All possible types for "citeAs[x]"
-	public enum CiteAsX: Equatable, Hashable, Sendable {
+	public indirect enum CiteAsX: Equatable, Hashable, Sendable {
 		case markdown(FHIRPrimitive<FHIRString>)
 		case reference(Reference)
 	}

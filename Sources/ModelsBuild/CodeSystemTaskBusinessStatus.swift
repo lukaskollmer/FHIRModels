@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/task-business-status
  ValueSet: http://hl7.org/fhir/ValueSet/task-business-status
  */
-public enum TaskBusinessStatus: String, FHIRPrimitiveType {
+public indirect enum TaskBusinessStatus: String, FHIRPrimitiveType {
 	
 	/// The patient IV has been prepared.
 	case ivPrepped = "iv-prepped"

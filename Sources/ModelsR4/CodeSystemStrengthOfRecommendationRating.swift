@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/recommendation-strength
  ValueSet: http://hl7.org/fhir/ValueSet/recommendation-strength
  */
-public enum StrengthOfRecommendationRating: String, FHIRPrimitiveType {
+public indirect enum StrengthOfRecommendationRating: String, FHIRPrimitiveType {
 	
 	/// Strong recommendation.
 	case strong

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-code
  ValueSet: http://hl7.org/fhir/ValueSet/action-code
  */
-public enum ActionCode: String, FHIRPrimitiveType {
+public indirect enum ActionCode: String, FHIRPrimitiveType {
 	
 	/// The action indicates that information should be collected from a participant in the process.
 	case collectInformation = "collect-information"

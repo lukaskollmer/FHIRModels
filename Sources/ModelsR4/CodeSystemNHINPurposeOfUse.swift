@@ -26,7 +26,7 @@ import FMCore
  URL: http://healthit.gov/nhin/purposeofuse
  ValueSet: http://hl7.org/fhir/ValueSet/nhin-purposeofuse
  */
-public enum NHINPurposeOfUse: String, FHIRPrimitiveType {
+public indirect enum NHINPurposeOfUse: String, FHIRPrimitiveType {
 	
 	/// Disclosures about victims of abuse, neglect or domestic violence.
 	case ABUSE

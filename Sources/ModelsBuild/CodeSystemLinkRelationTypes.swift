@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/CodeSystem/iana-link-relations
  */
-public enum LinkRelationTypes: String, FHIRPrimitiveType {
+public indirect enum LinkRelationTypes: String, FHIRPrimitiveType {
 	
 	/// Conveys an identifier for the link's context.
 	case `self`

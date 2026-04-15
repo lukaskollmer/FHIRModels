@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/restful-capability-mode
  ValueSet: http://hl7.org/fhir/ValueSet/restful-capability-mode
  */
-public enum RestfulCapabilityMode: String, FHIRPrimitiveType {
+public indirect enum RestfulCapabilityMode: String, FHIRPrimitiveType {
 	
 	/// The application acts as a client for this resource.
 	case client

@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types
  ValueSet: http://hl7.org/fhir/ValueSet/testscript-profile-destination-types
  */
-public enum TestScriptProfileDestinationType: String, FHIRPrimitiveType {
+public indirect enum TestScriptProfileDestinationType: String, FHIRPrimitiveType {
 	
 	/// A FHIR server acting as a Structured Data Capture Form Manager.
 	case fHIRSDCFormManager = "FHIR-SDC-FormManager"

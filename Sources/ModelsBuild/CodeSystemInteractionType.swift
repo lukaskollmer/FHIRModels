@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/interaction-type
  ValueSet: http://hl7.org/fhir/ValueSet/interaction-type
  */
-public enum InteractionType: String, FHIRPrimitiveType {
+public indirect enum InteractionType: String, FHIRPrimitiveType {
 	
 	/// drugDrug
 	case drugDrug = "drug-drug"

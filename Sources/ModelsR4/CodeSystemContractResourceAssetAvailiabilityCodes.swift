@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/asset-availability
  ValueSet: http://hl7.org/fhir/ValueSet/asset-availability
  */
-public enum ContractResourceAssetAvailiabilityCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceAssetAvailiabilityCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case lease

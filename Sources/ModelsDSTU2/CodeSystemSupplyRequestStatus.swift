@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/supplyrequest-status
  ValueSet: http://hl7.org/fhir/ValueSet/supplyrequest-status
  */
-public enum SupplyRequestStatus: String, FHIRPrimitiveType {
+public indirect enum SupplyRequestStatus: String, FHIRPrimitiveType {
 	
 	/// The orderer of the supply cancelled the request.
 	case cancelled

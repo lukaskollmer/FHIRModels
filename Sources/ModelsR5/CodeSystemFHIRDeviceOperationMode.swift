@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-operation-mode
  ValueSet: http://hl7.org/fhir/ValueSet/device-operation-mode
  */
-public enum FHIRDeviceOperationMode: String, FHIRPrimitiveType {
+public indirect enum FHIRDeviceOperationMode: String, FHIRPrimitiveType {
 	
 	/// The device operates in a mode that is intended for demonstration purposes only. Arbitrary values are generated.
 	case demo

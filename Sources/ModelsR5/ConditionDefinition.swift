@@ -29,7 +29,7 @@ public struct ConditionDefinition: DomainResource {
 	public static let resourceType: ResourceType = .conditionDefinition
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -614,7 +614,7 @@ public struct ConditionDefinitionPlan: BackboneElement {
 public struct ConditionDefinitionPrecondition: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 	}

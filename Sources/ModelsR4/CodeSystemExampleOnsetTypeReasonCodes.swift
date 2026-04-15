@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/ex-onsettype
  ValueSet: http://hl7.org/fhir/ValueSet/ex-onsettype
  */
-public enum ExampleOnsetTypeReasonCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleOnsetTypeReasonCodes: String, FHIRPrimitiveType {
 	
 	/// Start date of last menstruation.
 	case lmn

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/qicore-condition-criticality
  ValueSet: http://hl7.org/fhir/ValueSet/qicore-condition-criticality
  */
-public enum QICoreConditionCriticalityCodes: String, FHIRPrimitiveType {
+public indirect enum QICoreConditionCriticalityCodes: String, FHIRPrimitiveType {
 	
 	/// The condition is considered to be controllable
 	case controllable

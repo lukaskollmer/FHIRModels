@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/audit-event-severity
  ValueSet: http://hl7.org/fhir/ValueSet/audit-event-severity
  */
-public enum AuditEventSeverity: String, FHIRPrimitiveType {
+public indirect enum AuditEventSeverity: String, FHIRPrimitiveType {
 	
 	/// Notification should be sent to trigger action be taken. e.g., Loss of the primary network connection needing
 	/// attention.

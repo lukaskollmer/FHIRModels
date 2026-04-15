@@ -30,7 +30,7 @@ public struct Questionnaire: DomainResource {
 	public static let resourceType: ResourceType = .questionnaire
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -587,7 +587,7 @@ public struct QuestionnaireItem: BackboneElement {
 public struct QuestionnaireItemAnswerOption: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case date(FHIRPrimitive<FHIRDate>)
 		case integer(FHIRPrimitive<FHIRInteger>)
@@ -737,7 +737,7 @@ public struct QuestionnaireItemAnswerOption: BackboneElement {
 public struct QuestionnaireItemEnableWhen: BackboneElement {
 	
 	/// All possible types for "answer[x]"
-	public enum AnswerX: Equatable, Hashable, Sendable {
+	public indirect enum AnswerX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case coding(Coding)
 		case date(FHIRPrimitive<FHIRDate>)
@@ -935,7 +935,7 @@ public struct QuestionnaireItemEnableWhen: BackboneElement {
 public struct QuestionnaireItemInitial: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case coding(Coding)

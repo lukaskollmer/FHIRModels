@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/media-subtype
  ValueSet: http://hl7.org/fhir/ValueSet/digital-media-subtype
  */
-public enum MediaSubType: String, FHIRPrimitiveType {
+public indirect enum MediaSubType: String, FHIRPrimitiveType {
 	
 	/// A diagram. Often used in diagnostic reports
 	case diagram

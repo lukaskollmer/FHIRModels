@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/event-capability-mode
  ValueSet: http://hl7.org/fhir/ValueSet/event-capability-mode
  */
-public enum EventCapabilityMode: String, FHIRPrimitiveType {
+public indirect enum EventCapabilityMode: String, FHIRPrimitiveType {
 	
 	/// The application receives requests and sends responses.
 	case receiver

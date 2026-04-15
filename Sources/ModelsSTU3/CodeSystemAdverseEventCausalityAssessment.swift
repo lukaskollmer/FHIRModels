@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/adverse-event-causality-assess
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-causality-assess
  */
-public enum AdverseEventCausalityAssessment: String, FHIRPrimitiveType {
+public indirect enum AdverseEventCausalityAssessment: String, FHIRPrimitiveType {
 	
 	/// assess1
 	case assess1

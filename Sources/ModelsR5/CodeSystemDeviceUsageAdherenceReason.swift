@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/deviceusage-adherence-reason
  ValueSet: http://hl7.org/fhir/ValueSet/deviceusage-adherence-reason
  */
-public enum DeviceUsageAdherenceReason: String, FHIRPrimitiveType {
+public indirect enum DeviceUsageAdherenceReason: String, FHIRPrimitiveType {
 	
 	/// The device is broken.
 	case broken

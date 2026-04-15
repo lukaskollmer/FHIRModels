@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/consentperformer
  ValueSet: http://hl7.org/fhir/ValueSet/consent-performer
  */
-public enum PerformerRoleCodes: String, FHIRPrimitiveType {
+public indirect enum PerformerRoleCodes: String, FHIRPrimitiveType {
 	
 	/// An entity or an entity's delegatee who is the grantee in an agreement such as a consent for services, advanced
 	/// directive, or a privacy consent directive in accordance with jurisdictional, organizational, or patient policy.

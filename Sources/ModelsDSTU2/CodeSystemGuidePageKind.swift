@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/guide-page-kind
  ValueSet: http://hl7.org/fhir/ValueSet/guide-page-kind
  */
-public enum GuidePageKind: String, FHIRPrimitiveType {
+public indirect enum GuidePageKind: String, FHIRPrimitiveType {
 	
 	/// This is a page that creates the listed resources as a dictionary.
 	case dictionary

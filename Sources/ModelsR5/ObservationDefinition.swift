@@ -30,7 +30,7 @@ public struct ObservationDefinition: DomainResource {
 	public static let resourceType: ResourceType = .observationDefinition
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}

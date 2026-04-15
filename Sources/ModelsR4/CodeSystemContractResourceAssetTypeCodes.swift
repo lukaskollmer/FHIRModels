@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-asset-type
  ValueSet: http://hl7.org/fhir/ValueSet/contract-assettype
  */
-public enum ContractResourceAssetTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceAssetTypeCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case participation

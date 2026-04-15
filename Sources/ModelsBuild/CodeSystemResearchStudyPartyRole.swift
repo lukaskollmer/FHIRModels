@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-party-role
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-party-role
  */
-public enum ResearchStudyPartyRole: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyPartyRole: String, FHIRPrimitiveType {
 	
 	/// An organization or individual, who contributes to a study by providing support to the primary investigator to
 	/// conduct research.

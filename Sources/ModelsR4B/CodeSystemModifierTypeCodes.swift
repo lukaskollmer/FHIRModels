@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/modifiers
  */
-public enum ModifierTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ModifierTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Repair of prior service or installation.
 	case A = "a"

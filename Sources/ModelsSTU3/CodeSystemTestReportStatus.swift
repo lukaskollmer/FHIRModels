@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/report-status-codes
  ValueSet: http://hl7.org/fhir/ValueSet/report-status-codes
  */
-public enum TestReportStatus: String, FHIRPrimitiveType {
+public indirect enum TestReportStatus: String, FHIRPrimitiveType {
 	
 	/// All test operations have completed
 	case completed

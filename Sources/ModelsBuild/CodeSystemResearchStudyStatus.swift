@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-status
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-status
  */
-public enum ResearchStudyStatus: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyStatus: String, FHIRPrimitiveType {
 	
 	/// Study is opened for accrual.
 	case active

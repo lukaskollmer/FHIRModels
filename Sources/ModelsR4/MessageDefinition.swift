@@ -30,7 +30,7 @@ public struct MessageDefinition: DomainResource {
 	public static let resourceType: ResourceType = .messageDefinition
 	
 	/// All possible types for "event[x]"
-	public enum EventX: Equatable, Hashable, Sendable {
+	public indirect enum EventX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

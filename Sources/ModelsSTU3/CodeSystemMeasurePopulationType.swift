@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/measure-population
  ValueSet: http://hl7.org/fhir/ValueSet/measure-population
  */
-public enum MeasurePopulationType: String, FHIRPrimitiveType {
+public indirect enum MeasurePopulationType: String, FHIRPrimitiveType {
 	
 	/// The lower portion of a fraction used to calculate a rate, proportion, or ratio. The denominator can be the same
 	/// as the initial population, or a subset of the initial population to further constrain the population for the

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-security-control
  ValueSet: http://hl7.org/fhir/ValueSet/contract-security-control
  */
-public enum ContractResourceSecurityControlCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceSecurityControlCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case policy

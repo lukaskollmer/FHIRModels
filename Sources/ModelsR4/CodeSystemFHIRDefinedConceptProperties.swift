@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/concept-properties
  ValueSet: http://hl7.org/fhir/ValueSet/concept-properties
  */
-public enum FHIRDefinedConceptProperties: String, FHIRPrimitiveType {
+public indirect enum FHIRDefinedConceptProperties: String, FHIRPrimitiveType {
 	
 	/// The concept identified in this property is a child of the concept on which it is a property. The property type
 	/// will be 'code'. The meaning of 'child' is defined by the hierarchyMeaning attribute

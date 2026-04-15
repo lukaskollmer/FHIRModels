@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/artifact-contribution-type
  ValueSet: http://hl7.org/fhir/ValueSet/artifact-contribution-type
  */
-public enum ArtifactContributionType: String, FHIRPrimitiveType {
+public indirect enum ArtifactContributionType: String, FHIRPrimitiveType {
 	
 	/// Conceptualization (see https://jats4r.org/credit-taxonomy).
 	case conceptualization

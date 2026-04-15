@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-type
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-type
  */
-public enum DeviceAlertType: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertType: String, FHIRPrimitiveType {
 	
 	/// The alert condition is related to the patient state
 	case physiological

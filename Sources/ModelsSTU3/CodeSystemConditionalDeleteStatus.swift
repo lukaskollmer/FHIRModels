@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/conditional-delete-status
  ValueSet: http://hl7.org/fhir/ValueSet/conditional-delete-status
  */
-public enum ConditionalDeleteStatus: String, FHIRPrimitiveType {
+public indirect enum ConditionalDeleteStatus: String, FHIRPrimitiveType {
 	
 	/// Conditional deletes are supported, and multiple resources can be deleted in a single interaction.
 	case multiple

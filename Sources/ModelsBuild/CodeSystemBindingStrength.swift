@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/binding-strength
  ValueSet: http://hl7.org/fhir/ValueSet/binding-strength
  */
-public enum BindingStrength: String, FHIRPrimitiveType {
+public indirect enum BindingStrength: String, FHIRPrimitiveType {
 	
 	/// There is no constraint on the allowed set of codes at the root level, though there may be additional bindings
 	/// that apply in certain contexts.  The root binding element will be a description that gives guidance on potential

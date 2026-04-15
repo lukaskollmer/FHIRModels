@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/measure-supplemental-data-example
  ValueSet: http://hl7.org/fhir/ValueSet/measure-supplemental-data-example
  */
-public enum MeasureSupplementalDataExample: String, FHIRPrimitiveType {
+public indirect enum MeasureSupplementalDataExample: String, FHIRPrimitiveType {
 	
 	/// Age Supplemental Data.
 	case age

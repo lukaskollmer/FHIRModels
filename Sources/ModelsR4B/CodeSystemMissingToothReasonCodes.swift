@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/missingtoothreason
  */
-public enum MissingToothReasonCodes: String, FHIRPrimitiveType {
+public indirect enum MissingToothReasonCodes: String, FHIRPrimitiveType {
 	
 	/// Congenital
 	case C = "c"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/resource-type-link
  ValueSet: http://hl7.org/fhir/ValueSet/resource-type-link
  */
-public enum PayeeResourceType: String, FHIRPrimitiveType {
+public indirect enum PayeeResourceType: String, FHIRPrimitiveType {
 	
 	/// Organization resource.
 	case organization

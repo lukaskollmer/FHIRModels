@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/qicore-adverseevent-category
  ValueSet: http://hl7.org/fhir/ValueSet/qicore-adverseevent-category
  */
-public enum QICoreAdverseEventCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum QICoreAdverseEventCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Blood or Blood Product
 	case blood

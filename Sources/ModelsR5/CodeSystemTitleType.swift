@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/title-type
  ValueSet: http://hl7.org/fhir/ValueSet/title-type
  */
-public enum TitleType: String, FHIRPrimitiveType {
+public indirect enum TitleType: String, FHIRPrimitiveType {
 	
 	/// Abbreviation used as title
 	case acronym

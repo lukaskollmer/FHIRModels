@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/validation-process
  ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-validation-process
  */
-public enum ValidationProcess: String, FHIRPrimitiveType {
+public indirect enum ValidationProcess: String, FHIRPrimitiveType {
 	
 	/// editCheck
 	case editCheck = "edit-check"

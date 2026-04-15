@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medication-request-priority
  ValueSet: http://hl7.org/fhir/ValueSet/medication-request-priority
  */
-public enum MedicationRequestPriority: String, FHIRPrimitiveType {
+public indirect enum MedicationRequestPriority: String, FHIRPrimitiveType {
 	
 	/// The order should be acted on as soon as possible.
 	case asap

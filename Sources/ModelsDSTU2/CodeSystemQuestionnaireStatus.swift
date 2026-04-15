@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/questionnaire-status
  ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-status
  */
-public enum QuestionnaireStatus: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireStatus: String, FHIRPrimitiveType {
 	
 	/// This Questionnaire is not ready for official use.
 	case draft

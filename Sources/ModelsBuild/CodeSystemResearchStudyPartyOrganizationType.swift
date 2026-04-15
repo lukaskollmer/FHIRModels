@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-party-organization-type
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-party-organization-type
  */
-public enum ResearchStudyPartyOrganizationType: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyPartyOrganizationType: String, FHIRPrimitiveType {
 	
 	/// academic
 	case academic

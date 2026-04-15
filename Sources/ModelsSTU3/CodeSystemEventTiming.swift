@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/event-timing
  ValueSet: http://hl7.org/fhir/ValueSet/event-timing
  */
-public enum EventTiming: String, FHIRPrimitiveType {
+public indirect enum EventTiming: String, FHIRPrimitiveType {
 	
 	/// event occurs during the afternoon
 	case AFT

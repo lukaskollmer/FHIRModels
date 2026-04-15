@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/plan-definition-type
  ValueSet: http://hl7.org/fhir/ValueSet/plan-definition-type
  */
-public enum PlanDefinitionType: String, FHIRPrimitiveType {
+public indirect enum PlanDefinitionType: String, FHIRPrimitiveType {
 	
 	/// Defines a desired/typical sequence of clinical activities including preconditions, triggers and temporal
 	/// relationships.

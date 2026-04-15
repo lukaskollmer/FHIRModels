@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-status
  ValueSet: http://hl7.org/fhir/ValueSet/substance-status
  */
-public enum FHIRSubstanceStatus: String, FHIRPrimitiveType {
+public indirect enum FHIRSubstanceStatus: String, FHIRPrimitiveType {
 	
 	/// The substance is considered for use or reference.
 	case active

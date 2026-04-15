@@ -30,7 +30,7 @@ public struct ArtifactAssessment: DomainResource {
 	public static let resourceType: ResourceType = .artifactAssessment
 	
 	/// All possible types for "artifact[x]"
-	public enum ArtifactX: Equatable, Hashable, Sendable {
+	public indirect enum ArtifactX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case reference(Reference)
 		case uri(FHIRPrimitive<FHIRURI>)
@@ -404,7 +404,7 @@ public struct ArtifactAssessmentContent: BackboneElement {
 public struct ArtifactAssessmentRelatesTo: BackboneElement {
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case canonical(FHIRPrimitive<Canonical>)
 		case markdown(FHIRPrimitive<FHIRString>)

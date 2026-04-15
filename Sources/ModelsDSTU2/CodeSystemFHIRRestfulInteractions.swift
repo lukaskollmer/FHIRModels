@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/restful-interaction
  ValueSet: http://hl7.org/fhir/ValueSet/restful-interaction
  */
-public enum FHIRRestfulInteractions: String, FHIRPrimitiveType {
+public indirect enum FHIRRestfulInteractions: String, FHIRPrimitiveType {
 	
 	/// Get a conformance statement for the system.
 	case conformance

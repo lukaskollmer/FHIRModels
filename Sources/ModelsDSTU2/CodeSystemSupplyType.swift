@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/supply-kind
  ValueSet: http://hl7.org/fhir/ValueSet/supplyrequest-kind
  */
-public enum SupplyType: String, FHIRPrimitiveType {
+public indirect enum SupplyType: String, FHIRPrimitiveType {
 	
 	/// Supply is stored and requested from central supply.
 	case central

@@ -30,13 +30,13 @@ public struct Goal: DomainResource {
 	public static let resourceType: ResourceType = .goal
 	
 	/// All possible types for "start[x]"
-	public enum StartX: Equatable, Hashable, Sendable {
+	public indirect enum StartX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case date(FHIRPrimitive<FHIRDate>)
 	}
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case quantity(Quantity)
 	}

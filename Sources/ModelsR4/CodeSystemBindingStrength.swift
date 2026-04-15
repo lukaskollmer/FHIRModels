@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/binding-strength
  ValueSet: http://hl7.org/fhir/ValueSet/binding-strength
  */
-public enum BindingStrength: String, FHIRPrimitiveType {
+public indirect enum BindingStrength: String, FHIRPrimitiveType {
 	
 	/// Instances are not expected or even encouraged to draw from the specified value set.  The value set merely
 	/// provides examples of the types of concepts intended to be included.

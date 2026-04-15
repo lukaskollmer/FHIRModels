@@ -29,13 +29,13 @@ public struct Contract: DomainResource {
 	public static let resourceType: ResourceType = .contract
 	
 	/// All possible types for "legallyBinding[x]"
-	public enum LegallyBindingX: Equatable, Hashable, Sendable {
+	public indirect enum LegallyBindingX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "topic[x]"
-	public enum TopicX: Equatable, Hashable, Sendable {
+	public indirect enum TopicX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -564,7 +564,7 @@ public struct ContractContentDefinition: BackboneElement {
 public struct ContractFriendly: BackboneElement {
 	
 	/// All possible types for "content[x]"
-	public enum ContentX: Equatable, Hashable, Sendable {
+	public indirect enum ContentX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case reference(Reference)
 	}
@@ -665,7 +665,7 @@ public struct ContractFriendly: BackboneElement {
 public struct ContractLegal: BackboneElement {
 	
 	/// All possible types for "content[x]"
-	public enum ContentX: Equatable, Hashable, Sendable {
+	public indirect enum ContentX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case reference(Reference)
 	}
@@ -766,7 +766,7 @@ public struct ContractLegal: BackboneElement {
 public struct ContractRule: BackboneElement {
 	
 	/// All possible types for "content[x]"
-	public enum ContentX: Equatable, Hashable, Sendable {
+	public indirect enum ContentX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case reference(Reference)
 	}
@@ -953,7 +953,7 @@ public struct ContractSigner: BackboneElement {
 public struct ContractTerm: BackboneElement {
 	
 	/// All possible types for "topic[x]"
-	public enum TopicX: Equatable, Hashable, Sendable {
+	public indirect enum TopicX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -1138,7 +1138,7 @@ public struct ContractTerm: BackboneElement {
 public struct ContractTermAction: BackboneElement {
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
@@ -1720,7 +1720,7 @@ public struct ContractTermAssetContext: BackboneElement {
 public struct ContractTermAssetValuedItem: BackboneElement {
 	
 	/// All possible types for "entity[x]"
-	public enum EntityX: Equatable, Hashable, Sendable {
+	public indirect enum EntityX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -2058,7 +2058,7 @@ public struct ContractTermOffer: BackboneElement {
 public struct ContractTermOfferAnswer: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case coding(Coding)

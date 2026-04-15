@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-condition-kind
  ValueSet: http://hl7.org/fhir/ValueSet/action-condition-kind
  */
-public enum ActionConditionKind: String, FHIRPrimitiveType {
+public indirect enum ActionConditionKind: String, FHIRPrimitiveType {
 	
 	/// The condition describes whether or not a given action is applicable
 	case applicability

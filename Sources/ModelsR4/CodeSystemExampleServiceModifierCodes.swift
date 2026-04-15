@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/ex-servicemodifier
  ValueSet: http://hl7.org/fhir/ValueSet/service-modifiers
  */
-public enum ExampleServiceModifierCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleServiceModifierCodes: String, FHIRPrimitiveType {
 	
 	/// Services provided outside or normal business hours.
 	case ah

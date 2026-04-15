@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-element-type
  ValueSet: http://hl7.org/fhir/ValueSet/research-element-type
  */
-public enum ResearchElementType: String, FHIRPrimitiveType {
+public indirect enum ResearchElementType: String, FHIRPrimitiveType {
 	
 	/// The element defines an exposure within the population that is being researched.
 	case exposure

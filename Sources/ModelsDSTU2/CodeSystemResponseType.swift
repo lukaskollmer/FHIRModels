@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/response-code
  ValueSet: http://hl7.org/fhir/ValueSet/response-code
  */
-public enum ResponseType: String, FHIRPrimitiveType {
+public indirect enum ResponseType: String, FHIRPrimitiveType {
 	
 	/// The message was rejected because of some content in it. There is no point in re-sending without change. The
 	/// response narrative SHALL describe the issue.

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-special-measures
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-special-measures
  */
-public enum SpecialMeasures: String, FHIRPrimitiveType {
+public indirect enum SpecialMeasures: String, FHIRPrimitiveType {
 	
 	/// Requirement to conduct post-authorisation studies
 	case postAuthorisationStudies = "Post-authorisationStudies"

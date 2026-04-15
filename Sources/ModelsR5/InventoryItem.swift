@@ -324,7 +324,7 @@ public struct InventoryItemAssociation: BackboneElement {
 public struct InventoryItemCharacteristic: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case annotation(Annotation)
 		case boolean(FHIRPrimitive<FHIRBool>)

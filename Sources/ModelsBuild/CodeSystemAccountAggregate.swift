@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/account-aggregate
  ValueSet: http://hl7.org/fhir/ValueSet/account-aggregate
  */
-public enum AccountAggregate: String, FHIRPrimitiveType {
+public indirect enum AccountAggregate: String, FHIRPrimitiveType {
 	
 	/// This (aggregated) balance is expected to be paid by Insurance coverage(s)
 	case insurance

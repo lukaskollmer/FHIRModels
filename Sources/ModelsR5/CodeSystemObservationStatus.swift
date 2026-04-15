@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/observation-status
  ValueSet: http://hl7.org/fhir/ValueSet/observation-status
  */
-public enum ObservationStatus: String, FHIRPrimitiveType {
+public indirect enum ObservationStatus: String, FHIRPrimitiveType {
 	
 	/// Subsequent to being Final, the observation has been modified subsequent.  This includes updates/new information
 	/// and corrections.

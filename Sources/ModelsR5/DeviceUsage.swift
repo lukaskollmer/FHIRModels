@@ -30,7 +30,7 @@ public struct DeviceUsage: DomainResource {
 	public static let resourceType: ResourceType = .deviceUsage
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)

@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/research-study-phase
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-phase
  */
-public enum ResearchStudyPhase: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyPhase: String, FHIRPrimitiveType {
 	
 	/// Trials without phases (for example, studies of devices or behavioral interventions).
 	case NA = "n-a"

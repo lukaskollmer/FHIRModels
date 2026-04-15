@@ -30,7 +30,7 @@ public struct TestScript: DomainResource {
 	public static let resourceType: ResourceType = .testScript
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -1384,7 +1384,7 @@ public struct TestScriptSetupActionAssert: BackboneElement {
 public struct TestScriptSetupActionAssertRequirement: BackboneElement {
 	
 	/// All possible types for "link[x]"
-	public enum LinkX: Equatable, Hashable, Sendable {
+	public indirect enum LinkX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

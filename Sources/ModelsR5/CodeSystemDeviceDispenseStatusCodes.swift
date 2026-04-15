@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicedispense-status
  ValueSet: http://hl7.org/fhir/ValueSet/devicedispense-status
  */
-public enum DeviceDispenseStatusCodes: String, FHIRPrimitiveType {
+public indirect enum DeviceDispenseStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The dispensed product was not and will never be picked up by the patient.
 	case cancelled

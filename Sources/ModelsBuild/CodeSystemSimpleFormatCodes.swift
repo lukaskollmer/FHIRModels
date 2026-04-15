@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/simple-format-codes
  */
-public enum SimpleFormatCodes: String, FHIRPrimitiveType {
+public indirect enum SimpleFormatCodes: String, FHIRPrimitiveType {
 	
 	/// The JSON format described by the FHIR specification. The formal Mime Type is application/fhir+json
 	case json

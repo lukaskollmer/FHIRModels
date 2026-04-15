@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/group-involvement
  ValueSet: http://hl7.org/fhir/ValueSet/group-involvement
  */
-public enum GroupInvolvement: String, FHIRPrimitiveType {
+public indirect enum GroupInvolvement: String, FHIRPrimitiveType {
 	
 	/// The group member was working in the workplace, but is not consistently present.
 	case casual

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/chargeitem-status
  ValueSet: http://hl7.org/fhir/ValueSet/chargeitem-status
  */
-public enum ChargeItemStatus: String, FHIRPrimitiveType {
+public indirect enum ChargeItemStatus: String, FHIRPrimitiveType {
 	
 	/// The processing of the charge was aborted
 	case aborted

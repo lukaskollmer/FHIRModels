@@ -36,7 +36,7 @@ public struct AdverseEvent: DomainResource {
 	public static let resourceType: ResourceType = .adverseEvent
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
@@ -371,7 +371,7 @@ public struct AdverseEvent: DomainResource {
 public struct AdverseEventContributingFactor: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -472,7 +472,7 @@ public struct AdverseEventContributingFactor: BackboneElement {
 public struct AdverseEventMitigatingAction: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -647,7 +647,7 @@ public struct AdverseEventParticipant: BackboneElement {
 public struct AdverseEventPreventiveAction: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -746,7 +746,7 @@ public struct AdverseEventPreventiveAction: BackboneElement {
 public struct AdverseEventSupportingInfo: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -847,7 +847,7 @@ public struct AdverseEventSupportingInfo: BackboneElement {
 public struct AdverseEventSuspectEntity: BackboneElement {
 	
 	/// All possible types for "instance[x]"
-	public enum InstanceX: Equatable, Hashable, Sendable {
+	public indirect enum InstanceX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

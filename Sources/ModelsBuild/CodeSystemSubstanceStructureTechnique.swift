@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-structure-technique
  ValueSet: http://hl7.org/fhir/ValueSet/substance-structure-technique
  */
-public enum SubstanceStructureTechnique: String, FHIRPrimitiveType {
+public indirect enum SubstanceStructureTechnique: String, FHIRPrimitiveType {
 	
 	/// HPLC
 	case HPLC

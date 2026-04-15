@@ -31,7 +31,7 @@ public struct ChargeItemDefinition: DomainResource {
 	public static let resourceType: ResourceType = .chargeItemDefinition
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}

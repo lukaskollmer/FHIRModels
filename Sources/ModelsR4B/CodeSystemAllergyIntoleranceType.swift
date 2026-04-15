@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/allergy-intolerance-type
  ValueSet: http://hl7.org/fhir/ValueSet/allergy-intolerance-type
  */
-public enum AllergyIntoleranceType: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceType: String, FHIRPrimitiveType {
 	
 	/// A propensity for hypersensitive reaction(s) to a substance.  These reactions are most typically type I
 	/// hypersensitivity, plus other "allergy-like" reactions, including pseudoallergy.

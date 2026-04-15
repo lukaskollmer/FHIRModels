@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-pediatric-use
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-pediatric-use
  */
-public enum PediatricUse: String, FHIRPrimitiveType {
+public indirect enum PediatricUse: String, FHIRPrimitiveType {
 	
 	/// Adolescents (12 to < 18 years)
 	case adolescents = "Adolescents"

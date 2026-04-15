@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/biologicallyderived-productcodes
  ValueSet: http://hl7.org/fhir/ValueSet/biologicallyderived-productcodes
  */
-public enum BiologicallyDerivedProductCodes: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductCodes: String, FHIRPrimitiveType {
 	
 	/// RED BLOOD CELLS|CPD>AS5/450mL/refg|Irr|ResLeu
 	case E0398 = "e0398"

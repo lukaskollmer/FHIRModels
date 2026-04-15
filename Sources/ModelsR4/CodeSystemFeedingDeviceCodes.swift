@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/feeding-device
  */
-public enum FeedingDeviceCodes: String, FHIRPrimitiveType {
+public indirect enum FeedingDeviceCodes: String, FHIRPrimitiveType {
 	
 	/// Angled utensils definition:
 	case angledUtensil = "angled-utensil"

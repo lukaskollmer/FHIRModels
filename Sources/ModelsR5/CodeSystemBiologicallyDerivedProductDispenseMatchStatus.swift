@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-match-status
  ValueSet: http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-match-status
  */
-public enum BiologicallyDerivedProductDispenseMatchStatus: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductDispenseMatchStatus: String, FHIRPrimitiveType {
 	
 	/// The product has been serologically or electronically crossmatched for the recipient
 	case crossmatched

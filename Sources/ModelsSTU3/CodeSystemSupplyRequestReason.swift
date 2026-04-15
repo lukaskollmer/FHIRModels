@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/supplyrequest-reason
  ValueSet: http://hl7.org/fhir/ValueSet/supplyrequest-reason
  */
-public enum SupplyRequestReason: String, FHIRPrimitiveType {
+public indirect enum SupplyRequestReason: String, FHIRPrimitiveType {
 	
 	/// The supply has been requested for use in direct patient care.
 	case patientCare = "patient-care"

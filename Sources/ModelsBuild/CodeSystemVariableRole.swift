@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/variable-role
  ValueSet: http://hl7.org/fhir/ValueSet/variable-role
  */
-public enum VariableRole: String, FHIRPrimitiveType {
+public indirect enum VariableRole: String, FHIRPrimitiveType {
 	
 	/// A variable that influences the exposure or outcome.
 	case covariate

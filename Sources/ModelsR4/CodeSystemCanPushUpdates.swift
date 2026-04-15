@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/can-push-updates
  ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-can-push-updates
  */
-public enum CanPushUpdates: String, FHIRPrimitiveType {
+public indirect enum CanPushUpdates: String, FHIRPrimitiveType {
 	
 	/// no
 	case no

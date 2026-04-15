@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/implant-status
  ValueSet: http://hl7.org/fhir/ValueSet/implant-status
  */
-public enum ImplantStatus: String, FHIRPrimitiveType {
+public indirect enum ImplantStatus: String, FHIRPrimitiveType {
 	
 	/// The implanted device has been turned off
 	case disabled

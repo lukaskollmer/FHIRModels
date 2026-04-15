@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/questionnaire-question-control
  ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-question-control
  */
-public enum QuestionnaireQuestionUIControlCodes: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireQuestionUIControlCodes: String, FHIRPrimitiveType {
 	
 	/// A control which provides a list of potential matches based on text entered into a control.  Used for large
 	/// choice sets where text-matching is an appropriate discovery mechanism.

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/package-type
  ValueSet: http://hl7.org/fhir/ValueSet/package-type
  */
-public enum PackageType: String, FHIRPrimitiveType {
+public indirect enum PackageType: String, FHIRPrimitiveType {
 	
 	/// medicinalProductPack
 	case medicinalProductPack = "MedicinalProductPack"

@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/list-example-use-codes
  */
-public enum ExampleUseCodesForList: String, FHIRPrimitiveType {
+public indirect enum ExampleUseCodesForList: String, FHIRPrimitiveType {
 	
 	/// A list of part adverse reactions.
 	case adverserxns

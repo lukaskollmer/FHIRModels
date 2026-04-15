@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/deviceusage-adherence-code
  ValueSet: http://hl7.org/fhir/ValueSet/deviceusage-adherence-code
  */
-public enum DeviceUsageAdherenceCode: String, FHIRPrimitiveType {
+public indirect enum DeviceUsageAdherenceCode: String, FHIRPrimitiveType {
 	
 	/// The device is always used.
 	case always

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/xds-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/xds-relationship-type
  */
-public enum XDSRelationshipType: String, FHIRPrimitiveType {
+public indirect enum XDSRelationshipType: String, FHIRPrimitiveType {
 	
 	/// A separate XDS document that references a prior document, and may extend or alter the observations in the prior
 	/// document.

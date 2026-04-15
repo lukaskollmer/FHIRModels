@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-nametype
  ValueSet: http://hl7.org/fhir/ValueSet/device-nametype
  */
-public enum DeviceNameType: String, FHIRPrimitiveType {
+public indirect enum DeviceNameType: String, FHIRPrimitiveType {
 	
 	/// Manufacturer name.
 	case manufacturerName = "manufacturer-name"

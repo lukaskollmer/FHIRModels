@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/conceptmap-unmapped-mode
  ValueSet: http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode
  */
-public enum ConceptMapGroupUnmappedMode: String, FHIRPrimitiveType {
+public indirect enum ConceptMapGroupUnmappedMode: String, FHIRPrimitiveType {
 	
 	/// Use the code(s) explicitly provided in the group.unmapped 'code' or 'valueSet' element.
 	case fixed

@@ -27,7 +27,7 @@ import FMCore
 public struct Annotation: DataType {
 	
 	/// All possible types for "author[x]"
-	public enum AuthorX: Equatable, Hashable, Sendable {
+	public indirect enum AuthorX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case string(FHIRPrimitive<FHIRString>)
 	}

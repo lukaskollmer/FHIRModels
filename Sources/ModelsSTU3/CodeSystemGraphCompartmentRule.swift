@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/graph-compartment-rule
  ValueSet: http://hl7.org/fhir/ValueSet/graph-compartment-rule
  */
-public enum GraphCompartmentRule: String, FHIRPrimitiveType {
+public indirect enum GraphCompartmentRule: String, FHIRPrimitiveType {
 	
 	/// The compartment rule is defined in the accompanying FHIRPath expression
 	case custom

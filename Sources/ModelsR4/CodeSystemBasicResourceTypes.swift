@@ -28,7 +28,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/basic-resource-type
  ValueSet: http://hl7.org/fhir/ValueSet/basic-resource-type
  */
-public enum BasicResourceTypes: String, FHIRPrimitiveType {
+public indirect enum BasicResourceTypes: String, FHIRPrimitiveType {
 	
 	/// A set of (possibly conditional) steps to be taken to achieve some aim.  Includes study protocols, treatment
 	/// protocols, emergency protocols, etc.

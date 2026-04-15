@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/coverage-selfpay
  ValueSet: http://hl7.org/fhir/ValueSet/coverage-selfpay
  */
-public enum CoverageSelfPayCodes: String, FHIRPrimitiveType {
+public indirect enum CoverageSelfPayCodes: String, FHIRPrimitiveType {
 	
 	/// An individual or organization is paying directly for goods and services.
 	case pay

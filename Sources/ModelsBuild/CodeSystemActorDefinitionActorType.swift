@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/actordefinition-actor-type
  ValueSet: http://hl7.org/fhir/ValueSet/actordefinition-actor-type
  */
-public enum ActorDefinitionActorType: String, FHIRPrimitiveType {
+public indirect enum ActorDefinitionActorType: String, FHIRPrimitiveType {
 	
 	/// A group of people or animals
 	case collective

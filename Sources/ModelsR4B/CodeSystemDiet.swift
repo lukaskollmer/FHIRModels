@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/diet
  */
-public enum Diet: String, FHIRPrimitiveType {
+public indirect enum Diet: String, FHIRPrimitiveType {
 	
 	/// Excludes dairy products.
 	case dairyFree = "dairy-free"

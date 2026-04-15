@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/supplydelivery-status
  ValueSet: http://hl7.org/fhir/ValueSet/supplydelivery-status
  */
-public enum SupplyDeliveryStatus: String, FHIRPrimitiveType {
+public indirect enum SupplyDeliveryStatus: String, FHIRPrimitiveType {
 	
 	/// Delivery was not completed.
 	case abandoned

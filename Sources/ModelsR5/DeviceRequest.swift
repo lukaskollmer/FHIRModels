@@ -30,7 +30,7 @@ public struct DeviceRequest: DomainResource {
 	public static let resourceType: ResourceType = .deviceRequest
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
@@ -379,7 +379,7 @@ public struct DeviceRequest: DomainResource {
 public struct DeviceRequestParameter: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)

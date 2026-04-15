@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-businessstatus-inpatient
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-businessstatus-inpatient
  */
-public enum EncounterBusinessStatusInpatient: String, FHIRPrimitiveType {
+public indirect enum EncounterBusinessStatusInpatient: String, FHIRPrimitiveType {
 	
 	/// The patient has been admitted to the facility.
 	case admit

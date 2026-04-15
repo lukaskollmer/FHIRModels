@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-state
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-state
  */
-public enum EncounterState: String, FHIRPrimitiveType {
+public indirect enum EncounterState: String, FHIRPrimitiveType {
 	
 	/// The Patient is present for the encounter, however is not currently meeting with a practitioner.
 	case arrived

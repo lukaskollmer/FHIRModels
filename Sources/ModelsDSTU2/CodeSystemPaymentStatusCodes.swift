@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/paymentstatus
  ValueSet: http://hl7.org/fhir/ValueSet/payment-status
  */
-public enum PaymentStatusCodes: String, FHIRPrimitiveType {
+public indirect enum PaymentStatusCodes: String, FHIRPrimitiveType {
 	
 	/// cleared
 	case cleared

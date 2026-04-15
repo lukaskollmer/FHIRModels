@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-variable-unacceptable-data-handling
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-variable-unacceptable-data-handling
  */
-public enum EvidenceVariableUnacceptableDataHandling: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableUnacceptableDataHandling: String, FHIRPrimitiveType {
 	
 	/// Replace unacceptable values to a null value.
 	case setValueToNull = "set-value-to-null"

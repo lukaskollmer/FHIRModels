@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contact-point-use
  ValueSet: http://hl7.org/fhir/ValueSet/contact-point-use
  */
-public enum ContactPointUse: String, FHIRPrimitiveType {
+public indirect enum ContactPointUse: String, FHIRPrimitiveType {
 	
 	/// A communication contact point at a home; attempted contacts for business purposes might intrude privacy and
 	/// chances are one will contact family or other household members instead of the person one wishes to call.

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-presence
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-presence
  */
-public enum DeviceAlertPresence: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertPresence: String, FHIRPrimitiveType {
 	
 	/// The signal is no longer annunciated having been stopped by deliberate operator action although the alert
 	/// condition is still present

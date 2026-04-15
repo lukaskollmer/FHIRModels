@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/evidence-variant-state
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-variant-state
  */
-public enum EvidenceVariantState: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariantState: String, FHIRPrimitiveType {
 	
 	/// high risk estimate.
 	case highRisk = "high-risk"

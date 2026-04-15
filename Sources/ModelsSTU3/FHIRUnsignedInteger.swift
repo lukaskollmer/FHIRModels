@@ -68,7 +68,7 @@ extension FHIRUnsignedInteger: Codable {
 
 // MARK: -
 
-public enum FHIRUnsignedIntegerError: Error {
+public indirect enum FHIRUnsignedIntegerError: Error {
 	case valueIsLessThanZero
 }
 

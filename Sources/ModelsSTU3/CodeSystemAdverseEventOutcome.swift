@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/adverse-event-outcome
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-outcome
  */
-public enum AdverseEventOutcome: String, FHIRPrimitiveType {
+public indirect enum AdverseEventOutcome: String, FHIRPrimitiveType {
 	
 	/// fatal
 	case fatal

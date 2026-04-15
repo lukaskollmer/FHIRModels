@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-quality
  ValueSet: http://hl7.org/fhir/ValueSet/cqif-evidence-quality
  */
-public enum QualityOfEvidenceRating: String, FHIRPrimitiveType {
+public indirect enum QualityOfEvidenceRating: String, FHIRPrimitiveType {
 	
 	/// High quality evidence
 	case high

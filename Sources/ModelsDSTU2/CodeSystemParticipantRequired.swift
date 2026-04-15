@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/participantrequired
  ValueSet: http://hl7.org/fhir/ValueSet/participantrequired
  */
-public enum ParticipantRequired: String, FHIRPrimitiveType {
+public indirect enum ParticipantRequired: String, FHIRPrimitiveType {
 	
 	/// The participant is excluded from the appointment, and may not be informed of the appointment taking place.
 	/// (Appointment is about them, not for them - such as 2 doctors discussing results about a patient's test).

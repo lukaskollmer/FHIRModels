@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/specimen-contained-preference
  ValueSet: http://hl7.org/fhir/ValueSet/specimen-contained-preference
  */
-public enum SpecimenContainedPreference: String, FHIRPrimitiveType {
+public indirect enum SpecimenContainedPreference: String, FHIRPrimitiveType {
 	
 	/// This type of conditioned specimen is an alternate.
 	case alternate

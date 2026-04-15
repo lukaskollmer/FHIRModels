@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/parameter-group
  ValueSet: http://hl7.org/fhir/ValueSet/parameter-group
  */
-public enum DeviceDefinitionParameterGroup: String, FHIRPrimitiveType {
+public indirect enum DeviceDefinitionParameterGroup: String, FHIRPrimitiveType {
 	
 	/// Blood Chemistry Parameter Group - MDC_PGRP_BLOOD_CHEM.
 	case bloodChemistry = "blood-chemistry"

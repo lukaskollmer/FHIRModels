@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/care-plan-relationship
  ValueSet: http://hl7.org/fhir/ValueSet/care-plan-relationship
  */
-public enum CarePlanRelationship: String, FHIRPrimitiveType {
+public indirect enum CarePlanRelationship: String, FHIRPrimitiveType {
 	
 	/// This plan provides details about how to perform activities defined at a higher level by the referenced plan.
 	case fulfills

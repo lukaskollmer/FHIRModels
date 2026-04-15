@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/questionnaire-disabled-display
  */
-public enum QuestionnaireItemDisabledDisplay: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireItemDisabledDisplay: String, FHIRPrimitiveType {
 	
 	/// The item (and its children) should not be visible to the user at all.
 	case hidden

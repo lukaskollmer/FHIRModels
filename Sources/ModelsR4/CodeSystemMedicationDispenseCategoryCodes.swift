@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category
  ValueSet: http://hl7.org/fhir/ValueSet/medicationdispense-category
  */
-public enum MedicationDispenseCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationDispenseCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Includes dispenses for medications to be administered or consumed by the patient in their home (this would
 	/// include long term care or nursing homes, hospices, etc.).

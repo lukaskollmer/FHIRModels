@@ -31,13 +31,13 @@ public struct MedicationDispense: DomainResource {
 	public static let resourceType: ResourceType = .medicationDispense
 	
 	/// All possible types for "medication[x]"
-	public enum MedicationX: Equatable, Hashable, Sendable {
+	public indirect enum MedicationX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "notDoneReason[x]"
-	public enum NotDoneReasonX: Equatable, Hashable, Sendable {
+	public indirect enum NotDoneReasonX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

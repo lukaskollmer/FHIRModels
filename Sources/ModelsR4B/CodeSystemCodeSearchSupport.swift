@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/code-search-support
  ValueSet: http://hl7.org/fhir/ValueSet/code-search-support
  */
-public enum CodeSearchSupport: String, FHIRPrimitiveType {
+public indirect enum CodeSearchSupport: String, FHIRPrimitiveType {
 	
 	/// The search for code on ValueSet only includes all codes based on the expansion of the value set.
 	case all

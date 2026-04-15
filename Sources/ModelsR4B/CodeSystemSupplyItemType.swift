@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/supply-item-type
  */
-public enum SupplyItemType: String, FHIRPrimitiveType {
+public indirect enum SupplyItemType: String, FHIRPrimitiveType {
 	
 	/// What is supplied (or requested) is a device.
 	case device

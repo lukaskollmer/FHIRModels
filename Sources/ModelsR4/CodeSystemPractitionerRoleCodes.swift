@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/practitioner-role
  */
-public enum PractitionerRoleCodes: String, FHIRPrimitiveType {
+public indirect enum PractitionerRoleCodes: String, FHIRPrimitiveType {
 	
 	/// A qualified/registered medical practitioner
 	case doctor

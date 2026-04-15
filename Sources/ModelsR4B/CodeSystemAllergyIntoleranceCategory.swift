@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/allergy-intolerance-category
  ValueSet: http://hl7.org/fhir/ValueSet/allergy-intolerance-category
  */
-public enum AllergyIntoleranceCategory: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceCategory: String, FHIRPrimitiveType {
 	
 	/// A preparation that is synthesized from living organisms or their products, especially a human or animal protein,
 	/// such as a hormone or antitoxin, that is used as a diagnostic, preventive, or therapeutic agent. Examples of

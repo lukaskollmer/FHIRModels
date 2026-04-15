@@ -29,7 +29,7 @@ public struct Observation: DomainResource {
 	public static let resourceType: ResourceType = .observation
 	
 	/// All possible types for "effective[x]"
-	public enum EffectiveX: Equatable, Hashable, Sendable {
+	public indirect enum EffectiveX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case instant(FHIRPrimitive<Instant>)
 		case period(Period)
@@ -37,13 +37,13 @@ public struct Observation: DomainResource {
 	}
 	
 	/// All possible types for "instantiates[x]"
-	public enum InstantiatesX: Equatable, Hashable, Sendable {
+	public indirect enum InstantiatesX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
@@ -564,7 +564,7 @@ public struct Observation: DomainResource {
 public struct ObservationComponent: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/processpriority
  ValueSet: http://hl7.org/fhir/ValueSet/process-priority
  */
-public enum PriorityCodes: String, FHIRPrimitiveType {
+public indirect enum PriorityCodes: String, FHIRPrimitiveType {
 	
 	/// Later, when possible.
 	case deferred

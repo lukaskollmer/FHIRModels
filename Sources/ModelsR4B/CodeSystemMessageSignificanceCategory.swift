@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/message-significance-category
  ValueSet: http://hl7.org/fhir/ValueSet/message-significance-category
  */
-public enum MessageSignificanceCategory: String, FHIRPrimitiveType {
+public indirect enum MessageSignificanceCategory: String, FHIRPrimitiveType {
 	
 	/// The message represents/requests a change that should not be processed more than once; e.g., making a booking for
 	/// an appointment.

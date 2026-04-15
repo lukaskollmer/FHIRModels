@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medicationrequest-dispenser-instructions
  ValueSet: http://hl7.org/fhir/ValueSet/medicationrequest-dispenser-instructions
  */
-public enum MedicationRequestDispenserInstructions: String, FHIRPrimitiveType {
+public indirect enum MedicationRequestDispenserInstructions: String, FHIRPrimitiveType {
 	
 	/// Flag that extra monitoring is needed when dispensing.
 	case additionalMonitoringRequired = "additional-monitoring-required"

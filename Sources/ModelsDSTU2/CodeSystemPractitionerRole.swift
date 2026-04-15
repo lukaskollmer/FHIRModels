@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/practitioner-role
  ValueSet: http://hl7.org/fhir/ValueSet/practitioner-role
  */
-public enum PractitionerRole: String, FHIRPrimitiveType {
+public indirect enum PractitionerRole: String, FHIRPrimitiveType {
 	
 	/// doctor
 	case doctor

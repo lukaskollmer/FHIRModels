@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/ex-procedure-type
  ValueSet: http://hl7.org/fhir/ValueSet/ex-procedure-type
  */
-public enum ExampleProcedureTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleProcedureTypeCodes: String, FHIRPrimitiveType {
 	
 	/// The first procedure in a series required to produce and overall patient outcome.
 	case primary

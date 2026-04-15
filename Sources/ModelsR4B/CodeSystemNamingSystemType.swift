@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/namingsystem-type
  ValueSet: http://hl7.org/fhir/ValueSet/namingsystem-type
  */
-public enum NamingSystemType: String, FHIRPrimitiveType {
+public indirect enum NamingSystemType: String, FHIRPrimitiveType {
 	
 	/// The naming system is used to define concepts and symbols to represent those concepts; e.g. UCUM, LOINC, NDC
 	/// code, local lab codes, etc.

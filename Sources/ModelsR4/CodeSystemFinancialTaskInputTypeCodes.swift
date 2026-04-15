@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/financialtaskinputtype
  ValueSet: http://hl7.org/fhir/ValueSet/financial-taskinputtype
  */
-public enum FinancialTaskInputTypeCodes: String, FHIRPrimitiveType {
+public indirect enum FinancialTaskInputTypeCodes: String, FHIRPrimitiveType {
 	
 	/// The name of a resource to not include in a selection.
 	case exclude

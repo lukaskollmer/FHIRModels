@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/animal-genderstatus
  */
-public enum GenderStatus: String, FHIRPrimitiveType {
+public indirect enum GenderStatus: String, FHIRPrimitiveType {
 	
 	/// The animal's reproductive organs are intact.
 	case intact

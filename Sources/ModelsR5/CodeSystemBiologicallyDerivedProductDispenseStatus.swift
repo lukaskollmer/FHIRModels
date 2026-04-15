@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/biologicallyderivedproductdispense-status
  ValueSet: http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-status
  */
-public enum BiologicallyDerivedProductDispenseStatus: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductDispenseStatus: String, FHIRPrimitiveType {
 	
 	/// The requested product has been allocated and is ready for transport.
 	case allocated

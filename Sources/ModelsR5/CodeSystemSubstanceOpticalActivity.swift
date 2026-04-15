@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-optical-activity
  ValueSet: http://hl7.org/fhir/ValueSet/substance-optical-activity
  */
-public enum SubstanceOpticalActivity: String, FHIRPrimitiveType {
+public indirect enum SubstanceOpticalActivity: String, FHIRPrimitiveType {
 	
 	/// dextrorotary
 	case dextrorotary = "+"

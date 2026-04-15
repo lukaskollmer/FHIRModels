@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/claim-type
  ValueSet: http://hl7.org/fhir/ValueSet/claim-type
  */
-public enum ClaimTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ClaimTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Hospital, clinic and typically inpatient claims.
 	case institutional

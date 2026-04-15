@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/benefit-network
  */
-public enum NetworkTypeCodes: String, FHIRPrimitiveType {
+public indirect enum NetworkTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Services rendered by a Network provider
 	case `in`

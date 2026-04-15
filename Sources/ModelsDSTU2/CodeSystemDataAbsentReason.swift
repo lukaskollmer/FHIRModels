@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/data-absent-reason
  ValueSet: http://hl7.org/fhir/ValueSet/data-absent-reason
  */
-public enum DataAbsentReason: String, FHIRPrimitiveType {
+public indirect enum DataAbsentReason: String, FHIRPrimitiveType {
 	
 	/// The source human does not know the value.
 	case asked

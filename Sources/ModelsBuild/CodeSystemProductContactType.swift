@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-contact-type
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-contact-type
  */
-public enum ProductContactType: String, FHIRPrimitiveType {
+public indirect enum ProductContactType: String, FHIRPrimitiveType {
 	
 	/// Qualified Person Responsible for Pharmacovigilance
 	case QPPV

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
  ValueSet: http://hl7.org/fhir/ValueSet/allergyintolerance-verification
  */
-public enum AllergyIntoleranceVerificationStatusCodes: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceVerificationStatusCodes: String, FHIRPrimitiveType {
 	
 	/// A high level of certainty about the propensity for a reaction to the identified substance, which may include
 	/// clinical evidence by testing or rechallenge.

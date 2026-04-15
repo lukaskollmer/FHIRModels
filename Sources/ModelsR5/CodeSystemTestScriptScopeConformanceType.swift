@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/testscript-scope-conformance-codes
  ValueSet: http://hl7.org/fhir/ValueSet/testscript-scope-conformance-codes
  */
-public enum TestScriptScopeConformanceType: String, FHIRPrimitiveType {
+public indirect enum TestScriptScopeConformanceType: String, FHIRPrimitiveType {
 	
 	/// All tests are expected to pass but non-pass statuses may be allowed.
 	case optional

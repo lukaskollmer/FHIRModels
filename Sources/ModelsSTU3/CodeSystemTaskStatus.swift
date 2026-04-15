@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/task-status
  ValueSet: http://hl7.org/fhir/ValueSet/task-status
  */
-public enum TaskStatus: String, FHIRPrimitiveType {
+public indirect enum TaskStatus: String, FHIRPrimitiveType {
 	
 	/// The potential performer has agreed to execute the task but has not yet started work.
 	case accepted

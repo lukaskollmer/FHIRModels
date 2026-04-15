@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/expression-language
  ValueSet: http://hl7.org/fhir/ValueSet/expression-language
  */
-public enum ExpressionLanguage: String, FHIRPrimitiveType {
+public indirect enum ExpressionLanguage: String, FHIRPrimitiveType {
 	
 	/// FHIR's RESTful query syntax - typically independent of base URL.
 	case applicationXFhirQuery = "application/x-fhir-query"

@@ -30,19 +30,19 @@ public struct ActivityDefinition: DomainResource {
 	public static let resourceType: ResourceType = .activityDefinition
 	
 	/// All possible types for "product[x]"
-	public enum ProductX: Equatable, Hashable, Sendable {
+	public indirect enum ProductX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)

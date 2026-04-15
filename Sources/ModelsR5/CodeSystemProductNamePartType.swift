@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-name-part-type
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type
  */
-public enum ProductNamePartType: String, FHIRPrimitiveType {
+public indirect enum ProductNamePartType: String, FHIRPrimitiveType {
 	
 	/// containerPart
 	case containerPart = "ContainerPart"

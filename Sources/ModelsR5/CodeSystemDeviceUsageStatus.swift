@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/deviceusage-status
  ValueSet: http://hl7.org/fhir/ValueSet/deviceusage-status
  */
-public enum DeviceUsageStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceUsageStatus: String, FHIRPrimitiveType {
 	
 	/// The device is still being used.
 	case active

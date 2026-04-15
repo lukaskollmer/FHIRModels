@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/concept-properties
  ValueSet: http://hl7.org/fhir/ValueSet/concept-properties
  */
-public enum ConceptProperties: String, FHIRPrimitiveType {
+public indirect enum ConceptProperties: String, FHIRPrimitiveType {
 	
 	/// This property contains the code for another representation of this concept, with the same real-world meaning, in
 	/// this code system.

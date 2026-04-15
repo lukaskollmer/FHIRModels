@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/adjustment-reason
  ValueSet: http://hl7.org/fhir/ValueSet/adjustment-reason
  */
-public enum AdjustmentReasonCodes: String, FHIRPrimitiveType {
+public indirect enum AdjustmentReasonCodes: String, FHIRPrimitiveType {
 	
 	/// A001
 	case A001

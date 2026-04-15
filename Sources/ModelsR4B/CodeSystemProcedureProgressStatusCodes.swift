@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/procedure-progress-status-code
  */
-public enum ProcedureProgressStatusCodes: String, FHIRPrimitiveType {
+public indirect enum ProcedureProgressStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The patient is under anesthesia.
 	case anesthesiaInduced = "anesthesia-induced"

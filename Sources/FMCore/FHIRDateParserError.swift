@@ -48,7 +48,7 @@ extension FHIRDateParserErrorPosition: Equatable {
 
 // MARK: - FHIRDateParserError
 
-public enum FHIRDateParserError: LocalizedError {
+public indirect enum FHIRDateParserError: LocalizedError {
 	case invalidSeparator(FHIRDateParserErrorPosition)
 	case invalidYear(FHIRDateParserErrorPosition)
 	case invalidMonth(FHIRDateParserErrorPosition)

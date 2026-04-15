@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/dataelement-stringency
  ValueSet: http://hl7.org/fhir/ValueSet/dataelement-stringency
  */
-public enum DataElementStringency: String, FHIRPrimitiveType {
+public indirect enum DataElementStringency: String, FHIRPrimitiveType {
 	
 	/// The data element is sufficiently well-constrained that multiple pieces of data captured according to the
 	/// constraints of the data element will be comparable (though in some cases, a degree of automated

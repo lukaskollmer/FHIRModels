@@ -30,7 +30,7 @@ public struct Condition: DomainResource {
 	public static let resourceType: ResourceType = .condition
 	
 	/// All possible types for "abatement[x]"
-	public enum AbatementX: Equatable, Hashable, Sendable {
+	public indirect enum AbatementX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case dateTime(FHIRPrimitive<DateTime>)
@@ -40,7 +40,7 @@ public struct Condition: DomainResource {
 	}
 	
 	/// All possible types for "onset[x]"
-	public enum OnsetX: Equatable, Hashable, Sendable {
+	public indirect enum OnsetX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)

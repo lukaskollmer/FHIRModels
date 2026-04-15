@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/flag-status
  ValueSet: http://hl7.org/fhir/ValueSet/flag-status
  */
-public enum FlagStatus: String, FHIRPrimitiveType {
+public indirect enum FlagStatus: String, FHIRPrimitiveType {
 	
 	/// A current flag that should be displayed to a user. A system may use the category to determine which user roles
 	/// should view the flag.

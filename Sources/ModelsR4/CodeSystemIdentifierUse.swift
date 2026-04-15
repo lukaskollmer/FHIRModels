@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/identifier-use
  ValueSet: http://hl7.org/fhir/ValueSet/identifier-use
  */
-public enum IdentifierUse: String, FHIRPrimitiveType {
+public indirect enum IdentifierUse: String, FHIRPrimitiveType {
 	
 	/// The identifier considered to be most trusted for the identification of this item. Sometimes also known as
 	/// "primary" and "main". The determination of "official" is subjective and implementation guides often provide

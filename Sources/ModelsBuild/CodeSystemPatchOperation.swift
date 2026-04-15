@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/patch-operation
  ValueSet: http://hl7.org/fhir/ValueSet/patch-operation
  */
-public enum PatchOperation: String, FHIRPrimitiveType {
+public indirect enum PatchOperation: String, FHIRPrimitiveType {
 	
 	/// Add content at the nominated location.
 	case add

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/activity-definition-category
  ValueSet: http://hl7.org/fhir/ValueSet/activity-definition-category
  */
-public enum ActivityDefinitionCategory: String, FHIRPrimitiveType {
+public indirect enum ActivityDefinitionCategory: String, FHIRPrimitiveType {
 	
 	/// The activity is intended to perform or is related to assessment of the patient.
 	case assessment

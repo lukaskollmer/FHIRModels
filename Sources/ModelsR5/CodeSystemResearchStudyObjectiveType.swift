@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-objective-type
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-objective-type
  */
-public enum ResearchStudyObjectiveType: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyObjectiveType: String, FHIRPrimitiveType {
 	
 	/// Exploratory questions to be answered in the study.
 	case exploratory

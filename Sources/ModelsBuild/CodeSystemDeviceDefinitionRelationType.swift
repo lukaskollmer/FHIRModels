@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicedefinition-relationtype
  ValueSet: http://hl7.org/fhir/ValueSet/device-relationtype
  */
-public enum DeviceDefinitionRelationType: String, FHIRPrimitiveType {
+public indirect enum DeviceDefinitionRelationType: String, FHIRPrimitiveType {
 	
 	/// Gateway.
 	case gateway

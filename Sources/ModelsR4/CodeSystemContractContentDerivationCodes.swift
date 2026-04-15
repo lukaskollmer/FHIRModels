@@ -28,7 +28,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/contract-content-derivative
  ValueSet: http://hl7.org/fhir/ValueSet/contract-content-derivative
  */
-public enum ContractContentDerivationCodes: String, FHIRPrimitiveType {
+public indirect enum ContractContentDerivationCodes: String, FHIRPrimitiveType {
 	
 	/// Content derivative that conveys sufficient information needed to register the source basal content from which it
 	/// is derived.  This derivative content may be used to register the basal content as it changes status in its

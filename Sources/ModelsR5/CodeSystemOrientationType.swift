@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/orientation-type
  ValueSet: http://hl7.org/fhir/ValueSet/orientation-type
  */
-public enum OrientationType: String, FHIRPrimitiveType {
+public indirect enum OrientationType: String, FHIRPrimitiveType {
 	
 	/// Antisense orientation of reference sequence.
 	case antisense

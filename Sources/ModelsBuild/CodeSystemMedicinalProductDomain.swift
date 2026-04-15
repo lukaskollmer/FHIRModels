@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-domain
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-domain
  */
-public enum MedicinalProductDomain: String, FHIRPrimitiveType {
+public indirect enum MedicinalProductDomain: String, FHIRPrimitiveType {
 	
 	/// Product intended for use with humans
 	case human = "Human"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-subject-status
  ValueSet: http://hl7.org/fhir/ValueSet/research-subject-status
  */
-public enum ResearchSubjectStatus: String, FHIRPrimitiveType {
+public indirect enum ResearchSubjectStatus: String, FHIRPrimitiveType {
 	
 	/// An identified person that can be considered for inclusion in a study.
 	case candidate

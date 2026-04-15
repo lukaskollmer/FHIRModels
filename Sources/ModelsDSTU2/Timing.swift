@@ -105,7 +105,7 @@ public struct Timing: Element {
 public struct TimingRepeat: Element {
 	
 	/// All possible types for "bounds[x]"
-	public enum BoundsX: Equatable, Hashable, Sendable {
+	public indirect enum BoundsX: Equatable, Hashable, Sendable {
 		case period(Period)
 		case quantity(Quantity)
 		case range(Range)

@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/permission-rule-combining
  */
-public enum PermissionRuleCombining: String, FHIRPrimitiveType {
+public indirect enum PermissionRuleCombining: String, FHIRPrimitiveType {
 	
 	/// The deny overrides combining algorithm is intended for those cases where a deny decision should have priority
 	/// over a permit decision.

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/week-of-month
  ValueSet: http://hl7.org/fhir/ValueSet/week-of-month
  */
-public enum WeekOfMonth: String, FHIRPrimitiveType {
+public indirect enum WeekOfMonth: String, FHIRPrimitiveType {
 	
 	/// First week of the month.
 	case first

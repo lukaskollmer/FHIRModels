@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/financialtaskcode
  ValueSet: http://hl7.org/fhir/ValueSet/financial-taskcode
  */
-public enum FinancialTaskCodes: String, FHIRPrimitiveType {
+public indirect enum FinancialTaskCodes: String, FHIRPrimitiveType {
 	
 	/// Cancel or reverse a resource, such as a claim or preauthorization, which is in-process or complete.
 	case cancel

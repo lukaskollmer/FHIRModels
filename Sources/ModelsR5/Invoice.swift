@@ -30,7 +30,7 @@ public struct Invoice: DomainResource {
 	public static let resourceType: ResourceType = .invoice
 	
 	/// All possible types for "period[x]"
-	public enum PeriodX: Equatable, Hashable, Sendable {
+	public indirect enum PeriodX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}
@@ -306,13 +306,13 @@ public struct Invoice: DomainResource {
 public struct InvoiceLineItem: BackboneElement {
 	
 	/// All possible types for "chargeItem[x]"
-	public enum ChargeItemX: Equatable, Hashable, Sendable {
+	public indirect enum ChargeItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "serviced[x]"
-	public enum ServicedX: Equatable, Hashable, Sendable {
+	public indirect enum ServicedX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}

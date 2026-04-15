@@ -30,7 +30,7 @@ public struct RequestGroup: DomainResource {
 	public static let resourceType: ResourceType = .requestGroup
 	
 	/// All possible types for "reason[x]"
-	public enum ReasonX: Equatable, Hashable, Sendable {
+	public indirect enum ReasonX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -283,7 +283,7 @@ public struct RequestGroup: DomainResource {
 public struct RequestGroupAction: BackboneElement {
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
 		case period(Period)
@@ -637,7 +637,7 @@ public struct RequestGroupActionCondition: BackboneElement {
 public struct RequestGroupActionRelatedAction: BackboneElement {
 	
 	/// All possible types for "offset[x]"
-	public enum OffsetX: Equatable, Hashable, Sendable {
+	public indirect enum OffsetX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case range(Range)
 	}

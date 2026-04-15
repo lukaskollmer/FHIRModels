@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/exception
  ValueSet: http://hl7.org/fhir/ValueSet/claim-exception
  */
-public enum ExceptionCodes: String, FHIRPrimitiveType {
+public indirect enum ExceptionCodes: String, FHIRPrimitiveType {
 	
 	/// Disabled
 	case disabled

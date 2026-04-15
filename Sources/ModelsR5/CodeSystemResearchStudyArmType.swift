@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-arm-type
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-arm-type
  */
-public enum ResearchStudyArmType: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyArmType: String, FHIRPrimitiveType {
 	
 	/// activeComparator
 	case activeComparator = "active-comparator"

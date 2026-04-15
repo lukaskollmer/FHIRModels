@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-weight-type
  ValueSet: http://hl7.org/fhir/ValueSet/substance-weight-type
  */
-public enum SubstanceWeightType: String, FHIRPrimitiveType {
+public indirect enum SubstanceWeightType: String, FHIRPrimitiveType {
 	
 	/// average
 	case average = "Average"

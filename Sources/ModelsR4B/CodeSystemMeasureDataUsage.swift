@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/measure-data-usage
  ValueSet: http://hl7.org/fhir/ValueSet/measure-data-usage
  */
-public enum MeasureDataUsage: String, FHIRPrimitiveType {
+public indirect enum MeasureDataUsage: String, FHIRPrimitiveType {
 	
 	/// The data is intended to be used to calculate and apply a risk adjustment model for the measure.
 	case riskAdjustmentFactor = "risk-adjustment-factor"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/observation-triggeredbytype
  ValueSet: http://hl7.org/fhir/ValueSet/observation-triggeredbytype
  */
-public enum TriggeredBytype: String, FHIRPrimitiveType {
+public indirect enum TriggeredBytype: String, FHIRPrimitiveType {
 	
 	/// Performance of the same test again with the same parameters/settings/solution.
 	case `repeat`

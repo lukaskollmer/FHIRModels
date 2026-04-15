@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/qicore-communication-medium
  ValueSet: http://hl7.org/fhir/ValueSet/qicore-communication-medium
  */
-public enum QICoreCommunicationMediumCodes: String, FHIRPrimitiveType {
+public indirect enum QICoreCommunicationMediumCodes: String, FHIRPrimitiveType {
 	
 	/// The message was communicated via a medical device
 	case device

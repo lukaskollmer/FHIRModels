@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/vision-base-codes
  ValueSet: http://hl7.org/fhir/ValueSet/vision-base-codes
  */
-public enum VisionBase: String, FHIRPrimitiveType {
+public indirect enum VisionBase: String, FHIRPrimitiveType {
 	
 	/// inner edge.
 	case `in`

@@ -25,7 +25,7 @@ import FMCore
 public struct Extension: Element {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case annotation(Annotation)
 		case attachment(Attachment)

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/ex-serviceproduct
  ValueSet: http://hl7.org/fhir/ValueSet/service-product
  */
-public enum ExampleServiceProductCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleServiceProductCodes: String, FHIRPrimitiveType {
 	
 	/// Exam
 	case exam

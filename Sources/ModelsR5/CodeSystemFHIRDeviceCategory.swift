@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-category
  ValueSet: http://hl7.org/fhir/ValueSet/device-category
  */
-public enum FHIRDeviceCategory: String, FHIRPrimitiveType {
+public indirect enum FHIRDeviceCategory: String, FHIRPrimitiveType {
 	
 	/// Device where the operation depends on a source of energy.
 	case active

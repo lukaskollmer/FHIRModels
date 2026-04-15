@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/condition-clinical
  ValueSet: http://hl7.org/fhir/ValueSet/condition-clinical
  */
-public enum ConditionClinicalStatusCodes: String, FHIRPrimitiveType {
+public indirect enum ConditionClinicalStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The subject is currently experiencing the symptoms of the condition or there is evidence of the condition.
 	case active

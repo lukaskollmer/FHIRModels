@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/goal-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/goal-status-reason
  */
-public enum GoalStatusReason: String, FHIRPrimitiveType {
+public indirect enum GoalStatusReason: String, FHIRPrimitiveType {
 	
 	/// Goal suspended or ended because of a significant life event (marital change, bereavement, etc.).
 	case lifeEvent = "life-event"

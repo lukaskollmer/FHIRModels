@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/claim-outcome
  */
-public enum ClaimProcessingOutcomeCodes: String, FHIRPrimitiveType {
+public indirect enum ClaimProcessingOutcomeCodes: String, FHIRPrimitiveType {
 	
 	/// The processing has completed without errors
 	case complete

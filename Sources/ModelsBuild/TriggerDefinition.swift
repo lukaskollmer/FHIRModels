@@ -28,7 +28,7 @@ import FMCore
 public struct TriggerDefinition: DataType {
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case timing(Timing)

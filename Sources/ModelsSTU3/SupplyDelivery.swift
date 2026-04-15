@@ -29,7 +29,7 @@ public struct SupplyDelivery: DomainResource {
 	public static let resourceType: ResourceType = .supplyDelivery
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
@@ -258,7 +258,7 @@ public struct SupplyDelivery: DomainResource {
 public struct SupplyDeliverySuppliedItem: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

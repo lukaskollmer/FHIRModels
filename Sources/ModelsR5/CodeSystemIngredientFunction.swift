@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/ingredient-function
  ValueSet: http://hl7.org/fhir/ValueSet/ingredient-function
  */
-public enum IngredientFunction: String, FHIRPrimitiveType {
+public indirect enum IngredientFunction: String, FHIRPrimitiveType {
 	
 	/// alkalizingAgent
 	case alkalizingAgent = "AlkalizingAgent"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/http-verb
  ValueSet: http://hl7.org/fhir/ValueSet/http-verb
  */
-public enum HTTPVerb: String, FHIRPrimitiveType {
+public indirect enum HTTPVerb: String, FHIRPrimitiveType {
 	
 	/// HTTP DELETE Command.
 	case DELETE

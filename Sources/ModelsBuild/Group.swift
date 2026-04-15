@@ -39,7 +39,7 @@ public struct Group: DomainResource {
 	public static let resourceType: ResourceType = .group
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -380,19 +380,19 @@ public struct Group: DomainResource {
 public struct GroupCharacteristic: BackboneElement {
 	
 	/// All possible types for "duration[x]"
-	public enum DurationX: Equatable, Hashable, Sendable {
+	public indirect enum DurationX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case range(Range)
 	}
 	
 	/// All possible types for "instances[x]"
-	public enum InstancesX: Equatable, Hashable, Sendable {
+	public indirect enum InstancesX: Equatable, Hashable, Sendable {
 		case range(Range)
 		case unsignedInt(FHIRPrimitive<FHIRUnsignedInteger>)
 	}
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case expression(Expression)

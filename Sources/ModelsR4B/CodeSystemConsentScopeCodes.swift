@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/consentscope
  */
-public enum ConsentScopeCodes: String, FHIRPrimitiveType {
+public indirect enum ConsentScopeCodes: String, FHIRPrimitiveType {
 	
 	/// Actions to be taken if they are no longer able to make decisions for themselves
 	case adr

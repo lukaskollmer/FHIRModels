@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/clinical-impression-status
  ValueSet: http://hl7.org/fhir/ValueSet/clinical-impression-status
  */
-public enum ClinicalImpressionStatus: String, FHIRPrimitiveType {
+public indirect enum ClinicalImpressionStatus: String, FHIRPrimitiveType {
 	
 	/// The assessment is done and the results are final.
 	case completed

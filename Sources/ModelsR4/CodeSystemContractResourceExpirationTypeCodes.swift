@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-expiration-type
  ValueSet: http://hl7.org/fhir/ValueSet/contract-expiration-type
  */
-public enum ContractResourceExpirationTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceExpirationTypeCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case breach

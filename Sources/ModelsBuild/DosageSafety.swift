@@ -99,7 +99,7 @@ public struct DosageSafety: BackboneType {
 public struct DosageSafetyDoseLimit: Element {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case expression(Expression)
 		case integer(FHIRPrimitive<FHIRInteger>)
 		case quantity(Quantity)

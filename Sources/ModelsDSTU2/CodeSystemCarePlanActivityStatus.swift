@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/care-plan-activity-status
  ValueSet: http://hl7.org/fhir/ValueSet/care-plan-activity-status
  */
-public enum CarePlanActivityStatus: String, FHIRPrimitiveType {
+public indirect enum CarePlanActivityStatus: String, FHIRPrimitiveType {
 	
 	/// The activities have been ended prior to completion (perhaps even before they were started).
 	case cancelled

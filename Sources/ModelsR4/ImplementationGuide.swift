@@ -470,7 +470,7 @@ public struct ImplementationGuideDefinitionGrouping: BackboneElement {
 public struct ImplementationGuideDefinitionPage: BackboneElement {
 	
 	/// All possible types for "name[x]"
-	public enum NameX: Equatable, Hashable, Sendable {
+	public indirect enum NameX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case url(FHIRPrimitive<FHIRURI>)
 	}
@@ -670,7 +670,7 @@ public struct ImplementationGuideDefinitionParameter: BackboneElement {
 public struct ImplementationGuideDefinitionResource: BackboneElement {
 	
 	/// All possible types for "example[x]"
-	public enum ExampleX: Equatable, Hashable, Sendable {
+	public indirect enum ExampleX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case canonical(FHIRPrimitive<Canonical>)
 	}
@@ -1234,7 +1234,7 @@ public struct ImplementationGuideManifestPage: BackboneElement {
 public struct ImplementationGuideManifestResource: BackboneElement {
 	
 	/// All possible types for "example[x]"
-	public enum ExampleX: Equatable, Hashable, Sendable {
+	public indirect enum ExampleX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case canonical(FHIRPrimitive<Canonical>)
 	}

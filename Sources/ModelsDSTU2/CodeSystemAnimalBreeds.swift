@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/animal-breed
  ValueSet: http://hl7.org/fhir/ValueSet/animal-breeds
  */
-public enum AnimalBreeds: String, FHIRPrimitiveType {
+public indirect enum AnimalBreeds: String, FHIRPrimitiveType {
 	
 	/// gret
 	case gret

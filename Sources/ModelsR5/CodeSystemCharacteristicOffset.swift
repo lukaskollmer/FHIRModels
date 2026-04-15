@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/characteristic-offset
  ValueSet: http://hl7.org/fhir/ValueSet/characteristic-offset
  */
-public enum CharacteristicOffset: String, FHIRPrimitiveType {
+public indirect enum CharacteristicOffset: String, FHIRPrimitiveType {
 	
 	/// The lower bound of the reference range.
 	case LNL

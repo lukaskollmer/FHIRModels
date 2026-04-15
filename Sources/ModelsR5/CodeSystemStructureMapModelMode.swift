@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-model-mode
  ValueSet: http://hl7.org/fhir/ValueSet/map-model-mode
  */
-public enum StructureMapModelMode: String, FHIRPrimitiveType {
+public indirect enum StructureMapModelMode: String, FHIRPrimitiveType {
 	
 	/// This structure describes an instance that the mapping engine may ask to create that is used a target of data.
 	case produced

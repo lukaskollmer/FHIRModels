@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicestatus
  ValueSet: http://hl7.org/fhir/ValueSet/devicestatus
  */
-public enum DeviceStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceStatus: String, FHIRPrimitiveType {
 	
 	/// The Device is available for use.
 	case available

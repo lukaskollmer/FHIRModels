@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/search-modifier-code
  ValueSet: http://hl7.org/fhir/ValueSet/search-modifier-code
  */
-public enum SearchModifierCode: String, FHIRPrimitiveType {
+public indirect enum SearchModifierCode: String, FHIRPrimitiveType {
 	
 	/// The search parameter is a URI (relative or absolute) that identifies a value set, and the search parameter tests
 	/// whether the coding is in the specified value set.

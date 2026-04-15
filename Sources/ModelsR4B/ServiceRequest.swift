@@ -29,20 +29,20 @@ public struct ServiceRequest: DomainResource {
 	public static let resourceType: ResourceType = .serviceRequest
 	
 	/// All possible types for "asNeeded[x]"
-	public enum AsNeededX: Equatable, Hashable, Sendable {
+	public indirect enum AsNeededX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 	}
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
 	}
 	
 	/// All possible types for "quantity[x]"
-	public enum QuantityX: Equatable, Hashable, Sendable {
+	public indirect enum QuantityX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case range(Range)
 		case ratio(Ratio)

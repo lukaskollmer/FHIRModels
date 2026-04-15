@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/provenance-entity-role
  ValueSet: http://hl7.org/fhir/ValueSet/provenance-entity-role
  */
-public enum ProvenanceEntityRole: String, FHIRPrimitiveType {
+public indirect enum ProvenanceEntityRole: String, FHIRPrimitiveType {
 	
 	/// The record resulting from this event adheres to the protocol, guideline, order set or other definition
 	/// represented by this entity.

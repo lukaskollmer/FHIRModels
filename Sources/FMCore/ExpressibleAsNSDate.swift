@@ -23,7 +23,7 @@ public protocol ExpressibleAsNSDate {
 	func asNSDate() throws -> Date
 }
 
-public enum DateExpressionError: Error {
+public indirect enum DateExpressionError: Error {
 	case unableToExpressAsDate(DateComponents)
 	case unableToConstructFromDate(Date, DateComponents)
 }

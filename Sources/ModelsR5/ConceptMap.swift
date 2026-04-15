@@ -30,19 +30,19 @@ public struct ConceptMap: DomainResource {
 	public static let resourceType: ResourceType = .conceptMap
 	
 	/// All possible types for "sourceScope[x]"
-	public enum SourceScopeX: Equatable, Hashable, Sendable {
+	public indirect enum SourceScopeX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
 	
 	/// All possible types for "targetScope[x]"
-	public enum TargetScopeX: Equatable, Hashable, Sendable {
+	public indirect enum TargetScopeX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -877,7 +877,7 @@ public struct ConceptMapGroupElementTarget: BackboneElement {
 public struct ConceptMapGroupElementTargetDependsOn: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case code(FHIRPrimitive<FHIRString>)
 		case coding(Coding)
@@ -1019,7 +1019,7 @@ public struct ConceptMapGroupElementTargetDependsOn: BackboneElement {
 public struct ConceptMapGroupElementTargetProperty: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case code(FHIRPrimitive<FHIRString>)
 		case coding(Coding)

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/issue-severity
  ValueSet: http://hl7.org/fhir/ValueSet/issue-severity
  */
-public enum IssueSeverity: String, FHIRPrimitiveType {
+public indirect enum IssueSeverity: String, FHIRPrimitiveType {
 	
 	/// The issue is sufficiently important to cause the action to fail.
 	case error

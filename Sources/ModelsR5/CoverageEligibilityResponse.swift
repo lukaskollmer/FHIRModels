@@ -29,7 +29,7 @@ public struct CoverageEligibilityResponse: DomainResource {
 	public static let resourceType: ResourceType = .coverageEligibilityResponse
 	
 	/// All possible types for "serviced[x]"
-	public enum ServicedX: Equatable, Hashable, Sendable {
+	public indirect enum ServicedX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}
@@ -366,7 +366,7 @@ public struct CoverageEligibilityResponseError: BackboneElement {
 public struct CoverageEligibilityResponseEvent: BackboneElement {
 	
 	/// All possible types for "when[x]"
-	public enum WhenX: Equatable, Hashable, Sendable {
+	public indirect enum WhenX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -739,14 +739,14 @@ public struct CoverageEligibilityResponseInsuranceItem: BackboneElement {
 public struct CoverageEligibilityResponseInsuranceItemBenefit: BackboneElement {
 	
 	/// All possible types for "allowed[x]"
-	public enum AllowedX: Equatable, Hashable, Sendable {
+	public indirect enum AllowedX: Equatable, Hashable, Sendable {
 		case money(Money)
 		case string(FHIRPrimitive<FHIRString>)
 		case unsignedInt(FHIRPrimitive<FHIRUnsignedInteger>)
 	}
 	
 	/// All possible types for "used[x]"
-	public enum UsedX: Equatable, Hashable, Sendable {
+	public indirect enum UsedX: Equatable, Hashable, Sendable {
 		case money(Money)
 		case string(FHIRPrimitive<FHIRString>)
 		case unsignedInt(FHIRPrimitive<FHIRUnsignedInteger>)

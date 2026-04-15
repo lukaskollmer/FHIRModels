@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/claim-use-link
  ValueSet: http://hl7.org/fhir/ValueSet/claim-use-link
  */
-public enum Use: String, FHIRPrimitiveType {
+public indirect enum Use: String, FHIRPrimitiveType {
 	
 	/// The treatment is complete and this represents a Claim for the services.
 	case complete

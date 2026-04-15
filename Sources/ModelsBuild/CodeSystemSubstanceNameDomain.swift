@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-name-domain
  ValueSet: http://hl7.org/fhir/ValueSet/substance-name-domain
  */
-public enum SubstanceNameDomain: String, FHIRPrimitiveType {
+public indirect enum SubstanceNameDomain: String, FHIRPrimitiveType {
 	
 	/// activeIngredient
 	case activeIngredient = "ActiveIngredient"

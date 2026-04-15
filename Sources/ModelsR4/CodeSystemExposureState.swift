@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/exposure-state
  ValueSet: http://hl7.org/fhir/ValueSet/exposure-state
  */
-public enum ExposureState: String, FHIRPrimitiveType {
+public indirect enum ExposureState: String, FHIRPrimitiveType {
 	
 	/// used when the results by exposure is describing the results for the primary exposure of interest.
 	case exposure

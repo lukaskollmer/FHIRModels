@@ -27,15 +27,18 @@ let package = Package(
 		.target(name: "ModelsBuild", dependencies: ["FMCore"]),
 		.testTarget(name: "CoreTests", dependencies: ["FMCore"]),
 		.testTarget(name: "DateTimeTests", dependencies: ["ModelsR5"]),
-		.testTarget(name: "ModelTests",
-					dependencies: [
-						"ModelsDSTU2",
-						"ModelsSTU3",
-						"ModelsR4",
-						"ModelsR4B",
-						"ModelsR5",
-						"ModelsBuild",
-					]),
+		.testTarget(
+            name: "ModelTests",
+            dependencies: [
+                "ModelsDSTU2",
+                "ModelsSTU3",
+                "ModelsR4",
+                "ModelsR4B",
+                "ModelsR5",
+                "ModelsBuild",
+            ],
+            resources: [.process("Resources")]
+        ),
 		.testTarget(name: "PrimitiveTests", dependencies: ["ModelsR4"]),
 	]
 )

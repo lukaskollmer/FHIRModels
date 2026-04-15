@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medicationrequest-intent
  ValueSet: http://hl7.org/fhir/ValueSet/medicationrequest-intent
  */
-public enum MedicationRequestIntentCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationRequestIntentCodes: String, FHIRPrimitiveType {
 	
 	/// The request represents the view of an authorization instantiated by a fulfilling system representing the details
 	/// of the fulfiller's intention to act upon a submitted order.

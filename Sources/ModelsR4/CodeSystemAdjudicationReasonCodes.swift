@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/adjudication-reason
  ValueSet: http://hl7.org/fhir/ValueSet/adjudication-reason
  */
-public enum AdjudicationReasonCodes: String, FHIRPrimitiveType {
+public indirect enum AdjudicationReasonCodes: String, FHIRPrimitiveType {
 	
 	/// Not covered
 	case ar001

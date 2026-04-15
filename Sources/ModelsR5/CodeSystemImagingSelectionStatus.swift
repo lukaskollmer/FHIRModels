@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/imagingselection-status
  ValueSet: http://hl7.org/fhir/ValueSet/imagingselection-status
  */
-public enum ImagingSelectionStatus: String, FHIRPrimitiveType {
+public indirect enum ImagingSelectionStatus: String, FHIRPrimitiveType {
 	
 	/// The selected resources are available..
 	case available

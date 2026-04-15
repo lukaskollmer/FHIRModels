@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-activationState
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-activationState
  */
-public enum DeviceAlertActivationState: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertActivationState: String, FHIRPrimitiveType {
 	
 	/// The intended system function (e.g., detecting or signaling) is deactivated
 	case off

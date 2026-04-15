@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/discriminator-type
  ValueSet: http://hl7.org/fhir/ValueSet/discriminator-type
  */
-public enum DiscriminatorType: String, FHIRPrimitiveType {
+public indirect enum DiscriminatorType: String, FHIRPrimitiveType {
 	
 	/// The slices are differentiated by the presence or absence of the nominated element. There SHALL be no more than
 	/// two slices. The slices are differentiated by the fact that one must have a max of 0 and the other must have a

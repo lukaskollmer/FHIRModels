@@ -25,7 +25,7 @@ import FMCore
  URL: http://www.hl7.org/fhir/contractaction
  ValueSet: http://hl7.org/fhir/ValueSet/contract-action
  */
-public enum ContractActionCodes: String, FHIRPrimitiveType {
+public indirect enum ContractActionCodes: String, FHIRPrimitiveType {
 	
 	/// actionA
 	case actionA = "action-a"

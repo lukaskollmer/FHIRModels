@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-input-mode
  ValueSet: http://hl7.org/fhir/ValueSet/map-input-mode
  */
-public enum StructureMapInputMode: String, FHIRPrimitiveType {
+public indirect enum StructureMapInputMode: String, FHIRPrimitiveType {
 	
 	/// Names an input instance used a source for mapping.
 	case source

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/note-type
  ValueSet: http://hl7.org/fhir/ValueSet/note-type
  */
-public enum NoteType: String, FHIRPrimitiveType {
+public indirect enum NoteType: String, FHIRPrimitiveType {
 	
 	/// Display the note.
 	case display

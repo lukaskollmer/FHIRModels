@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic
  ValueSet: http://hl7.org/fhir/ValueSet/medicationknowledge-characteristic
  */
-public enum MedicationKnowledgeCharacteristicCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationKnowledgeCharacteristicCodes: String, FHIRPrimitiveType {
 	
 	/// Description of the coating of the product
 	case coating

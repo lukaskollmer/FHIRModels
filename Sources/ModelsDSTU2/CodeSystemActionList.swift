@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/actionlist
  ValueSet: http://hl7.org/fhir/ValueSet/actionlist
  */
-public enum ActionList: String, FHIRPrimitiveType {
+public indirect enum ActionList: String, FHIRPrimitiveType {
 	
 	/// Cancel, reverse or nullify the target resource.
 	case cancel

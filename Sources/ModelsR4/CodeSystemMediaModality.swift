@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/media-modality
  */
-public enum MediaModality: String, FHIRPrimitiveType {
+public indirect enum MediaModality: String, FHIRPrimitiveType {
 	
 	/// A diagram. Often used in diagnostic reports
 	case diagram

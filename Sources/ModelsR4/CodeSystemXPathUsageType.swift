@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/search-xpath-usage
  ValueSet: http://hl7.org/fhir/ValueSet/search-xpath-usage
  */
-public enum XPathUsageType: String, FHIRPrimitiveType {
+public indirect enum XPathUsageType: String, FHIRPrimitiveType {
 	
 	/// The search parameter is based on a spatial transform of the selected nodes, using physical distance from the
 	/// middle.

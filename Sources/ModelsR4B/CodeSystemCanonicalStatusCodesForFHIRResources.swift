@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/resource-status
  ValueSet: http://hl7.org/fhir/ValueSet/resource-status
  */
-public enum CanonicalStatusCodesForFHIRResources: String, FHIRPrimitiveType {
+public indirect enum CanonicalStatusCodesForFHIRResources: String, FHIRPrimitiveType {
 	
 	/// The process described/requested in the resource did not complete - usually due to some workflow error, and no
 	/// further action is planned

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/property-representation
  ValueSet: http://hl7.org/fhir/ValueSet/property-representation
  */
-public enum PropertyRepresentation: String, FHIRPrimitiveType {
+public indirect enum PropertyRepresentation: String, FHIRPrimitiveType {
 	
 	/// Use CDA narrative instead of XHTML
 	case cdaText

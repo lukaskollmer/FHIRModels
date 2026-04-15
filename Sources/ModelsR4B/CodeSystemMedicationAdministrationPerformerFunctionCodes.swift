@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/med-admin-perform-function
  ValueSet: http://hl7.org/fhir/ValueSet/med-admin-perform-function
  */
-public enum MedicationAdministrationPerformerFunctionCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationAdministrationPerformerFunctionCodes: String, FHIRPrimitiveType {
 	
 	/// A person, non-person living subject, organization or device that who actually and principally carries out the
 	/// action

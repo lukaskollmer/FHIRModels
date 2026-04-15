@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-special-arrangements
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-special-arrangements
  */
-public enum SpecialArrangements: String, FHIRPrimitiveType {
+public indirect enum SpecialArrangements: String, FHIRPrimitiveType {
 	
 	/// att
 	case att

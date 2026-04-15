@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/qicore-adverseevent-type
  ValueSet: http://hl7.org/fhir/ValueSet/qicore-adverseevent-type
  */
-public enum QICoreAdverseEventTypeCodes: String, FHIRPrimitiveType {
+public indirect enum QICoreAdverseEventTypeCodes: String, FHIRPrimitiveType {
 	
 	/// A safety incident, reaction, medication error, or other untoward medical event affecting a patient
 	case incident

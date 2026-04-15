@@ -28,7 +28,7 @@ import FMCore
 public struct DataRequirement: Element {
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -258,7 +258,7 @@ public struct DataRequirementCodeFilter: Element {
 public struct DataRequirementDateFilter: Element {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
 		case period(Period)

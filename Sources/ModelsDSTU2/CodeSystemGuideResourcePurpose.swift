@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/guide-resource-purpose
  ValueSet: http://hl7.org/fhir/ValueSet/guide-resource-purpose
  */
-public enum GuideResourcePurpose: String, FHIRPrimitiveType {
+public indirect enum GuideResourcePurpose: String, FHIRPrimitiveType {
 	
 	/// The resource defines an extension (StructureDefinition) that is used in the implementation guide.
 	case `extension`

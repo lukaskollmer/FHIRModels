@@ -19,7 +19,7 @@
 
 import FMCore
 
-public enum ResourceProxy: FHIRType {
+public indirect enum ResourceProxy: FHIRType {
 	case account(Account)
 	case activityDefinition(ActivityDefinition)
 	case adverseEvent(AdverseEvent)
@@ -30,7 +30,7 @@ public enum ResourceProxy: FHIRType {
 	case basic(Basic)
 	case binary(Binary)
 	case bodySite(BodySite)
-	indirect case bundle(Bundle)
+	case bundle(Bundle)
 	case capabilityStatement(CapabilityStatement)
 	case carePlan(CarePlan)
 	case careTeam(CareTeam)

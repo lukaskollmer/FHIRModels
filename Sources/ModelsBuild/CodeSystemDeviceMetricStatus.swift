@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/metric-status
  ValueSet: http://hl7.org/fhir/ValueSet/metric-status
  */
-public enum DeviceMetricStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceMetricStatus: String, FHIRPrimitiveType {
 	
 	/// The device metric record is active.
 	case active

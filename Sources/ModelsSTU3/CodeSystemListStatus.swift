@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/list-status
  ValueSet: http://hl7.org/fhir/ValueSet/list-status
  */
-public enum ListStatus: String, FHIRPrimitiveType {
+public indirect enum ListStatus: String, FHIRPrimitiveType {
 	
 	/// The list is considered to be an active part of the patient's record.
 	case current

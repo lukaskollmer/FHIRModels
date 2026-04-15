@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/service-mode
  ValueSet: http://hl7.org/fhir/ValueSet/service-mode
  */
-public enum ServiceMode: String, FHIRPrimitiveType {
+public indirect enum ServiceMode: String, FHIRPrimitiveType {
 	
 	/// This service will be provided via a realtime chat/messaging conversation
 	case chat

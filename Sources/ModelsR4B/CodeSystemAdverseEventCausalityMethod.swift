@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/adverse-event-causality-method
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-causality-method
  */
-public enum AdverseEventCausalityMethod: String, FHIRPrimitiveType {
+public indirect enum AdverseEventCausalityMethod: String, FHIRPrimitiveType {
 	
 	/// bayesian
 	case bayesian = "Bayesian"

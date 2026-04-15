@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/care-plan-status
  ValueSet: http://hl7.org/fhir/ValueSet/care-plan-status
  */
-public enum CarePlanStatus: String, FHIRPrimitiveType {
+public indirect enum CarePlanStatus: String, FHIRPrimitiveType {
 	
 	/// The plan is intended to be followed and used as part of patient care.
 	case active

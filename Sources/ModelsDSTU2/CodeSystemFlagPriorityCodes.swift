@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/flag-priority-code
  ValueSet: http://hl7.org/fhir/ValueSet/flag-priority
  */
-public enum FlagPriorityCodes: String, FHIRPrimitiveType {
+public indirect enum FlagPriorityCodes: String, FHIRPrimitiveType {
 	
 	/// High priority.
 	case PH

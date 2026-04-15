@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-origin-relationship
  ValueSet: http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-origin-relationship
  */
-public enum BiologicallyDerivedProductDispenseOriginRelationship: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductDispenseOriginRelationship: String, FHIRPrimitiveType {
 	
 	/// The donor and the recipient are unrelated
 	case allogeneic

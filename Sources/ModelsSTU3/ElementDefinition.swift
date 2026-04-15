@@ -27,7 +27,7 @@ import FMCore
 public struct ElementDefinition: Element {
 	
 	/// All possible types for "defaultValue[x]"
-	public enum DefaultValueX: Equatable, Hashable, Sendable {
+	public indirect enum DefaultValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)
@@ -69,7 +69,7 @@ public struct ElementDefinition: Element {
 	}
 	
 	/// All possible types for "fixed[x]"
-	public enum FixedX: Equatable, Hashable, Sendable {
+	public indirect enum FixedX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)
@@ -111,7 +111,7 @@ public struct ElementDefinition: Element {
 	}
 	
 	/// All possible types for "maxValue[x]"
-	public enum MaxValueX: Equatable, Hashable, Sendable {
+	public indirect enum MaxValueX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case decimal(FHIRPrimitive<FHIRDecimal>)
@@ -124,7 +124,7 @@ public struct ElementDefinition: Element {
 	}
 	
 	/// All possible types for "minValue[x]"
-	public enum MinValueX: Equatable, Hashable, Sendable {
+	public indirect enum MinValueX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case decimal(FHIRPrimitive<FHIRDecimal>)
@@ -137,7 +137,7 @@ public struct ElementDefinition: Element {
 	}
 	
 	/// All possible types for "pattern[x]"
-	public enum PatternX: Equatable, Hashable, Sendable {
+	public indirect enum PatternX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)
@@ -1775,7 +1775,7 @@ public struct ElementDefinitionBase: Element {
 public struct ElementDefinitionBinding: Element {
 	
 	/// All possible types for "valueSet[x]"
-	public enum ValueSetX: Equatable, Hashable, Sendable {
+	public indirect enum ValueSetX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
@@ -1989,7 +1989,7 @@ public struct ElementDefinitionConstraint: Element {
 public struct ElementDefinitionExample: Element {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)

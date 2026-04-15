@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/procedure-status
  ValueSet: http://hl7.org/fhir/ValueSet/procedure-status
  */
-public enum ProcedureStatus: String, FHIRPrimitiveType {
+public indirect enum ProcedureStatus: String, FHIRPrimitiveType {
 	
 	/// The procedure was terminated without completing successfully.
 	case aborted

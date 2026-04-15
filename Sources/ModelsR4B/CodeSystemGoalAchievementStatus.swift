@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/goal-achievement
  ValueSet: http://hl7.org/fhir/ValueSet/goal-achievement
  */
-public enum GoalAchievementStatus: String, FHIRPrimitiveType {
+public indirect enum GoalAchievementStatus: String, FHIRPrimitiveType {
 	
 	/// The goal has been met.
 	case achieved

@@ -218,7 +218,7 @@ public struct NutritionProduct: DomainResource {
 public struct NutritionProductCharacteristic: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case base64Binary(FHIRPrimitive<Base64Binary>)
 		case boolean(FHIRPrimitive<FHIRBool>)
@@ -365,7 +365,7 @@ public struct NutritionProductCharacteristic: BackboneElement {
 public struct NutritionProductIngredient: BackboneElement {
 	
 	/// All possible types for "amount[x]"
-	public enum AmountX: Equatable, Hashable, Sendable {
+	public indirect enum AmountX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case ratio(Ratio)
 	}
@@ -593,7 +593,7 @@ public struct NutritionProductInstance: BackboneElement {
 public struct NutritionProductNutrient: BackboneElement {
 	
 	/// All possible types for "amount[x]"
-	public enum AmountX: Equatable, Hashable, Sendable {
+	public indirect enum AmountX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case ratio(Ratio)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type
  ValueSet: http://hl7.org/fhir/ValueSet/medicationknowledge-package-type
  */
-public enum MedicationKnowledgePackageTypeCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationKnowledgePackageTypeCodes: String, FHIRPrimitiveType {
 	
 	/// amp
 	case amp

@@ -31,13 +31,13 @@ public struct Evidence: DomainResource {
 	public static let resourceType: ResourceType = .evidence
 	
 	/// All possible types for "citeAs[x]"
-	public enum CiteAsX: Equatable, Hashable, Sendable {
+	public indirect enum CiteAsX: Equatable, Hashable, Sendable {
 		case markdown(FHIRPrimitive<FHIRString>)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}

@@ -28,7 +28,7 @@ import FMCore
 public struct Population: BackboneElement {
 	
 	/// All possible types for "age[x]"
-	public enum AgeX: Equatable, Hashable, Sendable {
+	public indirect enum AgeX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case range(Range)
 	}

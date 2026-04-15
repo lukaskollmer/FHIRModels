@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contact-point-system
  ValueSet: http://hl7.org/fhir/ValueSet/contact-point-system
  */
-public enum ContactPointSystem: String, FHIRPrimitiveType {
+public indirect enum ContactPointSystem: String, FHIRPrimitiveType {
 	
 	/// The value is an email address.
 	case email

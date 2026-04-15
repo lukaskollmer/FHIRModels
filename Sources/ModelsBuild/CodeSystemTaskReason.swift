@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/task-reason
  ValueSet: http://hl7.org/fhir/ValueSet/task-reason
  */
-public enum TaskReason: String, FHIRPrimitiveType {
+public indirect enum TaskReason: String, FHIRPrimitiveType {
 	
 	/// The task is requesting a patient to be admitted.
 	case admittance

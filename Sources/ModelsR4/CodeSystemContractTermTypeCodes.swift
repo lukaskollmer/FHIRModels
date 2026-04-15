@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/contracttermtypecodes
  ValueSet: http://hl7.org/fhir/ValueSet/contract-term-type
  */
-public enum ContractTermTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractTermTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Based on specialized statutes that deal with particular subjects.
 	case statutory

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medication-cost-category
  ValueSet: http://hl7.org/fhir/ValueSet/medication-cost-category
  */
-public enum MedicationCostCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationCostCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Tier A cost for this medication
 	case banda

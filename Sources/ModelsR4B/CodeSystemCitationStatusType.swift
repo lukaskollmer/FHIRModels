@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/citation-status-type
  ValueSet: http://hl7.org/fhir/ValueSet/citation-status-type
  */
-public enum CitationStatusType: String, FHIRPrimitiveType {
+public indirect enum CitationStatusType: String, FHIRPrimitiveType {
 	
 	/// Medline Citation Status of Completed
 	case medlineCompleted = "medline-completed"

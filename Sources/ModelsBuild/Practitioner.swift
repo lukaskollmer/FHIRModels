@@ -29,7 +29,7 @@ public struct Practitioner: DomainResource {
 	public static let resourceType: ResourceType = .practitioner
 	
 	/// All possible types for "deceased[x]"
-	public enum DeceasedX: Equatable, Hashable, Sendable {
+	public indirect enum DeceasedX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case dateTime(FHIRPrimitive<DateTime>)
 	}

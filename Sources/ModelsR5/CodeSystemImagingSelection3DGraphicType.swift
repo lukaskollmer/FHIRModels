@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/imagingselection-3dgraphictype
  ValueSet: http://hl7.org/fhir/ValueSet/imagingselection-3dgraphictype
  */
-public enum ImagingSelection3DGraphicType: String, FHIRPrimitiveType {
+public indirect enum ImagingSelection3DGraphicType: String, FHIRPrimitiveType {
 	
 	/// an ellipse defined by four (x,y,z) triplets, the first two triplets specifying the endpoints of the major axis
 	/// and the second two triplets specifying the endpoints of the minor axis.

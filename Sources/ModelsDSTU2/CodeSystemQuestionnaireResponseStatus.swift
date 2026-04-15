@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/questionnaire-answers-status
  ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-answers-status
  */
-public enum QuestionnaireResponseStatus: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireResponseStatus: String, FHIRPrimitiveType {
 	
 	/// This QuestionnaireResponse has been filled out with answers, then marked as complete, yet changes or additions
 	/// have been made to it afterwards.

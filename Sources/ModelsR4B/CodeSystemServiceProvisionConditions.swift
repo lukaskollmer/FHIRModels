@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/service-provision-conditions
  ValueSet: http://hl7.org/fhir/ValueSet/service-provision-conditions
  */
-public enum ServiceProvisionConditions: String, FHIRPrimitiveType {
+public indirect enum ServiceProvisionConditions: String, FHIRPrimitiveType {
 	
 	/// Fees apply for this service.
 	case cost

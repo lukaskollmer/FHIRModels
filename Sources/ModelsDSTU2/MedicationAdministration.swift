@@ -31,13 +31,13 @@ public struct MedicationAdministration: DomainResource {
 	public static let resourceType: ResourceType = .medicationAdministration
 	
 	/// All possible types for "effectiveTime[x]"
-	public enum EffectiveTimeX: Equatable, Hashable, Sendable {
+	public indirect enum EffectiveTimeX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
 	
 	/// All possible types for "medication[x]"
-	public enum MedicationX: Equatable, Hashable, Sendable {
+	public indirect enum MedicationX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

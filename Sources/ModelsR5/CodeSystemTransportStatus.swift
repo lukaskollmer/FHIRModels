@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/transport-status
  ValueSet: http://hl7.org/fhir/ValueSet/transport-status
  */
-public enum TransportStatus: String, FHIRPrimitiveType {
+public indirect enum TransportStatus: String, FHIRPrimitiveType {
 	
 	/// Transport was started but not completed.
 	case abandoned

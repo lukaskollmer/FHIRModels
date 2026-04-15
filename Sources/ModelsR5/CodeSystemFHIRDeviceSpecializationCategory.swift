@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-specification-category
  ValueSet: http://hl7.org/fhir/ValueSet/device-specification-category
  */
-public enum FHIRDeviceSpecializationCategory: String, FHIRPrimitiveType {
+public indirect enum FHIRDeviceSpecializationCategory: String, FHIRPrimitiveType {
 	
 	/// A communication standard.
 	case communication

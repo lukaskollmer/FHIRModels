@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-prim-purp-type
  */
-public enum ResearchStudyPrimaryPurposeType: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyPrimaryPurposeType: String, FHIRPrimitiveType {
 	
 	/// One or more interventions for examining the basic mechanism of action (for example, physiology or biomechanics
 	/// of an intervention).

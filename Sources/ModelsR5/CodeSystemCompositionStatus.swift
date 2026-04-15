@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/composition-status
  ValueSet: http://hl7.org/fhir/ValueSet/composition-status
  */
-public enum CompositionStatus: String, FHIRPrimitiveType {
+public indirect enum CompositionStatus: String, FHIRPrimitiveType {
 	
 	/// The composition content or the referenced resources have been modified (edited or added to) subsequent to being
 	/// released as "final" and the composition is complete and verified by an authorized person.

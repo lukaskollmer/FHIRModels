@@ -30,21 +30,21 @@ public struct FamilyMemberHistory: DomainResource {
 	public static let resourceType: ResourceType = .familyMemberHistory
 	
 	/// All possible types for "age[x]"
-	public enum AgeX: Equatable, Hashable, Sendable {
+	public indirect enum AgeX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case range(Range)
 		case string(FHIRPrimitive<FHIRString>)
 	}
 	
 	/// All possible types for "born[x]"
-	public enum BornX: Equatable, Hashable, Sendable {
+	public indirect enum BornX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 		case string(FHIRPrimitive<FHIRString>)
 	}
 	
 	/// All possible types for "deceased[x]"
-	public enum DeceasedX: Equatable, Hashable, Sendable {
+	public indirect enum DeceasedX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case date(FHIRPrimitive<FHIRDate>)
 		case quantity(Quantity)

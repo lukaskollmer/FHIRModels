@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-subject-status
  ValueSet: http://hl7.org/fhir/ValueSet/research-subject-status
  */
-public enum ResearchSubjectStatus: String, FHIRPrimitiveType {
+public indirect enum ResearchSubjectStatus: String, FHIRPrimitiveType {
 	
 	/// The subject is currently being monitored and/or subject to treatment as part of the study
 	case active

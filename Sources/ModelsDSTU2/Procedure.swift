@@ -30,13 +30,13 @@ public struct Procedure: DomainResource {
 	public static let resourceType: ResourceType = .procedure
 	
 	/// All possible types for "performed[x]"
-	public enum PerformedX: Equatable, Hashable, Sendable {
+	public indirect enum PerformedX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
 	
 	/// All possible types for "reason[x]"
-	public enum ReasonX: Equatable, Hashable, Sendable {
+	public indirect enum ReasonX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

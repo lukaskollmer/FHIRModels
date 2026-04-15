@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/related-artifact-type
  ValueSet: http://hl7.org/fhir/ValueSet/related-artifact-type
  */
-public enum RelatedArtifactType: String, FHIRPrimitiveType {
+public indirect enum RelatedArtifactType: String, FHIRPrimitiveType {
 	
 	/// This artifact is amended with or changed by the target artifact. There is information in this artifact that
 	/// should be functionally replaced with information in the target artifact.

@@ -302,7 +302,7 @@ public struct SpecimenDefinitionTypeTested: BackboneElement {
 public struct SpecimenDefinitionTypeTestedContainer: BackboneElement {
 	
 	/// All possible types for "minimumVolume[x]"
-	public enum MinimumVolumeX: Equatable, Hashable, Sendable {
+	public indirect enum MinimumVolumeX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -455,7 +455,7 @@ public struct SpecimenDefinitionTypeTestedContainer: BackboneElement {
 public struct SpecimenDefinitionTypeTestedContainerAdditive: BackboneElement {
 	
 	/// All possible types for "additive[x]"
-	public enum AdditiveX: Equatable, Hashable, Sendable {
+	public indirect enum AdditiveX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

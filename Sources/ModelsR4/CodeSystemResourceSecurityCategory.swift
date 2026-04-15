@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/resource-security-category
  ValueSet: http://hl7.org/fhir/ValueSet/resource-security-category
  */
-public enum ResourceSecurityCategory: String, FHIRPrimitiveType {
+public indirect enum ResourceSecurityCategory: String, FHIRPrimitiveType {
 	
 	/// These resources tend to not contain any individual data, or business sensitive data. Most often these Resources
 	/// will be available for anonymous access, meaning there is no access control based on the user or system

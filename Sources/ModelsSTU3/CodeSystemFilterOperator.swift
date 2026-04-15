@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/filter-operator
  ValueSet: http://hl7.org/fhir/ValueSet/filter-operator
  */
-public enum FilterOperator: String, FHIRPrimitiveType {
+public indirect enum FilterOperator: String, FHIRPrimitiveType {
 	
 	/// The specified property of the code is in the set of codes or concepts specified in the provided value (comma
 	/// separated list).

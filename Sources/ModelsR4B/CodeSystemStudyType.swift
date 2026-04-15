@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/study-type
  ValueSet: http://hl7.org/fhir/ValueSet/study-type
  */
-public enum StudyType: String, FHIRPrimitiveType {
+public indirect enum StudyType: String, FHIRPrimitiveType {
 	
 	/// controlled (but not randomized) trial.
 	case CCT

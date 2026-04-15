@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-legalstate
  ValueSet: http://hl7.org/fhir/ValueSet/contract-legalstate
  */
-public enum ContractResourceLegalStateCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceLegalStateCodes: String, FHIRPrimitiveType {
 	
 	/// Contract is augmented with additional information to correct errors in a predecessor or to updated values in a
 	/// predecessor. Usage: Contract altered within effective time. Precedence Order = 9. Comparable FHIR and v.3 status

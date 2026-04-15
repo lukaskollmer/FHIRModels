@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/safety-entries
  ValueSet: http://hl7.org/fhir/ValueSet/safety-entries
  */
-public enum FHIRSafetyCheckListEntries: String, FHIRPrimitiveType {
+public indirect enum FHIRSafetyCheckListEntries: String, FHIRPrimitiveType {
 	
 	/// My system ensures that system clocks are synchronized using a protocol like NTP or SNTP, or my server is robust
 	/// against clients that have the wrong clock set

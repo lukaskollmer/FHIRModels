@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/definition-method
  ValueSet: http://hl7.org/fhir/ValueSet/definition-method
  */
-public enum DefinitionMethod: String, FHIRPrimitiveType {
+public indirect enum DefinitionMethod: String, FHIRPrimitiveType {
 	
 	/// Aggregated using mean of observed values.
 	case mean

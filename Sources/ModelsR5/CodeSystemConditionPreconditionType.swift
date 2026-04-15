@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/condition-precondition-type
  ValueSet: http://hl7.org/fhir/ValueSet/condition-precondition-type
  */
-public enum ConditionPreconditionType: String, FHIRPrimitiveType {
+public indirect enum ConditionPreconditionType: String, FHIRPrimitiveType {
 	
 	/// The observation is very sensitive for the condition, but may also indicate other conditions.
 	case sensitive

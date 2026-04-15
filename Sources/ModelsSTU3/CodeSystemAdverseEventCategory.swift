@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/adverse-event-category
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-category
  */
-public enum AdverseEventCategory: String, FHIRPrimitiveType {
+public indirect enum AdverseEventCategory: String, FHIRPrimitiveType {
 	
 	/// AE
 	case AE

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/benefit-unit
  ValueSet: http://hl7.org/fhir/ValueSet/benefit-unit
  */
-public enum UnitTypeCodes: String, FHIRPrimitiveType {
+public indirect enum UnitTypeCodes: String, FHIRPrimitiveType {
 	
 	/// A family, typically includes self, spouse(s) and children to a defined age
 	case family

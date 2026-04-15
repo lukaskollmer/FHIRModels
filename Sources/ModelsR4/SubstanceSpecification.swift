@@ -378,7 +378,7 @@ public struct SubstanceSpecificationFHIRString: BackboneElement {
 public struct SubstanceSpecificationMoiety: BackboneElement {
 	
 	/// All possible types for "amount[x]"
-	public enum AmountX: Equatable, Hashable, Sendable {
+	public indirect enum AmountX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -749,13 +749,13 @@ public struct SubstanceSpecificationNameOfficial: BackboneElement {
 public struct SubstanceSpecificationProperty: BackboneElement {
 	
 	/// All possible types for "amount[x]"
-	public enum AmountX: Equatable, Hashable, Sendable {
+	public indirect enum AmountX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case string(FHIRPrimitive<FHIRString>)
 	}
 	
 	/// All possible types for "definingSubstance[x]"
-	public enum DefiningSubstanceX: Equatable, Hashable, Sendable {
+	public indirect enum DefiningSubstanceX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -904,7 +904,7 @@ public struct SubstanceSpecificationProperty: BackboneElement {
 public struct SubstanceSpecificationRelationship: BackboneElement {
 	
 	/// All possible types for "amount[x]"
-	public enum AmountX: Equatable, Hashable, Sendable {
+	public indirect enum AmountX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case range(Range)
 		case ratio(Ratio)
@@ -912,7 +912,7 @@ public struct SubstanceSpecificationRelationship: BackboneElement {
 	}
 	
 	/// All possible types for "substance[x]"
-	public enum SubstanceX: Equatable, Hashable, Sendable {
+	public indirect enum SubstanceX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

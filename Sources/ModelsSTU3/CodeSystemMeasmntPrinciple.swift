@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/measurement-principle
  ValueSet: http://hl7.org/fhir/ValueSet/measurement-principle
  */
-public enum MeasmntPrinciple: String, FHIRPrimitiveType {
+public indirect enum MeasmntPrinciple: String, FHIRPrimitiveType {
 	
 	/// Measurement is done using the acoustical principle.
 	case acoustical

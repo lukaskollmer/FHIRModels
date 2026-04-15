@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/supply-kind
  */
-public enum SupplyType: String, FHIRPrimitiveType {
+public indirect enum SupplyType: String, FHIRPrimitiveType {
 	
 	/// Supply is stored and requested from central supply.
 	case central

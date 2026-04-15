@@ -29,7 +29,7 @@ public struct TestPlan: DomainResource {
 	public static let resourceType: ResourceType = .testPlan
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -687,7 +687,7 @@ public struct TestPlanTestCaseDependency: BackboneElement {
 public struct TestPlanTestCaseTestData: BackboneElement {
 	
 	/// All possible types for "source[x]"
-	public enum SourceX: Equatable, Hashable, Sendable {
+	public indirect enum SourceX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -871,7 +871,7 @@ public struct TestPlanTestCaseTestRun: BackboneElement {
 public struct TestPlanTestCaseTestRunScript: BackboneElement {
 	
 	/// All possible types for "source[x]"
-	public enum SourceX: Equatable, Hashable, Sendable {
+	public indirect enum SourceX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case string(FHIRPrimitive<FHIRString>)
 	}

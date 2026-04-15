@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/quality-type
  ValueSet: http://hl7.org/fhir/ValueSet/quality-type
  */
-public enum QualityType: String, FHIRPrimitiveType {
+public indirect enum QualityType: String, FHIRPrimitiveType {
 	
 	/// INDEL Comparison
 	case indel

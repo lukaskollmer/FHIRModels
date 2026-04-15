@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-correctiveactionscope
  ValueSet: http://hl7.org/fhir/ValueSet/device-correctiveactionscope
  */
-public enum DeviceCorrectiveActionScope: String, FHIRPrimitiveType {
+public indirect enum DeviceCorrectiveActionScope: String, FHIRPrimitiveType {
 	
 	/// The corrective action was intended for a specific batch of units identified by a lot number.
 	case lotNumbers = "lot-numbers"

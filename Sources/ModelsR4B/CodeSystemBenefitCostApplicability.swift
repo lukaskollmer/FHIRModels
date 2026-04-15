@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/insuranceplan-applicability
  ValueSet: http://hl7.org/fhir/ValueSet/applicability
  */
-public enum BenefitCostApplicability: String, FHIRPrimitiveType {
+public indirect enum BenefitCostApplicability: String, FHIRPrimitiveType {
 	
 	/// Provider is contracted with the health insurance company to provide services to plan members for specific pre-
 	/// negotiated rates

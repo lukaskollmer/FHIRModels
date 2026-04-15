@@ -29,7 +29,7 @@ public struct DeviceAlert: DomainResource {
 	public static let resourceType: ResourceType = .deviceAlert
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}

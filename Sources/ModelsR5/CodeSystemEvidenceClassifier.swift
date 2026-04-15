@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-classifier-code
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-classifier-code
  */
-public enum EvidenceClassifier: String, FHIRPrimitiveType {
+public indirect enum EvidenceClassifier: String, FHIRPrimitiveType {
 	
 	/// Allocation concealment not stated.
 	case allocConcealNotStated = "AllocConcealNotStated"

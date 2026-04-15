@@ -30,7 +30,7 @@ public struct AuditEvent: DomainResource {
 	public static let resourceType: ResourceType = .auditEvent
 	
 	/// All possible types for "occurred[x]"
-	public enum OccurredX: Equatable, Hashable, Sendable {
+	public indirect enum OccurredX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -273,7 +273,7 @@ public struct AuditEvent: DomainResource {
 public struct AuditEventAgent: BackboneElement {
 	
 	/// All possible types for "network[x]"
-	public enum NetworkX: Equatable, Hashable, Sendable {
+	public indirect enum NetworkX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case string(FHIRPrimitive<FHIRString>)
 		case uri(FHIRPrimitive<FHIRURI>)
@@ -543,7 +543,7 @@ public struct AuditEventEntity: BackboneElement {
 public struct AuditEventEntityDetail: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case base64Binary(FHIRPrimitive<Base64Binary>)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)

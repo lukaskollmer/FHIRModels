@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/catalogType
  */
-public enum CatalogType: String, FHIRPrimitiveType {
+public indirect enum CatalogType: String, FHIRPrimitiveType {
 	
 	/// Protocol List.
 	case `protocol`

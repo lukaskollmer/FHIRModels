@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/guide-parameter-code
  ValueSet: http://hl7.org/fhir/ValueSet/guide-parameter-code
  */
-public enum GuideParameterCode: String, FHIRPrimitiveType {
+public indirect enum GuideParameterCode: String, FHIRPrimitiveType {
 	
 	/// If the value of this string 0..* parameter is one of the metadata fields then all conformance resources will
 	/// have any specified [Resource].[field] overwritten with the ImplementationGuide.[field], where field is one of:

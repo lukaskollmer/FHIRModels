@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/task-code
  ValueSet: http://hl7.org/fhir/ValueSet/task-code
  */
-public enum TaskCode: String, FHIRPrimitiveType {
+public indirect enum TaskCode: String, FHIRPrimitiveType {
 	
 	/// Abort, cancel or withdraw the focal resource, as appropriate for the type of resource.
 	case abort

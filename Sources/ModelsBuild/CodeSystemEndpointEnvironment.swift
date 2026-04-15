@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/endpoint-environment
  ValueSet: http://hl7.org/fhir/ValueSet/endpoint-environment
  */
-public enum EndpointEnvironment: String, FHIRPrimitiveType {
+public indirect enum EndpointEnvironment: String, FHIRPrimitiveType {
 	
 	/// Development environment used while building systems
 	case dev

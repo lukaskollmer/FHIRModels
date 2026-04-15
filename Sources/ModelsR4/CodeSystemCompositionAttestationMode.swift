@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/composition-attestation-mode
  ValueSet: http://hl7.org/fhir/ValueSet/composition-attestation-mode
  */
-public enum CompositionAttestationMode: String, FHIRPrimitiveType {
+public indirect enum CompositionAttestationMode: String, FHIRPrimitiveType {
 	
 	/// The person authenticated the content and accepted legal responsibility for its content.
 	case legal

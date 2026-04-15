@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/reason-medication-given
  */
-public enum ReasonMedicationGivenCodes: String, FHIRPrimitiveType {
+public indirect enum ReasonMedicationGivenCodes: String, FHIRPrimitiveType {
 	
 	/// No reason known.
 	case A = "a"

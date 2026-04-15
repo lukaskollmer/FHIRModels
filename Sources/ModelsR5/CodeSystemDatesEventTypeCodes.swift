@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/datestype
  */
-public enum DatesEventTypeCodes: String, FHIRPrimitiveType {
+public indirect enum DatesEventTypeCodes: String, FHIRPrimitiveType {
 	
 	/// The date when an insurance card was issued.
 	case cardIssued = "card-issued"

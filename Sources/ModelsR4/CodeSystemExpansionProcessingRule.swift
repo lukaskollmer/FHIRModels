@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/expansion-processing-rule
  ValueSet: http://hl7.org/fhir/ValueSet/expansion-processing-rule
  */
-public enum ExpansionProcessingRule: String, FHIRPrimitiveType {
+public indirect enum ExpansionProcessingRule: String, FHIRPrimitiveType {
 	
 	/// The expansion (when in UI mode) includes all codes *and* any defined groups (in extensions).
 	case allCodes = "all-codes"

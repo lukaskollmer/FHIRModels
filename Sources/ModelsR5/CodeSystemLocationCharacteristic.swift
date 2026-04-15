@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/location-characteristic
  ValueSet: http://hl7.org/fhir/ValueSet/location-characteristic
  */
-public enum LocationCharacteristic: String, FHIRPrimitiveType {
+public indirect enum LocationCharacteristic: String, FHIRPrimitiveType {
 	
 	/// The location is or has an intensive care unit
 	case hasIcu = "has-icu"

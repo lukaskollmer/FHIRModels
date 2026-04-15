@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-use-request-priority
  ValueSet: http://hl7.org/fhir/ValueSet/device-use-request-priority
  */
-public enum DeviceUseRequestPriority: String, FHIRPrimitiveType {
+public indirect enum DeviceUseRequestPriority: String, FHIRPrimitiveType {
 	
 	/// The request should be acted on as soon as possible.
 	case asap

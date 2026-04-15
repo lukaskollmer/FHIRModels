@@ -27,7 +27,7 @@ public struct StructureMap: DomainResource {
 	public static let resourceType: ResourceType = .structureMap
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -1040,7 +1040,7 @@ public struct StructureMapGroupRuleTarget: BackboneElement {
 public struct StructureMapGroupRuleTargetParameter: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case date(FHIRPrimitive<FHIRDate>)
 		case dateTime(FHIRPrimitive<DateTime>)

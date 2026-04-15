@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/list-order
  */
-public enum ListOrderCodes: String, FHIRPrimitiveType {
+public indirect enum ListOrderCodes: String, FHIRPrimitiveType {
 	
 	/// The list is sorted alphabetically by an unspecified property of the items in the list.
 	case alphabetic

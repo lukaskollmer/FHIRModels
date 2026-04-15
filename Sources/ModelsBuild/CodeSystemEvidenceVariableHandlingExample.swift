@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/variable-handling-example
  ValueSet: http://hl7.org/fhir/ValueSet/variable-handling-example
  */
-public enum EvidenceVariableHandlingExample: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableHandlingExample: String, FHIRPrimitiveType {
 	
 	/// A boolean variable is a variable which is defined to have only 2 possible values: True or False.
 	case boolean

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/testscript-scope-phase-codes
  ValueSet: http://hl7.org/fhir/ValueSet/testscript-scope-phase-codes
  */
-public enum TestScriptScopePhaseType: String, FHIRPrimitiveType {
+public indirect enum TestScriptScopePhaseType: String, FHIRPrimitiveType {
 	
 	/// The internal system to system phase.
 	case integration

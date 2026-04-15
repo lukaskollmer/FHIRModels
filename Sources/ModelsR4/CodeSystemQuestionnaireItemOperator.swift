@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/questionnaire-enable-operator
  ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-enable-operator
  */
-public enum QuestionnaireItemOperator: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireItemOperator: String, FHIRPrimitiveType {
 	
 	/// True if whether at least one answer has a value that is equal to the enableWhen answer.
 	case equal = "="

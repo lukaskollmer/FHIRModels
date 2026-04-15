@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/CodeSystem/deviceassociation-association-status
  */
-public enum DeviceAssociationAssociationStatusCodes: String, FHIRPrimitiveType {
+public indirect enum DeviceAssociationAssociationStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The implanted device remains in the patient's body and is no longer in use.
 	case abandoned

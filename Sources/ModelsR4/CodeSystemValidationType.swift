@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/validation-type
  ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-validation-type
  */
-public enum ValidationType: String, FHIRPrimitiveType {
+public indirect enum ValidationType: String, FHIRPrimitiveType {
 	
 	/// multiple
 	case multiple

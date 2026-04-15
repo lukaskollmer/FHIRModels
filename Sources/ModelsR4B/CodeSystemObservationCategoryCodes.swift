@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/observation-category
  ValueSet: http://hl7.org/fhir/ValueSet/observation-category
  */
-public enum ObservationCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum ObservationCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Observations that measure or record any bodily activity that enhances or maintains physical fitness and overall
 	/// health and wellness.  Not under direct supervision of practitioner such as a physical therapist. (e.g., laps

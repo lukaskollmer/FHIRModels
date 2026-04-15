@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicationdispense-admin-location
  ValueSet: http://hl7.org/fhir/ValueSet/medicationdispense-admin-location
  */
-public enum MedDispenseAdminLocationCodes: String, FHIRPrimitiveType {
+public indirect enum MedDispenseAdminLocationCodes: String, FHIRPrimitiveType {
 	
 	/// Includes dispenses for medications to be administered or consumed by the patient in their home (this would
 	/// include long term care or nursing homes, hospices, etc.).

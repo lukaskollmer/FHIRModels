@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/concept-subsumption-outcome
  ValueSet: http://hl7.org/fhir/ValueSet/concept-subsumption-outcome
  */
-public enum ConceptSubsumptionOutcome: String, FHIRPrimitiveType {
+public indirect enum ConceptSubsumptionOutcome: String, FHIRPrimitiveType {
 	
 	/// The two concepts are equivalent (have the same properties).
 	case equivalent

@@ -25,7 +25,7 @@ import FMCore
  URL: http://loinc.org/vs/LL2654-3
  ValueSet: http://hl7.org/fhir/ValueSet/valueset-sdc-profile-example
  */
-public enum AHRQMedicationQ1: String, FHIRPrimitiveType {
+public indirect enum AHRQMedicationQ1: String, FHIRPrimitiveType {
 	
 	/// LA202715
 	case LA202715 = "LA20271-5"

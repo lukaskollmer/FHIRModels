@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-performer-function
  ValueSet: http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-performer-function
  */
-public enum BiologicallyDerivedProductDispensePerformerFunction: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductDispensePerformerFunction: String, FHIRPrimitiveType {
 	
 	/// Antibody identification procedure
 	case antibodyIdentification = "antibody-identification"

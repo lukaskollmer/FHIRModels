@@ -535,7 +535,7 @@ public struct NutritionOrderEnteralFormulaAdditive: BackboneElement {
 public struct NutritionOrderEnteralFormulaAdministration: BackboneElement {
 	
 	/// All possible types for "rate[x]"
-	public enum RateX: Equatable, Hashable, Sendable {
+	public indirect enum RateX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case ratio(Ratio)
 	}

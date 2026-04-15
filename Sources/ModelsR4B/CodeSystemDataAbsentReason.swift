@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/data-absent-reason
  ValueSet: http://hl7.org/fhir/ValueSet/data-absent-reason
  */
-public enum DataAbsentReason: String, FHIRPrimitiveType {
+public indirect enum DataAbsentReason: String, FHIRPrimitiveType {
 	
 	/// The content of the data is represented in the resource narrative.
 	case asText = "as-text"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/task-performer-function-code
  ValueSet: http://hl7.org/fhir/ValueSet/task-performer-function-code
  */
-public enum TaskPerformerFunctionCode: String, FHIRPrimitiveType {
+public indirect enum TaskPerformerFunctionCode: String, FHIRPrimitiveType {
 	
 	/// A person, non-person living subject, organization or device that who actually and principally carries out the
 	/// Task action.

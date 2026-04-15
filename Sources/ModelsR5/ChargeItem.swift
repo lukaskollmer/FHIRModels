@@ -32,7 +32,7 @@ public struct ChargeItem: DomainResource {
 	public static let resourceType: ResourceType = .chargeItem
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)

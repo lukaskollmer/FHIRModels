@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/consentpolicycodes
  */
-public enum PolicyCodes: String, FHIRPrimitiveType {
+public indirect enum PolicyCodes: String, FHIRPrimitiveType {
 	
 	/// Pursuant to Sec. 2 no. 9 Health Telematics Act 2012, ELGA Health Data ( “ELGA-Gesundheitsdaten”) = Medical
 	/// documents. Austria opted for an opt-out approach. This means that a person is by default ‘ELGA participant’

@@ -25,7 +25,7 @@ import FMCore
  URL: http://www.hl7.org/fhir/contractactorrole
  ValueSet: http://hl7.org/fhir/ValueSet/contract-actorrole
  */
-public enum ContractActorRoleCodes: String, FHIRPrimitiveType {
+public indirect enum ContractActorRoleCodes: String, FHIRPrimitiveType {
 	
 	/// patient
 	case patient

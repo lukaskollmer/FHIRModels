@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/hl7-work-group
  ValueSet: http://hl7.org/fhir/ValueSet/hl7-work-group
  */
-public enum HL7Workgroup: String, FHIRPrimitiveType {
+public indirect enum HL7Workgroup: String, FHIRPrimitiveType {
 	
 	/// Application Implementation and Design (http://www.hl7.org/Special/committees/java/index.cfm)
 	case aid

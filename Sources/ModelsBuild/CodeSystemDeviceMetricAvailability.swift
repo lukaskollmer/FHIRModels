@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/metric-availability
  ValueSet: http://hl7.org/fhir/ValueSet/metric-availability
  */
-public enum DeviceMetricAvailability: String, FHIRPrimitiveType {
+public indirect enum DeviceMetricAvailability: String, FHIRPrimitiveType {
 	
 	/// Without break, cessation, or interruption; without intervening time.
 	case cont

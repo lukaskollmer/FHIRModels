@@ -30,7 +30,7 @@ public struct DeviceDefinition: DomainResource {
 	public static let resourceType: ResourceType = .deviceDefinition
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -1112,7 +1112,7 @@ public struct DeviceDefinitionGuideline: BackboneElement {
 public struct DeviceDefinitionHasPart: BackboneElement {
 	
 	/// All possible types for "definition[x]"
-	public enum DefinitionX: Equatable, Hashable, Sendable {
+	public indirect enum DefinitionX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 	}
@@ -1220,7 +1220,7 @@ public struct DeviceDefinitionHasPart: BackboneElement {
 public struct DeviceDefinitionLink: BackboneElement {
 	
 	/// All possible types for "relatedDevice[x]"
-	public enum RelatedDeviceX: Equatable, Hashable, Sendable {
+	public indirect enum RelatedDeviceX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 	}
@@ -1592,7 +1592,7 @@ public struct DeviceDefinitionPackagingDistributor: BackboneElement {
 public struct DeviceDefinitionProperty: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)

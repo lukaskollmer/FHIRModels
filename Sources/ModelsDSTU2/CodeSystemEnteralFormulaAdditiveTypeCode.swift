@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/entformula-additive
  ValueSet: http://hl7.org/fhir/ValueSet/entformula-additive
  */
-public enum EnteralFormulaAdditiveTypeCode: String, FHIRPrimitiveType {
+public indirect enum EnteralFormulaAdditiveTypeCode: String, FHIRPrimitiveType {
 	
 	/// carbohydrate
 	case carbohydrate

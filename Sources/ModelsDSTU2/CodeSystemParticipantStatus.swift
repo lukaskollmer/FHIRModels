@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/participantstatus
  ValueSet: http://hl7.org/fhir/ValueSet/participantstatus
  */
-public enum ParticipantStatus: String, FHIRPrimitiveType {
+public indirect enum ParticipantStatus: String, FHIRPrimitiveType {
 	
 	/// The appointment participant has accepted that they can attend the appointment at the time specified in the
 	/// AppointmentResponse.

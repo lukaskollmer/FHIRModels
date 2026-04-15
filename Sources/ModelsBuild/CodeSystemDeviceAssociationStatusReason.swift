@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/deviceassociation-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/deviceassociation-status-reason
  */
-public enum DeviceAssociationStatusReason: String, FHIRPrimitiveType {
+public indirect enum DeviceAssociationStatusReason: String, FHIRPrimitiveType {
 	
 	/// The device is connected to the patient.
 	case attached

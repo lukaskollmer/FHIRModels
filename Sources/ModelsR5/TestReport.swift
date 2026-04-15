@@ -544,7 +544,7 @@ public struct TestReportSetupActionAssert: BackboneElement {
 public struct TestReportSetupActionAssertRequirement: BackboneElement {
 	
 	/// All possible types for "link[x]"
-	public enum LinkX: Equatable, Hashable, Sendable {
+	public indirect enum LinkX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

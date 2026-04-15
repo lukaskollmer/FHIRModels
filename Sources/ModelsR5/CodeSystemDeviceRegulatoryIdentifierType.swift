@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/devicedefinition-regulatory-identifier-type
  */
-public enum DeviceRegulatoryIdentifierType: String, FHIRPrimitiveType {
+public indirect enum DeviceRegulatoryIdentifierType: String, FHIRPrimitiveType {
 	
 	/// EUDAMED's basic UDI-DI identifier.
 	case basic

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/citation-summary-style
  ValueSet: http://hl7.org/fhir/ValueSet/citation-summary-style
  */
-public enum CitationSummaryStyle: String, FHIRPrimitiveType {
+public indirect enum CitationSummaryStyle: String, FHIRPrimitiveType {
 	
 	/// Chemistry.
 	case acs

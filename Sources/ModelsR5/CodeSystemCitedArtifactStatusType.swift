@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/cited-artifact-status-type
  ValueSet: http://hl7.org/fhir/ValueSet/cited-artifact-status-type
  */
-public enum CitedArtifactStatusType: String, FHIRPrimitiveType {
+public indirect enum CitedArtifactStatusType: String, FHIRPrimitiveType {
 	
 	/// The content that was not published yet has been approved for publication by the publisher and/or editor.
 	case accepted

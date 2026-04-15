@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/definition-status
  ValueSet: http://hl7.org/fhir/ValueSet/definition-status
  */
-public enum DefinitionStatus: String, FHIRPrimitiveType {
+public indirect enum DefinitionStatus: String, FHIRPrimitiveType {
 	
 	/// The definition is considered ready for use
 	case active

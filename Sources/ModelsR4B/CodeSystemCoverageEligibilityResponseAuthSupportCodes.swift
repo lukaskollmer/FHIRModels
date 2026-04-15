@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support
  */
-public enum CoverageEligibilityResponseAuthSupportCodes: String, FHIRPrimitiveType {
+public indirect enum CoverageEligibilityResponseAuthSupportCodes: String, FHIRPrimitiveType {
 	
 	/// A formal accident report as would be filed with police or a simlar official body.
 	case accidentreport

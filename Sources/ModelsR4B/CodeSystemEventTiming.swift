@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/event-timing
  */
-public enum EventTiming: String, FHIRPrimitiveType {
+public indirect enum EventTiming: String, FHIRPrimitiveType {
 	
 	/// Event occurs during the afternoon. The exact time is unspecified and established by institution convention or
 	/// patient interpretation.

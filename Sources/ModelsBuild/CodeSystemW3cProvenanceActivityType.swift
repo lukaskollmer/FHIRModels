@@ -28,7 +28,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/w3c-provenance-activity-type
  */
-public enum W3cProvenanceActivityType: String, FHIRPrimitiveType {
+public indirect enum W3cProvenanceActivityType: String, FHIRPrimitiveType {
 	
 	/// Ascribing of an entity (object/document) to an agent.
 	case attribution = "Attribution"

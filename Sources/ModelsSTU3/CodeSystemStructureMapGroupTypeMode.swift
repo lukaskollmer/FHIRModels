@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-group-type-mode
  ValueSet: http://hl7.org/fhir/ValueSet/map-group-type-mode
  */
-public enum StructureMapGroupTypeMode: String, FHIRPrimitiveType {
+public indirect enum StructureMapGroupTypeMode: String, FHIRPrimitiveType {
 	
 	/// This group is not a default group for the types
 	case none

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/question-max-occurs
  ValueSet: http://hl7.org/fhir/ValueSet/question-max-occurs
  */
-public enum MaxOccurs: String, FHIRPrimitiveType {
+public indirect enum MaxOccurs: String, FHIRPrimitiveType {
 	
 	/// Element can repeat an unlimited number of times
 	case max = "*"

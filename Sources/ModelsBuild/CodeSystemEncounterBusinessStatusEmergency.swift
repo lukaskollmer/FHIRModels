@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-businessstatus-emergency
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-businessstatus-emergency
  */
-public enum EncounterBusinessStatusEmergency: String, FHIRPrimitiveType {
+public indirect enum EncounterBusinessStatusEmergency: String, FHIRPrimitiveType {
 	
 	/// The patient has arrived at the emergency department.
 	case arrived

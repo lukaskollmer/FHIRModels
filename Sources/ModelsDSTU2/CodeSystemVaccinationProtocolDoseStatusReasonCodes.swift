@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/vaccination-protocol-dose-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/vaccination-protocol-dose-status-reason
  */
-public enum VaccinationProtocolDoseStatusReasonCodes: String, FHIRPrimitiveType {
+public indirect enum VaccinationProtocolDoseStatusReasonCodes: String, FHIRPrimitiveType {
 	
 	/// advstorage
 	case advstorage

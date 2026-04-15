@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/consentaction
  ValueSet: http://hl7.org/fhir/ValueSet/consent-action
  */
-public enum ConsentActionCodes: String, FHIRPrimitiveType {
+public indirect enum ConsentActionCodes: String, FHIRPrimitiveType {
 	
 	/// Retrieval without permitting collection, use or disclosure. e.g., no screen-scraping for collection, use or
 	/// disclosure (view-only access)

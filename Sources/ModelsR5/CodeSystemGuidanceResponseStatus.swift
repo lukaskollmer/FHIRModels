@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/guidance-response-status
  ValueSet: http://hl7.org/fhir/ValueSet/guidance-response-status
  */
-public enum GuidanceResponseStatus: String, FHIRPrimitiveType {
+public indirect enum GuidanceResponseStatus: String, FHIRPrimitiveType {
 	
 	/// The request was processed successfully, but more data may result in a more complete evaluation.
 	case dataRequested = "data-requested"

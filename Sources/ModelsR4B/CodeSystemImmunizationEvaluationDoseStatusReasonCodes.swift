@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason
  */
-public enum ImmunizationEvaluationDoseStatusReasonCodes: String, FHIRPrimitiveType {
+public indirect enum ImmunizationEvaluationDoseStatusReasonCodes: String, FHIRPrimitiveType {
 	
 	/// The product was stored in a manner inconsistent with manufacturer guidelines potentially reducing the
 	/// effectiveness of the product.

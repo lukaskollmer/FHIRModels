@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/endpoint-status
  ValueSet: http://hl7.org/fhir/ValueSet/endpoint-status
  */
-public enum EndpointStatus: String, FHIRPrimitiveType {
+public indirect enum EndpointStatus: String, FHIRPrimitiveType {
 	
 	/// This endpoint is expected to be active and can be used.
 	case active

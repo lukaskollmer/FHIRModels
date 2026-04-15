@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/measure-scoring
  ValueSet: http://hl7.org/fhir/ValueSet/measure-scoring
  */
-public enum MeasureScoring: String, FHIRPrimitiveType {
+public indirect enum MeasureScoring: String, FHIRPrimitiveType {
 	
 	/// The measure is a cohort definition
 	case cohort

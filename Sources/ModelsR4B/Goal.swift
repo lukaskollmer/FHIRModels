@@ -30,7 +30,7 @@ public struct Goal: DomainResource {
 	public static let resourceType: ResourceType = .goal
 	
 	/// All possible types for "start[x]"
-	public enum StartX: Equatable, Hashable, Sendable {
+	public indirect enum StartX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case date(FHIRPrimitive<FHIRDate>)
 	}
@@ -290,7 +290,7 @@ public struct Goal: DomainResource {
 public struct GoalTarget: BackboneElement {
 	
 	/// All possible types for "detail[x]"
-	public enum DetailX: Equatable, Hashable, Sendable {
+	public indirect enum DetailX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case integer(FHIRPrimitive<FHIRInteger>)
@@ -301,7 +301,7 @@ public struct GoalTarget: BackboneElement {
 	}
 	
 	/// All possible types for "due[x]"
-	public enum DueX: Equatable, Hashable, Sendable {
+	public indirect enum DueX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case duration(Duration)
 	}

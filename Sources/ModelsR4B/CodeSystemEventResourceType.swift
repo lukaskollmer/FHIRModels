@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/event-resource-types
  ValueSet: http://hl7.org/fhir/ValueSet/event-resource-types
  */
-public enum EventResourceType: String, FHIRPrimitiveType {
+public indirect enum EventResourceType: String, FHIRPrimitiveType {
 	
 	/// Item containing charge code(s) associated with the provision of healthcare provider products.
 	case chargeItem = "ChargeItem"

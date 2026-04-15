@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/clinical-use-definition-category
  ValueSet: http://hl7.org/fhir/ValueSet/clinical-use-definition-category
  */
-public enum ClinicalUseDefinitionCategory: String, FHIRPrimitiveType {
+public indirect enum ClinicalUseDefinitionCategory: String, FHIRPrimitiveType {
 	
 	/// driveAndMachines
 	case driveAndMachines = "DriveAndMachines"

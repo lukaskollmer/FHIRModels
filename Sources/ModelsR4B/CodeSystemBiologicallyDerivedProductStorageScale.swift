@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/product-storage-scale
  ValueSet: http://hl7.org/fhir/ValueSet/product-storage-scale
  */
-public enum BiologicallyDerivedProductStorageScale: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductStorageScale: String, FHIRPrimitiveType {
 	
 	/// Celsius or centigrade temperature scale.
 	case celsius

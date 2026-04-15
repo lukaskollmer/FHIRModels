@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-category
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-category
  */
-public enum DeviceAlertCategory: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertCategory: String, FHIRPrimitiveType {
 	
 	/// Related to environmental conditions
 	case environment

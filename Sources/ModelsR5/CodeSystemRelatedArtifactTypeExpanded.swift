@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/related-artifact-type-expanded
  ValueSet: http://hl7.org/fhir/ValueSet/related-artifact-type-expanded
  */
-public enum RelatedArtifactTypeExpanded: String, FHIRPrimitiveType {
+public indirect enum RelatedArtifactTypeExpanded: String, FHIRPrimitiveType {
 	
 	/// A copy of the artifact in a publication with a different artifact identifier.
 	case reprint

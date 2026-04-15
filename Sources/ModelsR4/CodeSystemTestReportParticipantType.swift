@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/report-participant-type
  ValueSet: http://hl7.org/fhir/ValueSet/report-participant-type
  */
-public enum TestReportParticipantType: String, FHIRPrimitiveType {
+public indirect enum TestReportParticipantType: String, FHIRPrimitiveType {
 	
 	/// A FHIR Client.
 	case client

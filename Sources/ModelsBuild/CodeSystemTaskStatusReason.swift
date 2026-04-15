@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/task-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/task-status-reason
  */
-public enum TaskStatusReason: String, FHIRPrimitiveType {
+public indirect enum TaskStatusReason: String, FHIRPrimitiveType {
 	
 	/// Something in the environment is preventing task completion.
 	case environmentalIssue = "environmental-issue"

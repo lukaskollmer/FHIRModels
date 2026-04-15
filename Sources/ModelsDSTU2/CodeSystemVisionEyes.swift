@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/vision-eye-codes
  ValueSet: http://hl7.org/fhir/ValueSet/vision-eye-codes
  */
-public enum VisionEyes: String, FHIRPrimitiveType {
+public indirect enum VisionEyes: String, FHIRPrimitiveType {
 	
 	/// Left Eye
 	case left

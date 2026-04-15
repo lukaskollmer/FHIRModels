@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/article-url-type
  ValueSet: http://hl7.org/fhir/ValueSet/article-url-type
  */
-public enum ArticleUrlType: String, FHIRPrimitiveType {
+public indirect enum ArticleUrlType: String, FHIRPrimitiveType {
 	
 	/// URL to reach the abstract for the article.
 	case abstract

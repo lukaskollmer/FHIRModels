@@ -349,7 +349,7 @@ public struct EvidenceVariable: DomainResource {
 public struct EvidenceVariableCharacteristic: BackboneElement {
 	
 	/// All possible types for "definition[x]"
-	public enum DefinitionX: Equatable, Hashable, Sendable {
+	public indirect enum DefinitionX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 		case dataRequirement(DataRequirement)
@@ -359,7 +359,7 @@ public struct EvidenceVariableCharacteristic: BackboneElement {
 	}
 	
 	/// All possible types for "participantEffective[x]"
-	public enum ParticipantEffectiveX: Equatable, Hashable, Sendable {
+	public indirect enum ParticipantEffectiveX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
 		case period(Period)

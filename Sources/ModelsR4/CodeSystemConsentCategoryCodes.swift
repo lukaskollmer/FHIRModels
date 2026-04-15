@@ -29,7 +29,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/consentcategorycodes
  */
-public enum ConsentCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum ConsentCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Any instructions, written or given verbally by a patient to a health care provider in anticipation of potential
 	/// need for medical treatment. [2005 Honor My Wishes]

@@ -30,7 +30,7 @@ public struct GuidanceResponse: DomainResource {
 	public static let resourceType: ResourceType = .guidanceResponse
 	
 	/// All possible types for "module[x]"
-	public enum ModuleX: Equatable, Hashable, Sendable {
+	public indirect enum ModuleX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 		case uri(FHIRPrimitive<FHIRURI>)

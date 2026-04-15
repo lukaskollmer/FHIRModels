@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/variable-role
  ValueSet: http://hl7.org/fhir/ValueSet/variable-role
  */
-public enum EvidenceVariableRole: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableRole: String, FHIRPrimitiveType {
 	
 	/// variable represents a confounder.
 	case confounder

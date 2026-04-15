@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/FDI-surface
  ValueSet: http://hl7.org/fhir/ValueSet/surface
  */
-public enum SurfaceCodes: String, FHIRPrimitiveType {
+public indirect enum SurfaceCodes: String, FHIRPrimitiveType {
 	
 	/// The surface of a tooth that is closest to the midline (middle) of the face.
 	case M = "M"

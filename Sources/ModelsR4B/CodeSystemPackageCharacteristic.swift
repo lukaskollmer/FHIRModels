@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/package-characteristic
  ValueSet: http://hl7.org/fhir/ValueSet/package-characteristic
  */
-public enum PackageCharacteristic: String, FHIRPrimitiveType {
+public indirect enum PackageCharacteristic: String, FHIRPrimitiveType {
 	
 	/// calendarPack
 	case calendarPack = "CalendarPack"

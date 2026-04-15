@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/episode-of-care-status
  ValueSet: http://hl7.org/fhir/ValueSet/episode-of-care-status
  */
-public enum EpisodeOfCareStatus: String, FHIRPrimitiveType {
+public indirect enum EpisodeOfCareStatus: String, FHIRPrimitiveType {
 	
 	/// This episode of care is current.
 	case active

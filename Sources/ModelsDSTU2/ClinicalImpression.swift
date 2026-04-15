@@ -33,7 +33,7 @@ public struct ClinicalImpression: DomainResource {
 	public static let resourceType: ResourceType = .clinicalImpression
 	
 	/// All possible types for "trigger[x]"
-	public enum TriggerX: Equatable, Hashable, Sendable {
+	public indirect enum TriggerX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

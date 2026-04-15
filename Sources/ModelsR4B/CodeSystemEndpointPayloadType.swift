@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/endpoint-payload-type
  */
-public enum EndpointPayloadType: String, FHIRPrimitiveType {
+public indirect enum EndpointPayloadType: String, FHIRPrimitiveType {
 	
 	/// Any payload type can be used with this endpoint, it is either a payload agnostic infrastructure (such as a
 	/// storage repository), or some other type of endpoint where payload considerations are internally handled, and not

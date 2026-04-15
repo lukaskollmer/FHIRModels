@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/admit-source
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-admit-source
  */
-public enum AdmitSource: String, FHIRPrimitiveType {
+public indirect enum AdmitSource: String, FHIRPrimitiveType {
 	
 	/// born
 	case born

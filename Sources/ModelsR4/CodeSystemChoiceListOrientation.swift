@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/choice-list-orientation
  ValueSet: http://hl7.org/fhir/ValueSet/choice-list-orientation
  */
-public enum ChoiceListOrientation: String, FHIRPrimitiveType {
+public indirect enum ChoiceListOrientation: String, FHIRPrimitiveType {
 	
 	/// List choices along the horizontal axis.
 	case horizontal

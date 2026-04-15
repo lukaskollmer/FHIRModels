@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-action-status
  ValueSet: http://hl7.org/fhir/ValueSet/contract-actionstatus
  */
-public enum ContractResourceActionStatusCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceActionStatusCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case complete

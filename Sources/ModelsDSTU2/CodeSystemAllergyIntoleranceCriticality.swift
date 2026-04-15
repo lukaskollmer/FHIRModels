@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/allergy-intolerance-criticality
  ValueSet: http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality
  */
-public enum AllergyIntoleranceCriticality: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceCriticality: String, FHIRPrimitiveType {
 	
 	/// The potential clinical impact of a future reaction is estimated as high risk: exposure to substance may result
 	/// in a life threatening or organ system threatening outcome. Future exposure to the Substance may be considered an

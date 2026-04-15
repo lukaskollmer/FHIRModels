@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/encounter-special-arrangements
  */
-public enum SpecialArrangements: String, FHIRPrimitiveType {
+public indirect enum SpecialArrangements: String, FHIRPrimitiveType {
 	
 	/// An additional bed made available for a person accompanying the patient, for example a parent accompanying a
 	/// child.

@@ -237,7 +237,7 @@ public struct BiologicallyDerivedProduct: DomainResource {
 public struct BiologicallyDerivedProductCollection: BackboneElement {
 	
 	/// All possible types for "collected[x]"
-	public enum CollectedX: Equatable, Hashable, Sendable {
+	public indirect enum CollectedX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -348,7 +348,7 @@ public struct BiologicallyDerivedProductCollection: BackboneElement {
 public struct BiologicallyDerivedProductProperty: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)

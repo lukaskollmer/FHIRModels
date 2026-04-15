@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/study-design
  ValueSet: http://hl7.org/fhir/ValueSet/study-design
  */
-public enum StudyDesign: String, FHIRPrimitiveType {
+public indirect enum StudyDesign: String, FHIRPrimitiveType {
 	
 	/// A study design in which an independent variable (an exposure or intervention) is prospectively assigned or
 	/// modified by the investigator to evaluate a response in the dependent variable (an effect or outcome).

@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/provenance-participant-type
  ValueSet: http://hl7.org/fhir/ValueSet/provenance-agent-type
  */
-public enum ProvenanceParticipantType: String, FHIRPrimitiveType {
+public indirect enum ProvenanceParticipantType: String, FHIRPrimitiveType {
 	
 	/// The participant is a device, an instance of a manufactured thing that is used in the provision of healthcare
 	/// without being substantially changed through that activity. The device may be a machine, an insert, a computer,

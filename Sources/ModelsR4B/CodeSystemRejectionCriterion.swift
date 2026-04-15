@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/rejection-criteria
  ValueSet: http://hl7.org/fhir/ValueSet/rejection-criteria
  */
-public enum RejectionCriterion: String, FHIRPrimitiveType {
+public indirect enum RejectionCriterion: String, FHIRPrimitiveType {
 	
 	/// specimen container broken.
 	case broken

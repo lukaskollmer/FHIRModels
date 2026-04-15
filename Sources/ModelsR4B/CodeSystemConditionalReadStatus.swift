@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/conditional-read-status
  ValueSet: http://hl7.org/fhir/ValueSet/conditional-read-status
  */
-public enum ConditionalReadStatus: String, FHIRPrimitiveType {
+public indirect enum ConditionalReadStatus: String, FHIRPrimitiveType {
 	
 	/// Conditional reads are supported, with both If-Modified-Since and If-None-Match HTTP Headers.
 	case fullSupport = "full-support"

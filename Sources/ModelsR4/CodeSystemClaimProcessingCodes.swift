@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/remittance-outcome
  ValueSet: http://hl7.org/fhir/ValueSet/remittance-outcome
  */
-public enum ClaimProcessingCodes: String, FHIRPrimitiveType {
+public indirect enum ClaimProcessingCodes: String, FHIRPrimitiveType {
 	
 	/// The processing has completed without errors
 	case complete

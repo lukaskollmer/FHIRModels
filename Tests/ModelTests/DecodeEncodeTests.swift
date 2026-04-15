@@ -601,4 +601,18 @@ struct DecodeEncodeTests {
             #expect(error.errorDescription == "medicationReference [not Dictionary<String, Any>]")
         }
     }
+    
+    
+    @Test
+    func concurrentDecoding() async throws {
+        let url = try #require(Bundle.module.url(forResource: "Test", withExtension: "json"))
+        let data = try Data(contentsOf: url)
+        try await withThrowingDiscardingTaskGroup { taskGroup in
+            for _ in 0..<100 {
+                taskGroup.addTask {
+                    _ = try JSONDecoder().decode(Questionnaire.self, from: data)
+                }
+            }
+        }
+    }
 }

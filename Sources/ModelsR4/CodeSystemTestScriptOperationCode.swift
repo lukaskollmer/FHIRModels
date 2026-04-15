@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/testscript-operation-codes
  ValueSet: http://hl7.org/fhir/ValueSet/testscript-operation-codes
  */
-public enum TestScriptOperationCode: String, FHIRPrimitiveType {
+public indirect enum TestScriptOperationCode: String, FHIRPrimitiveType {
 	
 	/// Realizes an ActivityDefinition in a specific context
 	case apply

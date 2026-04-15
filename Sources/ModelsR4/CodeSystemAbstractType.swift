@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/abstract-types
  */
-public enum AbstractType: String, FHIRPrimitiveType {
+public indirect enum AbstractType: String, FHIRPrimitiveType {
 	
 	/// A place holder that means any kind of resource
 	case any = "Any"

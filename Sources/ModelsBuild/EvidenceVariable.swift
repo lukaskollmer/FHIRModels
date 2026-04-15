@@ -29,7 +29,7 @@ public struct EvidenceVariable: DomainResource {
 	public static let resourceType: ResourceType = .evidenceVariable
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -486,7 +486,7 @@ public struct EvidenceVariable: DomainResource {
 public struct EvidenceVariableCategory: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case range(Range)
@@ -857,7 +857,7 @@ public struct EvidenceVariableDataStorage: BackboneElement {
 public struct EvidenceVariableDefinitionModifier: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case expression(Expression)
@@ -1036,7 +1036,7 @@ public struct EvidenceVariableDefinitionModifier: BackboneElement {
 public struct EvidenceVariableRelatesTo: BackboneElement {
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case canonical(FHIRPrimitive<Canonical>)
 		case markdown(FHIRPrimitive<FHIRString>)

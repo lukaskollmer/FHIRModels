@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/library-type
  ValueSet: http://hl7.org/fhir/ValueSet/library-type
  */
-public enum LibraryType: String, FHIRPrimitiveType {
+public indirect enum LibraryType: String, FHIRPrimitiveType {
 	
 	/// The resource is a collection of knowledge assets.
 	case assetCollection = "asset-collection"

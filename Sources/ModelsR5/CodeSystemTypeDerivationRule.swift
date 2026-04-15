@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/type-derivation-rule
  ValueSet: http://hl7.org/fhir/ValueSet/type-derivation-rule
  */
-public enum TypeDerivationRule: String, FHIRPrimitiveType {
+public indirect enum TypeDerivationRule: String, FHIRPrimitiveType {
 	
 	/// This definition adds additional rules to an existing concrete type.
 	case constraint

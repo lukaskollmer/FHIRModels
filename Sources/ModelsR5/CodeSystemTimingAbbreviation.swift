@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/timing-abbreviation
  */
-public enum TimingAbbreviation: String, FHIRPrimitiveType {
+public indirect enum TimingAbbreviation: String, FHIRPrimitiveType {
 	
 	/// Service is provided continuously between start time and stop time.
 	case C

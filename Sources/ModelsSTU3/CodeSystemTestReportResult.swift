@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/report-result-codes
  ValueSet: http://hl7.org/fhir/ValueSet/report-result-codes
  */
-public enum TestReportResult: String, FHIRPrimitiveType {
+public indirect enum TestReportResult: String, FHIRPrimitiveType {
 	
 	/// One or more test operations failed one or more asserts
 	case fail

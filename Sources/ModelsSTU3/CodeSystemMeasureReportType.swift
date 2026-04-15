@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/measure-report-type
  ValueSet: http://hl7.org/fhir/ValueSet/measure-report-type
  */
-public enum MeasureReportType: String, FHIRPrimitiveType {
+public indirect enum MeasureReportType: String, FHIRPrimitiveType {
 	
 	/// An individual report that provides information on the performance for a given measure with respect to a single
 	/// patient

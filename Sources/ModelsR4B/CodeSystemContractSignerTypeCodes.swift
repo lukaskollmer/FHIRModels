@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/contract-signer-type
  */
-public enum ContractSignerTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractSignerTypeCodes: String, FHIRPrimitiveType {
 	
 	/// An entity that has a business or professional relationship with another entity in accordance with an agreement.
 	case AFFL

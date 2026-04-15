@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/location-status
  ValueSet: http://hl7.org/fhir/ValueSet/location-status
  */
-public enum LocationStatus: String, FHIRPrimitiveType {
+public indirect enum LocationStatus: String, FHIRPrimitiveType {
 	
 	/// The location is operational.
 	case active

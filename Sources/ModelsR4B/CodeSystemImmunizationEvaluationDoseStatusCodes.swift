@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status
  */
-public enum ImmunizationEvaluationDoseStatusCodes: String, FHIRPrimitiveType {
+public indirect enum ImmunizationEvaluationDoseStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The dose does not count toward fulfilling a path to immunity for a patient.
 	case notvalid

@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/goal-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/goal-status-reason
  */
-public enum GoalStatusReason: String, FHIRPrimitiveType {
+public indirect enum GoalStatusReason: String, FHIRPrimitiveType {
 	
 	/// Goal cannot be reached due to financial barrier or reason.
 	case financialBarrier = "financial-barrier"

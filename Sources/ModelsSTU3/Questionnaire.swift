@@ -301,7 +301,7 @@ public struct Questionnaire: DomainResource {
 public struct QuestionnaireItem: BackboneElement {
 	
 	/// All possible types for "initial[x]"
-	public enum InitialX: Equatable, Hashable, Sendable {
+	public indirect enum InitialX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case coding(Coding)
@@ -611,7 +611,7 @@ public struct QuestionnaireItem: BackboneElement {
 public struct QuestionnaireItemEnableWhen: BackboneElement {
 	
 	/// All possible types for "answer[x]"
-	public enum AnswerX: Equatable, Hashable, Sendable {
+	public indirect enum AnswerX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case coding(Coding)
@@ -823,7 +823,7 @@ public struct QuestionnaireItemEnableWhen: BackboneElement {
 public struct QuestionnaireItemOption: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case date(FHIRPrimitive<FHIRDate>)
 		case integer(FHIRPrimitive<FHIRInteger>)

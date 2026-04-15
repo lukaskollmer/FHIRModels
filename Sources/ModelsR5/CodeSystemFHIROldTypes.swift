@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/fhir-old-types
  ValueSet: http://hl7.org/fhir/ValueSet/fhir-old-types
  */
-public enum FHIROldTypes: String, FHIRPrimitiveType {
+public indirect enum FHIROldTypes: String, FHIRPrimitiveType {
 	
 	/// bodySite
 	case bodySite = "BodySite"

@@ -277,7 +277,7 @@ public struct MeasureReport: DomainResource {
 public struct MeasureReportGroup: BackboneElement {
 	
 	/// All possible types for "measureScore[x]"
-	public enum MeasureScoreX: Equatable, Hashable, Sendable {
+	public indirect enum MeasureScoreX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case dateTime(FHIRPrimitive<DateTime>)
@@ -766,7 +766,7 @@ public struct MeasureReportGroupStratifier: BackboneElement {
 public struct MeasureReportGroupStratifierStratum: BackboneElement {
 	
 	/// All possible types for "measureScore[x]"
-	public enum MeasureScoreX: Equatable, Hashable, Sendable {
+	public indirect enum MeasureScoreX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case dateTime(FHIRPrimitive<DateTime>)
@@ -778,7 +778,7 @@ public struct MeasureReportGroupStratifierStratum: BackboneElement {
 	}
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
@@ -1004,7 +1004,7 @@ public struct MeasureReportGroupStratifierStratum: BackboneElement {
 public struct MeasureReportGroupStratifierStratumComponent: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)

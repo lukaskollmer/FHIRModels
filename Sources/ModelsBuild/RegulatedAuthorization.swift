@@ -261,7 +261,7 @@ public struct RegulatedAuthorization: DomainResource {
 public struct RegulatedAuthorizationCase: BackboneElement {
 	
 	/// All possible types for "date[x]"
-	public enum DateX: Equatable, Hashable, Sendable {
+	public indirect enum DateX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/deviceassociation-operationstatus
  ValueSet: http://hl7.org/fhir/ValueSet/deviceassociation-operationstatus
  */
-public enum FHIRDeviceAssociationOperationStatus: String, FHIRPrimitiveType {
+public indirect enum FHIRDeviceAssociationOperationStatus: String, FHIRPrimitiveType {
 	
 	/// The device is defective or for maintenance and is not available or working.
 	case defective

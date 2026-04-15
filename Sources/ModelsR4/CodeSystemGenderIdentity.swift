@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/gender-identity
  */
-public enum GenderIdentity: String, FHIRPrimitiveType {
+public indirect enum GenderIdentity: String, FHIRPrimitiveType {
 	
 	/// the patient identifies as female
 	case female

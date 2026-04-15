@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/additionalmaterials
  ValueSet: http://hl7.org/fhir/ValueSet/additionalmaterials
  */
-public enum AdditionalMaterialCodes: String, FHIRPrimitiveType {
+public indirect enum AdditionalMaterialCodes: String, FHIRPrimitiveType {
 	
 	/// Document
 	case document

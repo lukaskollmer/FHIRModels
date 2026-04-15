@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/referencerange-meaning
  */
-public enum ObservationReferenceRangeMeaningCodes: String, FHIRPrimitiveType {
+public indirect enum ObservationReferenceRangeMeaningCodes: String, FHIRPrimitiveType {
 	
 	/// Endocrine related states that change the expected value.
 	case endocrine

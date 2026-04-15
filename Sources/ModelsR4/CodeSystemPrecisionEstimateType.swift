@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/precision-estimate-type
  ValueSet: http://hl7.org/fhir/ValueSet/precision-estimate-type
  */
-public enum PrecisionEstimateType: String, FHIRPrimitiveType {
+public indirect enum PrecisionEstimateType: String, FHIRPrimitiveType {
 	
 	/// confidence interval.
 	case CI

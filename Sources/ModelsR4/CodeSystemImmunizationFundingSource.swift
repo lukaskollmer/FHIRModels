@@ -27,7 +27,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/immunization-funding-source
  ValueSet: http://hl7.org/fhir/ValueSet/immunization-funding-source
  */
-public enum ImmunizationFundingSource: String, FHIRPrimitiveType {
+public indirect enum ImmunizationFundingSource: String, FHIRPrimitiveType {
 	
 	/// The vaccine was purchased with private funds.
 	case `private`

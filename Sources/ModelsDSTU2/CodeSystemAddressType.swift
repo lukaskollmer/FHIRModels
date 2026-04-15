@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/address-type
  ValueSet: http://hl7.org/fhir/ValueSet/address-type
  */
-public enum AddressType: String, FHIRPrimitiveType {
+public indirect enum AddressType: String, FHIRPrimitiveType {
 	
 	/// An address that is both physical and postal.
 	case both

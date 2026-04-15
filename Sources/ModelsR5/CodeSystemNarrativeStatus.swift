@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/narrative-status
  ValueSet: http://hl7.org/fhir/ValueSet/narrative-status
  */
-public enum NarrativeStatus: String, FHIRPrimitiveType {
+public indirect enum NarrativeStatus: String, FHIRPrimitiveType {
 	
 	/// The contents of the narrative may contain additional information not found in the structured data. Note that
 	/// there is no computable way to determine what the extra information is, other than by human inspection.

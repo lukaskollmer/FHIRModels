@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/care-plan-activity-category
  ValueSet: http://hl7.org/fhir/ValueSet/care-plan-activity-category
  */
-public enum CarePlanActivityCategory: String, FHIRPrimitiveType {
+public indirect enum CarePlanActivityCategory: String, FHIRPrimitiveType {
 	
 	/// Plan for the patient to consume food of a specified nature
 	case diet

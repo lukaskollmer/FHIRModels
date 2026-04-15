@@ -31,13 +31,13 @@ public struct Library: DomainResource {
 	public static let resourceType: ResourceType = .library
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}

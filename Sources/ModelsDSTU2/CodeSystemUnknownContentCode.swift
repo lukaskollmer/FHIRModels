@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/unknown-content-code
  ValueSet: http://hl7.org/fhir/ValueSet/unknown-content-code
  */
-public enum UnknownContentCode: String, FHIRPrimitiveType {
+public indirect enum UnknownContentCode: String, FHIRPrimitiveType {
 	
 	/// The application accepts unknown elements and extensions.
 	case both

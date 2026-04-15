@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-applicability-behavior
  ValueSet: http://hl7.org/fhir/ValueSet/action-applicability-behavior
  */
-public enum ActionApplicabilityBehavior: String, FHIRPrimitiveType {
+public indirect enum ActionApplicabilityBehavior: String, FHIRPrimitiveType {
 	
 	/// The applicability of each action is evaluated independently; if the applicability criteria for an action
 	/// evaluates to true, it is applied.

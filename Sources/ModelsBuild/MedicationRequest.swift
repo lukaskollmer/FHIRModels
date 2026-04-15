@@ -32,7 +32,7 @@ public struct MedicationRequest: DomainResource {
 	public static let resourceType: ResourceType = .medicationRequest
 	
 	/// All possible types for "effectiveTiming[x]"
-	public enum EffectiveTimingX: Equatable, Hashable, Sendable {
+	public indirect enum EffectiveTimingX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case period(Period)
 		case range(Range)
@@ -651,7 +651,7 @@ public struct MedicationRequestDispenseRequestInitialFill: BackboneElement {
 public struct MedicationRequestSubstitution: BackboneElement {
 	
 	/// All possible types for "allowed[x]"
-	public enum AllowedX: Equatable, Hashable, Sendable {
+	public indirect enum AllowedX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 	}

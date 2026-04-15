@@ -30,7 +30,7 @@ public struct ResearchElementDefinition: DomainResource {
 	public static let resourceType: ResourceType = .researchElementDefinition
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -426,7 +426,7 @@ public struct ResearchElementDefinition: DomainResource {
 public struct ResearchElementDefinitionCharacteristic: BackboneElement {
 	
 	/// All possible types for "definition[x]"
-	public enum DefinitionX: Equatable, Hashable, Sendable {
+	public indirect enum DefinitionX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 		case dataRequirement(DataRequirement)
@@ -434,7 +434,7 @@ public struct ResearchElementDefinitionCharacteristic: BackboneElement {
 	}
 	
 	/// All possible types for "participantEffective[x]"
-	public enum ParticipantEffectiveX: Equatable, Hashable, Sendable {
+	public indirect enum ParticipantEffectiveX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
 		case period(Period)
@@ -442,7 +442,7 @@ public struct ResearchElementDefinitionCharacteristic: BackboneElement {
 	}
 	
 	/// All possible types for "studyEffective[x]"
-	public enum StudyEffectiveX: Equatable, Hashable, Sendable {
+	public indirect enum StudyEffectiveX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
 		case period(Period)

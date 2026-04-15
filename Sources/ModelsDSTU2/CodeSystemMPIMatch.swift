@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/patient-mpi-match
  ValueSet: http://hl7.org/fhir/ValueSet/patient-mpi-match
  */
-public enum MPIMatch: String, FHIRPrimitiveType {
+public indirect enum MPIMatch: String, FHIRPrimitiveType {
 	
 	/// This record meets the MPI criteria to be automatically considered as a full match.
 	case certain

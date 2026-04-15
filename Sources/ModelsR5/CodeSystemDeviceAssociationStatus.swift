@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/deviceassociation-status
  ValueSet: http://hl7.org/fhir/ValueSet/deviceassociation-status
  */
-public enum DeviceAssociationStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceAssociationStatus: String, FHIRPrimitiveType {
 	
 	/// The device is attached to the patient but not implanted in the patient.
 	case attached

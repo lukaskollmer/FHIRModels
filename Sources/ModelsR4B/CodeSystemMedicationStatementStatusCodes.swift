@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medication-statement-status
  ValueSet: http://hl7.org/fhir/ValueSet/medication-statement-status
  */
-public enum MedicationStatementStatusCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationStatementStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The medication is still being taken.
 	case active

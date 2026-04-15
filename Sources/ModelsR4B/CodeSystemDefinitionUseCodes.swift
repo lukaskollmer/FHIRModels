@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/definition-use
  ValueSet: http://hl7.org/fhir/ValueSet/definition-use
  */
-public enum DefinitionUseCodes: String, FHIRPrimitiveType {
+public indirect enum DefinitionUseCodes: String, FHIRPrimitiveType {
 	
 	/// This structure captures an analysis of a domain
 	case archetype

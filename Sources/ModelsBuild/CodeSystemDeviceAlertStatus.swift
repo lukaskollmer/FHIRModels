@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-status
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-status
  */
-public enum DeviceAlertStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertStatus: String, FHIRPrimitiveType {
 	
 	/// The alert condition is not present, and all signals are off
 	case completed

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/substance-category
  ValueSet: http://hl7.org/fhir/ValueSet/substance-category
  */
-public enum SubstanceCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum SubstanceCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// A substance that causes an allergic reaction.
 	case allergen

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-form
  ValueSet: http://hl7.org/fhir/ValueSet/substance-form
  */
-public enum SubstanceForm: String, FHIRPrimitiveType {
+public indirect enum SubstanceForm: String, FHIRPrimitiveType {
 	
 	/// base
 	case base

@@ -479,7 +479,7 @@ public struct ExplanationOfBenefit: DomainResource {
 public struct ExplanationOfBenefitAccident: BackboneElement {
 	
 	/// All possible types for "location[x]"
-	public enum LocationX: Equatable, Hashable, Sendable {
+	public indirect enum LocationX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case reference(Reference)
 	}
@@ -591,14 +591,14 @@ public struct ExplanationOfBenefitAccident: BackboneElement {
 public struct ExplanationOfBenefitAddItem: BackboneElement {
 	
 	/// All possible types for "location[x]"
-	public enum LocationX: Equatable, Hashable, Sendable {
+	public indirect enum LocationX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "serviced[x]"
-	public enum ServicedX: Equatable, Hashable, Sendable {
+	public indirect enum ServicedX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}
@@ -1239,14 +1239,14 @@ public struct ExplanationOfBenefitBenefitBalance: BackboneElement {
 public struct ExplanationOfBenefitBenefitBalanceFinancial: BackboneElement {
 	
 	/// All possible types for "allowed[x]"
-	public enum AllowedX: Equatable, Hashable, Sendable {
+	public indirect enum AllowedX: Equatable, Hashable, Sendable {
 		case money(Money)
 		case string(FHIRPrimitive<FHIRString>)
 		case unsignedInt(FHIRPrimitive<FHIRUnsignedInteger>)
 	}
 	
 	/// All possible types for "used[x]"
-	public enum UsedX: Equatable, Hashable, Sendable {
+	public indirect enum UsedX: Equatable, Hashable, Sendable {
 		case money(Money)
 		case unsignedInt(FHIRPrimitive<FHIRUnsignedInteger>)
 	}
@@ -1489,7 +1489,7 @@ public struct ExplanationOfBenefitCareTeam: BackboneElement {
 public struct ExplanationOfBenefitDiagnosis: BackboneElement {
 	
 	/// All possible types for "diagnosis[x]"
-	public enum DiagnosisX: Equatable, Hashable, Sendable {
+	public indirect enum DiagnosisX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -1707,14 +1707,14 @@ public struct ExplanationOfBenefitInsurance: BackboneElement {
 public struct ExplanationOfBenefitItem: BackboneElement {
 	
 	/// All possible types for "location[x]"
-	public enum LocationX: Equatable, Hashable, Sendable {
+	public indirect enum LocationX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "serviced[x]"
-	public enum ServicedX: Equatable, Hashable, Sendable {
+	public indirect enum ServicedX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}
@@ -2630,7 +2630,7 @@ public struct ExplanationOfBenefitPayment: BackboneElement {
 public struct ExplanationOfBenefitProcedure: BackboneElement {
 	
 	/// All possible types for "procedure[x]"
-	public enum ProcedureX: Equatable, Hashable, Sendable {
+	public indirect enum ProcedureX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -2941,13 +2941,13 @@ public struct ExplanationOfBenefitRelated: BackboneElement {
 public struct ExplanationOfBenefitSupportingInfo: BackboneElement {
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case quantity(Quantity)

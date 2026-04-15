@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/biologicallyderived-product-status
  ValueSet: http://hl7.org/fhir/ValueSet/biologicallyderived-product-status
  */
-public enum BiologicallyDerivedProductStatus: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductStatus: String, FHIRPrimitiveType {
 	
 	/// Product is currently available for use.
 	case available

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/metric-color
  ValueSet: http://hl7.org/fhir/ValueSet/metric-color
  */
-public enum DeviceMetricColor: String, FHIRPrimitiveType {
+public indirect enum DeviceMetricColor: String, FHIRPrimitiveType {
 	
 	/// Color for representation - black.
 	case black

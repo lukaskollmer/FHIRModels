@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/procedure-request-status
  ValueSet: http://hl7.org/fhir/ValueSet/procedure-request-status
  */
-public enum ProcedureRequestStatus: String, FHIRPrimitiveType {
+public indirect enum ProcedureRequestStatus: String, FHIRPrimitiveType {
 	
 	/// The request was attempted, but due to some procedural error, it could not be completed.
 	case aborted

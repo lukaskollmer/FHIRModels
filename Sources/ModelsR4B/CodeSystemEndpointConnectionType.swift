@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/endpoint-connection-type
  */
-public enum EndpointConnectionType: String, FHIRPrimitiveType {
+public indirect enum EndpointConnectionType: String, FHIRPrimitiveType {
 	
 	/// DICOMweb RESTful Image query - http://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_6.7.html
 	case dicomQidoRs = "dicom-qido-rs"

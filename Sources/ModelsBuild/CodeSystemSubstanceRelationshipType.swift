@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/substance-relationship-type
  */
-public enum SubstanceRelationshipType: String, FHIRPrimitiveType {
+public indirect enum SubstanceRelationshipType: String, FHIRPrimitiveType {
 	
 	/// activeMoiety
 	case activeMoiety = "ActiveMoiety"

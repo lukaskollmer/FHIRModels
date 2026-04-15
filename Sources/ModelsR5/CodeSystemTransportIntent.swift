@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/transport-intent
  */
-public enum TransportIntent: String, FHIRPrimitiveType {
+public indirect enum TransportIntent: String, FHIRPrimitiveType {
 	
 	/// The intent is not known.  When dealing with Transport, it's not always known (or relevant) how the transport was
 	/// initiated - i.e. whether it was proposed, planned, ordered or just done spontaneously.

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/item-type
  ValueSet: http://hl7.org/fhir/ValueSet/item-type
  */
-public enum QuestionnaireItemType: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireItemType: String, FHIRPrimitiveType {
 	
 	/// Question with binary content such as an image, PDF, etc. as an answer (valueAttachment).
 	case attachment

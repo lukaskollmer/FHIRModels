@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-required-behavior
  ValueSet: http://hl7.org/fhir/ValueSet/action-required-behavior
  */
-public enum ActionRequiredBehavior: String, FHIRPrimitiveType {
+public indirect enum ActionRequiredBehavior: String, FHIRPrimitiveType {
 	
 	/// An action with this behavior may be included in the set of actions processed by the end user
 	case could

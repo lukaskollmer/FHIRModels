@@ -29,7 +29,7 @@ import FMCore
 public struct Signature: Element {
 	
 	/// All possible types for "who[x]"
-	public enum WhoX: Equatable, Hashable, Sendable {
+	public indirect enum WhoX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

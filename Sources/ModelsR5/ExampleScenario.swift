@@ -27,7 +27,7 @@ public struct ExampleScenario: DomainResource {
 	public static let resourceType: ResourceType = .exampleScenario
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -410,7 +410,7 @@ public struct ExampleScenarioActor: BackboneElement {
 public struct ExampleScenarioInstance: BackboneElement {
 	
 	/// All possible types for "structureProfile[x]"
-	public enum StructureProfileX: Equatable, Hashable, Sendable {
+	public indirect enum StructureProfileX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

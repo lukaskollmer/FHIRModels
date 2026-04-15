@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/device-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/device-status-reason
  */
-public enum FHIRDeviceStatusReason: String, FHIRPrimitiveType {
+public indirect enum FHIRDeviceStatusReason: String, FHIRPrimitiveType {
 	
 	/// The device hardware is disconnected.
 	case hwDiscon = "hw-discon"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/observation-referencerange-normalvalue
  ValueSet: http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue
  */
-public enum ObservationReferenceRangeNormalValue: String, FHIRPrimitiveType {
+public indirect enum ObservationReferenceRangeNormalValue: String, FHIRPrimitiveType {
 	
 	/// The expected normal value for the observation is absent.
 	case absent

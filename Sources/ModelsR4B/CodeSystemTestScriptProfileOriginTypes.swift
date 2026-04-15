@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types
  */
-public enum TestScriptProfileOriginTypes: String, FHIRPrimitiveType {
+public indirect enum TestScriptProfileOriginTypes: String, FHIRPrimitiveType {
 	
 	/// General FHIR client used to initiate operations against a FHIR server.
 	case fHIRClient = "FHIR-Client"

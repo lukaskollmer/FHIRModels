@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/bundle-type
  ValueSet: http://hl7.org/fhir/ValueSet/bundle-type
  */
-public enum BundleType: String, FHIRPrimitiveType {
+public indirect enum BundleType: String, FHIRPrimitiveType {
 	
 	/// The bundle is a set of actions - intended to be processed by a server as a group of independent actions.
 	case batch

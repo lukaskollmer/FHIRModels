@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medication-statement-taken
  ValueSet: http://hl7.org/fhir/ValueSet/medication-statement-taken
  */
-public enum MedicationStatementTaken: String, FHIRPrimitiveType {
+public indirect enum MedicationStatementTaken: String, FHIRPrimitiveType {
 	
 	/// Negative assertion that patient has not taken medication
 	case N = "n"

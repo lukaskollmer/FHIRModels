@@ -28,7 +28,7 @@ public struct Media: DomainResource {
 	public static let resourceType: ResourceType = .media
 	
 	/// All possible types for "created[x]"
-	public enum CreatedX: Equatable, Hashable, Sendable {
+	public indirect enum CreatedX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/detectedissue-severity
  ValueSet: http://hl7.org/fhir/ValueSet/detectedissue-severity
  */
-public enum DetectedIssueSeverity: String, FHIRPrimitiveType {
+public indirect enum DetectedIssueSeverity: String, FHIRPrimitiveType {
 	
 	/// Indicates the issue may be life-threatening or has the potential to cause permanent injury.
 	case high

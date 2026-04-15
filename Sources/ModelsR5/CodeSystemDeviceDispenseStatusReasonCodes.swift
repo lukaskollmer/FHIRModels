@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/CodeSystem/devicedispense-status-reason
  */
-public enum DeviceDispenseStatusReasonCodes: String, FHIRPrimitiveType {
+public indirect enum DeviceDispenseStatusReasonCodes: String, FHIRPrimitiveType {
 	
 	/// The device was not dispensed because a contraindication was found - for example pregnancy, allergy to a device
 	/// component...

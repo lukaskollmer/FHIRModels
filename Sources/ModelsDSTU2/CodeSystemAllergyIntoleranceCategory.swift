@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/allergy-intolerance-category
  ValueSet: http://hl7.org/fhir/ValueSet/allergy-intolerance-category
  */
-public enum AllergyIntoleranceCategory: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceCategory: String, FHIRPrimitiveType {
 	
 	/// Substances that are encountered in the environment.
 	case environment

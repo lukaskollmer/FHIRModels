@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/failure-action
  ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-failure-action
  */
-public enum FailureAction: String, FHIRPrimitiveType {
+public indirect enum FailureAction: String, FHIRPrimitiveType {
 	
 	/// fatal
 	case fatal

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/regulated-authorization-type
  ValueSet: http://hl7.org/fhir/ValueSet/regulated-authorization-type
  */
-public enum RegulatedAuthorizationType: String, FHIRPrimitiveType {
+public indirect enum RegulatedAuthorizationType: String, FHIRPrimitiveType {
 	
 	/// marketingAuth
 	case marketingAuth = "MarketingAuth"

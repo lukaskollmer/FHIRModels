@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship
  ValueSet: http://hl7.org/fhir/ValueSet/related-claim-relationship
  */
-public enum ExampleRelatedClaimRelationshipCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleRelatedClaimRelationshipCodes: String, FHIRPrimitiveType {
 	
 	/// A claim for a different suite of services which is related the suite claimed here.
 	case associated

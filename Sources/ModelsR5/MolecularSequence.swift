@@ -399,7 +399,7 @@ public struct MolecularSequenceRelativeEdit: BackboneElement {
 public struct MolecularSequenceRelativeStartingSequence: BackboneElement {
 	
 	/// All possible types for "sequence[x]"
-	public enum SequenceX: Equatable, Hashable, Sendable {
+	public indirect enum SequenceX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 		case string(FHIRPrimitive<FHIRString>)

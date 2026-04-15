@@ -411,7 +411,7 @@ public struct ClinicalUseDefinitionContraindicationOtherTherapy: BackboneElement
 public struct ClinicalUseDefinitionIndication: BackboneElement {
 	
 	/// All possible types for "duration[x]"
-	public enum DurationX: Equatable, Hashable, Sendable {
+	public indirect enum DurationX: Equatable, Hashable, Sendable {
 		case range(Range)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -662,7 +662,7 @@ public struct ClinicalUseDefinitionInteraction: BackboneElement {
 public struct ClinicalUseDefinitionInteractionInteractant: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

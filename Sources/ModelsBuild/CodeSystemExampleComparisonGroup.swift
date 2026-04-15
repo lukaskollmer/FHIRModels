@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/example-comparison-group
  ValueSet: http://hl7.org/fhir/ValueSet/example-comparison-group
  */
-public enum ExampleComparisonGroup: String, FHIRPrimitiveType {
+public indirect enum ExampleComparisonGroup: String, FHIRPrimitiveType {
 	
 	/// Not receiving the exposure or intervention.
 	case absenceOfExposure = "absence-of-exposure"

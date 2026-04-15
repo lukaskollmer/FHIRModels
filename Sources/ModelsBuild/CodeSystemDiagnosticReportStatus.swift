@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/diagnostic-report-status
  ValueSet: http://hl7.org/fhir/ValueSet/diagnostic-report-status
  */
-public enum DiagnosticReportStatus: String, FHIRPrimitiveType {
+public indirect enum DiagnosticReportStatus: String, FHIRPrimitiveType {
 	
 	/// Subsequent to being final, the report has been modified.  This includes any change in the results, diagnosis,
 	/// narrative text, or other content of a report that has been issued.

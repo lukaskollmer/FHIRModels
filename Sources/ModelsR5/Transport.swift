@@ -388,7 +388,7 @@ public struct Transport: DomainResource {
 public struct TransportInput: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)
@@ -1017,7 +1017,7 @@ public struct TransportInput: BackboneElement {
 public struct TransportOutput: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)

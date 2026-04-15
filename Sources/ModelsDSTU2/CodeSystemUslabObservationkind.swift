@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/obs-kind
  ValueSet: http://hl7.org/fhir/ValueSet/uslab-obs-kind
  */
-public enum UslabObservationkind: String, FHIRPrimitiveType {
+public indirect enum UslabObservationkind: String, FHIRPrimitiveType {
 	
 	/// The value is Observation.value[x] is some other unsolicited clnically relevant information.
 	case information

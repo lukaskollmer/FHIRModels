@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/audit-event-action
  ValueSet: http://hl7.org/fhir/ValueSet/audit-event-action
  */
-public enum AuditEventAction: String, FHIRPrimitiveType {
+public indirect enum AuditEventAction: String, FHIRPrimitiveType {
 	
 	/// Create a new database object, such as placing an order.
 	case C

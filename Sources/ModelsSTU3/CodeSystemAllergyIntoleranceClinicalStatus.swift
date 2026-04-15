@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/allergy-clinical-status
  ValueSet: http://hl7.org/fhir/ValueSet/allergy-clinical-status
  */
-public enum AllergyIntoleranceClinicalStatus: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceClinicalStatus: String, FHIRPrimitiveType {
 	
 	/// An active record of a risk of a reaction to the identified substance.
 	case active

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/compartment-type
  ValueSet: http://hl7.org/fhir/ValueSet/compartment-type
  */
-public enum CompartmentType: String, FHIRPrimitiveType {
+public indirect enum CompartmentType: String, FHIRPrimitiveType {
 	
 	/// The compartment definition is for the device compartment
 	case device = "Device"

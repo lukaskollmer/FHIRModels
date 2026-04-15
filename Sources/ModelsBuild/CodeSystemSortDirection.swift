@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/sort-direction
  ValueSet: http://hl7.org/fhir/ValueSet/sort-direction
  */
-public enum SortDirection: String, FHIRPrimitiveType {
+public indirect enum SortDirection: String, FHIRPrimitiveType {
 	
 	/// Sort by the value ascending, so that lower values appear first.
 	case ascending

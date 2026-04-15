@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/contract-type
  ValueSet: http://hl7.org/fhir/ValueSet/contract-type
  */
-public enum ContractTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Consent Directive.
 	case consent

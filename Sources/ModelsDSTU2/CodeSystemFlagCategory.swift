@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/flag-category
  ValueSet: http://hl7.org/fhir/ValueSet/flag-category
  */
-public enum FlagCategory: String, FHIRPrimitiveType {
+public indirect enum FlagCategory: String, FHIRPrimitiveType {
 	
 	/// Flags related to administrative and financial processes.
 	case admin

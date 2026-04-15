@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/condition-category
  ValueSet: http://hl7.org/fhir/ValueSet/condition-category
  */
-public enum ConditionCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum ConditionCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter.
 	case encounterDiagnosis = "encounter-diagnosis"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/participationstatus
  ValueSet: http://hl7.org/fhir/ValueSet/participationstatus
  */
-public enum ParticipationStatus: String, FHIRPrimitiveType {
+public indirect enum ParticipationStatus: String, FHIRPrimitiveType {
 	
 	/// The participant has accepted the appointment.
 	case accepted

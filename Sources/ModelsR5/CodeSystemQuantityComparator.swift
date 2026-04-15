@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/quantity-comparator
  ValueSet: http://hl7.org/fhir/ValueSet/quantity-comparator
  */
-public enum QuantityComparator: String, FHIRPrimitiveType {
+public indirect enum QuantityComparator: String, FHIRPrimitiveType {
 	
 	/// The actual value is sufficient for the total quantity to equal the given value.
 	case ad

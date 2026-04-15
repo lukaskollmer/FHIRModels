@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/artifact-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/artifact-relationship-type
  */
-public enum ArtifactRelationshipType: String, FHIRPrimitiveType {
+public indirect enum ArtifactRelationshipType: String, FHIRPrimitiveType {
 	
 	/// Amended with
 	case amendedWith = "amended-with"

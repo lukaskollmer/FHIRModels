@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/search-entry-mode
  ValueSet: http://hl7.org/fhir/ValueSet/search-entry-mode
  */
-public enum SearchEntryMode: String, FHIRPrimitiveType {
+public indirect enum SearchEntryMode: String, FHIRPrimitiveType {
 	
 	/// This resource is returned because it is referred to from another resource in the search set.
 	case include

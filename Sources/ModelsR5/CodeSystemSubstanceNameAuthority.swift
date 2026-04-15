@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-name-authority
  ValueSet: http://hl7.org/fhir/ValueSet/substance-name-authority
  */
-public enum SubstanceNameAuthority: String, FHIRPrimitiveType {
+public indirect enum SubstanceNameAuthority: String, FHIRPrimitiveType {
 	
 	/// BAN
 	case BAN

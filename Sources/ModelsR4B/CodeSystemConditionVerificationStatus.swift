@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/condition-ver-status
  ValueSet: http://hl7.org/fhir/ValueSet/condition-ver-status
  */
-public enum ConditionVerificationStatus: String, FHIRPrimitiveType {
+public indirect enum ConditionVerificationStatus: String, FHIRPrimitiveType {
 	
 	/// There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.
 	case confirmed

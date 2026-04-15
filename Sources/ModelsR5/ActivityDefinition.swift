@@ -30,26 +30,26 @@ public struct ActivityDefinition: DomainResource {
 	public static let resourceType: ResourceType = .activityDefinition
 	
 	/// All possible types for "asNeeded[x]"
-	public enum AsNeededX: Equatable, Hashable, Sendable {
+	public indirect enum AsNeededX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 	}
 	
 	/// All possible types for "product[x]"
-	public enum ProductX: Equatable, Hashable, Sendable {
+	public indirect enum ProductX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case duration(Duration)
 		case range(Range)
@@ -57,7 +57,7 @@ public struct ActivityDefinition: DomainResource {
 	}
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}

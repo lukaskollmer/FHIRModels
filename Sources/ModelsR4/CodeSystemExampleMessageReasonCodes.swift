@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/message-reasons-encounter
  ValueSet: http://hl7.org/fhir/ValueSet/message-reason-encounter
  */
-public enum ExampleMessageReasonCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleMessageReasonCodes: String, FHIRPrimitiveType {
 	
 	/// The patient has returned from a temporary absence.
 	case `return`

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/cited-artifact-abstract-type
  ValueSet: http://hl7.org/fhir/ValueSet/cited-artifact-abstract-type
  */
-public enum CitedArtifactAbstractType: String, FHIRPrimitiveType {
+public indirect enum CitedArtifactAbstractType: String, FHIRPrimitiveType {
 	
 	/// Machine translated form of abstract in a different language, language element codes the language into which it
 	/// was translated by machine

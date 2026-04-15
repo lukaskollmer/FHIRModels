@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/consent-except-type
  ValueSet: http://hl7.org/fhir/ValueSet/consent-except-type
  */
-public enum ConsentExceptType: String, FHIRPrimitiveType {
+public indirect enum ConsentExceptType: String, FHIRPrimitiveType {
 	
 	/// Consent is denied for actions meeting these rules
 	case deny

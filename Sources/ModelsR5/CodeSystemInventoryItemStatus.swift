@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/inventoryitem-status
  ValueSet: http://hl7.org/fhir/ValueSet/inventoryitem-status
  */
-public enum InventoryItemStatus: String, FHIRPrimitiveType {
+public indirect enum InventoryItemStatus: String, FHIRPrimitiveType {
 	
 	/// The item is active and can be referenced.
 	case active

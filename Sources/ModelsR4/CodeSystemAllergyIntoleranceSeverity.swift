@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/reaction-event-severity
  ValueSet: http://hl7.org/fhir/ValueSet/reaction-event-severity
  */
-public enum AllergyIntoleranceSeverity: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceSeverity: String, FHIRPrimitiveType {
 	
 	/// Causes mild physiological effects.
 	case mild

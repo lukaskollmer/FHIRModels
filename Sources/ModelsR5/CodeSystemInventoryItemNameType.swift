@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/inventoryitem-nametype
  ValueSet: http://hl7.org/fhir/ValueSet/inventoryitem-nametype
  */
-public enum InventoryItemNameType: String, FHIRPrimitiveType {
+public indirect enum InventoryItemNameType: String, FHIRPrimitiveType {
 	
 	/// An alias or common name for the item.
 	case alias

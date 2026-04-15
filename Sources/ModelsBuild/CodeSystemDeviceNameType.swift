@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-nametype
  ValueSet: http://hl7.org/fhir/ValueSet/device-nametype
  */
-public enum DeviceNameType: String, FHIRPrimitiveType {
+public indirect enum DeviceNameType: String, FHIRPrimitiveType {
 	
 	/// the term used by the patient associated with the device when describing the device, for example 'knee implant',
 	/// when documented as a self-reported device.

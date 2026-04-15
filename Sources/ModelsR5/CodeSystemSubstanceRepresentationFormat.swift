@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-representation-format
  ValueSet: http://hl7.org/fhir/ValueSet/substance-representation-format
  */
-public enum SubstanceRepresentationFormat: String, FHIRPrimitiveType {
+public indirect enum SubstanceRepresentationFormat: String, FHIRPrimitiveType {
 	
 	/// CDX
 	case CDX

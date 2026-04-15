@@ -31,7 +31,7 @@ public struct Consent: DomainResource {
 	public static let resourceType: ResourceType = .consent
 	
 	/// All possible types for "source[x]"
-	public enum SourceX: Equatable, Hashable, Sendable {
+	public indirect enum SourceX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case identifier(Identifier)
 		case reference(Reference)

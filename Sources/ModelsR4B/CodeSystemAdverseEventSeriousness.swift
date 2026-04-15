@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/adverse-event-seriousness
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-seriousness
  */
-public enum AdverseEventSeriousness: String, FHIRPrimitiveType {
+public indirect enum AdverseEventSeriousness: String, FHIRPrimitiveType {
 	
 	/// Non-serious.
 	case nonSerious = "Non-serious"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/transaction-mode
  ValueSet: http://hl7.org/fhir/ValueSet/transaction-mode
  */
-public enum TransactionMode: String, FHIRPrimitiveType {
+public indirect enum TransactionMode: String, FHIRPrimitiveType {
 	
 	/// Batches are  supported.
 	case batch

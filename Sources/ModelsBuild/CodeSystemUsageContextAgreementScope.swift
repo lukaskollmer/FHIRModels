@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/usage-context-agreement-scope
  ValueSet: http://hl7.org/fhir/ValueSet/usage-context-agreement-scope
  */
-public enum UsageContextAgreementScope: String, FHIRPrimitiveType {
+public indirect enum UsageContextAgreementScope: String, FHIRPrimitiveType {
 	
 	/// Sets contractual or business expectations for systems participating in a particular exchange community.
 	case community

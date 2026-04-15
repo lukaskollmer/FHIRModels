@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/concept-map-equivalence
  ValueSet: http://hl7.org/fhir/ValueSet/concept-map-equivalence
  */
-public enum ConceptMapEquivalence: String, FHIRPrimitiveType {
+public indirect enum ConceptMapEquivalence: String, FHIRPrimitiveType {
 	
 	/// This is an explicit assertion that there is no mapping between the source and target concept.
 	case disjoint

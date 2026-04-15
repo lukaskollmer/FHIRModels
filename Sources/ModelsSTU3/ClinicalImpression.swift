@@ -33,7 +33,7 @@ public struct ClinicalImpression: DomainResource {
 	public static let resourceType: ResourceType = .clinicalImpression
 	
 	/// All possible types for "effective[x]"
-	public enum EffectiveX: Equatable, Hashable, Sendable {
+	public indirect enum EffectiveX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -316,7 +316,7 @@ public struct ClinicalImpression: DomainResource {
 public struct ClinicalImpressionFinding: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

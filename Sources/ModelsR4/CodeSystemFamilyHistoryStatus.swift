@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/history-status
  ValueSet: http://hl7.org/fhir/ValueSet/history-status
  */
-public enum FamilyHistoryStatus: String, FHIRPrimitiveType {
+public indirect enum FamilyHistoryStatus: String, FHIRPrimitiveType {
 	
 	/// All available related health information is captured as of the date (and possibly time) when the family member
 	/// history was taken.

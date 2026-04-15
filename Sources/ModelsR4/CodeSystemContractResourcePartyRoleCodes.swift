@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-party-role
  ValueSet: http://hl7.org/fhir/ValueSet/contract-party-role
  */
-public enum ContractResourcePartyRoleCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourcePartyRoleCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case flunky

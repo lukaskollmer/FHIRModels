@@ -613,7 +613,7 @@ public struct MedicationRequestDispenseRequestInitialFill: BackboneElement {
 public struct MedicationRequestSubstitution: BackboneElement {
 	
 	/// All possible types for "allowed[x]"
-	public enum AllowedX: Equatable, Hashable, Sendable {
+	public indirect enum AllowedX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/published-in-type
  ValueSet: http://hl7.org/fhir/ValueSet/published-in-type
  */
-public enum PublishedInType: String, FHIRPrimitiveType {
+public indirect enum PublishedInType: String, FHIRPrimitiveType {
 	
 	/// Non-periodical written or printed works consisting of sheets of pages fastened or bound together within covers.
 	case D001877

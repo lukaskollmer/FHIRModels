@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/location-physical-type
  ValueSet: http://hl7.org/fhir/ValueSet/location-physical-type
  */
-public enum LocationType: String, FHIRPrimitiveType {
+public indirect enum LocationType: String, FHIRPrimitiveType {
 	
 	/// A defined boundary, such as a state, region, country, county
 	case area

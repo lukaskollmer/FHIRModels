@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/resource-slicing-rules
  ValueSet: http://hl7.org/fhir/ValueSet/resource-slicing-rules
  */
-public enum SlicingRules: String, FHIRPrimitiveType {
+public indirect enum SlicingRules: String, FHIRPrimitiveType {
 	
 	/// No additional content is allowed other than that described by the slices in this profile.
 	case closed

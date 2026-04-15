@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/communication-request-status
  ValueSet: http://hl7.org/fhir/ValueSet/communication-request-status
  */
-public enum CommunicationRequestStatus: String, FHIRPrimitiveType {
+public indirect enum CommunicationRequestStatus: String, FHIRPrimitiveType {
 	
 	/// The receiving system has accepted the order, but work has not yet commenced.
 	case accepted

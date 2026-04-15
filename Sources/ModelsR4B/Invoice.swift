@@ -262,7 +262,7 @@ public struct Invoice: DomainResource {
 public struct InvoiceLineItem: BackboneElement {
 	
 	/// All possible types for "chargeItem[x]"
-	public enum ChargeItemX: Equatable, Hashable, Sendable {
+	public indirect enum ChargeItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

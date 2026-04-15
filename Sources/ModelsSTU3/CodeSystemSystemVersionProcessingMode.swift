@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/system-version-processing-mode
  ValueSet: http://hl7.org/fhir/ValueSet/system-version-processing-mode
  */
-public enum SystemVersionProcessingMode: String, FHIRPrimitiveType {
+public indirect enum SystemVersionProcessingMode: String, FHIRPrimitiveType {
 	
 	/// Use this version of the code system if a value set doesn't specify a version
 	case `default`

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/request-status
  ValueSet: http://hl7.org/fhir/ValueSet/request-status
  */
-public enum RequestStatus: String, FHIRPrimitiveType {
+public indirect enum RequestStatus: String, FHIRPrimitiveType {
 	
 	/// The request is in force and ready to be acted upon.
 	case active

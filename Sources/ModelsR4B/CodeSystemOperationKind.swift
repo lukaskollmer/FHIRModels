@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/operation-kind
  ValueSet: http://hl7.org/fhir/ValueSet/operation-kind
  */
-public enum OperationKind: String, FHIRPrimitiveType {
+public indirect enum OperationKind: String, FHIRPrimitiveType {
 	
 	/// This operation is invoked as an operation.
 	case operation

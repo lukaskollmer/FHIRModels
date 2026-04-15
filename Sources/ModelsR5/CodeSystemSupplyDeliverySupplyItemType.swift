@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/supplydelivery-supplyitemtype
  ValueSet: http://hl7.org/fhir/ValueSet/supplydelivery-supplyitemtype
  */
-public enum SupplyDeliverySupplyItemType: String, FHIRPrimitiveType {
+public indirect enum SupplyDeliverySupplyItemType: String, FHIRPrimitiveType {
 	
 	/// Supply is a kind of biologically derived product.
 	case biologicallyderivedproduct

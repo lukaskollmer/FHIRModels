@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/secondary-finding
  ValueSet: http://hl7.org/fhir/ValueSet/secondary-finding
  */
-public enum GeneticObservationSecondaryFindings: String, FHIRPrimitiveType {
+public indirect enum GeneticObservationSecondaryFindings: String, FHIRPrimitiveType {
 	
 	/// First release (2013): ACMG Recommendations for Reporting of Incidental Findings in Clinical Exome and Genome
 	/// Sequencing.  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3727274/

@@ -294,7 +294,7 @@ public struct MedicationKnowledge: DomainResource {
 public struct MedicationKnowledgeCost: BackboneElement {
 	
 	/// All possible types for "cost[x]"
-	public enum CostX: Equatable, Hashable, Sendable {
+	public indirect enum CostX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case money(Money)
 	}
@@ -520,7 +520,7 @@ public struct MedicationKnowledgeDefinitional: BackboneElement {
 public struct MedicationKnowledgeDefinitionalDrugCharacteristic: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case base64Binary(FHIRPrimitive<Base64Binary>)
 		case codeableConcept(CodeableConcept)
@@ -654,7 +654,7 @@ public struct MedicationKnowledgeDefinitionalDrugCharacteristic: BackboneElement
 public struct MedicationKnowledgeDefinitionalIngredient: BackboneElement {
 	
 	/// All possible types for "strength[x]"
-	public enum StrengthX: Equatable, Hashable, Sendable {
+	public indirect enum StrengthX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case ratio(Ratio)
@@ -1019,7 +1019,7 @@ public struct MedicationKnowledgeIndicationGuidelineDosingGuidelineDosage: Backb
 public struct MedicationKnowledgeIndicationGuidelineDosingGuidelinePatientCharacteristic: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case range(Range)
@@ -1131,7 +1131,7 @@ public struct MedicationKnowledgeIndicationGuidelineDosingGuidelinePatientCharac
 public struct MedicationKnowledgeMedicineClassification: BackboneElement {
 	
 	/// All possible types for "source[x]"
-	public enum SourceX: Equatable, Hashable, Sendable {
+	public indirect enum SourceX: Equatable, Hashable, Sendable {
 		case string(FHIRPrimitive<FHIRString>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
@@ -1880,7 +1880,7 @@ public struct MedicationKnowledgeStorageGuideline: BackboneElement {
 public struct MedicationKnowledgeStorageGuidelineEnvironmentalSetting: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case range(Range)

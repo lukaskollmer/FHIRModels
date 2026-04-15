@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/search-comparator
  ValueSet: http://hl7.org/fhir/ValueSet/search-comparator
  */
-public enum SearchComparator: String, FHIRPrimitiveType {
+public indirect enum SearchComparator: String, FHIRPrimitiveType {
 	
 	/// the value for the parameter in the resource is approximately the same to the provided value.
 	case ap

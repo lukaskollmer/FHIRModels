@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/qualification-status
  */
-public enum QualificationStatus: String, FHIRPrimitiveType {
+public indirect enum QualificationStatus: String, FHIRPrimitiveType {
 	
 	/// The qualification is available to use - The qualification period may be included to indicate a time interval if
 	/// required.

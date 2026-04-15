@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/specimen-status
  ValueSet: http://hl7.org/fhir/ValueSet/specimen-status
  */
-public enum SpecimenStatus: String, FHIRPrimitiveType {
+public indirect enum SpecimenStatus: String, FHIRPrimitiveType {
 	
 	/// The physical specimen is present and in good condition.
 	case available

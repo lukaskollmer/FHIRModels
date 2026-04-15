@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/transport-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/transport-status-reason
  */
-public enum TransportStatusReason: String, FHIRPrimitiveType {
+public indirect enum TransportStatusReason: String, FHIRPrimitiveType {
 	
 	/// Patient declined transport.
 	case declinedByPatient = "declined-by-patient"

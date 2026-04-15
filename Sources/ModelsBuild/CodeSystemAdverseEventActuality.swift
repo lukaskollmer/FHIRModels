@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/adverse-event-actuality
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-actuality
  */
-public enum AdverseEventActuality: String, FHIRPrimitiveType {
+public indirect enum AdverseEventActuality: String, FHIRPrimitiveType {
 	
 	/// The adverse event actually happened regardless of whether anyone was affected or harmed.
 	case actual

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/appointmentstatus
  ValueSet: http://hl7.org/fhir/ValueSet/appointmentstatus
  */
-public enum AppointmentStatus: String, FHIRPrimitiveType {
+public indirect enum AppointmentStatus: String, FHIRPrimitiveType {
 	
 	/// The patient/patients has/have arrived and is/are waiting to be seen.
 	case arrived

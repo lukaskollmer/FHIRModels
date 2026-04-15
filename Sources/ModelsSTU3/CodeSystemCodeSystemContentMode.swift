@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/codesystem-content-mode
  ValueSet: http://hl7.org/fhir/ValueSet/codesystem-content-mode
  */
-public enum CodeSystemContentMode: String, FHIRPrimitiveType {
+public indirect enum CodeSystemContentMode: String, FHIRPrimitiveType {
 	
 	/// All the concepts defined by the code system are included in the code system resource
 	case complete

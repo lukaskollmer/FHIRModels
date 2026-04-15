@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/variant-state
  ValueSet: http://hl7.org/fhir/ValueSet/variant-state
  */
-public enum SequenceStatus: String, FHIRPrimitiveType {
+public indirect enum SequenceStatus: String, FHIRPrimitiveType {
 	
 	/// result of the variant is missing.
 	case absent

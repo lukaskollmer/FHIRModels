@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/benefit-type
  */
-public enum BenefitTypeCodes: String, FHIRPrimitiveType {
+public indirect enum BenefitTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Maximum benefit allowable.
 	case benefit

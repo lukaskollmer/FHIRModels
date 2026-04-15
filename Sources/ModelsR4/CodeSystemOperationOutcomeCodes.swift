@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/operation-outcome
  */
-public enum OperationOutcomeCodes: String, FHIRPrimitiveType {
+public indirect enum OperationOutcomeCodes: String, FHIRPrimitiveType {
 	
 	/// DELETE_MULTIPLE_MATCHES
 	case DELETE_MULTIPLE_MATCHES

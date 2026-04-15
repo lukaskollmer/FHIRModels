@@ -27,7 +27,7 @@ import FMCore
  
  URL: http://uri.etsi.org/01903/v1.2.2
  */
-public enum ETSISignatureTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ETSISignatureTypeCodes: String, FHIRPrimitiveType {
 	
 	/// indicates that the signer has created the signed data object (but not necessarily approved, nor sent it).
 	case proofOfCreation = "ProofOfCreation"

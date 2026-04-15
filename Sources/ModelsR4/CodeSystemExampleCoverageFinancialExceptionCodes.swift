@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception
  ValueSet: http://hl7.org/fhir/ValueSet/coverage-financial-exception
  */
-public enum ExampleCoverageFinancialExceptionCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleCoverageFinancialExceptionCodes: String, FHIRPrimitiveType {
 	
 	/// Children in the foster care have all copays and deductibles waived.
 	case foster

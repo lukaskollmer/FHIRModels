@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/language-preference-type
  */
-public enum LanguagePreferenceType: String, FHIRPrimitiveType {
+public indirect enum LanguagePreferenceType: String, FHIRPrimitiveType {
 	
 	/// The patient prefers to verbally communicate with the associated language.
 	case verbal

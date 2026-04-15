@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/subscription-payload-content
  ValueSet: http://hl7.org/fhir/ValueSet/subscription-payload-content
  */
-public enum SubscriptionPayloadContent: String, FHIRPrimitiveType {
+public indirect enum SubscriptionPayloadContent: String, FHIRPrimitiveType {
 	
 	/// No resource content is transacted in the notification payload.
 	case empty

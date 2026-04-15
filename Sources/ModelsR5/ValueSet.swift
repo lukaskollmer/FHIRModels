@@ -31,7 +31,7 @@ public struct ValueSet: DomainResource {
 	public static let resourceType: ResourceType = .valueSet
 	
 	/// All possible types for "versionAlgorithm[x]"
-	public enum VersionAlgorithmX: Equatable, Hashable, Sendable {
+	public indirect enum VersionAlgorithmX: Equatable, Hashable, Sendable {
 		case coding(Coding)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -1132,7 +1132,7 @@ public struct ValueSetExpansionContains: BackboneElement {
 public struct ValueSetExpansionContainsProperty: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case code(FHIRPrimitive<FHIRString>)
 		case coding(Coding)
@@ -1299,7 +1299,7 @@ public struct ValueSetExpansionContainsProperty: BackboneElement {
 public struct ValueSetExpansionContainsPropertySubProperty: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case code(FHIRPrimitive<FHIRString>)
 		case coding(Coding)
@@ -1459,7 +1459,7 @@ public struct ValueSetExpansionContainsPropertySubProperty: BackboneElement {
 public struct ValueSetExpansionParameter: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case code(FHIRPrimitive<FHIRString>)
 		case dateTime(FHIRPrimitive<DateTime>)

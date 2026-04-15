@@ -25,7 +25,7 @@ import FMCore
 public struct VirtualServiceDetail: DataType {
 	
 	/// All possible types for "address[x]"
-	public enum AddressX: Equatable, Hashable, Sendable {
+	public indirect enum AddressX: Equatable, Hashable, Sendable {
 		case contactPoint(ContactPoint)
 		case extendedContactDetail(ExtendedContactDetail)
 		case string(FHIRPrimitive<FHIRString>)

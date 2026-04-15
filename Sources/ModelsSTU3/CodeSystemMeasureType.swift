@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/measure-type
  ValueSet: http://hl7.org/fhir/ValueSet/measure-type
  */
-public enum MeasureType: String, FHIRPrimitiveType {
+public indirect enum MeasureType: String, FHIRPrimitiveType {
 	
 	/// A measure that combines multiple component measures in to a single quality measure
 	case composite

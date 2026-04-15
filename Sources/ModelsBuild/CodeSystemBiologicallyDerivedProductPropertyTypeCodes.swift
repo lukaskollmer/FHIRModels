@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/biologicallyderived-product-property-type-codes
  ValueSet: http://hl7.org/fhir/ValueSet/biologicallyderived-product-property-type-codes
  */
-public enum BiologicallyDerivedProductPropertyTypeCodes: String, FHIRPrimitiveType {
+public indirect enum BiologicallyDerivedProductPropertyTypeCodes: String, FHIRPrimitiveType {
 	
 	/// See https://www.isbt128.org/uri/ABORhD
 	case aborhd

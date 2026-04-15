@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/inventoryreport-status
  ValueSet: http://hl7.org/fhir/ValueSet/inventoryreport-status
  */
-public enum InventoryReportStatus: String, FHIRPrimitiveType {
+public indirect enum InventoryReportStatus: String, FHIRPrimitiveType {
 	
 	/// This report is submitted as current.
 	case active

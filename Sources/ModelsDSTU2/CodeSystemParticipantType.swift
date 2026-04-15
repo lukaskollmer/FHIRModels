@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/participant-type
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-participant-type
  */
-public enum ParticipantType: String, FHIRPrimitiveType {
+public indirect enum ParticipantType: String, FHIRPrimitiveType {
 	
 	/// A person to be contacted in case of an emergency during the encounter.
 	case emergency

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/days-of-week
  ValueSet: http://hl7.org/fhir/ValueSet/days-of-week
  */
-public enum DaysOfWeek: String, FHIRPrimitiveType {
+public indirect enum DaysOfWeek: String, FHIRPrimitiveType {
 	
 	/// Friday.
 	case fri

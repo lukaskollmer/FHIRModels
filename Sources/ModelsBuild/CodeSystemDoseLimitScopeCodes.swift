@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/dose-limit-scope
  ValueSet: http://hl7.org/fhir/ValueSet/dose-limit-scope
  */
-public enum DoseLimitScopeCodes: String, FHIRPrimitiveType {
+public indirect enum DoseLimitScopeCodes: String, FHIRPrimitiveType {
 	
 	/// Maximum Dosage for a single dose
 	case administration

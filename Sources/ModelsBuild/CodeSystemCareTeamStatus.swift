@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/care-team-status
  ValueSet: http://hl7.org/fhir/ValueSet/care-team-status
  */
-public enum CareTeamStatus: String, FHIRPrimitiveType {
+public indirect enum CareTeamStatus: String, FHIRPrimitiveType {
 	
 	/// The care team is currently participating in the coordination and delivery of care.
 	case active

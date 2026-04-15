@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/product-intended-use
  ValueSet: http://hl7.org/fhir/ValueSet/product-intended-use
  */
-public enum ProductIntendedUse: String, FHIRPrimitiveType {
+public indirect enum ProductIntendedUse: String, FHIRPrimitiveType {
 	
 	/// alleviation
 	case alleviation = "Alleviation"

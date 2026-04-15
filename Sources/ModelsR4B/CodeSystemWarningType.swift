@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/warning-type
  ValueSet: http://hl7.org/fhir/ValueSet/warning-type
  */
-public enum WarningType: String, FHIRPrimitiveType {
+public indirect enum WarningType: String, FHIRPrimitiveType {
 	
 	/// Get medical advice/attention.
 	case P313

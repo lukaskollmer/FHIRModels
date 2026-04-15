@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/search-processingmode
  ValueSet: http://hl7.org/fhir/ValueSet/search-processingmode
  */
-public enum SearchProcessingModeType: String, FHIRPrimitiveType {
+public indirect enum SearchProcessingModeType: String, FHIRPrimitiveType {
 	
 	/// The search parameter is derived directly from the selected nodes based on the type definitions.
 	case normal

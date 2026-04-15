@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/namingsystem-identifier-type
  ValueSet: http://hl7.org/fhir/ValueSet/namingsystem-identifier-type
  */
-public enum NamingSystemIdentifierType: String, FHIRPrimitiveType {
+public indirect enum NamingSystemIdentifierType: String, FHIRPrimitiveType {
 	
 	/// An IRI string that can be prepended to the code to obtain a concept IRI for RDF applications. This should be a
 	/// valid, absolute IRI as defined in RFC 3987. See [the RDF spec](rdf.html#iri-stem) for details on how this value

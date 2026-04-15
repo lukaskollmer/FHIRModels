@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/artifactassessment-disposition
  ValueSet: http://hl7.org/fhir/ValueSet/artifactassessment-disposition
  */
-public enum ArtifactAssessmentDisposition: String, FHIRPrimitiveType {
+public indirect enum ArtifactAssessmentDisposition: String, FHIRPrimitiveType {
 	
 	/// The comment is not persuasive (rejected in full)
 	case notPersuasive = "not-persuasive"

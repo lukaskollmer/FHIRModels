@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contributor-summary-style
  ValueSet: http://hl7.org/fhir/ValueSet/contributor-summary-style
  */
-public enum ContributorSummaryStyle: String, FHIRPrimitiveType {
+public indirect enum ContributorSummaryStyle: String, FHIRPrimitiveType {
 	
 	/// Example: Jennifer Laskowski et al.
 	case a1full

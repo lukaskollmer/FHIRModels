@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/operation-outcome
  ValueSet: http://hl7.org/fhir/ValueSet/operation-outcome
  */
-public enum OperationOutcomeCodes: String, FHIRPrimitiveType {
+public indirect enum OperationOutcomeCodes: String, FHIRPrimitiveType {
 	
 	/// MSG_AUTH_REQUIRED
 	case MSG_AUTH_REQUIRED

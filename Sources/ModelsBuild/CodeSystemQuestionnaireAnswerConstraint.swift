@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/questionnaire-answer-constraint
  */
-public enum QuestionnaireAnswerConstraint: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireAnswerConstraint: String, FHIRPrimitiveType {
 	
 	/// Only values listed as answerOption or in the expansion of the answerValueSet are permitted
 	case optionsOnly

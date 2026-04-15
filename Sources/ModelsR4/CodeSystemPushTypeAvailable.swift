@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/push-type-available
  ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-push-type-available
  */
-public enum PushTypeAvailable: String, FHIRPrimitiveType {
+public indirect enum PushTypeAvailable: String, FHIRPrimitiveType {
 	
 	/// any
 	case any

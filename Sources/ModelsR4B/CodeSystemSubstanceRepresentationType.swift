@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-representation-type
  ValueSet: http://hl7.org/fhir/ValueSet/substance-representation-type
  */
-public enum SubstanceRepresentationType: String, FHIRPrimitiveType {
+public indirect enum SubstanceRepresentationType: String, FHIRPrimitiveType {
 	
 	/// brand
 	case brand = "Brand"

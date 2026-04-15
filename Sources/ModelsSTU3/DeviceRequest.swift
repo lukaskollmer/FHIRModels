@@ -30,13 +30,13 @@ public struct DeviceRequest: DomainResource {
 	public static let resourceType: ResourceType = .deviceRequest
 	
 	/// All possible types for "code[x]"
-	public enum CodeX: Equatable, Hashable, Sendable {
+	public indirect enum CodeX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)

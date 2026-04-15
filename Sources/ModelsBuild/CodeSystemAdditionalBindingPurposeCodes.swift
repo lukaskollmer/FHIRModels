@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/additional-binding-purpose
  ValueSet: http://hl7.org/fhir/ValueSet/additional-binding-purpose
  */
-public enum AdditionalBindingPurposeCodes: String, FHIRPrimitiveType {
+public indirect enum AdditionalBindingPurposeCodes: String, FHIRPrimitiveType {
 	
 	/// Instances are strongly encouraged to have a code from this value set and, if they enable 'best practice'
 	/// validation mode, they will receive a 'best practice violation' message for data elements that do not include a

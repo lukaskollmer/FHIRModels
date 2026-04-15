@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/reason-medication-not-given
  ValueSet: http://hl7.org/fhir/ValueSet/reason-medication-not-given-codes
  */
-public enum ReasonMedicationNotGivenCodes: String, FHIRPrimitiveType {
+public indirect enum ReasonMedicationNotGivenCodes: String, FHIRPrimitiveType {
 	
 	/// No reason known.
 	case A = "a"

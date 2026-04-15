@@ -279,7 +279,7 @@ public struct RequestGroup: DomainResource {
 public struct RequestGroupAction: BackboneElement {
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
@@ -635,7 +635,7 @@ public struct RequestGroupActionCondition: BackboneElement {
 public struct RequestGroupActionRelatedAction: BackboneElement {
 	
 	/// All possible types for "offset[x]"
-	public enum OffsetX: Equatable, Hashable, Sendable {
+	public indirect enum OffsetX: Equatable, Hashable, Sendable {
 		case duration(Duration)
 		case range(Range)
 	}

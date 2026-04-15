@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-focus-type
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-focus-type
  */
-public enum ResearchStudyFocusType: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyFocusType: String, FHIRPrimitiveType {
 	
 	/// device
 	case device

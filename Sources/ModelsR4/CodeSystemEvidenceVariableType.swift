@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/variable-type
  ValueSet: http://hl7.org/fhir/ValueSet/variable-type
  */
-public enum EvidenceVariableType: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableType: String, FHIRPrimitiveType {
 	
 	/// The variable is a continuous result such as a quantity.
 	case continuous

@@ -369,7 +369,7 @@ public struct IngredientSubstance: BackboneElement {
 public struct IngredientSubstanceStrength: BackboneElement {
 	
 	/// All possible types for "concentration[x]"
-	public enum ConcentrationX: Equatable, Hashable, Sendable {
+	public indirect enum ConcentrationX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case ratio(Ratio)
@@ -377,7 +377,7 @@ public struct IngredientSubstanceStrength: BackboneElement {
 	}
 	
 	/// All possible types for "presentation[x]"
-	public enum PresentationX: Equatable, Hashable, Sendable {
+	public indirect enum PresentationX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case ratio(Ratio)
@@ -594,7 +594,7 @@ public struct IngredientSubstanceStrength: BackboneElement {
 public struct IngredientSubstanceStrengthReferenceStrength: BackboneElement {
 	
 	/// All possible types for "strength[x]"
-	public enum StrengthX: Equatable, Hashable, Sendable {
+	public indirect enum StrengthX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case ratio(Ratio)
 		case ratioRange(RatioRange)

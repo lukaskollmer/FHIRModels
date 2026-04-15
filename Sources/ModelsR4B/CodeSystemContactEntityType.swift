@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/contactentity-type
  */
-public enum ContactEntityType: String, FHIRPrimitiveType {
+public indirect enum ContactEntityType: String, FHIRPrimitiveType {
 	
 	/// Contact details for administrative enquiries.
 	case ADMIN

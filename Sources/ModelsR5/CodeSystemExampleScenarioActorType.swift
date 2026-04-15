@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/examplescenario-actor-type
  ValueSet: http://hl7.org/fhir/ValueSet/examplescenario-actor-type
  */
-public enum ExampleScenarioActorType: String, FHIRPrimitiveType {
+public indirect enum ExampleScenarioActorType: String, FHIRPrimitiveType {
 	
 	/// A human actor
 	case person

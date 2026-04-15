@@ -632,7 +632,7 @@ public struct MedicinalProductNameNamePart: BackboneElement {
 public struct MedicinalProductSpecialDesignation: BackboneElement {
 	
 	/// All possible types for "indication[x]"
-	public enum IndicationX: Equatable, Hashable, Sendable {
+	public indirect enum IndicationX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/measure-report-type
  ValueSet: http://hl7.org/fhir/ValueSet/measure-report-type
  */
-public enum MeasureReportType: String, FHIRPrimitiveType {
+public indirect enum MeasureReportType: String, FHIRPrimitiveType {
 	
 	/// A data exchange report that contains data-of-interest for the measure (i.e. data that is needed to calculate the
 	/// measure)

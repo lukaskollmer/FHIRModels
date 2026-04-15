@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/media-type
  ValueSet: http://hl7.org/fhir/ValueSet/media-category
  */
-public enum DigitalMediaType: String, FHIRPrimitiveType {
+public indirect enum DigitalMediaType: String, FHIRPrimitiveType {
 	
 	/// The media consists of a sound recording
 	case audio

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/ex-visionprescriptionproduct
  ValueSet: http://hl7.org/fhir/ValueSet/vision-product
  */
-public enum ExampleVisionPrescriptionProductCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleVisionPrescriptionProductCodes: String, FHIRPrimitiveType {
 	
 	/// contact
 	case contact

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function
  ValueSet: http://hl7.org/fhir/ValueSet/medicationdispense-performer-function
  */
-public enum MedicationDispensePerformerFunctionCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationDispensePerformerFunctionCodes: String, FHIRPrimitiveType {
 	
 	/// Performed initial quality assurance on the prepared medication
 	case checker

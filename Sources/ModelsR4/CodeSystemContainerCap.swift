@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/container-cap
  ValueSet: http://hl7.org/fhir/ValueSet/container-cap
  */
-public enum ContainerCap: String, FHIRPrimitiveType {
+public indirect enum ContainerCap: String, FHIRPrimitiveType {
 	
 	/// black cap.
 	case black

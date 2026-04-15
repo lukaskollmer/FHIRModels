@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medication-intended-performer-role
  ValueSet: http://hl7.org/fhir/ValueSet/medication-intended-performer-role
  */
-public enum MedicationIntendedPerformerRole: String, FHIRPrimitiveType {
+public indirect enum MedicationIntendedPerformerRole: String, FHIRPrimitiveType {
 	
 	/// oncologynurse
 	case oncologynurse

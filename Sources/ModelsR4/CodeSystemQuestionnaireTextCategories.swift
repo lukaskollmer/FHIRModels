@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/questionnaire-display-category
  ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-display-category
  */
-public enum QuestionnaireTextCategories: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireTextCategories: String, FHIRPrimitiveType {
 	
 	/// The text provides additional guidance on populating the containing item.  Help text isn't necessarily expected
 	/// to be rendered as part of the form, but may instead be made available through fly-over, pop-up button, link to a

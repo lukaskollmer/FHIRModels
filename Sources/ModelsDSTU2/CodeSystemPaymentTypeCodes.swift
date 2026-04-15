@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/payment-type
  ValueSet: http://hl7.org/fhir/ValueSet/payment-type
  */
-public enum PaymentTypeCodes: String, FHIRPrimitiveType {
+public indirect enum PaymentTypeCodes: String, FHIRPrimitiveType {
 	
 	/// adjustment
 	case adjustment

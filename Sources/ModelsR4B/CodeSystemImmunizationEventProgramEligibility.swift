@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/immunization-program-eligibility
  */
-public enum ImmunizationEventProgramEligibility: String, FHIRPrimitiveType {
+public indirect enum ImmunizationEventProgramEligibility: String, FHIRPrimitiveType {
 	
 	/// The patient is not eligible for the funding program.
 	case ineligible

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medication-request-intent
  ValueSet: http://hl7.org/fhir/ValueSet/medication-request-intent
  */
-public enum MedicationRequestIntent: String, FHIRPrimitiveType {
+public indirect enum MedicationRequestIntent: String, FHIRPrimitiveType {
 	
 	/// The request represents an instance for the particular order, for example a medication administration record.
 	case instanceOrder = "instance-order"

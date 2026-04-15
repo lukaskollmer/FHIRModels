@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/assert-response-code-types
  ValueSet: http://hl7.org/fhir/ValueSet/assert-response-code-types
  */
-public enum AssertionResponseTypes: String, FHIRPrimitiveType {
+public indirect enum AssertionResponseTypes: String, FHIRPrimitiveType {
 	
 	/// Response code is 100.
 	case `continue`

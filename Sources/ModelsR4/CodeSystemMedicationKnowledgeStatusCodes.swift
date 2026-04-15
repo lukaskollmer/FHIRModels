@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/medicationknowledge-status
  ValueSet: http://hl7.org/fhir/ValueSet/medicationknowledge-status
  */
-public enum MedicationKnowledgeStatusCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationKnowledgeStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The medication is available for use.
 	case active

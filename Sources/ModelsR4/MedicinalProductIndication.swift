@@ -203,7 +203,7 @@ public struct MedicinalProductIndication: DomainResource {
 public struct MedicinalProductIndicationOtherTherapy: BackboneElement {
 	
 	/// All possible types for "medication[x]"
-	public enum MedicationX: Equatable, Hashable, Sendable {
+	public indirect enum MedicationX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

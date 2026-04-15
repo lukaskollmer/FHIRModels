@@ -30,7 +30,7 @@ public struct CommunicationRequest: DomainResource {
 	public static let resourceType: ResourceType = .communicationRequest
 	
 	/// All possible types for "scheduled[x]"
-	public enum ScheduledX: Equatable, Hashable, Sendable {
+	public indirect enum ScheduledX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}

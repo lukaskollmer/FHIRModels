@@ -369,7 +369,7 @@ public struct MedicinalProductDefinition: DomainResource {
 public struct MedicinalProductDefinitionCharacteristic: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)

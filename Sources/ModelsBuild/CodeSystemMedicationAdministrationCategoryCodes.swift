@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medication-admin-category
  ValueSet: http://hl7.org/fhir/ValueSet/medication-admin-category
  */
-public enum MedicationAdministrationCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationAdministrationCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Includes administrations for medications to be administered or consumed by the patient in their home (this would
 	/// include long term care or nursing homes, hospices, etc.).

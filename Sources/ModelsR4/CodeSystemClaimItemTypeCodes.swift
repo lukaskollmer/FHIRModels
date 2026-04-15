@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/ex-claimitemtype
  ValueSet: http://hl7.org/fhir/ValueSet/fm-itemtype
  */
-public enum ClaimItemTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ClaimItemTypeCodes: String, FHIRPrimitiveType {
 	
 	/// A group of products and/or Services, amount ar the summary or detail level products and services.
 	case group

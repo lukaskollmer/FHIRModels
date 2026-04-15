@@ -26,7 +26,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/color-names
  */
-public enum ColorCodes: String, FHIRPrimitiveType {
+public indirect enum ColorCodes: String, FHIRPrimitiveType {
 	
 	/// aliceblue
 	case aliceblue

@@ -383,7 +383,7 @@ public struct Task: DomainResource {
 public struct TaskFocus: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case reference(Reference)
 	}
@@ -484,7 +484,7 @@ public struct TaskFocus: BackboneElement {
 public struct TaskInput: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)
@@ -1123,7 +1123,7 @@ public struct TaskInput: BackboneElement {
 public struct TaskOutput: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)

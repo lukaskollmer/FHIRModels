@@ -32,7 +32,7 @@ public struct Procedure: DomainResource {
 	public static let resourceType: ResourceType = .procedure
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case age(Age)
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
@@ -42,7 +42,7 @@ public struct Procedure: DomainResource {
 	}
 	
 	/// All possible types for "reported[x]"
-	public enum ReportedX: Equatable, Hashable, Sendable {
+	public indirect enum ReportedX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case reference(Reference)
 	}

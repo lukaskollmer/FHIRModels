@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/eligibility
  */
-public enum Eligibility: String, FHIRPrimitiveType {
+public indirect enum Eligibility: String, FHIRPrimitiveType {
 	
 	/// An assessment is required to receive services associated with this code
 	case assessmentRequired = "assessment-required"

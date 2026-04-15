@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-use-request-status
  ValueSet: http://hl7.org/fhir/ValueSet/device-use-request-status
  */
-public enum DeviceUseRequestStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceUseRequestStatus: String, FHIRPrimitiveType {
 	
 	/// The request was attempted, but due to some procedural error, it could not be completed.
 	case aborted

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/definition-resource-types
  ValueSet: http://hl7.org/fhir/ValueSet/definition-resource-types
  */
-public enum DefinitionResourceType: String, FHIRPrimitiveType {
+public indirect enum DefinitionResourceType: String, FHIRPrimitiveType {
 	
 	/// This resource allows for the definition of some activity to be performed, independent of a particular patient,
 	/// practitioner, or other performance context.

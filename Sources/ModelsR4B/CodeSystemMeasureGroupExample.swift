@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/measure-group-example
  ValueSet: http://hl7.org/fhir/ValueSet/measure-group-example
  */
-public enum MeasureGroupExample: String, FHIRPrimitiveType {
+public indirect enum MeasureGroupExample: String, FHIRPrimitiveType {
 	
 	/// Primary Measure Group.
 	case primaryRate = "primary-rate"

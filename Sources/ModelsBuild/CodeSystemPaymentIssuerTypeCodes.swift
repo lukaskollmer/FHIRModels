@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/payment-issuertype
  ValueSet: http://hl7.org/fhir/ValueSet/payment-issuertype
  */
-public enum PaymentIssuerTypeCodes: String, FHIRPrimitiveType {
+public indirect enum PaymentIssuerTypeCodes: String, FHIRPrimitiveType {
 	
 	/// An insurer, or party acting on their behalf, which is making payment following a contract, direct or indirect,
 	/// with the patient to pay for healthcare-related services.

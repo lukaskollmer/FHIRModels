@@ -577,7 +577,7 @@ public struct AuditEventEntity: BackboneElement {
 public struct AuditEventEntityDetail: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case base64Binary(FHIRPrimitive<Base64Binary>)
 		case string(FHIRPrimitive<FHIRString>)
 	}

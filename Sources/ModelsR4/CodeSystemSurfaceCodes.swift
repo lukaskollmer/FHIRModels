@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/FDI-surface
  ValueSet: http://hl7.org/fhir/ValueSet/surface
  */
-public enum SurfaceCodes: String, FHIRPrimitiveType {
+public indirect enum SurfaceCodes: String, FHIRPrimitiveType {
 	
 	/// The surface of a posterior tooth facing the cheeks.
 	case B

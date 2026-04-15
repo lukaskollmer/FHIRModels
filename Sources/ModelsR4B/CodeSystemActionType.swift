@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/action-type
  ValueSet: http://hl7.org/fhir/ValueSet/action-type
  */
-public enum ActionType: String, FHIRPrimitiveType {
+public indirect enum ActionType: String, FHIRPrimitiveType {
 	
 	/// The action is to create a new resource.
 	case create

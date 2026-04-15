@@ -515,7 +515,7 @@ public struct ImplementationGuidePackage: BackboneElement {
 public struct ImplementationGuidePackageResource: BackboneElement {
 	
 	/// All possible types for "source[x]"
-	public enum SourceX: Equatable, Hashable, Sendable {
+	public indirect enum SourceX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

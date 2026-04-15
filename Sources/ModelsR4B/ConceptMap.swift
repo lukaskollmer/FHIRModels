@@ -30,13 +30,13 @@ public struct ConceptMap: DomainResource {
 	public static let resourceType: ResourceType = .conceptMap
 	
 	/// All possible types for "source[x]"
-	public enum SourceX: Equatable, Hashable, Sendable {
+	public indirect enum SourceX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case canonical(FHIRPrimitive<Canonical>)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

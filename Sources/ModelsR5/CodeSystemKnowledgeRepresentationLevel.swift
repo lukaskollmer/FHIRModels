@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/knowledge-representation-level
  ValueSet: http://hl7.org/fhir/uv/cpg/ValueSet/knowledge-representation-level
  */
-public enum KnowledgeRepresentationLevel: String, FHIRPrimitiveType {
+public indirect enum KnowledgeRepresentationLevel: String, FHIRPrimitiveType {
 	
 	/// The knowledge is expressed in a way that is coded and interpretable by CDS systems using a variety of formats,
 	/// affording direct executability, but potentially limited shareability. The knowledge is typically expressed

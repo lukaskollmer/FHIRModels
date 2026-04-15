@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/statistic-model-code
  ValueSet: http://hl7.org/fhir/ValueSet/statistic-model-code
  */
-public enum StatisticModelCode: String, FHIRPrimitiveType {
+public indirect enum StatisticModelCode: String, FHIRPrimitiveType {
 	
 	/// Used for adjusted analysis, paired with variable element(s)
 	case adjusted

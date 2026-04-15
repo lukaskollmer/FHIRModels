@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/goal-status
  ValueSet: http://hl7.org/fhir/ValueSet/goal-status
  */
-public enum GoalStatus: String, FHIRPrimitiveType {
+public indirect enum GoalStatus: String, FHIRPrimitiveType {
 	
 	/// A proposed goal was accepted
 	case accepted

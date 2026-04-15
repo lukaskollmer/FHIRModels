@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/provenance-entity-role
  ValueSet: http://hl7.org/fhir/ValueSet/provenance-entity-role
  */
-public enum ProvenanceEntityRole: String, FHIRPrimitiveType {
+public indirect enum ProvenanceEntityRole: String, FHIRPrimitiveType {
 	
 	/// A transformation of an entity into another, an update of an entity resulting in a new one, or the construction
 	/// of a new entity based on a preexisting entity.

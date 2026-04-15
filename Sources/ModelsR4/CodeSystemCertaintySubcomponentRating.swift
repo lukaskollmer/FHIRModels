@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating
  ValueSet: http://hl7.org/fhir/ValueSet/certainty-subcomponent-rating
  */
-public enum CertaintySubcomponentRating: String, FHIRPrimitiveType {
+public indirect enum CertaintySubcomponentRating: String, FHIRPrimitiveType {
 	
 	/// possible reason for increasing quality rating was checked and found to be absent.
 	case absent

@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/flagCategory
  ValueSet: http://hl7.org/fhir/ValueSet/qicore-flag-category
  */
-public enum FlagCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum FlagCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Special issues with respect to payment, insurance, or other administrative matters.
 	case ADM

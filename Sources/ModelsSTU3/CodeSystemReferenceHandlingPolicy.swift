@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/reference-handling-policy
  ValueSet: http://hl7.org/fhir/ValueSet/reference-handling-policy
  */
-public enum ReferenceHandlingPolicy: String, FHIRPrimitiveType {
+public indirect enum ReferenceHandlingPolicy: String, FHIRPrimitiveType {
 	
 	/// The server enforces that references have integrity - e.g. it ensures that references can always be resolved.
 	/// This is typically the case for clinical record systems, but often not the case for middleware/proxy systems

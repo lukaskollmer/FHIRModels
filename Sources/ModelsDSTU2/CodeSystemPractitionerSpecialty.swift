@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/practitioner-specialty
  ValueSet: http://hl7.org/fhir/ValueSet/practitioner-specialty
  */
-public enum PractitionerSpecialty: String, FHIRPrimitiveType {
+public indirect enum PractitionerSpecialty: String, FHIRPrimitiveType {
 	
 	/// cardio
 	case cardio

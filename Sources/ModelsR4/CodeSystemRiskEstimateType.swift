@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/risk-estimate-type
  ValueSet: http://hl7.org/fhir/ValueSet/risk-estimate-type
  */
-public enum RiskEstimateType: String, FHIRPrimitiveType {
+public indirect enum RiskEstimateType: String, FHIRPrimitiveType {
 	
 	/// descriptive measure reported as total number of items.
 	case count

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/subscriptiontopic-cr-behavior
  ValueSet: http://hl7.org/fhir/ValueSet/subscriptiontopic-cr-behavior
  */
-public enum CriteriaNotExistsBehavior: String, FHIRPrimitiveType {
+public indirect enum CriteriaNotExistsBehavior: String, FHIRPrimitiveType {
 	
 	/// The requested conditional statement will fail if a matching state does not exist (e.g., previous state during
 	/// create).

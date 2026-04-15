@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes
  ValueSet: http://hl7.org/fhir/ValueSet/contract-term-subtype
  */
-public enum ContractTermSubtypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractTermSubtypeCodes: String, FHIRPrimitiveType {
 	
 	/// Terms that go to the very root of a contract.
 	case condition

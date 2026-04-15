@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/graph-compartment-use
  ValueSet: http://hl7.org/fhir/ValueSet/graph-compartment-use
  */
-public enum GraphCompartmentUse: String, FHIRPrimitiveType {
+public indirect enum GraphCompartmentUse: String, FHIRPrimitiveType {
 	
 	/// This compartment rule is a condition for whether the rule applies.
 	case condition

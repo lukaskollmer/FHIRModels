@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/cited-artifact-classification-type
  ValueSet: http://hl7.org/fhir/ValueSet/cited-artifact-classification-type
  */
-public enum CitedArtifactClassificationType: String, FHIRPrimitiveType {
+public indirect enum CitedArtifactClassificationType: String, FHIRPrimitiveType {
 	
 	/// Chemical
 	case chemical

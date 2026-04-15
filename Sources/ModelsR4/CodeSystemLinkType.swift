@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/link-type
  ValueSet: http://hl7.org/fhir/ValueSet/link-type
  */
-public enum LinkType: String, FHIRPrimitiveType {
+public indirect enum LinkType: String, FHIRPrimitiveType {
 	
 	/// The patient resource containing this link is in use and valid but not considered the main source of information
 	/// about a patient. The link points forward to another patient resource that should be consulted to retrieve

@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/resource-validation-mode
  */
-public enum ResourceValidationMode: String, FHIRPrimitiveType {
+public indirect enum ResourceValidationMode: String, FHIRPrimitiveType {
 	
 	/// The server checks the content, and then checks that the content would be acceptable as a create (e.g. that the
 	/// content would not violate any uniqueness constraints).

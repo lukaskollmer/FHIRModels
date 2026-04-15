@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/care-team-category
  ValueSet: http://hl7.org/fhir/ValueSet/care-team-category
  */
-public enum CareTeamCategory: String, FHIRPrimitiveType {
+public indirect enum CareTeamCategory: String, FHIRPrimitiveType {
 	
 	/// This type of team is responsible for establishing, conducting, coordinating and monitoring the outcomes of
 	/// clinical trials. The team focuses on research, clinical care and education.

@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/allerg-intol-substance-exp-risk
  ValueSet: http://hl7.org/fhir/ValueSet/allerg-intol-substance-exp-risk
  */
-public enum AllergyIntoleranceSubstanceExposureRisk: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceSubstanceExposureRisk: String, FHIRPrimitiveType {
 	
 	/// Known risk of allergy or intolerance reaction upon exposure to the specified substance.
 	case knownReactionRisk = "known-reaction-risk"

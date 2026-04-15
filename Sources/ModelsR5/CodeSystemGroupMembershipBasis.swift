@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/group-membership-basis
  ValueSet: http://hl7.org/fhir/ValueSet/group-membership-basis
  */
-public enum GroupMembershipBasis: String, FHIRPrimitiveType {
+public indirect enum GroupMembershipBasis: String, FHIRPrimitiveType {
 	
 	/// The Group.characteristics specified are both necessary and sufficient to determine membership. All entities that
 	/// meet the criteria are considered to be members of the group, whether referenced by the group or not. If members

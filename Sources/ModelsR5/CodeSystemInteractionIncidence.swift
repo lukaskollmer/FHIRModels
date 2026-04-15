@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/interaction-incidence
  ValueSet: http://hl7.org/fhir/ValueSet/interaction-incidence
  */
-public enum InteractionIncidence: String, FHIRPrimitiveType {
+public indirect enum InteractionIncidence: String, FHIRPrimitiveType {
 	
 	/// observed
 	case observed = "Observed"

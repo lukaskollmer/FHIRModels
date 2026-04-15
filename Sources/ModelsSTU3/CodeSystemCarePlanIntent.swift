@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/care-plan-intent
  ValueSet: http://hl7.org/fhir/ValueSet/care-plan-intent
  */
-public enum CarePlanIntent: String, FHIRPrimitiveType {
+public indirect enum CarePlanIntent: String, FHIRPrimitiveType {
 	
 	/// The care plan represents a component or option for a RequestGroup that establishes timing, conditionality and/or
 	/// other constraints among a set of requests.

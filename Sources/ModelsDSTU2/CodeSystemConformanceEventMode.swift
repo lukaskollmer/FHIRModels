@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/message-conformance-event-mode
  ValueSet: http://hl7.org/fhir/ValueSet/message-conformance-event-mode
  */
-public enum ConformanceEventMode: String, FHIRPrimitiveType {
+public indirect enum ConformanceEventMode: String, FHIRPrimitiveType {
 	
 	/// The application receives requests and sends responses.
 	case receiver

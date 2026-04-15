@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/artifactassessment-information-type
  ValueSet: http://hl7.org/fhir/ValueSet/artifactassessment-information-type
  */
-public enum ArtifactAssessmentInformationType: String, FHIRPrimitiveType {
+public indirect enum ArtifactAssessmentInformationType: String, FHIRPrimitiveType {
 	
 	/// A change request for the artifact
 	case changeRequest = "change-request"

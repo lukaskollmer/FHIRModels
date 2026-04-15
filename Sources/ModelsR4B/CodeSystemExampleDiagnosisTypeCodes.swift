@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/ex-diagnosistype
  */
-public enum ExampleDiagnosisTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleDiagnosisTypeCodes: String, FHIRPrimitiveType {
 	
 	/// The diagnosis given as the reason why the patient was admitted to the hospital.
 	case admitting

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/ex-paymenttype
  ValueSet: http://hl7.org/fhir/ValueSet/ex-paymenttype
  */
-public enum ExamplePaymentTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ExamplePaymentTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Complete (final) payment of the benefit under the Claim less any adjustments.
 	case complete

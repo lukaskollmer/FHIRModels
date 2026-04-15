@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/coverage-class
  */
-public enum CoverageClassCodes: String, FHIRPrimitiveType {
+public indirect enum CoverageClassCodes: String, FHIRPrimitiveType {
 	
 	/// A class of benefits.
 	case `class`

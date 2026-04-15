@@ -30,7 +30,7 @@ public struct EvidenceReport: DomainResource {
 	public static let resourceType: ResourceType = .evidenceReport
 	
 	/// All possible types for "citeAs[x]"
-	public enum CiteAsX: Equatable, Hashable, Sendable {
+	public indirect enum CiteAsX: Equatable, Hashable, Sendable {
 		case markdown(FHIRPrimitive<FHIRString>)
 		case reference(Reference)
 	}
@@ -305,7 +305,7 @@ public struct EvidenceReport: DomainResource {
 public struct EvidenceReportRelatesTo: BackboneElement {
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case identifier(Identifier)
 		case reference(Reference)
 	}
@@ -646,7 +646,7 @@ public struct EvidenceReportSubject: BackboneElement {
 public struct EvidenceReportSubjectCharacteristic: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)

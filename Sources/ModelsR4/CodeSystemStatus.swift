@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/status
  ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-status
  */
-public enum Status: String, FHIRPrimitiveType {
+public indirect enum Status: String, FHIRPrimitiveType {
 	
 	/// ***TODO***
 	case attested

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-priority
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-priority
  */
-public enum DeviceAlertPriority: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertPriority: String, FHIRPrimitiveType {
 	
 	/// The alert is about a potentially life-threatening condition that should be addressed immediately.
 	case high

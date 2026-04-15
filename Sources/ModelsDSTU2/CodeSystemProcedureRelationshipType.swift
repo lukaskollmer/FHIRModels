@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/procedure-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/procedure-relationship-type
  */
-public enum ProcedureRelationshipType: String, FHIRPrimitiveType {
+public indirect enum ProcedureRelationshipType: String, FHIRPrimitiveType {
 	
 	/// This procedure caused the related one to be performed.
 	case becauseOf = "because-of"

@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/subscriber-relationship
  ValueSet: http://hl7.org/fhir/ValueSet/subscriber-relationship
  */
-public enum SubscriberRelationshipCodes: String, FHIRPrimitiveType {
+public indirect enum SubscriberRelationshipCodes: String, FHIRPrimitiveType {
 	
 	/// The Beneficiary is a child of the Subscriber
 	case child

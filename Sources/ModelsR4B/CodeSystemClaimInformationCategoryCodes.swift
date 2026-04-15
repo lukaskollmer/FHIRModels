@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/claiminformationcategory
  */
-public enum ClaimInformationCategoryCodes: String, FHIRPrimitiveType {
+public indirect enum ClaimInformationCategoryCodes: String, FHIRPrimitiveType {
 	
 	/// Materials attached such as images, documents and resources.
 	case attachment

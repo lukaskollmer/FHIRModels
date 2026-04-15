@@ -424,7 +424,7 @@ public struct CompositionEvent: BackboneElement {
 public struct CompositionRelatesTo: BackboneElement {
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case identifier(Identifier)
 		case reference(Reference)
 	}

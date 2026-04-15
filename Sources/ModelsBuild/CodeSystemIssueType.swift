@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/issue-type
  ValueSet: http://hl7.org/fhir/ValueSet/issue-type
  */
-public enum IssueType: String, FHIRPrimitiveType {
+public indirect enum IssueType: String, FHIRPrimitiveType {
 	
 	/// An extension was found that was not acceptable, could not be resolved, or a modifierExtension was not
 	/// recognized.

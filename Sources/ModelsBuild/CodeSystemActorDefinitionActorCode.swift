@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/actordefinition-actor-code
  ValueSet: http://hl7.org/fhir/ValueSet/actordefinition-actor-code
  */
-public enum ActorDefinitionActorCode: String, FHIRPrimitiveType {
+public indirect enum ActorDefinitionActorCode: String, FHIRPrimitiveType {
 	
 	/// careTeam
 	case careTeam = "care-team"

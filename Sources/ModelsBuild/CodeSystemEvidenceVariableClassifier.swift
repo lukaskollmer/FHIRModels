@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-variable-classifier
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-variable-classifier
  */
-public enum EvidenceVariableClassifier: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableClassifier: String, FHIRPrimitiveType {
 	
 	/// Disease, diagnosis, or condition.
 	case condition

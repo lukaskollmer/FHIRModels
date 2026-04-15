@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/address-use
  ValueSet: http://hl7.org/fhir/ValueSet/address-use
  */
-public enum AddressUse: String, FHIRPrimitiveType {
+public indirect enum AddressUse: String, FHIRPrimitiveType {
 	
 	/// A communication address at a home.
 	case home

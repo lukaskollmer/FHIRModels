@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/search-param-type
  ValueSet: http://hl7.org/fhir/ValueSet/search-param-type
  */
-public enum SearchParamType: String, FHIRPrimitiveType {
+public indirect enum SearchParamType: String, FHIRPrimitiveType {
 	
 	/// A composite search parameter that combines a search on two values together.
 	case composite

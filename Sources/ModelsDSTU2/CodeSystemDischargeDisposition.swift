@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/discharge-disposition
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-discharge-disposition
  */
-public enum DischargeDisposition: String, FHIRPrimitiveType {
+public indirect enum DischargeDisposition: String, FHIRPrimitiveType {
 	
 	/// aadvice
 	case aadvice

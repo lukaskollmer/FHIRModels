@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/communication-category
  ValueSet: http://hl7.org/fhir/ValueSet/communication-category
  */
-public enum CommunicationCategory: String, FHIRPrimitiveType {
+public indirect enum CommunicationCategory: String, FHIRPrimitiveType {
 	
 	/// The communication conveys an alert.
 	case alert

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/verificationresult-validation-status
  ValueSet: http://hl7.org/fhir/ValueSet/validation-status
  */
-public enum ValidationStatus: String, FHIRPrimitiveType {
+public indirect enum ValidationStatus: String, FHIRPrimitiveType {
 	
 	/// failed
 	case failed

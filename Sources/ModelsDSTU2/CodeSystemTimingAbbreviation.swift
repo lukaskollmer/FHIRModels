@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/timing-abbreviation
  ValueSet: http://hl7.org/fhir/ValueSet/timing-abbreviation
  */
-public enum TimingAbbreviation: String, FHIRPrimitiveType {
+public indirect enum TimingAbbreviation: String, FHIRPrimitiveType {
 	
 	/// Every 4 hours at institution specified times
 	case Q4H

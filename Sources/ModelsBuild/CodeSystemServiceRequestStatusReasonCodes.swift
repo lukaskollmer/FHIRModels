@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/servicerequest-status-reason
  ValueSet: http://hl7.org/fhir/ValueSet/servicerequest-status-reason
  */
-public enum ServiceRequestStatusReasonCodes: String, FHIRPrimitiveType {
+public indirect enum ServiceRequestStatusReasonCodes: String, FHIRPrimitiveType {
 	
 	/// The service is no longer clinically necessary or relevant for the patient's care.
 	case noLongerClinicallyNecessary = "no-longer-clinically-necessary"

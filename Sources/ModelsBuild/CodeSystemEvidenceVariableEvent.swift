@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-variable-event
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-variable-event
  */
-public enum EvidenceVariableEvent: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableEvent: String, FHIRPrimitiveType {
 	
 	/// The time of first detection of the condition
 	case conditionDetection = "condition-detection"

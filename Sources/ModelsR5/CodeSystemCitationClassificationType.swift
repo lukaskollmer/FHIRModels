@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/citation-classification-type
  ValueSet: http://hl7.org/fhir/ValueSet/citation-classification-type
  */
-public enum CitationClassificationType: String, FHIRPrimitiveType {
+public indirect enum CitationClassificationType: String, FHIRPrimitiveType {
 	
 	/// Citation repository where this citation was created or copied from
 	case citationSource = "citation-source"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/versioning-policy
  ValueSet: http://hl7.org/fhir/ValueSet/versioning-policy
  */
-public enum ResourceVersionPolicy: String, FHIRPrimitiveType {
+public indirect enum ResourceVersionPolicy: String, FHIRPrimitiveType {
 	
 	/// VersionId meta-property is not supported (server) or used (client).
 	case noVersion = "no-version"

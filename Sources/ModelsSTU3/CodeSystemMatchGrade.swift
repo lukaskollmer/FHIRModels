@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/match-grade
  ValueSet: http://hl7.org/fhir/ValueSet/match-grade
  */
-public enum MatchGrade: String, FHIRPrimitiveType {
+public indirect enum MatchGrade: String, FHIRPrimitiveType {
 	
 	/// This record meets the matching criteria to be automatically considered as a full match.
 	case certain

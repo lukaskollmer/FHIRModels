@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/account-relationship
  ValueSet: http://hl7.org/fhir/ValueSet/account-relationship
  */
-public enum AccountRelationship: String, FHIRPrimitiveType {
+public indirect enum AccountRelationship: String, FHIRPrimitiveType {
 	
 	/// guarantor
 	case guarantor

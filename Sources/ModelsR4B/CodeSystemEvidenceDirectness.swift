@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/directness
  ValueSet: http://hl7.org/fhir/ValueSet/directness
  */
-public enum EvidenceDirectness: String, FHIRPrimitiveType {
+public indirect enum EvidenceDirectness: String, FHIRPrimitiveType {
 	
 	/// Exact matching quality between observed and intended variable, so no concern for indirectness in evidence
 	/// interpretation.

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/task-performer-type
  ValueSet: http://hl7.org/fhir/ValueSet/task-performer-type
  */
-public enum TaskPerformerType: String, FHIRPrimitiveType {
+public indirect enum TaskPerformerType: String, FHIRPrimitiveType {
 	
 	/// A workflow participant that acquires resources (specimens, images, etc) necessary to perform the task.
 	case acquirer

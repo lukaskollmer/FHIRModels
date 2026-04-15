@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/communication-not-done-reason
  ValueSet: http://hl7.org/fhir/ValueSet/communication-not-done-reason
  */
-public enum CommunicationNotDoneReason: String, FHIRPrimitiveType {
+public indirect enum CommunicationNotDoneReason: String, FHIRPrimitiveType {
 	
 	/// The communication was not done due to a family objection.
 	case familyObjection = "family-objection"

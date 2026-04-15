@@ -1823,7 +1823,7 @@ public struct CitationCitedArtifactPublicationFormPublishedIn: BackboneElement {
 public struct CitationCitedArtifactRelatesTo: BackboneElement {
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case identifier(Identifier)
 		case reference(Reference)
@@ -2344,7 +2344,7 @@ public struct CitationClassification: BackboneElement {
 public struct CitationRelatesTo: BackboneElement {
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case identifier(Identifier)
 		case reference(Reference)

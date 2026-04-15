@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/immunization-recommendation-date-criterion
  ValueSet: http://hl7.org/fhir/ValueSet/immunization-recommendation-date-criterion
  */
-public enum ImmunizationRecommendationDateCriterionCodes: String, FHIRPrimitiveType {
+public indirect enum ImmunizationRecommendationDateCriterionCodes: String, FHIRPrimitiveType {
 	
 	/// Date the next dose is considered due.
 	case due

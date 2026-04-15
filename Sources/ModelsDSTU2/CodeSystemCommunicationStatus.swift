@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/communication-status
  ValueSet: http://hl7.org/fhir/ValueSet/communication-status
  */
-public enum CommunicationStatus: String, FHIRPrimitiveType {
+public indirect enum CommunicationStatus: String, FHIRPrimitiveType {
 	
 	/// The message transmission is complete, i.e., delivered to the recipient's destination.
 	case completed

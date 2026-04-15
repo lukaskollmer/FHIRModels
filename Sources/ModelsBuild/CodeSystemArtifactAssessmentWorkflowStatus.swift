@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/artifactassessment-workflow-status
  ValueSet: http://hl7.org/fhir/ValueSet/artifactassessment-workflow-status
  */
-public enum ArtifactAssessmentWorkflowStatus: String, FHIRPrimitiveType {
+public indirect enum ArtifactAssessmentWorkflowStatus: String, FHIRPrimitiveType {
 	
 	/// The comment is resolved and any necessary changes have been applied
 	case applied

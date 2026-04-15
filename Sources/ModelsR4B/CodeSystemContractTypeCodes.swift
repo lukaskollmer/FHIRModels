@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/contract-type
  */
-public enum ContractTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractTypeCodes: String, FHIRPrimitiveType {
 	
 	/// Consent Directive.
 	case consent

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/definition-topic
  ValueSet: http://hl7.org/fhir/ValueSet/definition-topic
  */
-public enum DefinitionTopic: String, FHIRPrimitiveType {
+public indirect enum DefinitionTopic: String, FHIRPrimitiveType {
 	
 	/// The definition is related to assessment of the patient.
 	case assessment

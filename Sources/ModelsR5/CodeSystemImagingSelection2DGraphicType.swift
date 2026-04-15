@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/imagingselection-2dgraphictype
  ValueSet: http://hl7.org/fhir/ValueSet/imagingselection-2dgraphictype
  */
-public enum ImagingSelection2DGraphicType: String, FHIRPrimitiveType {
+public indirect enum ImagingSelection2DGraphicType: String, FHIRPrimitiveType {
 	
 	/// Two points shall be present; the first point is to be interpreted as the center and the second point as a point
 	/// on the circumference of a circle, some form of implementation dependent representation of which is to be drawn.

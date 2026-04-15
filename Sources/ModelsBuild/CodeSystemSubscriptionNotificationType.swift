@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/subscription-notification-type
  ValueSet: http://hl7.org/fhir/ValueSet/subscription-notification-type
  */
-public enum SubscriptionNotificationType: String, FHIRPrimitiveType {
+public indirect enum SubscriptionNotificationType: String, FHIRPrimitiveType {
 	
 	/// The status was generated for an event to the subscriber.
 	case eventNotification = "event-notification"

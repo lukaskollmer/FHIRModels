@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/list-empty-reason
  ValueSet: http://hl7.org/fhir/ValueSet/list-empty-reason
  */
-public enum ListEmptyReasons: String, FHIRPrimitiveType {
+public indirect enum ListEmptyReasons: String, FHIRPrimitiveType {
 	
 	/// This list has now closed or has ceased to be relevant or useful.
 	case closed

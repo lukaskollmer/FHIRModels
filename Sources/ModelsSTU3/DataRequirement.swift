@@ -121,7 +121,7 @@ public struct DataRequirement: Element {
 public struct DataRequirementCodeFilter: Element {
 	
 	/// All possible types for "valueSet[x]"
-	public enum ValueSetX: Equatable, Hashable, Sendable {
+	public indirect enum ValueSetX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -241,7 +241,7 @@ public struct DataRequirementCodeFilter: Element {
 public struct DataRequirementDateFilter: Element {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case duration(Duration)
 		case period(Period)

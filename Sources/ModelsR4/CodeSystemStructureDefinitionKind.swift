@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/structure-definition-kind
  ValueSet: http://hl7.org/fhir/ValueSet/structure-definition-kind
  */
-public enum StructureDefinitionKind: String, FHIRPrimitiveType {
+public indirect enum StructureDefinitionKind: String, FHIRPrimitiveType {
 	
 	/// A  complex structure that defines a set of data elements that is suitable for use in 'resources'. The base
 	/// specification defines a number of complex types, and other specifications can define additional types. These

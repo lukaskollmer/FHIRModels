@@ -534,7 +534,7 @@ public struct OperationDefinitionParameter: BackboneElement {
 public struct OperationDefinitionParameterBinding: BackboneElement {
 	
 	/// All possible types for "valueSet[x]"
-	public enum ValueSetX: Equatable, Hashable, Sendable {
+	public indirect enum ValueSetX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case uri(FHIRPrimitive<FHIRURI>)
 	}

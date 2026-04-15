@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/dosage-condition-code
  ValueSet: http://hl7.org/fhir/ValueSet/dosage-condition-code
  */
-public enum DosageConditionCodes: String, FHIRPrimitiveType {
+public indirect enum DosageConditionCodes: String, FHIRPrimitiveType {
 	
 	/// Whether this is needed. Note that this is different to PRN, because the entire course is if required, not on a
 	/// per dose basis

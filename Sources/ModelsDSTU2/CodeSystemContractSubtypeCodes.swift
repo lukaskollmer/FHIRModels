@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contractsubtypecodes
  ValueSet: http://hl7.org/fhir/ValueSet/contract-subtype
  */
-public enum ContractSubtypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractSubtypeCodes: String, FHIRPrimitiveType {
 	
 	/// disclosureCA
 	case disclosureCA = "disclosure-CA"

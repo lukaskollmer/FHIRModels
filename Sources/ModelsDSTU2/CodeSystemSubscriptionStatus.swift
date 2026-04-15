@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/subscription-status
  ValueSet: http://hl7.org/fhir/ValueSet/subscription-status
  */
-public enum SubscriptionStatus: String, FHIRPrimitiveType {
+public indirect enum SubscriptionStatus: String, FHIRPrimitiveType {
 	
 	/// The subscription is active.
 	case active

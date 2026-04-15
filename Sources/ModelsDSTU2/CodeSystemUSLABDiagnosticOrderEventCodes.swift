@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/uslab-event
  ValueSet: http://hl7.org/fhir/ValueSet/uslab-do-event
  */
-public enum USLABDiagnosticOrderEventCodes: String, FHIRPrimitiveType {
+public indirect enum USLABDiagnosticOrderEventCodes: String, FHIRPrimitiveType {
 	
 	/// a Provider (.orderer) adds one or more additional tests to a previously transmitted test requisition.
 	case addOnRequest = "add-on-request"

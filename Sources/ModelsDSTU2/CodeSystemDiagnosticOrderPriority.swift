@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/diagnostic-order-priority
  ValueSet: http://hl7.org/fhir/ValueSet/diagnostic-order-priority
  */
-public enum DiagnosticOrderPriority: String, FHIRPrimitiveType {
+public indirect enum DiagnosticOrderPriority: String, FHIRPrimitiveType {
 	
 	/// The order should be acted on as soon as possible.
 	case asap

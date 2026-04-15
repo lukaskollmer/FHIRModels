@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-transform
  ValueSet: http://hl7.org/fhir/ValueSet/map-transform
  */
-public enum StructureMapTransform: String, FHIRPrimitiveType {
+public indirect enum StructureMapTransform: String, FHIRPrimitiveType {
 	
 	/// Create a Coding. Parameters = (system. Code[, display]).
 	case C = "c"

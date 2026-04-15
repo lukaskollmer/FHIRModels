@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-target-list-mode
  ValueSet: http://hl7.org/fhir/ValueSet/map-target-list-mode
  */
-public enum StructureMapTargetListMode: String, FHIRPrimitiveType {
+public indirect enum StructureMapTargetListMode: String, FHIRPrimitiveType {
 	
 	/// re-use the first item in the list, and keep adding content to it.
 	case collate

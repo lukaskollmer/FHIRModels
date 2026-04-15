@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/order-status
  ValueSet: http://hl7.org/fhir/ValueSet/order-status
  */
-public enum OrderStatus: String, FHIRPrimitiveType {
+public indirect enum OrderStatus: String, FHIRPrimitiveType {
 	
 	/// Processing the order was stopped because of some workflow/business logic reason.
 	case aborted

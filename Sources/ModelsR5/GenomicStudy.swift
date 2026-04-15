@@ -529,7 +529,7 @@ public struct GenomicStudyAnalysisDevice: BackboneElement {
 public struct GenomicStudyAnalysisInput: BackboneElement {
 	
 	/// All possible types for "generatedBy[x]"
-	public enum GeneratedByX: Equatable, Hashable, Sendable {
+	public indirect enum GeneratedByX: Equatable, Hashable, Sendable {
 		case identifier(Identifier)
 		case reference(Reference)
 	}

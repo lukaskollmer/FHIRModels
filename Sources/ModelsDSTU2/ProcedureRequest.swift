@@ -29,19 +29,19 @@ public struct ProcedureRequest: DomainResource {
 	public static let resourceType: ResourceType = .procedureRequest
 	
 	/// All possible types for "asNeeded[x]"
-	public enum AsNeededX: Equatable, Hashable, Sendable {
+	public indirect enum AsNeededX: Equatable, Hashable, Sendable {
 		case boolean(FHIRPrimitive<FHIRBool>)
 		case codeableConcept(CodeableConcept)
 	}
 	
 	/// All possible types for "reason[x]"
-	public enum ReasonX: Equatable, Hashable, Sendable {
+	public indirect enum ReasonX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "scheduled[x]"
-	public enum ScheduledX: Equatable, Hashable, Sendable {
+	public indirect enum ScheduledX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)

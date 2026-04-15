@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/location-mode
  ValueSet: http://hl7.org/fhir/ValueSet/location-mode
  */
-public enum LocationMode: String, FHIRPrimitiveType {
+public indirect enum LocationMode: String, FHIRPrimitiveType {
 	
 	/// The Location resource represents a specific instance of a location (e.g. Operating Theatre 1A).
 	case instance

@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/synchronicity-control
  ValueSet: http://hl7.org/fhir/ValueSet/synchronicity-control
  */
-public enum OperationSynchronicityControl: String, FHIRPrimitiveType {
+public indirect enum OperationSynchronicityControl: String, FHIRPrimitiveType {
 	
 	/// This operation is invoked asynchronously.
 	case asynchronous

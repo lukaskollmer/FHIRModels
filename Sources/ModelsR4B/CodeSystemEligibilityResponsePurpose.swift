@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/eligibilityresponse-purpose
  ValueSet: http://hl7.org/fhir/ValueSet/eligibilityresponse-purpose
  */
-public enum EligibilityResponsePurpose: String, FHIRPrimitiveType {
+public indirect enum EligibilityResponsePurpose: String, FHIRPrimitiveType {
 	
 	/// The prior authorization requirements for the listed, or discovered if specified, converages for the categories
 	/// of service and/or specifed biling codes are requested.

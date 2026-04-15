@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct
  */
-public enum ExampleVisionPrescriptionProductCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleVisionPrescriptionProductCodes: String, FHIRPrimitiveType {
 	
 	/// A lens to be fitted for wearing directly on an eye.
 	case contact

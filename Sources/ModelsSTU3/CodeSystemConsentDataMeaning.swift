@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/consent-data-meaning
  ValueSet: http://hl7.org/fhir/ValueSet/consent-data-meaning
  */
-public enum ConsentDataMeaning: String, FHIRPrimitiveType {
+public indirect enum ConsentDataMeaning: String, FHIRPrimitiveType {
 	
 	/// The consent applies to instances of resources that are authored by
 	case authoredby

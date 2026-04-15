@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/extension-context
  ValueSet: http://hl7.org/fhir/ValueSet/extension-context
  */
-public enum ExtensionContext: String, FHIRPrimitiveType {
+public indirect enum ExtensionContext: String, FHIRPrimitiveType {
 	
 	/// The context is a particular extension from a particular profile, a uri that identifies the extension definition.
 	case `extension`

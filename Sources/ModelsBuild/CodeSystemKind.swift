@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/coverage-kind
  ValueSet: http://hl7.org/fhir/ValueSet/coverage-kind
  */
-public enum Kind: String, FHIRPrimitiveType {
+public indirect enum Kind: String, FHIRPrimitiveType {
 	
 	/// The Coverage provides the identifiers and card-level details of an insurance policy.
 	case insurance

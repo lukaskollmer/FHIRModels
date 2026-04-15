@@ -283,7 +283,7 @@ public struct MedicationBatch: BackboneElement {
 public struct MedicationIngredient: BackboneElement {
 	
 	/// All possible types for "strength[x]"
-	public enum StrengthX: Equatable, Hashable, Sendable {
+	public indirect enum StrengthX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 		case ratio(Ratio)

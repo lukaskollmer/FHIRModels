@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/observation-range-category
  ValueSet: http://hl7.org/fhir/ValueSet/observation-range-category
  */
-public enum ObservationRangeCategory: String, FHIRPrimitiveType {
+public indirect enum ObservationRangeCategory: String, FHIRPrimitiveType {
 	
 	/// Absolute Range for Ordinal and Continuous Observations. Results outside this range are not possible.
 	case absolute

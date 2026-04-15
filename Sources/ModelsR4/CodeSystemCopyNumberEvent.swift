@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/copy-number-event
  ValueSet: http://hl7.org/fhir/ValueSet/copy-number-event
  */
-public enum CopyNumberEvent: String, FHIRPrimitiveType {
+public indirect enum CopyNumberEvent: String, FHIRPrimitiveType {
 	
 	/// amplification.
 	case amp

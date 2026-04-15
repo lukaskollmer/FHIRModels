@@ -411,14 +411,14 @@ public struct ClaimResponse: DomainResource {
 public struct ClaimResponseAddItem: BackboneElement {
 	
 	/// All possible types for "location[x]"
-	public enum LocationX: Equatable, Hashable, Sendable {
+	public indirect enum LocationX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
 	
 	/// All possible types for "serviced[x]"
-	public enum ServicedX: Equatable, Hashable, Sendable {
+	public indirect enum ServicedX: Equatable, Hashable, Sendable {
 		case date(FHIRPrimitive<FHIRDate>)
 		case period(Period)
 	}
@@ -1257,7 +1257,7 @@ public struct ClaimResponseError: BackboneElement {
 public struct ClaimResponseEvent: BackboneElement {
 	
 	/// All possible types for "when[x]"
-	public enum WhenX: Equatable, Hashable, Sendable {
+	public indirect enum WhenX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -2193,14 +2193,14 @@ public struct ClaimResponseProcessNote: BackboneElement {
 public struct ClaimResponseSupportingInfo: BackboneElement {
 	
 	/// All possible types for "timing[x]"
-	public enum TimingX: Equatable, Hashable, Sendable {
+	public indirect enum TimingX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
 	}
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case address(Address)
 		case age(Age)
 		case annotation(Annotation)

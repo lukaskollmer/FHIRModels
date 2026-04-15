@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/restful-conformance-mode
  ValueSet: http://hl7.org/fhir/ValueSet/restful-conformance-mode
  */
-public enum RestfulConformanceMode: String, FHIRPrimitiveType {
+public indirect enum RestfulConformanceMode: String, FHIRPrimitiveType {
 	
 	/// The application acts as a client for this resource.
 	case client

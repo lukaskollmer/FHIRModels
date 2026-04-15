@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medication-package-form
  ValueSet: http://hl7.org/fhir/ValueSet/medication-package-form
  */
-public enum MedicationContainer: String, FHIRPrimitiveType {
+public indirect enum MedicationContainer: String, FHIRPrimitiveType {
 	
 	/// A sealed glass capsule containing a liquid
 	case ampoule

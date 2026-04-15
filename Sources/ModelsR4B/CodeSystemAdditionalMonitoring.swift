@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-additional-monitoring
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-additional-monitoring
  */
-public enum AdditionalMonitoring: String, FHIRPrimitiveType {
+public indirect enum AdditionalMonitoring: String, FHIRPrimitiveType {
 	
 	/// Requirement for Black Triangle Monitoring
 	case blackTriangleMonitoring = "BlackTriangleMonitoring"

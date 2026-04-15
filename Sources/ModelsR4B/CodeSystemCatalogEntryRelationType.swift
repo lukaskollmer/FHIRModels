@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/relation-type
  ValueSet: http://hl7.org/fhir/ValueSet/relation-type
  */
-public enum CatalogEntryRelationType: String, FHIRPrimitiveType {
+public indirect enum CatalogEntryRelationType: String, FHIRPrimitiveType {
 	
 	/// the related entry represents an item that replaces the current retired item.
 	case isReplacedBy = "is-replaced-by"

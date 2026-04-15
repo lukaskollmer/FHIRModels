@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/conformance-statement-kind
  ValueSet: http://hl7.org/fhir/ValueSet/conformance-statement-kind
  */
-public enum ConformanceStatementKind: String, FHIRPrimitiveType {
+public indirect enum ConformanceStatementKind: String, FHIRPrimitiveType {
 	
 	/// The Conformance instance represents the capabilities of a system or piece of software, independent of a
 	/// particular installation.

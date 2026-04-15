@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/verificationresult-communication-method
  */
-public enum VerificationresultCommunicationMethod: String, FHIRPrimitiveType {
+public indirect enum VerificationresultCommunicationMethod: String, FHIRPrimitiveType {
 	
 	/// The information is submitted/retrieved manually (e.g. by phone, fax, paper-based)
 	case manual

@@ -27,7 +27,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/immunization-recommendation-status
  ValueSet: http://hl7.org/fhir/ValueSet/immunization-recommendation-status
  */
-public enum ImmunizationRecommendationStatusCodes: String, FHIRPrimitiveType {
+public indirect enum ImmunizationRecommendationStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The patient is fully protected and no further doses are recommended.
 	case complete

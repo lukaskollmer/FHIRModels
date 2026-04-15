@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-asset-context
  ValueSet: http://hl7.org/fhir/ValueSet/contract-assetcontext
  */
-public enum ContractResourceAssetContextCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceAssetContextCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case custodian

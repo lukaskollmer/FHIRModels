@@ -1183,7 +1183,7 @@ public struct ResearchStudyRecruitment: BackboneElement {
 public struct ResearchStudyRelatesTo: BackboneElement {
 	
 	/// All possible types for "target[x]"
-	public enum TargetX: Equatable, Hashable, Sendable {
+	public indirect enum TargetX: Equatable, Hashable, Sendable {
 		case attachment(Attachment)
 		case canonical(FHIRPrimitive<Canonical>)
 		case markdown(FHIRPrimitive<FHIRString>)

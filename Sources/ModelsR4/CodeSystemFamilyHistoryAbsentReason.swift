@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/history-absent-reason
  ValueSet: http://hl7.org/fhir/ValueSet/history-absent-reason
  */
-public enum FamilyHistoryAbsentReason: String, FHIRPrimitiveType {
+public indirect enum FamilyHistoryAbsentReason: String, FHIRPrimitiveType {
 	
 	/// Patient does not have the information now, but can provide the information at a later date.
 	case deferred

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/guide-dependency-type
  ValueSet: http://hl7.org/fhir/ValueSet/guide-dependency-type
  */
-public enum GuideDependencyType: String, FHIRPrimitiveType {
+public indirect enum GuideDependencyType: String, FHIRPrimitiveType {
 	
 	/// The guide is embedded in this guide when published.
 	case inclusion

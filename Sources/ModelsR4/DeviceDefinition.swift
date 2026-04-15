@@ -29,7 +29,7 @@ public struct DeviceDefinition: DomainResource {
 	public static let resourceType: ResourceType = .deviceDefinition
 	
 	/// All possible types for "manufacturer[x]"
-	public enum ManufacturerX: Equatable, Hashable, Sendable {
+	public indirect enum ManufacturerX: Equatable, Hashable, Sendable {
 		case reference(Reference)
 		case string(FHIRPrimitive<FHIRString>)
 	}

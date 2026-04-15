@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/group-code
  ValueSet: http://hl7.org/fhir/ValueSet/group-code
  */
-public enum GroupCode: String, FHIRPrimitiveType {
+public indirect enum GroupCode: String, FHIRPrimitiveType {
 	
 	/// A collection of entities for an arbitrary reason.
 	case collection

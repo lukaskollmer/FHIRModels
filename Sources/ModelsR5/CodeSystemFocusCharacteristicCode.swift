@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/focus-characteristic-code
  ValueSet: http://hl7.org/fhir/ValueSet/focus-characteristic-code
  */
-public enum FocusCharacteristicCode: String, FHIRPrimitiveType {
+public indirect enum FocusCharacteristicCode: String, FHIRPrimitiveType {
 	
 	/// Used to reference a specific article.
 	case citation

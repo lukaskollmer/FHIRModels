@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/contractsubtypecodes
  ValueSet: http://hl7.org/fhir/ValueSet/contract-subtype
  */
-public enum ContractSubtypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractSubtypeCodes: String, FHIRPrimitiveType {
 	
 	/// Canadian health information disclosure policy.
 	case disclosureCa = "disclosure-ca"

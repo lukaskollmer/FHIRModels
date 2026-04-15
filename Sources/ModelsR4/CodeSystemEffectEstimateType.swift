@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/effect-estimate-type
  ValueSet: http://hl7.org/fhir/ValueSet/effect-estimate-type
  */
-public enum EffectEstimateType: String, FHIRPrimitiveType {
+public indirect enum EffectEstimateType: String, FHIRPrimitiveType {
 	
 	/// absolute risk difference (a type of absolute effect estimate).
 	case absoluteARD = "absolute-ARD"

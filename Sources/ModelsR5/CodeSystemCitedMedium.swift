@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/cited-medium
  ValueSet: http://hl7.org/fhir/ValueSet/cited-medium
  */
-public enum CitedMedium: String, FHIRPrimitiveType {
+public indirect enum CitedMedium: String, FHIRPrimitiveType {
 	
 	/// Online publication in a periodic release. Used to match NLM JournalIssue CitedMedium code for online version.
 	case internet

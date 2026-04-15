@@ -25,7 +25,7 @@ import FMCore
  URL: http://acme.com/config/fhir/codesystems/cholesterol
  ValueSet: http://hl7.org/fhir/ValueSet/example-inline
  */
-public enum ACMECodesForCholesterolInSerumPlasma: String, FHIRPrimitiveType {
+public indirect enum ACMECodesForCholesterolInSerumPlasma: String, FHIRPrimitiveType {
 	
 	/// Serum Cholesterol
 	case chol

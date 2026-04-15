@@ -30,13 +30,13 @@ public struct ImmunizationEvaluation: DomainResource {
 	public static let resourceType: ResourceType = .immunizationEvaluation
 	
 	/// All possible types for "doseNumber[x]"
-	public enum DoseNumberX: Equatable, Hashable, Sendable {
+	public indirect enum DoseNumberX: Equatable, Hashable, Sendable {
 		case positiveInt(FHIRPrimitive<FHIRPositiveInteger>)
 		case string(FHIRPrimitive<FHIRString>)
 	}
 	
 	/// All possible types for "seriesDoses[x]"
-	public enum SeriesDosesX: Equatable, Hashable, Sendable {
+	public indirect enum SeriesDosesX: Equatable, Hashable, Sendable {
 		case positiveInt(FHIRPrimitive<FHIRPositiveInteger>)
 		case string(FHIRPrimitive<FHIRString>)
 	}

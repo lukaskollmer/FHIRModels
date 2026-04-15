@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/CodeSystem/administration-subpotent-reason
  */
-public enum AdministrationSubPotentReason: String, FHIRPrimitiveType {
+public indirect enum AdministrationSubPotentReason: String, FHIRPrimitiveType {
 	
 	/// The medication experienced adverse storage conditions.
 	case adversestorage

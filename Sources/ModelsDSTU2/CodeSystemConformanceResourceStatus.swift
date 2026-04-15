@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/conformance-resource-status
  ValueSet: http://hl7.org/fhir/ValueSet/conformance-resource-status
  */
-public enum ConformanceResourceStatus: String, FHIRPrimitiveType {
+public indirect enum ConformanceResourceStatus: String, FHIRPrimitiveType {
 	
 	/// This resource is ready for normal use.
 	case active

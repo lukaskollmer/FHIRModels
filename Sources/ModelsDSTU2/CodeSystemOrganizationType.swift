@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/organization-type
  ValueSet: http://hl7.org/fhir/ValueSet/organization-type
  */
-public enum OrganizationType: String, FHIRPrimitiveType {
+public indirect enum OrganizationType: String, FHIRPrimitiveType {
 	
 	/// An organization that is a registered business or corporation but not identified by other types.
 	case bus

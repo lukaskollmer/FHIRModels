@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-status
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-status
  */
-public enum ResearchStudyStatus: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyStatus: String, FHIRPrimitiveType {
 	
 	/// The information sought by the study has been gathered and compiled and no further work is being performed
 	case completed

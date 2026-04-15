@@ -186,7 +186,7 @@ public struct Substance: DomainResource {
 public struct SubstanceIngredient: BackboneElement {
 	
 	/// All possible types for "substance[x]"
-	public enum SubstanceX: Equatable, Hashable, Sendable {
+	public indirect enum SubstanceX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

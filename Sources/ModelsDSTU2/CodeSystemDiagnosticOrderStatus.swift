@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/diagnostic-order-status
  ValueSet: http://hl7.org/fhir/ValueSet/diagnostic-order-status
  */
-public enum DiagnosticOrderStatus: String, FHIRPrimitiveType {
+public indirect enum DiagnosticOrderStatus: String, FHIRPrimitiveType {
 	
 	/// The receiving system has accepted the order, but work has not yet commenced.
 	case accepted

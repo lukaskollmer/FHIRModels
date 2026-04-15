@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-businessstatus-outpatient
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-businessstatus-outpatient
  */
-public enum EncounterBusinessStatusOutpatient: String, FHIRPrimitiveType {
+public indirect enum EncounterBusinessStatusOutpatient: String, FHIRPrimitiveType {
 	
 	/// The patient has checked in for the outpatient visit.
 	case checkIn = "check-in"

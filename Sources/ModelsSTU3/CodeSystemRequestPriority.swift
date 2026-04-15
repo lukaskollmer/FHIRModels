@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/request-priority
  ValueSet: http://hl7.org/fhir/ValueSet/request-priority
  */
-public enum RequestPriority: String, FHIRPrimitiveType {
+public indirect enum RequestPriority: String, FHIRPrimitiveType {
 	
 	/// The request should be actioned as soon as possible - higher priority than urgent
 	case asap

@@ -30,7 +30,7 @@ public struct GuidanceResponse: DomainResource {
 	public static let resourceType: ResourceType = .guidanceResponse
 	
 	/// All possible types for "reason[x]"
-	public enum ReasonX: Equatable, Hashable, Sendable {
+	public indirect enum ReasonX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medicinal-product-confidentiality
  ValueSet: http://hl7.org/fhir/ValueSet/medicinal-product-confidentiality
  */
-public enum ProductConfidentiality: String, FHIRPrimitiveType {
+public indirect enum ProductConfidentiality: String, FHIRPrimitiveType {
 	
 	/// Commercially Sensitive
 	case commerciallySensitive = "CommerciallySensitive"

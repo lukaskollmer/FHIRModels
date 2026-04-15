@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/assert-operator-codes
  ValueSet: http://hl7.org/fhir/ValueSet/assert-operator-codes
  */
-public enum AssertionOperatorType: String, FHIRPrimitiveType {
+public indirect enum AssertionOperatorType: String, FHIRPrimitiveType {
 	
 	/// Compare value within a known set of values.
 	case `in`

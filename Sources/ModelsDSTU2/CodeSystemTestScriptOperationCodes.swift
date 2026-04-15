@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/testscript-operation-codes
  ValueSet: http://hl7.org/fhir/ValueSet/testscript-operation-codes
  */
-public enum TestScriptOperationCodes: String, FHIRPrimitiveType {
+public indirect enum TestScriptOperationCodes: String, FHIRPrimitiveType {
 	
 	/// Closure Table Maintenance.
 	case closure

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/imagingstudy-status
  ValueSet: http://hl7.org/fhir/ValueSet/imagingstudy-status
  */
-public enum ImagingStudyStatus: String, FHIRPrimitiveType {
+public indirect enum ImagingStudyStatus: String, FHIRPrimitiveType {
 	
 	/// At least one instance has been associated with this imaging study.
 	case available

@@ -25,7 +25,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/concept-subsumption-outcome
  */
-public enum ConceptSubsumptionOutcome: String, FHIRPrimitiveType {
+public indirect enum ConceptSubsumptionOutcome: String, FHIRPrimitiveType {
 	
 	/// A equivalent to B if A subsumes B and B subsumes A
 	case equivalent

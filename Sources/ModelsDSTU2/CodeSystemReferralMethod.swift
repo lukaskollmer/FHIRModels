@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/service-referral-method
  ValueSet: http://hl7.org/fhir/ValueSet/service-referral-method
  */
-public enum ReferralMethod: String, FHIRPrimitiveType {
+public indirect enum ReferralMethod: String, FHIRPrimitiveType {
 	
 	/// Referrals may be accepted via a secure messaging system. To determine the types of secure messaging systems
 	/// supported, refer to the identifiers collection. Callers will need to understand the specific identifier system

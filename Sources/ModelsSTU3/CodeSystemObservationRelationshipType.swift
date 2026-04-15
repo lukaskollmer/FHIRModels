@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/observation-relationshiptypes
  ValueSet: http://hl7.org/fhir/ValueSet/observation-relationshiptypes
  */
-public enum ObservationRelationshipType: String, FHIRPrimitiveType {
+public indirect enum ObservationRelationshipType: String, FHIRPrimitiveType {
 	
 	/// The target resource (Observation or QuestionnaireResponse) is part of the information from which this
 	/// observation value is derived. (e.g. calculated anion gap, Apgar score)  NOTE:  "derived-from" is the only

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/payment-type
  ValueSet: http://hl7.org/fhir/ValueSet/payment-type
  */
-public enum PaymentTypeCodes: String, FHIRPrimitiveType {
+public indirect enum PaymentTypeCodes: String, FHIRPrimitiveType {
 	
 	/// The amount is an adjustment regarding claims already paid.
 	case adjustment

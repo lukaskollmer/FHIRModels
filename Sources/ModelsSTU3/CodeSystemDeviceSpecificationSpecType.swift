@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/specification-type
  ValueSet: http://hl7.org/fhir/ValueSet/specification-type
  */
-public enum DeviceSpecificationSpecType: String, FHIRPrimitiveType {
+public indirect enum DeviceSpecificationSpecType: String, FHIRPrimitiveType {
 	
 	/// Firmware Revision - MDC_ID_PROD_SPEC_FW
 	case firmwareRevision = "firmware-revision"

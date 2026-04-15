@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/content-type
  ValueSet: http://hl7.org/fhir/ValueSet/content-type
  */
-public enum ContentType: String, FHIRPrimitiveType {
+public indirect enum ContentType: String, FHIRPrimitiveType {
 	
 	/// JSON content-type corresponding to the application/json+fhir mime-type.
 	case json

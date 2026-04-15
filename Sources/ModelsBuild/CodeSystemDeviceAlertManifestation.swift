@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/devicealert-manifestation
  ValueSet: http://hl7.org/fhir/ValueSet/devicealert-manifestation
  */
-public enum DeviceAlertManifestation: String, FHIRPrimitiveType {
+public indirect enum DeviceAlertManifestation: String, FHIRPrimitiveType {
 	
 	/// The signal is annunciated using sound (e.g. a chime)
 	case auditory

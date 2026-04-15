@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/clinical-use-definition-type
  ValueSet: http://hl7.org/fhir/ValueSet/clinical-use-definition-type
  */
-public enum ClinicalUseDefinitionType: String, FHIRPrimitiveType {
+public indirect enum ClinicalUseDefinitionType: String, FHIRPrimitiveType {
 	
 	/// A reason for not giving the medication.
 	case contraindication

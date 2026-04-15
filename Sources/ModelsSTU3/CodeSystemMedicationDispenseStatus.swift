@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/medication-dispense-status
  ValueSet: http://hl7.org/fhir/ValueSet/medication-dispense-status
  */
-public enum MedicationDispenseStatus: String, FHIRPrimitiveType {
+public indirect enum MedicationDispenseStatus: String, FHIRPrimitiveType {
 	
 	/// All actions that are implied by the dispense have occurred.
 	case completed

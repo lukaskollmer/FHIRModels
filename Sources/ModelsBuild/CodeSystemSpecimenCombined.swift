@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/specimen-combined
  ValueSet: http://hl7.org/fhir/ValueSet/specimen-combined
  */
-public enum SpecimenCombined: String, FHIRPrimitiveType {
+public indirect enum SpecimenCombined: String, FHIRPrimitiveType {
 	
 	/// The specimen is in a group.
 	case grouped

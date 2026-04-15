@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/marital-status
  ValueSet: http://hl7.org/fhir/ValueSet/marital-status
  */
-public enum MaritalStatusCodes: String, FHIRPrimitiveType {
+public indirect enum MaritalStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The person is not presently married. The marital history is not known or stated.
 	case U

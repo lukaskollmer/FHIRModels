@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-amount-type
  ValueSet: http://hl7.org/fhir/ValueSet/substance-amount-type
  */
-public enum SubstanceAmountType: String, FHIRPrimitiveType {
+public indirect enum SubstanceAmountType: String, FHIRPrimitiveType {
 	
 	/// approximately
 	case approximately = "Approximately"

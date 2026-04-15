@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/group-type
  ValueSet: http://hl7.org/fhir/ValueSet/group-type
  */
-public enum GroupType: String, FHIRPrimitiveType {
+public indirect enum GroupType: String, FHIRPrimitiveType {
 	
 	/// Group contains "animal" Patient resources
 	case animal

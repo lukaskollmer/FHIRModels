@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/ex-programcode
  ValueSet: http://hl7.org/fhir/ValueSet/ex-program-code
  */
-public enum ExampleProgramReasonCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleProgramReasonCodes: String, FHIRPrimitiveType {
 	
 	/// Child Asthma Program
 	case `as`

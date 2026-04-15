@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/device-action
  ValueSet: http://hl7.org/fhir/ValueSet/device-action
  */
-public enum ProcedureDeviceActionCodes: String, FHIRPrimitiveType {
+public indirect enum ProcedureDeviceActionCodes: String, FHIRPrimitiveType {
 	
 	/// The device was explanted from the patient during the procedure.
 	case explanted

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-weight-method
  ValueSet: http://hl7.org/fhir/ValueSet/substance-weight-method
  */
-public enum SubstanceWeightMethod: String, FHIRPrimitiveType {
+public indirect enum SubstanceWeightMethod: String, FHIRPrimitiveType {
 	
 	/// SDSPAGE
 	case SDSPAGE = "SDS-PAGE"

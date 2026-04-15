@@ -29,7 +29,7 @@ public struct RiskAssessment: DomainResource {
 	public static let resourceType: ResourceType = .riskAssessment
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}
@@ -296,13 +296,13 @@ public struct RiskAssessment: DomainResource {
 public struct RiskAssessmentPrediction: BackboneElement {
 	
 	/// All possible types for "probability[x]"
-	public enum ProbabilityX: Equatable, Hashable, Sendable {
+	public indirect enum ProbabilityX: Equatable, Hashable, Sendable {
 		case decimal(FHIRPrimitive<FHIRDecimal>)
 		case range(Range)
 	}
 	
 	/// All possible types for "when[x]"
-	public enum WhenX: Equatable, Hashable, Sendable {
+	public indirect enum WhenX: Equatable, Hashable, Sendable {
 		case period(Period)
 		case range(Range)
 	}

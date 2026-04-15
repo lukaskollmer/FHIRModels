@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/fhir-types
  ValueSet: http://hl7.org/fhir/ValueSet/fhir-types
  */
-public enum ResourceType: String, FHIRPrimitiveType {
+public indirect enum ResourceType: String, FHIRPrimitiveType {
 	
 	/// A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track
 	/// charges for a patient, cost centers, etc.

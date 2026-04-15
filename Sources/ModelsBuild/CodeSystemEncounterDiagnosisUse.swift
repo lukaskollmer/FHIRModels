@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/encounter-diagnosis-use
  */
-public enum EncounterDiagnosisUse: String, FHIRPrimitiveType {
+public indirect enum EncounterDiagnosisUse: String, FHIRPrimitiveType {
 	
 	/// Final diagnosis established at the end of the encounter or episode of care.
 	case final

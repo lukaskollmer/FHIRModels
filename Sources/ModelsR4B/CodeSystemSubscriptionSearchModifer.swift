@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/subscription-search-modifier
  */
-public enum SubscriptionSearchModifer: String, FHIRPrimitiveType {
+public indirect enum SubscriptionSearchModifer: String, FHIRPrimitiveType {
 	
 	/// The search parameter is a member of a Group or List, or the search parameter is a URI (relative or absolute)
 	/// that identifies a value set, and the search parameter tests whether the value is present in the specified Group,

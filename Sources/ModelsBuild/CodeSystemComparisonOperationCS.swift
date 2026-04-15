@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/comparison-operation
  ValueSet: http://hl7.org/fhir/ValueSet/comparison-operation
  */
-public enum ComparisonOperationCS: String, FHIRPrimitiveType {
+public indirect enum ComparisonOperationCS: String, FHIRPrimitiveType {
 	
 	/// The value for the parameter in the resource is in the list of codes in the value (comma-separated, and subject
 	/// to code system logic; the code may be a value set).

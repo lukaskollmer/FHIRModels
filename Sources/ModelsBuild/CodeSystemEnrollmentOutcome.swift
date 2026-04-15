@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/enrollment-outcome
  ValueSet: http://hl7.org/fhir/ValueSet/enrollment-outcome
  */
-public enum EnrollmentOutcome: String, FHIRPrimitiveType {
+public indirect enum EnrollmentOutcome: String, FHIRPrimitiveType {
 	
 	/// The processing has completed without errors
 	case complete

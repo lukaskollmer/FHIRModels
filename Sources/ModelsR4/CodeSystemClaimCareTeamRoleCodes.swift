@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/claimcareteamrole
  ValueSet: http://hl7.org/fhir/ValueSet/claim-careteamrole
  */
-public enum ClaimCareTeamRoleCodes: String, FHIRPrimitiveType {
+public indirect enum ClaimCareTeamRoleCodes: String, FHIRPrimitiveType {
 	
 	/// Assisting care provider.
 	case assist

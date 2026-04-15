@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/repository-type
  ValueSet: http://hl7.org/fhir/ValueSet/repository-type
  */
-public enum RepositoryType: String, FHIRPrimitiveType {
+public indirect enum RepositoryType: String, FHIRPrimitiveType {
 	
 	/// When URL is clicked, the resource can be seen directly (by webpage or by download link format).
 	case directlink

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/consent-state-codes
  ValueSet: http://hl7.org/fhir/ValueSet/consent-state-codes
  */
-public enum ConsentState: String, FHIRPrimitiveType {
+public indirect enum ConsentState: String, FHIRPrimitiveType {
 	
 	/// The consent is to be followed and enforced.
 	case active

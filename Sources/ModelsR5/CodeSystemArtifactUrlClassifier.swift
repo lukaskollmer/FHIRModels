@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/artifact-url-classifier
  ValueSet: http://hl7.org/fhir/ValueSet/artifact-url-classifier
  */
-public enum ArtifactUrlClassifier: String, FHIRPrimitiveType {
+public indirect enum ArtifactUrlClassifier: String, FHIRPrimitiveType {
 	
 	/// The URL will reach a brief summary for the article.
 	case abstract

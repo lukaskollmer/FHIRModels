@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/payeetype
  ValueSet: http://hl7.org/fhir/ValueSet/payeetype
  */
-public enum PayeeTypeCodes: String, FHIRPrimitiveType {
+public indirect enum PayeeTypeCodes: String, FHIRPrimitiveType {
 	
 	/// other
 	case other

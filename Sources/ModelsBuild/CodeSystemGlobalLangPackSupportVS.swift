@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/global-langpack-support
  ValueSet: http://hl7.org/fhir/ValueSet/global-langpack-support
  */
-public enum GlobalLangPackSupportVS: String, FHIRPrimitiveType {
+public indirect enum GlobalLangPackSupportVS: String, FHIRPrimitiveType {
 	
 	/// The server supports language packs, but only when the value set asks for them, or they are requested explicitly
 	/// by parameter.

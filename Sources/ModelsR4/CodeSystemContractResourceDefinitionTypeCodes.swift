@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contract-definition-type
  ValueSet: http://hl7.org/fhir/ValueSet/contract-definition-type
  */
-public enum ContractResourceDefinitionTypeCodes: String, FHIRPrimitiveType {
+public indirect enum ContractResourceDefinitionTypeCodes: String, FHIRPrimitiveType {
 	
 	/// To be completed
 	case temp

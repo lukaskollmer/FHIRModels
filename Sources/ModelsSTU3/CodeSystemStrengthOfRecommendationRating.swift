@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/recommendation-strength
  ValueSet: http://hl7.org/fhir/ValueSet/cqif-recommendation-strength
  */
-public enum StrengthOfRecommendationRating: String, FHIRPrimitiveType {
+public indirect enum StrengthOfRecommendationRating: String, FHIRPrimitiveType {
 	
 	/// Strong recommendation
 	case strong

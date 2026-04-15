@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/sequence-type
  ValueSet: http://hl7.org/fhir/ValueSet/sequence-type
  */
-public enum SequenceType: String, FHIRPrimitiveType {
+public indirect enum SequenceType: String, FHIRPrimitiveType {
 	
 	/// Amino acid sequence.
 	case aa

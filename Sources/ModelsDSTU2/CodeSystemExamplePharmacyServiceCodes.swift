@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/ex-pharmaservice
  ValueSet: http://hl7.org/fhir/ValueSet/service-pharmacy
  */
-public enum ExamplePharmacyServiceCodes: String, FHIRPrimitiveType {
+public indirect enum ExamplePharmacyServiceCodes: String, FHIRPrimitiveType {
 	
 	/// Flu Shot
 	case flushot

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/benefit-term
  ValueSet: http://hl7.org/fhir/ValueSet/benefit-term
  */
-public enum BenefitTermCodes: String, FHIRPrimitiveType {
+public indirect enum BenefitTermCodes: String, FHIRPrimitiveType {
 	
 	/// Annual, renewing on the anniversary
 	case annual

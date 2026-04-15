@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/condition-state
  ValueSet: http://hl7.org/fhir/ValueSet/condition-state
  */
-public enum ConditionState: String, FHIRPrimitiveType {
+public indirect enum ConditionState: String, FHIRPrimitiveType {
 	
 	/// The condition is active.
 	case active

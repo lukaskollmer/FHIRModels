@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/action-participant-type
  ValueSet: http://hl7.org/fhir/ValueSet/action-participant-type
  */
-public enum ActionParticipantType: String, FHIRPrimitiveType {
+public indirect enum ActionParticipantType: String, FHIRPrimitiveType {
 	
 	/// The participant is a system or device used in the care of the patient.
 	case device

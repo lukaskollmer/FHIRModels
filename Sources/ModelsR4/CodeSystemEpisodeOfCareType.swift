@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/episodeofcare-type
  ValueSet: http://hl7.org/fhir/ValueSet/episodeofcare-type
  */
-public enum EpisodeOfCareType: String, FHIRPrimitiveType {
+public indirect enum EpisodeOfCareType: String, FHIRPrimitiveType {
 	
 	/// cacp
 	case cacp

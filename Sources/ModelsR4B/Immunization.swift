@@ -30,7 +30,7 @@ public struct Immunization: DomainResource {
 	public static let resourceType: ResourceType = .immunization
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case string(FHIRPrimitive<FHIRString>)
 	}
@@ -558,13 +558,13 @@ public struct ImmunizationPerformer: BackboneElement {
 public struct ImmunizationProtocolApplied: BackboneElement {
 	
 	/// All possible types for "doseNumber[x]"
-	public enum DoseNumberX: Equatable, Hashable, Sendable {
+	public indirect enum DoseNumberX: Equatable, Hashable, Sendable {
 		case positiveInt(FHIRPrimitive<FHIRPositiveInteger>)
 		case string(FHIRPrimitive<FHIRString>)
 	}
 	
 	/// All possible types for "seriesDoses[x]"
-	public enum SeriesDosesX: Equatable, Hashable, Sendable {
+	public indirect enum SeriesDosesX: Equatable, Hashable, Sendable {
 		case positiveInt(FHIRPrimitive<FHIRPositiveInteger>)
 		case string(FHIRPrimitive<FHIRString>)
 	}

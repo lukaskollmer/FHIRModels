@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/questionnaire-item-control
  ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-item-control
  */
-public enum QuestionnaireItemUIControlCodes: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireItemUIControlCodes: String, FHIRPrimitiveType {
 	
 	/// This table has one row - for the question.  Permitted answers are columns.  Used for choice questions.
 	case atable

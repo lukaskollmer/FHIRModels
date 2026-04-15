@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/therapy-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/therapy-relationship-type
  */
-public enum TherapyRelationshipType: String, FHIRPrimitiveType {
+public indirect enum TherapyRelationshipType: String, FHIRPrimitiveType {
 	
 	/// Contraindicated unless the other therapy is given
 	case contraindicatedExceptWith = "contraindicated-except-with"

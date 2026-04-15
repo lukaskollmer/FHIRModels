@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/publication-status
  ValueSet: http://hl7.org/fhir/ValueSet/publication-status
  */
-public enum PublicationStatus: String, FHIRPrimitiveType {
+public indirect enum PublicationStatus: String, FHIRPrimitiveType {
 	
 	/// This resource is ready for normal use.
 	case active

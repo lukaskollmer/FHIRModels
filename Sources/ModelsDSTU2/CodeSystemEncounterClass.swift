@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/encounter-class
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-class
  */
-public enum EncounterClass: String, FHIRPrimitiveType {
+public indirect enum EncounterClass: String, FHIRPrimitiveType {
 	
 	/// An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit.
 	case ambulatory

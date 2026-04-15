@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-context-type
  ValueSet: http://hl7.org/fhir/ValueSet/map-context-type
  */
-public enum StructureMapContextType: String, FHIRPrimitiveType {
+public indirect enum StructureMapContextType: String, FHIRPrimitiveType {
 	
 	/// The context specifies a type
 	case type

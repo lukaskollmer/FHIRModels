@@ -31,7 +31,7 @@ public struct MedicationAdministration: DomainResource {
 	public static let resourceType: ResourceType = .medicationAdministration
 	
 	/// All possible types for "occurrence[x]"
-	public enum OccurrenceX: Equatable, Hashable, Sendable {
+	public indirect enum OccurrenceX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 		case timing(Timing)
@@ -347,7 +347,7 @@ public struct MedicationAdministration: DomainResource {
 public struct MedicationAdministrationDosage: BackboneElement {
 	
 	/// All possible types for "rate[x]"
-	public enum RateX: Equatable, Hashable, Sendable {
+	public indirect enum RateX: Equatable, Hashable, Sendable {
 		case quantity(Quantity)
 		case ratio(Ratio)
 	}

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/linkage-type
  ValueSet: http://hl7.org/fhir/ValueSet/linkage-type
  */
-public enum LinkageType: String, FHIRPrimitiveType {
+public indirect enum LinkageType: String, FHIRPrimitiveType {
 	
 	/// The record represents the alternative view of the underlying event/condition/etc.  The record may still be
 	/// actively maintained, even though it is not considered to be the source of truth.

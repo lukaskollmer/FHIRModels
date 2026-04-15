@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/evidence-variable-constraint
  ValueSet: http://hl7.org/fhir/ValueSet/evidence-variable-constraint
  */
-public enum EvidenceVariableConstraintRule: String, FHIRPrimitiveType {
+public indirect enum EvidenceVariableConstraintRule: String, FHIRPrimitiveType {
 	
 	/// String values that are restricted to only numbers and letters [A-Za-z0-9].
 	case alphanumericOnly = "alphanumeric-only"

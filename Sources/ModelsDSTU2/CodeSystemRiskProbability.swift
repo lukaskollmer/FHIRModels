@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/risk-probability
  ValueSet: http://hl7.org/fhir/ValueSet/risk-probability
  */
-public enum RiskProbability: String, FHIRPrimitiveType {
+public indirect enum RiskProbability: String, FHIRPrimitiveType {
 	
 	/// The specified outcome is effectively guaranteed.
 	case certain

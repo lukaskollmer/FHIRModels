@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/request-resource-types
  ValueSet: http://hl7.org/fhir/ValueSet/request-resource-types
  */
-public enum RequestResourceType: String, FHIRPrimitiveType {
+public indirect enum RequestResourceType: String, FHIRPrimitiveType {
 	
 	/// A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a
 	/// specific date/time. This may result in one or more Encounter(s).

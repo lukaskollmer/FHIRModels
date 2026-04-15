@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/ingredient-manufacturer-role
  ValueSet: http://hl7.org/fhir/ValueSet/ingredient-manufacturer-role
  */
-public enum IngredientManufacturerRole: String, FHIRPrimitiveType {
+public indirect enum IngredientManufacturerRole: String, FHIRPrimitiveType {
 	
 	/// actual
 	case actual

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/operational-status
  ValueSet: http://hl7.org/fhir/ValueSet/operational-status
  */
-public enum DeviceComponentOperationalStatus: String, FHIRPrimitiveType {
+public indirect enum DeviceComponentOperationalStatus: String, FHIRPrimitiveType {
 	
 	/// The device was entered in error.
 	case enteredInError = "entered-in-error"

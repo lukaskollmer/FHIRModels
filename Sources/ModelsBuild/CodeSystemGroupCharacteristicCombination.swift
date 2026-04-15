@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/group-characteristic-combination
  */
-public enum GroupCharacteristicCombination: String, FHIRPrimitiveType {
+public indirect enum GroupCharacteristicCombination: String, FHIRPrimitiveType {
 	
 	/// Combine characteristics with AND.
 	case allOf = "all-of"

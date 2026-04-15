@@ -309,7 +309,7 @@ public struct MedicationKnowledge: DomainResource {
 public struct MedicationKnowledgeAdministrationGuidelines: BackboneElement {
 	
 	/// All possible types for "indication[x]"
-	public enum IndicationX: Equatable, Hashable, Sendable {
+	public indirect enum IndicationX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}
@@ -496,7 +496,7 @@ public struct MedicationKnowledgeAdministrationGuidelinesDosage: BackboneElement
 public struct MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics: BackboneElement {
 	
 	/// All possible types for "characteristic[x]"
-	public enum CharacteristicX: Equatable, Hashable, Sendable {
+	public indirect enum CharacteristicX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
 	}
@@ -689,7 +689,7 @@ public struct MedicationKnowledgeCost: BackboneElement {
 public struct MedicationKnowledgeDrugCharacteristic: BackboneElement {
 	
 	/// All possible types for "value[x]"
-	public enum ValueX: Equatable, Hashable, Sendable {
+	public indirect enum ValueX: Equatable, Hashable, Sendable {
 		case base64Binary(FHIRPrimitive<Base64Binary>)
 		case codeableConcept(CodeableConcept)
 		case quantity(Quantity)
@@ -813,7 +813,7 @@ public struct MedicationKnowledgeDrugCharacteristic: BackboneElement {
 public struct MedicationKnowledgeIngredient: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

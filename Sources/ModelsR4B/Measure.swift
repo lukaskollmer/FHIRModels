@@ -29,7 +29,7 @@ public struct Measure: DomainResource {
 	public static let resourceType: ResourceType = .measure
 	
 	/// All possible types for "subject[x]"
-	public enum SubjectX: Equatable, Hashable, Sendable {
+	public indirect enum SubjectX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

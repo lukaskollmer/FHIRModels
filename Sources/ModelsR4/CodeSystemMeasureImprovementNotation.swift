@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/measure-improvement-notation
  ValueSet: http://hl7.org/fhir/ValueSet/measure-improvement-notation
  */
-public enum MeasureImprovementNotation: String, FHIRPrimitiveType {
+public indirect enum MeasureImprovementNotation: String, FHIRPrimitiveType {
 	
 	/// Improvement is indicated as a decrease in the score or measurement (e.g. Lower score indicates better quality).
 	case decrease

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/subscription-tag
  ValueSet: http://hl7.org/fhir/ValueSet/subscription-tag
  */
-public enum SubscriptionTag: String, FHIRPrimitiveType {
+public indirect enum SubscriptionTag: String, FHIRPrimitiveType {
 	
 	/// The message has been delivered to its intended recipient.
 	case delivered

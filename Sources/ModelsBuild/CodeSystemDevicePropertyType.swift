@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/device-property-type
  */
-public enum DevicePropertyType: String, FHIRPrimitiveType {
+public indirect enum DevicePropertyType: String, FHIRPrimitiveType {
 	
 	/// Describes the range of colors that may be displayed or expressed on a device.
 	case color

@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/goal-relationship-type
  ValueSet: http://hl7.org/fhir/ValueSet/goal-relationship-type
  */
-public enum GoalRelationshipType: String, FHIRPrimitiveType {
+public indirect enum GoalRelationshipType: String, FHIRPrimitiveType {
 	
 	/// Indicates that the target goal is considered to be a "piece" of attaining this goal.
 	case milestone

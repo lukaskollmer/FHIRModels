@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/ruleset
  ValueSet: http://hl7.org/fhir/ValueSet/ruleset
  */
-public enum RulesetCodes: String, FHIRPrimitiveType {
+public indirect enum RulesetCodes: String, FHIRPrimitiveType {
 	
 	/// X124010
 	case X124010 = "x12-4010"

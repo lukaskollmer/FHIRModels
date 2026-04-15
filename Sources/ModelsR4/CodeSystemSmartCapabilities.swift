@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/smart-capabilities
  ValueSet: http://hl7.org/fhir/ValueSet/smart-capabilities
  */
-public enum SmartCapabilities: String, FHIRPrimitiveType {
+public indirect enum SmartCapabilities: String, FHIRPrimitiveType {
 	
 	/// support for SMART’s confidential client profile (symmetric client secret authentication).
 	case clientConfidentialSymmetric = "client-confidential-symmetric"

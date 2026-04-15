@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/admit-source
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-admit-source
  */
-public enum AdmitSource: String, FHIRPrimitiveType {
+public indirect enum AdmitSource: String, FHIRPrimitiveType {
 	
 	/// The patient is a newborn and the encounter will track the baby related activities (as opposed to the Mothers
 	/// encounter - that may be associated using the newborn encounters partof property)

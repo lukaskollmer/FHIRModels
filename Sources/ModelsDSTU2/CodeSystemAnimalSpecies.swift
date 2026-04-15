@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/animal-species
  ValueSet: http://hl7.org/fhir/ValueSet/animal-species
  */
-public enum AnimalSpecies: String, FHIRPrimitiveType {
+public indirect enum AnimalSpecies: String, FHIRPrimitiveType {
 	
 	/// Canis lupus familiaris
 	case canislf

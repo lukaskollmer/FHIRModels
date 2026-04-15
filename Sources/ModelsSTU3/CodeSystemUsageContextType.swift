@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/usage-context-type
  ValueSet: http://hl7.org/fhir/ValueSet/usage-context-type
  */
-public enum UsageContextType: String, FHIRPrimitiveType {
+public indirect enum UsageContextType: String, FHIRPrimitiveType {
 	
 	/// The age of the patient. For this context type, the value should be a range the specifies the applicable ages or
 	/// a code from the MeSH value set http://hl7.org/fhir/ValueSet/v3-AgeGroupObservationValue

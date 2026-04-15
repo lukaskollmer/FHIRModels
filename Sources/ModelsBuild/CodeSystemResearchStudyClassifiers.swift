@@ -27,7 +27,7 @@ import FMCore
  URL: http://hl7.org/fhir/research-study-classifiers
  ValueSet: http://hl7.org/fhir/ValueSet/research-study-classifiers
  */
-public enum ResearchStudyClassifiers: String, FHIRPrimitiveType {
+public indirect enum ResearchStudyClassifiers: String, FHIRPrimitiveType {
 	
 	/// A medical device regulated by the U.S. Food and Drug Administration.
 	case fdaRegulatedDevice = "fda-regulated-device"

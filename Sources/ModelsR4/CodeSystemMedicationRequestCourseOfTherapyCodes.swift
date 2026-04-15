@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy
  ValueSet: http://hl7.org/fhir/ValueSet/medicationrequest-course-of-therapy
  */
-public enum MedicationRequestCourseOfTherapyCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationRequestCourseOfTherapyCodes: String, FHIRPrimitiveType {
 	
 	/// A medication which the patient is only expected to consume for the duration of the current order and which is
 	/// not expected to be renewed.

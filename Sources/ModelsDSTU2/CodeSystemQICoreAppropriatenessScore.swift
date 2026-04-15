@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/appropriateness-score
  ValueSet: http://hl7.org/fhir/ValueSet/qicore-appropriateness-score
  */
-public enum QICoreAppropriatenessScore: String, FHIRPrimitiveType {
+public indirect enum QICoreAppropriatenessScore: String, FHIRPrimitiveType {
 	
 	/// The procedure is appropriate
 	case appropriate

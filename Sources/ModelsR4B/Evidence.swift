@@ -31,7 +31,7 @@ public struct Evidence: DomainResource {
 	public static let resourceType: ResourceType = .evidence
 	
 	/// All possible types for "citeAs[x]"
-	public enum CiteAsX: Equatable, Hashable, Sendable {
+	public indirect enum CiteAsX: Equatable, Hashable, Sendable {
 		case markdown(FHIRPrimitive<FHIRString>)
 		case reference(Reference)
 	}

@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission
  */
-public enum ExampleDiagnosisOnAdmissionCodes: String, FHIRPrimitiveType {
+public indirect enum ExampleDiagnosisOnAdmissionCodes: String, FHIRPrimitiveType {
 	
 	/// Diagnosis was not present at time of inpatient admission.
 	case N = "n"

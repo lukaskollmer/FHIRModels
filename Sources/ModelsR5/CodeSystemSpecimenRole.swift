@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/specimen-role
  ValueSet: http://hl7.org/fhir/ValueSet/specimen-role
  */
-public enum SpecimenRole: String, FHIRPrimitiveType {
+public indirect enum SpecimenRole: String, FHIRPrimitiveType {
 	
 	/// Used to test the validity of the measurement process, where the composition of the sample is unknown except to
 	/// the person submitting it.

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/qicore-military-service
  ValueSet: http://hl7.org/fhir/ValueSet/qicore-patient-military-service
  */
-public enum MilitaryServiceCodes: String, FHIRPrimitiveType {
+public indirect enum MilitaryServiceCodes: String, FHIRPrimitiveType {
 	
 	/// The subject is not a reserve member and is currently engaged in full-time military activity
 	case activeDuty = "active-duty"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/related-artifact-type
  ValueSet: http://hl7.org/fhir/ValueSet/related-artifact-type
  */
-public enum RelatedArtifactType: String, FHIRPrimitiveType {
+public indirect enum RelatedArtifactType: String, FHIRPrimitiveType {
 	
 	/// Bibliographic citation for papers, references, or other relevant material for the knowledge resource. This is
 	/// intended to allow for citation of related material, but that was not necessarily specifically prepared in

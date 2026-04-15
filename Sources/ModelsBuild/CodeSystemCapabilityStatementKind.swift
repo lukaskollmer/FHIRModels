@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/capability-statement-kind
  ValueSet: http://hl7.org/fhir/ValueSet/capability-statement-kind
  */
-public enum CapabilityStatementKind: String, FHIRPrimitiveType {
+public indirect enum CapabilityStatementKind: String, FHIRPrimitiveType {
 	
 	/// The CapabilityStatement instance represents the capabilities of a system or piece of software, independent of a
 	/// particular installation.

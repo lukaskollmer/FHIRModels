@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/need
  ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-need
  */
-public enum Need: String, FHIRPrimitiveType {
+public indirect enum Need: String, FHIRPrimitiveType {
 	
 	/// ***TODO***
 	case initial

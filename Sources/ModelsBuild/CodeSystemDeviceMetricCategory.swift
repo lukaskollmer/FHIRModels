@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/metric-category
  ValueSet: http://hl7.org/fhir/ValueSet/metric-category
  */
-public enum DeviceMetricCategory: String, FHIRPrimitiveType {
+public indirect enum DeviceMetricCategory: String, FHIRPrimitiveType {
 	
 	/// Observations generated for this DeviceMetric are calculated.
 	case calculation

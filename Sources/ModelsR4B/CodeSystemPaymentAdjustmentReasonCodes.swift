@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/payment-adjustment-reason
  */
-public enum PaymentAdjustmentReasonCodes: String, FHIRPrimitiveType {
+public indirect enum PaymentAdjustmentReasonCodes: String, FHIRPrimitiveType {
 	
 	/// Prior Payment Reversal
 	case A001 = "a001"

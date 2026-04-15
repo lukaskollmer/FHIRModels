@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/CodeSystem/medication-ingredientstrength
  ValueSet: http://hl7.org/fhir/ValueSet/medication-ingredientstrength
  */
-public enum MedicationIngredientStrengthCodes: String, FHIRPrimitiveType {
+public indirect enum MedicationIngredientStrengthCodes: String, FHIRPrimitiveType {
 	
 	/// As much as is sufficient.
 	case qs

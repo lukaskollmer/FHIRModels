@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/certainty-type
  ValueSet: http://hl7.org/fhir/ValueSet/certainty-type
  */
-public enum EvidenceCertaintyType: String, FHIRPrimitiveType {
+public indirect enum EvidenceCertaintyType: String, FHIRPrimitiveType {
 	
 	/// higher certainty due to dose response relationship.
 	case doseResponseGradient = "DoseResponseGradient"

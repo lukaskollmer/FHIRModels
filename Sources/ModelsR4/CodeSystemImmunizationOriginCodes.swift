@@ -27,7 +27,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/immunization-origin
  */
-public enum ImmunizationOriginCodes: String, FHIRPrimitiveType {
+public indirect enum ImmunizationOriginCodes: String, FHIRPrimitiveType {
 	
 	/// The data for the immunization event originated with an immunization information system (IIS) or registry
 	/// operating within the jurisdiction.

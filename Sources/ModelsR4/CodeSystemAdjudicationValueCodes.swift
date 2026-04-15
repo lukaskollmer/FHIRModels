@@ -26,7 +26,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/adjudication
  ValueSet: http://hl7.org/fhir/ValueSet/adjudication
  */
-public enum AdjudicationValueCodes: String, FHIRPrimitiveType {
+public indirect enum AdjudicationValueCodes: String, FHIRPrimitiveType {
 	
 	/// Amount payable under the coverage
 	case benefit

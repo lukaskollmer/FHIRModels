@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/allergy-intolerance-criticality
  ValueSet: http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality
  */
-public enum AllergyIntoleranceCriticality: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceCriticality: String, FHIRPrimitiveType {
 	
 	/// Worst case result of a future exposure is assessed to be life-threatening or having high potential for organ
 	/// system failure.

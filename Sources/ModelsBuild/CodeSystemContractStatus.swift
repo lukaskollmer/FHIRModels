@@ -27,7 +27,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/contract-status
  */
-public enum ContractStatus: String, FHIRPrimitiveType {
+public indirect enum ContractStatus: String, FHIRPrimitiveType {
 	
 	/// Contract is augmented with additional information to correct errors in a predecessor or to updated values in a
 	/// predecessor. Usage: Contract altered within effective time. Precedence Order = 9. Comparable FHIR and v.3 status

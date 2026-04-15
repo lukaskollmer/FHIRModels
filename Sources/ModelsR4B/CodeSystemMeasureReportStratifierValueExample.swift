@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/measurereport-stratifier-value-example
  ValueSet: http://hl7.org/fhir/ValueSet/measurereport-stratifier-value-example
  */
-public enum MeasureReportStratifierValueExample: String, FHIRPrimitiveType {
+public indirect enum MeasureReportStratifierValueExample: String, FHIRPrimitiveType {
 	
 	/// Northeast region stratification.
 	case northeast

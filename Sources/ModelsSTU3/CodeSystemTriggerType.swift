@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/trigger-type
  ValueSet: http://hl7.org/fhir/ValueSet/trigger-type
  */
-public enum TriggerType: String, FHIRPrimitiveType {
+public indirect enum TriggerType: String, FHIRPrimitiveType {
 	
 	/// The trigger occurs whenever access to data of a particular type is completed
 	case dataAccessEnded = "data-access-ended"

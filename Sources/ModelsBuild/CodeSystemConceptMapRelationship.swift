@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/concept-map-relationship
  ValueSet: http://hl7.org/fhir/ValueSet/concept-map-relationship
  */
-public enum ConceptMapRelationship: String, FHIRPrimitiveType {
+public indirect enum ConceptMapRelationship: String, FHIRPrimitiveType {
 	
 	/// The definitions of the concepts mean the same thing.
 	case equivalent

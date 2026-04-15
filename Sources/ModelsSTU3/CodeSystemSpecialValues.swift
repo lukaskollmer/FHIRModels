@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/special-values
  ValueSet: http://hl7.org/fhir/ValueSet/special-values
  */
-public enum SpecialValues: String, FHIRPrimitiveType {
+public indirect enum SpecialValues: String, FHIRPrimitiveType {
 	
 	/// Boolean false.
 	case `false`

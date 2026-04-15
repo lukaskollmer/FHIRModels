@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/discharge-disposition
  ValueSet: http://hl7.org/fhir/ValueSet/encounter-discharge-disposition
  */
-public enum DischargeDisposition: String, FHIRPrimitiveType {
+public indirect enum DischargeDisposition: String, FHIRPrimitiveType {
 	
 	/// The patient self discharged against medical advice.
 	case aadvice

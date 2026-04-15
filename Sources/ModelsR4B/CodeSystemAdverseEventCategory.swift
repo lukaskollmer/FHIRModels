@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/adverse-event-category
  ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-category
  */
-public enum AdverseEventCategory: String, FHIRPrimitiveType {
+public indirect enum AdverseEventCategory: String, FHIRPrimitiveType {
 	
 	/// The adverse event pertains to an expired drug.
 	case expiredDrug = "expired-drug"

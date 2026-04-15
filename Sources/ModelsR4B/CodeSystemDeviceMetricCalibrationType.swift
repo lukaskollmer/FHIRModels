@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/metric-calibration-type
  ValueSet: http://hl7.org/fhir/ValueSet/metric-calibration-type
  */
-public enum DeviceMetricCalibrationType: String, FHIRPrimitiveType {
+public indirect enum DeviceMetricCalibrationType: String, FHIRPrimitiveType {
 	
 	/// Gain metric calibration method.
 	case gain

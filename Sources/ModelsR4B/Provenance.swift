@@ -35,7 +35,7 @@ public struct Provenance: DomainResource {
 	public static let resourceType: ResourceType = .provenance
 	
 	/// All possible types for "occurred[x]"
-	public enum OccurredX: Equatable, Hashable, Sendable {
+	public indirect enum OccurredX: Equatable, Hashable, Sendable {
 		case dateTime(FHIRPrimitive<DateTime>)
 		case period(Period)
 	}

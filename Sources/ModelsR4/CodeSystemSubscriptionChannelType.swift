@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/subscription-channel-type
  ValueSet: http://hl7.org/fhir/ValueSet/subscription-channel-type
  */
-public enum SubscriptionChannelType: String, FHIRPrimitiveType {
+public indirect enum SubscriptionChannelType: String, FHIRPrimitiveType {
 	
 	/// The channel is executed by sending an email to the email addressed in the URI (which must be a mailto:).
 	case email

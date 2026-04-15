@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://terminology.hl7.org/CodeSystem/location-physical-type
  */
-public enum LocationType: String, FHIRPrimitiveType {
+public indirect enum LocationType: String, FHIRPrimitiveType {
 	
 	/// A defined physical boundary of something, such as a flood risk zone, region, postcode
 	case area

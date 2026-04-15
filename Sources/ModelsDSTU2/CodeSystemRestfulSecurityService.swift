@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/restful-security-service
  ValueSet: http://hl7.org/fhir/ValueSet/restful-security-service
  */
-public enum RestfulSecurityService: String, FHIRPrimitiveType {
+public indirect enum RestfulSecurityService: String, FHIRPrimitiveType {
 	
 	/// Microsoft NTLM Authentication.
 	case NTLM

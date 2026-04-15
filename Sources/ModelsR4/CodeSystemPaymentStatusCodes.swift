@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/paymentstatus
  ValueSet: http://hl7.org/fhir/ValueSet/payment-status
  */
-public enum PaymentStatusCodes: String, FHIRPrimitiveType {
+public indirect enum PaymentStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The payment has been received by the payee.
 	case cleared

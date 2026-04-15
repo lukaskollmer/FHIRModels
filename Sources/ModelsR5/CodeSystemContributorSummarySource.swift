@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/contributor-summary-source
  ValueSet: http://hl7.org/fhir/ValueSet/contributor-summary-source
  */
-public enum ContributorSummarySource: String, FHIRPrimitiveType {
+public indirect enum ContributorSummarySource: String, FHIRPrimitiveType {
 	
 	/// Data copied by human from article text.
 	case articleCopy = "article-copy"

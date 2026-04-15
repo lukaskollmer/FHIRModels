@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/verificationresult-primary-source-type
  ValueSet: http://hl7.org/fhir/ValueSet/primary-source-type
  */
-public enum PrimarySourceType: String, FHIRPrimitiveType {
+public indirect enum PrimarySourceType: String, FHIRPrimitiveType {
 	
 	/// authSource
 	case authSource = "auth-source"

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/group-special-type
  ValueSet: http://hl7.org/fhir/ValueSet/sdc-group-special-type
  */
-public enum QuestionnaireGroupSpecialType: String, FHIRPrimitiveType {
+public indirect enum QuestionnaireGroupSpecialType: String, FHIRPrimitiveType {
 	
 	/// The group is to be continuously visible at the bottom of the questionnaire
 	case footer

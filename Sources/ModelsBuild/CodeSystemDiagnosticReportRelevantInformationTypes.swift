@@ -26,7 +26,7 @@ import FMCore
  URL: http://hl7.org/fhir/diagnosticreport-relevant-information-types
  ValueSet: http://hl7.org/fhir/ValueSet/diagnosticreport-relevant-information-types
  */
-public enum DiagnosticReportRelevantInformationTypes: String, FHIRPrimitiveType {
+public indirect enum DiagnosticReportRelevantInformationTypes: String, FHIRPrimitiveType {
 	
 	/// Ask at Order Entry
 	case AOE

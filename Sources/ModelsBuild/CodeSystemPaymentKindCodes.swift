@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/payment-kind
  ValueSet: http://hl7.org/fhir/ValueSet/payment-kind
  */
-public enum PaymentKindCodes: String, FHIRPrimitiveType {
+public indirect enum PaymentKindCodes: String, FHIRPrimitiveType {
 	
 	/// The payment or adjustment is to an indicated account not to a specific charge.
 	case deposit

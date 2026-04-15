@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/classification-or-context
  ValueSet: http://hl7.org/fhir/ValueSet/classification-or-context
  */
-public enum ClassificationOrContext: String, FHIRPrimitiveType {
+public indirect enum ClassificationOrContext: String, FHIRPrimitiveType {
 	
 	/// Indicates the useContext is a classification - e.g. Administrative, financial, etc.
 	case classification

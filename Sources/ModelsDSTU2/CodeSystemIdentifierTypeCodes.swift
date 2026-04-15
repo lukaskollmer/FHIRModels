@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/identifier-type
  ValueSet: http://hl7.org/fhir/ValueSet/identifier-type
  */
-public enum IdentifierTypeCodes: String, FHIRPrimitiveType {
+public indirect enum IdentifierTypeCodes: String, FHIRPrimitiveType {
 	
 	/// The Identifier associated with the person, or service, who produces the observations or fulfills the order
 	/// requested by the requestor.

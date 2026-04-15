@@ -186,7 +186,7 @@ public struct MedicinalProductInteraction: DomainResource {
 public struct MedicinalProductInteractionInteractant: BackboneElement {
 	
 	/// All possible types for "item[x]"
-	public enum ItemX: Equatable, Hashable, Sendable {
+	public indirect enum ItemX: Equatable, Hashable, Sendable {
 		case codeableConcept(CodeableConcept)
 		case reference(Reference)
 	}

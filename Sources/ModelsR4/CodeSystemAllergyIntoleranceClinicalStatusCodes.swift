@@ -25,7 +25,7 @@ import FMCore
  URL: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
  ValueSet: http://hl7.org/fhir/ValueSet/allergyintolerance-clinical
  */
-public enum AllergyIntoleranceClinicalStatusCodes: String, FHIRPrimitiveType {
+public indirect enum AllergyIntoleranceClinicalStatusCodes: String, FHIRPrimitiveType {
 	
 	/// The subject is currently experiencing, or is at risk of, a reaction to the identified substance.
 	case active

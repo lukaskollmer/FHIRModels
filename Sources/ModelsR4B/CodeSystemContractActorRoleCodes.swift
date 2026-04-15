@@ -24,7 +24,7 @@ import FMCore
  
  URL: http://hl7.org/fhir/contract-actorrole
  */
-public enum ContractActorRoleCodes: String, FHIRPrimitiveType {
+public indirect enum ContractActorRoleCodes: String, FHIRPrimitiveType {
 	
 	/// A receiver, human or animal, of health care related goods and services.
 	case patient

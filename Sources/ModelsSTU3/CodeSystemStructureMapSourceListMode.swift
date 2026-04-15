@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/map-source-list-mode
  ValueSet: http://hl7.org/fhir/ValueSet/map-source-list-mode
  */
-public enum StructureMapSourceListMode: String, FHIRPrimitiveType {
+public indirect enum StructureMapSourceListMode: String, FHIRPrimitiveType {
 	
 	/// Only process this rule for the first in the list
 	case first

@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/substance-stereochemistry
  ValueSet: http://hl7.org/fhir/ValueSet/substance-stereochemistry
  */
-public enum SubstanceStereochemistry: String, FHIRPrimitiveType {
+public indirect enum SubstanceStereochemistry: String, FHIRPrimitiveType {
 	
 	/// constitutionalIsomer
 	case constitutionalIsomer = "ConstitutionalIsomer"

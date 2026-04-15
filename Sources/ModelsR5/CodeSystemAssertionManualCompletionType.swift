@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/assert-manual-completion-codes
  ValueSet: http://hl7.org/fhir/ValueSet/assert-manual-completion-codes
  */
-public enum AssertionManualCompletionType: String, FHIRPrimitiveType {
+public indirect enum AssertionManualCompletionType: String, FHIRPrimitiveType {
 	
 	/// Mark the currently waiting test failed and proceed with the next assert if the stopTestOnFail is false or the
 	/// next test in the TestScript if the stopTestOnFail is true.

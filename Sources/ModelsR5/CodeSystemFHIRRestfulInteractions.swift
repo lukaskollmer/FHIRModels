@@ -25,7 +25,7 @@ import FMCore
  URL: http://hl7.org/fhir/restful-interaction
  ValueSet: http://hl7.org/fhir/ValueSet/restful-interaction
  */
-public enum FHIRRestfulInteractions: String, FHIRPrimitiveType {
+public indirect enum FHIRRestfulInteractions: String, FHIRPrimitiveType {
 	
 	/// perform a set of a separate interactions in a single http operation
 	case batch
