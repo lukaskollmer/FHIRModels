@@ -33,7 +33,7 @@ extension FHIRPrimitiveType {
 
 // MARK: -
 
-public protocol FHIRPrimitiveProtocol: Codable, Sendable {
+public protocol FHIRPrimitiveProtocol: Codable, Sendable, _FHIRTypeWithExtensions {
 	
 	associatedtype PrimitiveType: FHIRPrimitiveType
 	

@@ -24,7 +24,7 @@ import FMCore
  
  A resource that includes narrative, extensions, and contained resources.
  */
-public protocol DomainResource: Resource {
+public protocol DomainResource: Resource, _FHIRTypeWithExtensions {
 	
 	static var resourceType: ResourceType { get }
 	

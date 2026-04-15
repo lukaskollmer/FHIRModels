@@ -33,7 +33,7 @@ public protocol ElementReadOnly: FHIRType {
 	var id: FHIRPrimitive<FHIRString>? { get }
 }
 
-public protocol Element: ElementReadOnly {
+public protocol Element: ElementReadOnly, _FHIRTypeWithExtensions {
 	
 	/// Additional content defined by implementations
 	var `extension`: [Extension]? { get set }
