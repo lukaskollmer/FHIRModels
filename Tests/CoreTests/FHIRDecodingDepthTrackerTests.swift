@@ -22,40 +22,86 @@ import ModelsR5
 import Testing
 
 struct FHIRDecodingDepthTrackerTests {
-	
+
+	// `nestedExtensionJSON(depth: 50)` nests 50 `Extension`s, each reached via the `extension`
+	// key plus an array index, so the deepest model decodes at codingPath depth 2 * 50 = 100.
+	// The limit is therefore honoured at codingPath-unit boundaries around 100, not 50.
 	@Test(arguments: [
-		(  1, true),
-		( 25, true),
-		( 49, true),
-		( 50, false),
-		( 64, false),
+		(   1, true),
+		(  50, true),
+		(  99, true),
+		( 100, false),
+		( 200, false),
 	])
-	func respectsDecodingDepth(levels: Int, shouldThrow: Bool) throws {
-		let counter = FHIRDecodingDepthTracker(maxDepth: levels)
+	func respectsDecodingDepth(maxDepth: Int, shouldThrow: Bool) throws {
 		let decoder = JSONDecoder()
-		decoder.userInfo[FHIRDecodingDepthTracker.userInfoKey] = counter
-		
+		decoder.maxFHIRModelsDepth = maxDepth
+
 		let data = try #require(nestedExtensionJSON(depth: 50).data(using: .utf8))
 		do {
 			_ = try decoder.decode(Patient.self, from: data)
-			#expect(!shouldThrow, "Should have thrown for a maximum of \(levels) but didn't")
+			#expect(!shouldThrow, "Should have thrown for a maximum of \(maxDepth) but didn't")
 		} catch let error as DecodingError {
-			#expect(shouldThrow, "Threw «\(error)» but should not have thrown for a maximum of \(levels)")
+			#expect(shouldThrow, "Threw «\(error)» but should not have thrown for a maximum of \(maxDepth)")
 		}
 	}
-	
+
 	@Test
 	func verifyProductionDecoderSetup() throws {
 		let decoder = JSONDecoder.fhirModelsReadyDecoder()
-		let counter = try #require(decoder.userInfo[FHIRDecodingDepthTracker.userInfoKey] as? FHIRDecodingDepthTracker)
-		#expect(counter.maxDepth == 64)
+		#expect(decoder.maxFHIRModelsDepth == 48)
 	}
-	
+
+	@Test
+	func productionDecoderHonoursCustomLimit() throws {
+		let decoder = JSONDecoder.fhirModelsReadyDecoder(maxDepth: 12)
+		#expect(decoder.maxFHIRModelsDepth == 12)
+	}
+
+	@Test
+	func unsetLimitDisablesEnforcement() throws {
+		let decoder = JSONDecoder() // no limit configured
+		#expect(decoder.maxFHIRModelsDepth == nil)
+		let data = try #require(nestedExtensionJSON(depth: 50).data(using: .utf8))
+		#expect(throws: Never.self) {
+			try decoder.decode(Patient.self, from: data)
+		}
+	}
+
+	/// A broad-but-shallow document must never be rejected: 500 sibling extensions have a true
+	/// nesting depth of 2, so the depth guard must not accumulate across siblings.
+	@Test
+	func wideDocumentIsNotRejected() throws {
+		let decoder = JSONDecoder.fhirModelsReadyDecoder()
+		let siblings = (0 ..< 500).map { #"{"url":"\#($0)","valueString":"v"}"# }.joined(separator: ",")
+		let json = #"{"resourceType":"Patient","extension":[\#(siblings)]}"#
+		let data = try #require(json.data(using: .utf8))
+		#expect(throws: Never.self) {
+			try decoder.decode(Patient.self, from: data)
+		}
+	}
+
+	/// Regression test for the shared-mutable-counter bug: one `fhirModelsReadyDecoder` reused
+	/// across many concurrent decodes of a valid, in-limit document must never spuriously throw.
+	@Test
+	func concurrentDecodesOnSharedDecoderSucceed() async throws {
+		let decoder = JSONDecoder.fhirModelsReadyDecoder()
+		let data = try #require(nestedExtensionJSON(depth: 8).data(using: .utf8)) // codingPath depth 16, well under 48
+		try await withThrowingTaskGroup(of: Void.self) { group in
+			for _ in 0 ..< 200 {
+				group.addTask {
+					_ = try decoder.decode(Patient.self, from: data)
+				}
+			}
+			try await group.waitForAll()
+		}
+	}
+
 	// MARK: - Utilities
-	
+
 	/**
 	 Builds a Patient JSON string with `depth` levels of nested `Extension`.
-	 
+
 	     {
 	        "resourceType": "Patient",
 	        "extension": [{
