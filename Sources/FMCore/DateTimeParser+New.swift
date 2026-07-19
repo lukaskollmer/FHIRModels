@@ -1,7 +1,86 @@
-import Foundation
+import struct Foundation.Decimal
+import struct Foundation.TimeZone
+import protocol Foundation.LocalizedError
 
 
-private let asciiDigits: [Character] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+private let asciiDigits: ClosedRange<UInt8> = 0x30...0x39
+
+
+func isAsciiDigit(_ char: Character) -> Bool {
+    if let value = char.asciiValue {
+        asciiDigits.contains(value)
+    } else {
+        false
+    }
+}
+
+
+struct DateTimeParseError: LocalizedError, CustomStringConvertible {
+    enum Kind {
+        case invalidInput(reason: String)
+        case unsupportedLiteral
+        // Component-specific kinds, mirroring the legacy `FHIRDateParserError` taxonomy
+        // so errors can be translated (and compared) 1:1 across the two engines.
+        case invalidSeparator
+        case invalidYear
+        case invalidMonth
+        case invalidDay
+        case invalidHour
+        case invalidMinute
+        case invalidSecond
+        case invalidTimeZonePrefix
+        case invalidTimeZoneHour
+        case invalidTimeZoneMinute
+        case additionalCharacters
+    }
+
+    let input: String
+    let range: Range<String.Index>
+    let kind: Kind
+
+//    var errorDescription: String? {
+//        // For the component-specific kinds, mirror the legacy `FHIRDateParserError.errorDescription`
+//        // phrasing ("Invalid year at [offset] in “input”", with a UTF-16 offset).
+//        let legacyName: String? = switch kind {
+//        case .unexpectedToken, .invalidInput, .unsupportedLiteral: nil
+//        case .invalidSeparator: "Invalid separator"
+//        case .invalidYear: "Invalid year"
+//        case .invalidMonth: "Invalid month"
+//        case .invalidDay: "Invalid day"
+//        case .invalidHour: "Invalid hour"
+//        case .invalidMinute: "Invalid minute"
+//        case .invalidSecond: "Invalid second"
+//        case .invalidTimeZonePrefix: "Invalid time zone prefix"
+//        case .invalidTimeZoneHour: "Invalid time zone hour"
+//        case .invalidTimeZoneMinute: "Invalid time zone minute"
+//        case .additionalCharacters: "Unexpected characters"
+//        }
+//        guard let legacyName else {
+//            return description
+//        }
+//        let utf16Offset = input.utf16.distance(from: input.utf16.startIndex, to: range.lowerBound)
+//        let preposition = if case .additionalCharacters = kind { "after" } else { "at" }
+//        return "\(legacyName) \(preposition) [\(utf16Offset)] in “\(input)”"
+//    }
+    
+    var description: String {
+        let startOffset = input.distance(from: input.startIndex, to: range.lowerBound)
+        let endOffset = input.distance(from: input.startIndex, to: range.upperBound)
+        return """
+            ParseError(
+                kind: \(kind)
+                range: \(startOffset)..<\(endOffset) ('\(input[range])')
+                input: '\(input)'
+            )
+            """
+    }
+    
+    init<Input: StringProtocol>(input: Input, range: Range<Input.Index>, kind: Kind) {
+        self.input = String(input)
+        self.range = range.lowerBound.samePosition(in: self.input)!..<range.upperBound.samePosition(in: self.input)!
+        self.kind = kind
+    }
+}
 
 
 /// Parser for ISO8601 DateTime literals as used in FHIRPath.
@@ -12,86 +91,17 @@ private let asciiDigits: [Character] = ["0", "1", "2", "3", "4", "5", "6", "7", 
 /// strict engine for the FHIR primitive date/time string formats — see the conformance extension
 /// at the bottom of this file. (Not `~Copyable`: protocol conformances require copyable types.)
 package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
-    struct ParseError: LocalizedError, CustomStringConvertible {
-        enum Kind {
-            case unexpectedToken(expected: [Character], found: Character?)
-            case invalidInput(reason: String)
-            case unsupportedLiteral
-            // Component-specific kinds, mirroring the legacy `FHIRDateParserError` taxonomy
-            // so errors can be translated (and compared) 1:1 across the two engines.
-            case invalidSeparator
-            case invalidYear
-            case invalidMonth
-            case invalidDay
-            case invalidHour
-            case invalidMinute
-            case invalidSecond
-            case invalidTimeZonePrefix
-            case invalidTimeZoneHour
-            case invalidTimeZoneMinute
-            case additionalCharacters
-        }
-
-        let input: String
-        let range: Range<String.Index>
-        let kind: Kind
-
-        var errorDescription: String? {
-            // For the component-specific kinds, mirror the legacy `FHIRDateParserError.errorDescription`
-            // phrasing ("Invalid year at [offset] in “input”", with a UTF-16 offset).
-            let legacyName: String? = switch kind {
-            case .unexpectedToken, .invalidInput, .unsupportedLiteral: nil
-            case .invalidSeparator: "Invalid separator"
-            case .invalidYear: "Invalid year"
-            case .invalidMonth: "Invalid month"
-            case .invalidDay: "Invalid day"
-            case .invalidHour: "Invalid hour"
-            case .invalidMinute: "Invalid minute"
-            case .invalidSecond: "Invalid second"
-            case .invalidTimeZonePrefix: "Invalid time zone prefix"
-            case .invalidTimeZoneHour: "Invalid time zone hour"
-            case .invalidTimeZoneMinute: "Invalid time zone minute"
-            case .additionalCharacters: "Unexpected characters"
-            }
-            guard let legacyName else {
-                return description
-            }
-            let utf16Offset = input.utf16.distance(from: input.utf16.startIndex, to: range.lowerBound)
-            let preposition = if case .additionalCharacters = kind { "after" } else { "at" }
-            return "\(legacyName) \(preposition) [\(utf16Offset)] in “\(input)”"
-        }
-        
-        var description: String {
-            let startOffset = input.distance(from: input.startIndex, to: range.lowerBound)
-            let endOffset = input.distance(from: input.startIndex, to: range.upperBound)
-            return """
-                ParseError(
-                    kind: \(kind)
-                    range: \(startOffset)..<\(endOffset) ('\(input[range])')
-                    input: '\(input)'
-                )
-                """
-        }
-        
-        init(input: Input, range: Range<Input.Index>, kind: Kind) {
-            self.input = String(input)
-            self.range = range.lowerBound.samePosition(in: self.input)!..<range.upperBound.samePosition(in: self.input)!
-            self.kind = kind
-        }
-    }
+    typealias ParseError = DateTimeParseError
     
     
     private let config: DateTimeParserConfig
     private let input: Input
     private var position: Input.Index
     
-    private let cal: Calendar
-    
-    fileprivate init(config: DateTimeParserConfig, input: Input, position: Input.Index, calendar: Calendar = .defaultForFHIRDateParsing) {
+    fileprivate init(config: DateTimeParserConfig, input: Input, position: Input.Index) {
         self.config = config
         self.input = input
         self.position = position
-        self.cal = calendar
     }
     
     private var current: Character? {
@@ -131,7 +141,7 @@ package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
         if current == expected {
             consume()
         } else {
-            throw makeError(errorKind ?? .unexpectedToken(expected: [expected], found: current), at: position)
+            throw makeError(errorKind ?? .invalidInput(reason: "Expected \(expected); got \(current)"), at: position)
         }
     }
     
@@ -140,13 +150,13 @@ package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
     /// - parameter expected: Non-empty list of tokens we allow to appear at the current position.
     /// - Throws: if the current token is not equal to the specified expected value.
     /// - Returns: the token that matched.
-    private mutating func expectAnyOfAndConsume(_ expected: [Character], errorKind: ParseError.Kind? = nil) throws(ParseError) -> Character {
+    private mutating func expectAndConsume(anyOf expected: [Character], errorKind: ParseError.Kind? = nil) throws(ParseError) -> Character {
         if let current, expected.contains(current) {
             consume()
             return current
         } else {
             throw makeError(
-                errorKind ?? .unexpectedToken(expected: expected, found: current),
+                errorKind ?? .invalidInput(reason: "Expected \(expected); got \(current)"),
                 at: position
             )
         }
@@ -165,12 +175,12 @@ extension DateTimeLiteralParser {
     /// - Throws: if, when the function is called, the first token is not a decimal digit.
     private mutating func parseInt<I: FixedWidthInteger>(_: I.Type = Int.self, numDigitsRule: IntParsingNumDigitsRule? = nil, errorKind: ParseError.Kind? = nil) throws(ParseError) -> I {
         guard !isAtEnd else {
-            throw makeError(errorKind ?? .unexpectedToken(expected: asciiDigits, found: nil), at: position)
+            throw makeError(errorKind ?? .invalidInput(reason: "Expected ASCII digit; found EOF"), at: position)
         }
         let startPos = position
-        let digits = input[position...].prefix { asciiDigits.contains($0) }
+        let digits = input[position...].prefix { isAsciiDigit($0) }
         guard !digits.isEmpty else {
-            throw makeError(errorKind ?? .unexpectedToken(expected: asciiDigits, found: current), at: position)
+            throw makeError(errorKind ?? .invalidInput(reason: "Expected ASCII digit; found \(current)"), at: position)
         }
         consume(digits.count)
         let literalRange = startPos..<position
@@ -211,7 +221,7 @@ extension DateTimeLiteralParser {
             throw makeError(errorKind, at: position)
         }
         let startPos = position
-        let integerPart = input[position...].prefix { asciiDigits.contains($0) }
+        let integerPart = input[position...].prefix { isAsciiDigit($0) }
         guard !integerPart.isEmpty else {
             throw makeError(errorKind, at: position)
         }
@@ -228,11 +238,11 @@ extension DateTimeLiteralParser {
             }
         }
         consume(integerPart.count)
-        let decimalString: Input.SubSequence
+        let fractionPart: Input.SubSequence // empty if no fraction present
         if current == "." {
             consume()
             // parse fractional part
-            let fractionPart = input[position...].prefix { asciiDigits.contains($0) }
+            fractionPart = input[position...].prefix { isAsciiDigit($0) }
             guard !fractionPart.isEmpty else {
                 throw makeError(errorKind, at: position) // TODO better error!
             }
@@ -249,20 +259,45 @@ extension DateTimeLiteralParser {
                 }
             }
             consume(fractionPart.count)
-            decimalString = input[integerPart.startIndex..<fractionPart.endIndex]
         } else {
             // integer part not followed by a "."
             if allowOmittingFractionalPart {
-                decimalString = integerPart
+                fractionPart = input[integerPart.endIndex..<integerPart.endIndex]
             } else {
                 throw makeError(errorKind, in: startPos..<position)
             }
         }
-        do {
-            let decimal = try Decimal(String(decimalString), format: .localizedDecimal(locale: .enUS), lenient: false)
-            return (decimal, Int(integerPart)!)
-        } catch {
-            throw makeError(errorKind, in: startPos..<position)
+        let decimal = Decimal(asciiIntegerDigits: integerPart.utf8, asciiFractionDigits: fractionPart.utf8)
+        return (decimal, Int(integerPart)!)
+    }
+}
+
+
+extension Decimal {
+    /// Creates a decimal from two collections of ASCII digits..
+    ///
+    /// For example,`"17".utf8` and `"239".utf8` would produce a Decimal with value `17.239`.
+    ///
+    /// - parameter integerDigits: The digits making up the decimal's integer part.
+    /// - parameter fractionDigits: The digits making up the decimal's fraction part.
+    ///
+    /// - Invariant: Both collections must contain only ASCII digits (`0x30...0x39`). No validation is performed.
+//    @_specialize(where I == String.UTF8View, F == String.UTF8View)
+//    @_specialize(where I == Substring.UTF8View, F == Substring.UTF8View)
+    init<I: Collection<UInt8>, F: Collection<UInt8>>(asciiIntegerDigits integerDigits: I, asciiFractionDigits fractionDigits: F) {
+        let fractionCount = fractionDigits.count
+        if integerDigits.count + fractionCount <= 19 {
+            var mantissa: UInt64 = 0
+            for byte in integerDigits { mantissa = mantissa &* 10 &+ UInt64(byte &- 48) }
+            for byte in fractionDigits { mantissa = mantissa &* 10 &+ UInt64(byte &- 48) }
+            self.init(sign: .plus, exponent: -fractionCount, significand: Decimal(mantissa))
+        } else {
+            var spelling = String(decoding: integerDigits, as: UTF8.self)
+            if fractionCount > 0 {
+                spelling += "."
+                spelling += String(decoding: fractionDigits, as: UTF8.self)
+            }
+            self = Decimal(string: spelling)!  // digit-run contract guarantees this parses
         }
     }
 }
@@ -282,7 +317,7 @@ extension DateTimeLiteralParser {
     ) throws(ParseError) -> (secondsFromGMT: Int, timeZoneString: Input.SubSequence) {
         let startPos = position
         guard current != "Z" else {
-            // if the time zone is 'Z', it is interpreted UTC.
+            // if the time zone is 'Z', it is interpreted as UTC.
             consume()
             return (0, input[startPos..<position])
         }
@@ -298,7 +333,7 @@ extension DateTimeLiteralParser {
         case .strict:
             // The dedicated field parsers replicate the legacy engine's error kinds and positions,
             // including the ±14:00 range rules.
-            `operator` = try expectAnyOfAndConsume(["+", "-"], errorKind: .invalidTimeZonePrefix)
+            `operator` = try expectAndConsume(anyOf: ["+", "-"], errorKind: .invalidTimeZonePrefix)
             hours = try _parseTimeZoneHour()
             try expectAndConsume(":", errorKind: .invalidSeparator)
             minutes = try _parseTimeZoneMinute(hours: hours)
@@ -314,7 +349,7 @@ extension DateTimeLiteralParser {
     /// Parses the 2-digit timezone-offset hour, matching the legacy engine's error shapes (ie, placing  the `invalidSeparator` at `start + min(2, count)` width).
     private mutating func _parseTimeZoneHour() throws(ParseError) -> Int {
         let start = position
-        let digits = input[position...].prefix { asciiDigits.contains($0) }
+        let digits = input[position...].prefix { isAsciiDigit($0) }
         guard !digits.isEmpty else {
             throw makeError(.invalidTimeZoneHour, at: start)
         }
@@ -322,7 +357,7 @@ extension DateTimeLiteralParser {
         guard digits.count == 2 else {
             throw makeError(.invalidSeparator, at: input.index(start, offsetBy: min(2, digits.count)))
         }
-        let value = Int(String(digits))! // SAFETY: exactly two ASCII digits. swiftlint:disable:this force_unwrapping
+        let value = Int(digits)! // SAFETY: exactly two ASCII digits. swiftlint:disable:this force_unwrapping
         guard value <= 14 else {
             throw makeError(.invalidTimeZoneHour, in: start..<position)
         }
@@ -334,7 +369,7 @@ extension DateTimeLiteralParser {
     /// field start otherwise, including the "±14:00 requires zero minutes" rule).
     private mutating func _parseTimeZoneMinute(hours: Int) throws(ParseError) -> Int {
         let start = position
-        let digits = input[position...].prefix { asciiDigits.contains($0) }
+        let digits = input[position...].prefix { isAsciiDigit($0) }
         guard !digits.isEmpty else {
             throw makeError(.invalidTimeZoneMinute, at: start)
         }
@@ -345,7 +380,7 @@ extension DateTimeLiteralParser {
         guard digits.count == 2 else {
             throw makeError(.invalidTimeZoneMinute, in: start..<position)
         }
-        let value = Int(String(digits))! // SAFETY: exactly two ASCII digits. swiftlint:disable:this force_unwrapping
+        let value = Int(digits)! // SAFETY: exactly two ASCII digits. swiftlint:disable:this force_unwrapping
         guard value <= 59, hours < 14 || value == 0 else {
             throw makeError(.invalidTimeZoneMinute, in: start..<position)
         }
@@ -356,6 +391,18 @@ extension DateTimeLiteralParser {
 
 
 extension DateTimeLiteralParser {
+    private func validating<V: ValidatableParseResult>(_ value: V, errorRangeStartPos: Input.Index) throws(ParseError) -> V {
+        switch value.validate(using: config) {
+        case .valid:
+            return value
+        case .invalid(let errorKind):
+            throw makeError(errorKind, in: errorRangeStartPos..<position)
+        }
+    }
+}
+
+
+extension DateTimeLiteralParser {
     fileprivate mutating func parseInstant() throws(ParseError) -> ParsedInstant {
         // YYYY-MM-DDThh:mm:ss.sss+zz:zz
         let startPos = position
@@ -363,18 +410,16 @@ extension DateTimeLiteralParser {
         try expectAndConsume("T", errorKind: .invalidSeparator)
         let time = try parseTime()
         let (timeZoneOffset, timeZoneString) = try parseTimeZoneComponent(validation: .strict)
-        guard (1...9999).contains(date.year), (1...12).contains(date.month), (1...31).contains(date.day),
-              let timeZone = TimeZone(secondsFromGMT: timeZoneOffset),
-              case let result = ParsedInstant(date: date, time: .init(time: time, timeZone: timeZone, timeZoneString: String(timeZoneString))),
-              result.isValid(in: cal) else {
-            let text = input[startPos..<position]
-            throw makeError(.invalidInput(reason: "\(text) does not correspond to a valid date!"), in: startPos..<position)
+        guard let timeZone = TimeZone(secondsFromGMT: timeZoneOffset) else {
+            throw makeError(.invalidTimeZoneHour, at: startPos) // TODO not necessarily the hour. maybe collapse the cases to only invalidTimeZone?
         }
-        return result
+        let result = ParsedInstant(date: date, time: .init(time: time, timeZone: timeZone, timeZoneString: String(timeZoneString)))
+        return try validating(result, errorRangeStartPos: startPos)
     }
     
     fileprivate mutating func parseInstantDate() throws(ParseError) -> ParsedInstant.Date {
-        let year = try parseYear()
+        let startPos = position
+        let year = try parseYear(validate: false) // we skip validation here as we will validate the whole result at the end.
         try expectAndConsume("-", errorKind: .invalidSeparator)
         let monthStart = position
         let month = try parseInt(UInt8.self, numDigitsRule: .exactly(2), errorKind: .invalidMonth)
@@ -382,80 +427,54 @@ extension DateTimeLiteralParser {
             throw makeError(.invalidMonth, in: monthStart..<position)
         }
         try expectAndConsume("-", errorKind: .invalidSeparator)
-        let dayStart = position
         let day = try parseInt(UInt8.self, numDigitsRule: .exactly(2), errorKind: .invalidDay)
-        guard DateComponents(year: year, month: Int(month), day: Int(day)).isValidDate(in: cal) else {
-            throw makeError(.invalidDay, in: dayStart..<position)
-        }
-        return .init(year: year, month: month, day: day)
+        let result = ParsedInstant.Date(year: year, month: month, day: day)
+        return try validating(result, errorRangeStartPos: startPos)
     }
     
     
     fileprivate mutating func parseTime() throws(ParseError) -> ParsedTime {
+        let startPos = position
         let hour = try parseClockField(max: 23, errorKind: .invalidHour)
         try expectAndConsume(":", errorKind: .invalidSeparator)
         let minute = try parseClockField(max: 59, errorKind: .invalidMinute)
         try expectAndConsume(":", errorKind: .invalidSeparator)
         let secondsStringStart = position
-//        // Integer seconds may be 60 (the leap second); a fraction may follow (the R4 regex permits
-//        // "60.5", so — unlike the legacy engine — no cap is applied to the fractional part).
-//        _ = try parseClockField(max: 60, errorKind: .invalidSecond)
-//        if current == "." {
-//            consume()
-//            let fractionStart = position
-//            let fraction = input[position...].prefix { asciiDigits.contains($0) }
-//            guard !fraction.isEmpty else {
-//                throw makeError(.invalidSecond, at: fractionStart)
-//            }
-//            consume(fraction.count)
-//        }
-//        let secondsString = input[secondsStringStart..<position]
-//        guard let second = Decimal(string: String(secondsString)) else {
-//            // Unreachable: `secondsString` is ASCII digits with at most one '.'.
-//            throw makeError(.invalidSecond, in: secondsStringStart..<position)
-//        }
         let second = try parseDecimal(
             integerPartDigitsLimit: .exactly(2),
             fractionPartDigitsLimit: config.maxFractionalSecondDigits.map { .atMost($0) },
             allowOmittingFractionalPart: true,
             errorKind: .invalidSecond
         )
-        guard (0...(config.allowLeapSecond60 ? 60 : 59)).contains(second.integerPart) else {
-            throw makeError(.invalidSecond, in: secondsStringStart..<position)
-        }
-        let secondsString = input[secondsStringStart..<position]
-        return .init(
+//        guard (0...(config.allowLeapSecond60 ? 60 : 59)).contains(second.integerPart) else {
+//            throw makeError(.invalidSecond, in: secondsStringStart..<position)
+//        }
+        let result = ParsedTime(
             hour: hour,
             minute: minute,
             second: second.decimal,
             secondIntegerPart: UInt8(truncatingIfNeeded: second.integerPart),
-            originalSecondsString: String(secondsString)
+            originalSecondsString: String(input[secondsStringStart..<position])
         )
+        return try validating(result, errorRangeStartPos: startPos)
     }
     
     
     fileprivate mutating func parseDate() throws(ParseError) -> ParsedDate {
         // YYYY, YYYY-MM, or YYYY-MM-DD
-        let year = try parseYear()
+        let startPos = position
+        let year = try parseYear(validate: false)
         guard current == "-" else {
-            return .init(year: year)
+            return try validating(.init(year: year), errorRangeStartPos: startPos)
         }
         consume()
-        let monthStart = position
         let month = try parseInt(UInt8.self, numDigitsRule: .exactly(2), errorKind: .invalidMonth)
-        guard DateComponents(year: year, month: Int(month)).isValidDate(in: cal) else {
-            throw makeError(.invalidMonth, in: monthStart..<position)
-        }
         guard current == "-" else {
-            return .init(year: year, month: month)
+            return try validating(.init(year: year, month: month), errorRangeStartPos: startPos)
         }
         consume()
-        let dayStart = position
         let day = try parseInt(UInt8.self, numDigitsRule: .exactly(2), errorKind: .invalidDay)
-        guard DateComponents(year: year, month: Int(month), day: Int(day)).isValidDate(in: cal) else {
-            throw makeError(.invalidDay, in: dayStart..<position)
-        }
-        return .init(year: year, month: month, day: day)
+        return try validating(.init(year: year, month: month, day: day), errorRangeStartPos: startPos)
     }
     
     
@@ -467,23 +486,16 @@ extension DateTimeLiteralParser {
         let startPos = position
         let date = try parseDate()
         guard current == "T" else {
-            return .init(date: date, time: nil)
+            return try validating(.init(date: date, time: nil), errorRangeStartPos: startPos)
         }
-        let timeSeparatorPos = position
         consume()
         let time = try parseTime()
         let (timeZoneOffset, timeZoneString) = try parseTimeZoneComponent(validation: .strict)
-        guard let timeZone = TimeZone(secondsFromGMT: timeZoneOffset),
-              case let result = ParsedDateTime(date: date, time: .init(time: time, timeZone: timeZone, timeZoneString: String(timeZoneString))),
-              result.isValid(in: cal) else {
-            if date.day == nil {
-                // A time may only follow a complete date (intentionally stricter than the legacy engine).
-                throw makeError(.additionalCharacters, at: timeSeparatorPos)
-            }
-            let text = input[startPos..<position]
-            throw makeError(.invalidInput(reason: "'\(text)' is not a valid date"), in: startPos..<position)
+        guard let timeZone = TimeZone(secondsFromGMT: timeZoneOffset) else {
+            throw makeError(.invalidTimeZoneHour, in: startPos..<position)
         }
-        return result
+        let result = ParsedDateTime(date: date, time: .init(time: time, timeZone: timeZone, timeZoneString: String(timeZoneString)))
+        return try validating(result, errorRangeStartPos: startPos)
     }
 }
 
@@ -504,7 +516,7 @@ extension DateTimeLiteralParser {
     /// _after_ the scanned digits.
     private mutating func parseClockField(max: Int, errorKind: ParseError.Kind) throws(ParseError) -> UInt8 {
         let start = position
-        let digits = input[position...].prefix { asciiDigits.contains($0) }
+        let digits = input[position...].prefix { isAsciiDigit($0) }
         guard !digits.isEmpty else {
             throw makeError(errorKind, at: start)
         }
@@ -512,15 +524,15 @@ extension DateTimeLiteralParser {
         guard digits.count == 2 else {
             throw makeError(.invalidSeparator, at: position)
         }
-        let value = UInt8(String(digits))! // SAFETY: exactly two ASCII digits, i.e. at most 99. swiftlint:disable:this force_unwrapping
+        let value = UInt8(digits)! // SAFETY: exactly two ASCII digits, i.e. at most 99. swiftlint:disable:this force_unwrapping
         guard Int(value) <= max else {
             throw makeError(errorKind, in: start..<position)
         }
         return value
     }
     
-    /// Parses a "year" value, and validates it against the current config.
-    private mutating func parseYear() throws(ParseError) -> Int {
+    /// Parses a "year" value, and optionally validates it against the current config.
+    private mutating func parseYear(validate: Bool) throws(ParseError) -> Int {
         let startPos = position
         let isNegative: Bool
         if current == "-" {
@@ -534,7 +546,7 @@ extension DateTimeLiteralParser {
         }
         var year = try parseInt(numDigitsRule: .exactly(4), errorKind: .invalidYear)
         year *= isNegative ? -1 : 1
-        guard config.allowedYears.contains(year) else {
+        guard !validate || config.allowedYears.contains(year) else {
             throw makeError(.invalidYear, at: startPos)
         }
         return year
@@ -542,92 +554,108 @@ extension DateTimeLiteralParser {
 }
 
 
-extension ParsedDate {
-    func isValid(in cal: Calendar) -> Bool {
-        guard year > 0 && year <= 9999 else {
-            return false
+// MARK: Parsed Components Validation
+
+
+private protocol ValidatableParseResult {
+    func validate(using config: DateTimeParserConfig) -> ParsedInstant.Date.ValidationResult
+}
+
+extension ParsedInstant.Date: ValidatableParseResult {
+    enum ValidationResult {
+        case valid
+        case invalid(DateTimeParseError.Kind)
+    }
+    
+    /// Zero-indexed month-length lookup. Not aware of leap years. January is at position `0`, December at `11`.
+    private static let monthLengths: [UInt8] = [
+        31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    ]
+    
+    func validate(using config: DateTimeParserConfig) -> ValidationResult {
+        guard config.allowedYears.contains(year) else {
+            return .invalid(.invalidYear)
         }
-        return switch (month, day) {
+        guard (1...12).contains(month) else {
+            return .invalid(.invalidMonth)
+        }
+        var daysInMonth = Self.monthLengths[Int(month - 1)]
+        if month == 2, (year.isMultiple(of: 4) && !year.isMultiple(of: 100)) || year.isMultiple(of: 400) {
+            daysInMonth += 1
+        }
+        guard (1...daysInMonth).contains(day) else {
+            return .invalid(.invalidDay)
+        }
+        return .valid
+    }
+}
+
+extension ParsedDate: ValidatableParseResult {
+    func validate(using config: DateTimeParserConfig) -> ParsedInstant.Date.ValidationResult {
+        guard config.allowedYears.contains(year) else {
+            return .invalid(.invalidYear)
+        }
+        switch (month, day) {
         case (.none, .none):
-            true
+            return .valid
         case (.some(let month), .none):
-            (1...12).contains(month)
+            return (1...12).contains(month) ? .valid : .invalid(.invalidMonth)
         case (.some(let month), .some(let day)):
-            DateComponents(year: year, month: Int(month), day: Int(day)).isValidDate(in: cal)
+            return ParsedInstant.Date(year: year, month: month, day: day).validate(using: config)
         case (.none, .some):
             // day without month is not allowed
-            false
+            return .invalid(.invalidMonth)
         }
     }
 }
 
-extension ParsedDateTime {
-    func isValid(in cal: Calendar) -> Bool {
+extension ParsedTime: ValidatableParseResult {
+    func validate(using config: DateTimeParserConfig) -> ParsedInstant.Date.ValidationResult {
+        guard (0...23).contains(hour) else {
+            return .invalid(.invalidHour)
+        }
+        guard (0...59).contains(minute) else {
+            return .invalid(.invalidMinute)
+        }
+        guard (0...(config.allowLeapSecond60 ? 60 : 59)).contains(secondIntegerPart) else {
+            return .invalid(.invalidSecond)
+        }
+        return .valid
+    }
+}
+
+extension ParsedDateTime: ValidatableParseResult {
+    func validate(using config: DateTimeParserConfig) -> ParsedInstant.Date.ValidationResult {
         if let time {
-            guard let month = date.month, let day = date.day else {
-                // if there is a time, we must also have a month and day.
-                return false
+            guard date.month != nil else {
+                // if there is a time, we must also have a month.
+                return .invalid(.invalidMonth)
             }
-            var components = DateComponents(
-                timeZone: time.timeZone,
-                year: date.year,
-                month: Int(month),
-                day: Int(day),
-                hour: Int(time.time.hour),
-                minute: Int(time.time.minute),
-                second: Int(time.time.secondIntegerPart)
-            )
-            if time.time.secondIntegerPart == 60 {
-                // leap second
-                components.second! -= 1
+            guard date.day != nil else {
+                // if there is a time, we must also have a day.
+                return .invalid(.invalidDay)
             }
-            var cal = cal
-            cal.timeZone = time.timeZone
-            return components.isValidDate(in: cal)
+            switch date.validate(using: config) {
+            case .valid:
+                return time.time.validate(using: config)
+            case .invalid(let kind):
+                return .invalid(kind)
+            }
         } else {
             // date-only
-            return date.isValid(in: cal)
+            return date.validate(using: config)
         }
     }
 }
 
-extension ParsedInstant {
-    func isValid(in cal: Calendar) -> Bool {
-        guard date.year > 0 && date.year <= 9999 else {
-            return false
+extension ParsedInstant: ValidatableParseResult {
+    func validate(using config: DateTimeParserConfig) -> ParsedInstant.Date.ValidationResult {
+        switch date.validate(using: config) {
+        case .invalid(let kind):
+            return .invalid(kind)
+        case .valid:
+            return time.time.validate(using: config)
         }
-        var components = DateComponents(
-            timeZone: time.timeZone,
-            year: date.year,
-            month: Int(date.month),
-            day: Int(date.day),
-            hour: Int(time.time.hour),
-            minute: Int(time.time.minute),
-            second: Int(time.time.secondIntegerPart)
-        )
-        if time.time.secondIntegerPart == 60 {
-            components.second! -= 1
-        }
-        var cal = cal
-        cal.timeZone = time.timeZone
-        return components.isValidDate(in: cal)
-    }
-}
-
-
-extension Decimal {
-    func secondsAndNanoseconds() -> (seconds: Int, nanoseconds: Int) {
-        var input = self
-        var whole = Decimal()
-        // .down = toward -inf, .up = toward +inf → this truncates toward zero
-        NSDecimalRound(&whole, &input, 0, self < 0 ? .up : .down)
-        var scaledFrac = (self - whole) * 1_000_000_000
-        var nanos = Decimal()
-        NSDecimalRound(&nanos, &scaledFrac, 0, self < 0 ? .up : .down)
-        return (
-            NSDecimalNumber(decimal: whole).intValue,
-            NSDecimalNumber(decimal: nanos).intValue
-        )
     }
 }
 
@@ -654,7 +682,7 @@ extension DateTimeLiteralParser.ParseError {
         case .invalidTimeZoneHour: .invalidTimeZoneHour(position)
         case .invalidTimeZoneMinute: .invalidTimeZoneMinute(position)
         case .additionalCharacters: .additionalCharacters(position)
-        case .unexpectedToken, .invalidInput, .unsupportedLiteral:
+        case .invalidInput, .unsupportedLiteral:
             // Fallback for the generic kinds; the classified FHIR entry points only reach this
             // on composite validity failures.
             .additionalCharacters(position)
@@ -663,7 +691,9 @@ extension DateTimeLiteralParser.ParseError {
 }
 
 package enum NewDateTimeParser: DateTimeParserProtocol {
-    package static func dateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDate {
+    @specialized(where S == String)
+    @specialized(where S == Substring)
+    package static func dateComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedDate {
         do {
             var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
             let date = try parser.parseDate()
@@ -674,7 +704,9 @@ package enum NewDateTimeParser: DateTimeParserProtocol {
         }
     }
 
-    package static func instantDateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant.Date {
+    @specialized(where S == String)
+    @specialized(where S == Substring)
+    package static func instantDateComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedInstant.Date {
         do {
             var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
             let date = try parser.parseInstantDate()
@@ -685,7 +717,9 @@ package enum NewDateTimeParser: DateTimeParserProtocol {
         }
     }
 
-    package static func timeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTime {
+    @specialized(where S == String)
+    @specialized(where S == Substring)
+    package static func timeComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedTime {
         do {
             var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
             let time = try parser.parseTime()
@@ -696,7 +730,9 @@ package enum NewDateTimeParser: DateTimeParserProtocol {
         }
     }
 
-    package static func dateTimeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDateTime {
+    @specialized(where S == String)
+    @specialized(where S == Substring)
+    package static func dateTimeComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedDateTime {
         do {
             var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
             let result = try parser.parseDateTime()
@@ -707,7 +743,9 @@ package enum NewDateTimeParser: DateTimeParserProtocol {
         }
     }
 
-    package static func instantComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant {
+    @specialized(where S == String)
+    @specialized(where S == Substring)
+    package static func instantComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedInstant {
         do {
             var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
             let instant = try parser.parseInstant()
@@ -718,7 +756,9 @@ package enum NewDateTimeParser: DateTimeParserProtocol {
         }
     }
 
-    package static func timeZoneComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTimeZone {
+    @specialized(where S == String)
+    @specialized(where S == Substring)
+    package static func timeZoneComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedTimeZone {
         do {
             var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
             let result = try parser.parseTimeZoneComponent(validation: .strict)
@@ -738,19 +778,4 @@ extension Collection {
     subscript(safe idx: Index) -> Element? {
         idx >= startIndex && idx < endIndex ? self[idx] : nil
     }
-}
-
-
-extension Locale {
-    fileprivate static let enUS = Locale(identifier: "en_US")
-}
-
-
-extension Calendar {
-    fileprivate static let defaultForFHIRDateParsing: Calendar = {
-        var cal = Calendar(identifier: .gregorian)
-        cal.timeZone = .gmt
-        cal.locale = .enUS
-        return cal
-    }()
 }

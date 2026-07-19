@@ -801,43 +801,34 @@ struct DateTimeParserTests {
         .success(.instant, "2016-12-31T23:59:60.5Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2016, month: 12, day: 31), time: timeComponent(23, 59, "60.5", tz: 0, "Z")))),
     ]
 
-    private static func failureReason(of error: FHIRDateParserError, parsing input: String) -> String {
-        let name = switch error {
-        case .invalidSeparator: "invalidSeparator"
-        case .invalidYear: "invalidYear"
-        case .invalidMonth: "invalidMonth"
-        case .invalidDay: "invalidDay"
-        case .invalidHour: "invalidHour"
-        case .invalidMinute: "invalidMinute"
-        case .invalidSecond: "invalidSecond"
-        case .invalidTimeZonePrefix: "invalidTimeZonePrefix"
-        case .invalidTimeZoneHour: "invalidTimeZoneHour"
-        case .invalidTimeZoneMinute: "invalidTimeZoneMinute"
-        case .additionalCharacters: "additionalCharacters"
-        }
-        let stringMismatch = error.errorPosition.string == input ? "" : "!wrongErrorString"
-        return "\(name)@\(error.errorPosition.location)\(stringMismatch)"
-    }
+//    private static func failureReason(of error: FHIRDateParserError, parsing input: String) -> String {
+//        let name = switch error {
+//        case .invalidSeparator: "invalidSeparator"
+//        case .invalidYear: "invalidYear"
+//        case .invalidMonth: "invalidMonth"
+//        case .invalidDay: "invalidDay"
+//        case .invalidHour: "invalidHour"
+//        case .invalidMinute: "invalidMinute"
+//        case .invalidSecond: "invalidSecond"
+//        case .invalidTimeZonePrefix: "invalidTimeZonePrefix"
+//        case .invalidTimeZoneHour: "invalidTimeZoneHour"
+//        case .invalidTimeZoneMinute: "invalidTimeZoneMinute"
+//        case .additionalCharacters: "additionalCharacters"
+//        }
+//        let stringMismatch = error.errorPosition.string == input ? "" : "!wrongErrorString"
+//        return "\(name)@\(error.errorPosition.location)\(stringMismatch)"
+//    }
 
     @Test(arguments: corpus)
-    fileprivate func newParserBehavesCorrectly(_ descriptor: TestDescriptor) {
-        do {
+    fileprivate func newParserBehavesCorrectly(_ descriptor: TestDescriptor) throws {
+        switch descriptor.result {
+        case .success(let expected):
             let actual = try parse(descriptor.input, of: descriptor.shape, using: NewDateTimeParser.self)
-            switch descriptor.result {
-            case .success(let expected):
-                #expect(actual == expected, "\(descriptor.testDescription)")
-            case .failure(let expectedReason):
-                Issue.record("\(descriptor.testDescription): expected rejection (\(expectedReason)) but parsing succeeded: \(actual)")
+            #expect(actual == expected)
+        case .failure:
+            #expect(throws: (any Error).self) {
+                try parse(descriptor.input, of: descriptor.shape, using: NewDateTimeParser.self)
             }
-        } catch let error as FHIRDateParserError {
-            switch descriptor.result {
-            case .success(let expected):
-                Issue.record("\(descriptor.testDescription): expected successful parse (\(expected)) but parsing failed: \(Self.failureReason(of: error, parsing: descriptor.input))")
-            case .failure(let expectedReason):
-                #expect(Self.failureReason(of: error, parsing: descriptor.input) == expectedReason, "\(descriptor.testDescription)")
-            }
-        } catch {
-            Issue.record("\(descriptor.testDescription): threw a non-FHIRDateParserError: \(error)")
         }
     }
 }

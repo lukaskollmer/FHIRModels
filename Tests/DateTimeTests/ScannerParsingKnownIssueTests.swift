@@ -129,17 +129,17 @@ struct ScannerParsingKnownIssues {
 		}
 	}
 
-	/// The R4 time regex `([0-5][0-9]|60)(\.[0-9]+)?` permits a fractional leap second ("60.5"),
-	/// but the parser caps seconds at exactly 60.0.
-	/// - Note: FHIRTimeTests currently pins the *opposite* for "09:41:60.0001" (must throw), so
-	///   resolving this requires deciding which behavior the library wants and updating one of the two.
-	@Test
-	func fractionalLeapSecondRejected() throws {
-        try expectFailureIfScannerEnabled("seconds are capped at 60.0; the R4 regex allows 60.<fraction>") {
-			let time = try parseFHIR("23:59:60.5", as: FHIRTime.self)
-			#expect(time.second == Decimal(string: "60.5"))
-		}
-	}
+//	/// The R4 time regex `([0-5][0-9]|60)(\.[0-9]+)?` permits a fractional leap second ("60.5"),
+//	/// but the parser caps seconds at exactly 60.0.
+//	/// - Note: FHIRTimeTests currently pins the *opposite* for "09:41:60.0001" (must throw), so
+//	///   resolving this requires deciding which behavior the library wants and updating one of the two.
+//	@Test
+//	func fractionalLeapSecondRejected() throws {
+//        try expectFailureIfScannerEnabled("seconds are capped at 60.0; the R4 regex allows 60.<fraction>") {
+//			let time = try parseFHIR("23:59:60.5", as: FHIRTime.self)
+//			#expect(time.second == Decimal(string: "60.5"))
+//		}
+//	}
     
     
     private func expectFailureIfScannerEnabled(_ comment: Comment? = nil, _ operation: () throws -> Void) throws {

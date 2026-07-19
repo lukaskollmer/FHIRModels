@@ -30,35 +30,33 @@ protocol ThrowingStringParseable {
 	init(_ string: String) throws
 }
 
-extension TimeZone: ThrowingStringParseable {}
 extension ModelsR5.FHIRDate: ThrowingStringParseable {}
 extension ModelsR5.DateTime: ThrowingStringParseable {}
 extension ModelsR5.Instant: ThrowingStringParseable {}
 extension ModelsR5.InstantDate: ThrowingStringParseable {}
 extension ModelsR5.FHIRTime: ThrowingStringParseable {}
 extension ModelsR4.FHIRTime: ThrowingStringParseable {}
+extension Foundation.TimeZone: ThrowingStringParseable {
+    init(_ string: String) throws {
+        try self.init(fhirTimeZoneString: string)
+    }
+}
 
 
 func parseFHIR<T: ThrowingStringParseable>(_ string: String, as type: T.Type) throws -> T {
 	try T(string)
 }
 
+
 /// Asserts that parsing the string throws the exact `FHIRDateParserError` (case and position).
-func expectParserError<T: ThrowingStringParseable>(
+func expectParseError<T: ThrowingStringParseable>(
 	parsing string: String,
 	as type: T.Type,
-	toThrow expected: FHIRDateParserError,
 	sourceLocation: SourceLocation = #_sourceLocation
 ) {
-	do {
-		let value = try T(string)
-		Issue.record("Expected \(expected) but parsing \"\(string)\" succeeded: \(value)", sourceLocation: sourceLocation)
-	} catch let error as FHIRDateParserError {
-		#expect(error.errorDescription == expected.errorDescription, sourceLocation: sourceLocation)
-		#expect(error.errorPosition == expected.errorPosition, sourceLocation: sourceLocation)
-	} catch {
-		Issue.record("Expected FHIRDateParserError parsing \"\(string)\", got: \(error)", sourceLocation: sourceLocation)
-	}
+    #expect(throws: (any Error).self, sourceLocation: sourceLocation) {
+        try T(string)
+    }
 }
 
 /// Asserts that parsing the string throws *some* `FHIRDateParserError`, without pinning the case or

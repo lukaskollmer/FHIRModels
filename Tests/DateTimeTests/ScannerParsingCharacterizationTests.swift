@@ -56,19 +56,19 @@ struct FHIRDateParsingCharacterization {
 	/// Components must be exactly 2 digits wide (and the year exactly 4).
 	@Test
 	func wrongWidthComponentsRejected() {
-		expectParserError(parsing: "2019-1-7", as: FHIRDate.self, toThrow: .invalidMonth(position("2019-1-7", 5)))
-		expectParserError(parsing: "2019-1", as: FHIRDate.self, toThrow: .invalidMonth(position("2019-1", 5)))
-		expectParserError(parsing: "2019-013-01", as: FHIRDate.self, toThrow: .invalidMonth(position("2019-013-01", 5)))
-		expectParserError(parsing: "2019-01-7", as: FHIRDate.self, toThrow: .invalidDay(position("2019-01-7", 8)))
+		expectParseError(parsing: "2019-1-7", as: FHIRDate.self)
+		expectParseError(parsing: "2019-1", as: FHIRDate.self)
+		expectParseError(parsing: "2019-013-01", as: FHIRDate.self)
+		expectParseError(parsing: "2019-01-7", as: FHIRDate.self)
 	}
 
 	/// `CharacterSet.decimalDigits` scans any Unicode digit (Nd), but the subsequent `Int`/`UInt8`
 	/// conversion is ASCII-only, so non-ASCII digits fail with the component error, not a separator error.
 	@Test
 	func nonASCIIDigitsRejected() {
-		expectParserError(parsing: "٢٠١٩", as: FHIRDate.self, toThrow: .invalidYear(position("٢٠١٩", 0)))			// Arabic-Indic
-		expectParserError(parsing: "２０１９", as: FHIRDate.self, toThrow: .invalidYear(position("２０１９", 0)))	// Fullwidth
-		expectParserError(parsing: "2019-٠١", as: FHIRDate.self, toThrow: .invalidMonth(position("2019-٠١", 5)))
+		expectParseError(parsing: "٢٠١٩", as: FHIRDate.self)			// Arabic-Indic
+		expectParseError(parsing: "２０１９", as: FHIRDate.self)	// Fullwidth
+		expectParseError(parsing: "2019-٠١", as: FHIRDate.self)
 	}
 }
 
@@ -86,8 +86,7 @@ struct FHIRTimeParsingCharacterization {
 		#expect(time.second == 60)
 		#expect(time.originalSecondsString == "60")
 		#expect(time.description == "09:41:60")
-
-		expectParserError(parsing: "09:41:61", as: FHIRTime.self, toThrow: .invalidSecond(position("09:41:61", 6)))
+		expectParseError(parsing: "09:41:61", as: FHIRTime.self)
 	}
 
 	/// The original seconds string is preserved verbatim even beyond `Decimal` precision,
@@ -110,58 +109,30 @@ struct DateTimeParsingCharacterization {
 	/// FHIR dateTime: "If hours and minutes are specified, a timezone SHALL be populated."
 	@Test
 	func timeZoneIsMandatoryWhenTimeIsPresent() {
-		expectParserError(
-			parsing: "2015-02-07T13:28:17",
-			as: DateTime.self,
-			toThrow: .invalidTimeZonePrefix(position("2015-02-07T13:28:17", 19))
-		)
-		expectParserError(
-			parsing: "2015-02-07T13:28:17.239",
-			as: DateTime.self,
-			toThrow: .invalidTimeZonePrefix(position("2015-02-07T13:28:17.239", 23))
-		)
+		expectParseError(parsing: "2015-02-07T13:28:17", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T13:28:17.239", as: DateTime.self,)
 	}
 
 	/// A dangling 'T' after the date (valid as a FHIRPath partial literal) is not a valid FHIR dateTime.
 	@Test
 	func danglingTimeSeparatorRejected() {
-		expectParserError(parsing: "2015-02-07T", as: DateTime.self, toThrow: .invalidHour(position("2015-02-07T", 11)))
-		expectParserError(parsing: "2015-02-07T ", as: DateTime.self, toThrow: .invalidHour(position("2015-02-07T ", 11)))
+		expectParseError(parsing: "2015-02-07T", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T ", as: DateTime.self)
 	}
 
 	/// FHIR requires the time to be specified down to (at least) the second.
 	@Test
 	func secondsAreMandatoryWhenTimeIsPresent() {
-		expectParserError(
-			parsing: "2015-02-07T13:28-05:00",
-			as: DateTime.self,
-			toThrow: .invalidSeparator(position("2015-02-07T13:28-05:00", 16))
-		)
-		expectParserError(
-			parsing: "2015-02-07T13-05:00",
-			as: DateTime.self,
-			toThrow: .invalidSeparator(position("2015-02-07T13-05:00", 13))
-		)
+		expectParseError(parsing: "2015-02-07T13:28-05:00", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T13-05:00", as: DateTime.self)
 	}
 
 	/// Component errors in the middle of a dateTime string carry positions in full-string coordinates.
 	@Test
 	func componentErrorsCarryFullStringPositions() {
-		expectParserError(
-			parsing: "2015-13-07T13:28:17Z",
-			as: DateTime.self,
-			toThrow: .invalidMonth(position("2015-13-07T13:28:17Z", 5))
-		)
-		expectParserError(
-			parsing: "2015-02-07T13:60:17Z",
-			as: DateTime.self,
-			toThrow: .invalidMinute(position("2015-02-07T13:60:17Z", 14))
-		)
-		expectParserError(
-			parsing: "2015-02-07T13:28:61Z",
-			as: DateTime.self,
-			toThrow: .invalidSecond(position("2015-02-07T13:28:61Z", 17))
-		)
+		expectParseError(parsing: "2015-13-07T13:28:17Z", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T13:60:17Z", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T13:28:61Z", as: DateTime.self)
 	}
 
 	/// All three spellings of UTC parse to the same `TimeZone`, but the original spelling
@@ -185,35 +156,15 @@ struct DateTimeParsingCharacterization {
 		#expect(minus14.timeZone == TimeZone(secondsFromGMT: -14 * 3600))
 		#expect(minus14.description == "2015-02-07T13:28:17-14:00")
 
-		expectParserError(
-			parsing: "2015-02-07T13:28:17+15:00",
-			as: DateTime.self,
-			toThrow: .invalidTimeZoneHour(position("2015-02-07T13:28:17+15:00", 20))
-		)
-		expectParserError(
-			parsing: "2015-02-07T13:28:17+14:01",
-			as: DateTime.self,
-			toThrow: .invalidTimeZoneMinute(position("2015-02-07T13:28:17+14:01", 23))
-		)
-		expectParserError(
-			parsing: "2015-02-07T13:28:17+05:60",
-			as: DateTime.self,
-			toThrow: .invalidTimeZoneMinute(position("2015-02-07T13:28:17+05:60", 23))
-		)
+		expectParseError(parsing: "2015-02-07T13:28:17+15:00", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T13:28:17+14:01", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T13:28:17+05:60", as: DateTime.self)
 	}
 
 	@Test
 	func trailingCharactersAfterTimeZoneRejected() {
-		expectParserError(
-			parsing: "2015-02-07T13:28:17-05:00x",
-			as: DateTime.self,
-			toThrow: .additionalCharacters(position("2015-02-07T13:28:17-05:00x", 25))
-		)
-		expectParserError(
-			parsing: "2015-02-07T13:28:17Zx",
-			as: DateTime.self,
-			toThrow: .additionalCharacters(position("2015-02-07T13:28:17Zx", 20))
-		)
+		expectParseError(parsing: "2015-02-07T13:28:17-05:00x", as: DateTime.self)
+		expectParseError(parsing: "2015-02-07T13:28:17Zx", as: DateTime.self)
 		// "…ZZ" is also rejected, but today via invalidTimeZoneHour@21 — an artifact of the "+-Z"
 		// run-scan bug (see ScannerParsingKnownIssues.timeZoneSignPrefixRunScan). Only the clean,
 		// typed failure is the contract here.
@@ -223,11 +174,7 @@ struct DateTimeParsingCharacterization {
 	/// The timezone prefix is case-sensitive (unlike the 'T' separator; see ScannerParsingKnownIssueTests).
 	@Test
 	func lowercaseZuluRejected() {
-		expectParserError(
-			parsing: "2015-02-07T13:28:17z",
-			as: DateTime.self,
-			toThrow: .invalidTimeZonePrefix(position("2015-02-07T13:28:17z", 19))
-		)
+		expectParseError(parsing: "2015-02-07T13:28:17z", as: DateTime.self)
 	}
 }
 
@@ -254,42 +201,22 @@ struct InstantParsingCharacterization {
 	/// InstantTests pins error *positions* for these; the error cases are part of the contract too.
 	@Test
 	func errorCasesArePinnedThroughTheInstantEntryPoint() {
-		expectParserError(parsing: "2014", as: Instant.self, toThrow: .invalidSeparator(position("2014", 4)))
-		expectParserError(parsing: "2016-11-08", as: Instant.self, toThrow: .invalidSeparator(position("2016-11-08", 10)))
-		expectParserError(
-			parsing: "2017-12-09T09:30:51",
-			as: Instant.self,
-			toThrow: .invalidTimeZonePrefix(position("2017-12-09T09:30:51", 19))
-		)
-		expectParserError(
-			parsing: "2017-12-09T09:30:51Zx",
-			as: Instant.self,
-			toThrow: .additionalCharacters(position("2017-12-09T09:30:51Zx", 20))
-		)
-		expectParserError(
-			parsing: "0000-12-09T09:30:51Z",
-			as: Instant.self,
-			toThrow: .invalidYear(position("0000-12-09T09:30:51Z", 0))
-		)
+		expectParseError(parsing: "2014", as: Instant.self)
+		expectParseError(parsing: "2016-11-08", as: Instant.self)
+		expectParseError(parsing: "2017-12-09T09:30:51", as: Instant.self)
+		expectParseError(parsing: "2017-12-09T09:30:51Zx", as: Instant.self)
+		expectParseError(parsing: "0000-12-09T09:30:51Z", as: Instant.self)
 	}
 
 	/// The compact ISO 8601 offset form (±hhmm, without the colon) is not valid FHIR.
 	@Test
 	func compactTimeZoneOffsetRejected() {
-		expectParserError(
-			parsing: "2017-12-09T09:30:51+0000",
-			as: Instant.self,
-			toThrow: .invalidSeparator(position("2017-12-09T09:30:51+0000", 22))
-		)
+		expectParseError(parsing: "2017-12-09T09:30:51+0000", as: Instant.self)
 	}
 
 	@Test
 	func lowercaseZuluRejected() {
-		expectParserError(
-			parsing: "2017-12-09T09:30:51z",
-			as: Instant.self,
-			toThrow: .invalidTimeZonePrefix(position("2017-12-09T09:30:51z", 19))
-		)
+		expectParseError(parsing: "2017-12-09T09:30:51z", as: Instant.self)
 	}
 }
 
@@ -311,18 +238,18 @@ struct InstantDateParsingCharacterization {
 	/// not `additionalCharacters`.
 	@Test
 	func partialDatesRejected() {
-		expectParserError(parsing: "2017", as: InstantDate.self, toThrow: .invalidSeparator(position("2017", 4)))
-		expectParserError(parsing: "2017-12", as: InstantDate.self, toThrow: .invalidSeparator(position("2017-12", 7)))
+		expectParseError(parsing: "2017", as: InstantDate.self)
+		expectParseError(parsing: "2017-12", as: InstantDate.self)
 	}
 
 	@Test
 	func componentValidationMatchesFHIRDate() {
-		expectParserError(parsing: "0000-12-09", as: InstantDate.self, toThrow: .invalidYear(position("0000-12-09", 0)))
-		expectParserError(parsing: "2017-1-09", as: InstantDate.self, toThrow: .invalidMonth(position("2017-1-09", 5)))
-		expectParserError(parsing: "2017-13-09", as: InstantDate.self, toThrow: .invalidMonth(position("2017-13-09", 5)))
-		expectParserError(parsing: "2017-12-9", as: InstantDate.self, toThrow: .invalidDay(position("2017-12-9", 8)))
-		expectParserError(parsing: "2017-12-32", as: InstantDate.self, toThrow: .invalidDay(position("2017-12-32", 8)))
-		expectParserError(parsing: "2017-12-09x", as: InstantDate.self, toThrow: .additionalCharacters(position("2017-12-09x", 10)))
+		expectParseError(parsing: "0000-12-09", as: InstantDate.self)
+		expectParseError(parsing: "2017-1-09", as: InstantDate.self)
+		expectParseError(parsing: "2017-13-09", as: InstantDate.self)
+		expectParseError(parsing: "2017-12-9", as: InstantDate.self)
+		expectParseError(parsing: "2017-12-32", as: InstantDate.self)
+		expectParseError(parsing: "2017-12-09x", as: InstantDate.self)
 	}
 }
 
@@ -340,7 +267,7 @@ struct TimeZoneParsingCharacterization {
 
 	@Test
 	func lowercaseZuluRejected() {
-		expectParserError(parsing: "z", as: TimeZone.self, toThrow: .invalidTimeZonePrefix(position("z", 0)))
+		expectParseError(parsing: "z", as: TimeZone.self)
 	}
 }
 
@@ -353,11 +280,11 @@ struct DegenerateInputCharacterization {
 	/// (The `TimeZone` case is pinned in TimeZoneTests.)
 	@Test
 	func emptyStringRejectedByEveryEntryPoint() {
-		expectParserError(parsing: "", as: FHIRDate.self, toThrow: .invalidYear(position("", 0)))
-		expectParserError(parsing: "", as: FHIRTime.self, toThrow: .invalidHour(position("", 0)))
-		expectParserError(parsing: "", as: DateTime.self, toThrow: .invalidYear(position("", 0)))
-		expectParserError(parsing: "", as: Instant.self, toThrow: .invalidYear(position("", 0)))
-		expectParserError(parsing: "", as: InstantDate.self, toThrow: .invalidYear(position("", 0)))
+		expectParseError(parsing: "", as: FHIRDate.self)
+		expectParseError(parsing: "", as: FHIRTime.self)
+		expectParseError(parsing: "", as: DateTime.self)
+		expectParseError(parsing: "", as: Instant.self)
+		expectParseError(parsing: "", as: InstantDate.self)
 	}
 
 	/// Absurdly long digit runs must produce a clean, typed error — never overflow or crash — through

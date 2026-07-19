@@ -22,6 +22,11 @@ import Foundation
 package typealias DateTimeParser = NewDateTimeParser
 
 
+//enum DateTimeParserValidationStrategy {
+//    /// apply no validation, and decode and all values as-is.
+//    case skip
+//}
+
 package struct DateTimeParserConfig {
     let allowedYears: Range<Int>
     let allowLeapSecond60: Bool
@@ -49,24 +54,9 @@ extension DateTimeParserConfig {
     package static let r6 = r5
 }
 
-/// A parsing engine for the string representations of the FHIR date/time primitive types
-/// (`FHIRDate`, `FHIRTime`, `DateTime`, `Instant`, `InstantDate`) and their timezone offsets.
-///
-/// This protocol is the seam that allows swapping the parsing implementation (e.g. the `Scanner`-based
-/// ``ScannerDateTimeParser`` vs. a hand-written token parser) without touching the primitive types
-/// themselves: each method takes the complete source string and returns validated components, including
-/// the verbatim spellings (`originalSecondsString`, `timeZoneString`) that lexical round-tripping of
-/// `description`/`Codable` depends on.
-///
-/// Requirements on every conformer:
-/// - The entire input string must be consumed; trailing characters are an error.
-/// - Failures must be thrown as ``FHIRDateParserError``, carrying the full input string and the
-///   UTF-16 offset of the offending position.
-/// - The observable behavior (accepted inputs, component values, error cases and positions) is pinned
-///   by the ScannerParsingCharacterization test suite; a conformer is a valid engine when it passes
-///   that suite.
-package protocol DateTimeParserProtocol: ~Copyable, SendableMetatype {
 
+// temporary protocol to allow switching parser implementations
+package protocol DateTimeParserProtocol: ~Copyable, SendableMetatype {
     /// Parses a FHIR "date" string: `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`.
     /// Omitted components are `nil` (reduced precision), which is semantically distinct from any value.
     static func dateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDate
