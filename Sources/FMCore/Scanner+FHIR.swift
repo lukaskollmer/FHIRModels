@@ -20,6 +20,7 @@ import Foundation
 
 public extension Scanner {
 	
+    @available(*, deprecated, message: "Ideally find a non-Scanner-based alternative!")
 	func hs_scanCharacters(from characterSet: CharacterSet) -> String? {
 		#if os(Linux) || os(Windows)
 		return scanCharacters(from: characterSet)

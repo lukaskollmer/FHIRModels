@@ -20,10 +20,10 @@ import Foundation
 
 public extension TimeZone {
 	
+    @available(*, deprecated, message: "TODO check who calls this and if they need the lax/strict parsing validation!")
 	init(_ originalString: String) throws {
-		let scanner = Scanner(string: originalString)
-		let (seconds, _) = try TimeZone.hs_parseComponents(from: scanner, expectAtEnd: true)
-		self.init(secondsFromGMT: seconds)!
+		let parsed = try DateTimeParser.timeZoneComponents(from: originalString)
+		self.init(secondsFromGMT: parsed.secondsFromGMT)!
 	}
 	
 	func gmtOffsetString(for reference: ExpressibleAsNSDate) -> String {
