@@ -188,7 +188,7 @@ package enum ScannerDateTimeParser: DateTimeParserProtocol {
 			throw FHIRDateParserError.additionalCharacters(FHIRDateParserErrorPosition(string: scanner.string, location: scanLocation))
 		}
 
-		return ParsedTime(hour: hour, minute: minute, second: second, originalSecondsString: secondString)
+        return ParsedTime(hour: hour, minute: minute, second: second, secondIntegerPart: UInt8(fullSecondString)!, originalSecondsString: secondString)
 	}
 
 	// MARK: - DateTime
@@ -268,30 +268,30 @@ package enum ScannerDateTimeParser: DateTimeParserProtocol {
 
 extension ScannerDateTimeParser {
 
-	package static func dateComponents(from input: some StringProtocol) throws -> ParsedDate {
+	package static func dateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDate {
 		try dateComponents(from: Scanner(string: String(input)), expectAtEnd: true)
 	}
 
-    package static func instantDateComponents(from input: some StringProtocol) throws -> ParsedInstant.Date {
+    package static func instantDateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant.Date {
 		try instantDateComponents(from: Scanner(string: String(input)), expectAtEnd: true)
 	}
 
-	package static func timeComponents(from input: some StringProtocol) throws -> ParsedTime {
+	package static func timeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTime {
 		try timeComponents(from: Scanner(string: String(input)), expectAtEnd: true)
 	}
 
-	package static func dateTimeComponents(from input: some StringProtocol) throws -> ParsedDateTime {
+	package static func dateTimeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDateTime {
 		try dateTimeComponents(from: Scanner(string: String(input)), expectAtEnd: true)
 	}
 
-	package static func instantComponents(from input: some StringProtocol) throws -> ParsedInstant {
+	package static func instantComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant {
 		try instantComponents(from: Scanner(string: String(input)), expectAtEnd: true)
 	}
 
 	/// - Note: `TimeZone.hs_parseComponents` performs no end-of-input check after the offset, so trailing
 	///   characters are currently ignored here (and in `TimeZone.init(_:)`), deviating from the protocol's
 	///   whole-string contract; pinned as a known issue in ScannerParsingKnownIssueTests.
-	package static func timeZoneComponents(from input: some StringProtocol) throws -> ParsedTimeZone {
+	package static func timeZoneComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTimeZone {
 		let (secondsFromGMT, timeZoneString) = try TimeZone.hs_parseComponents(from: Scanner(string: String(input)), expectAtEnd: true)
 		return ParsedTimeZone(secondsFromGMT: secondsFromGMT, timeZoneString: timeZoneString)
 	}

@@ -46,6 +46,7 @@ class FHIRTimeTests: XCTestCase {
 			("11:37:00.0", FHIRTime(hour: 11, minute: 37, second: 0.0)),
 			("14:13:12.11", FHIRTime(hour: 14, minute: 13, second: 12.11)),
 			("14:15:17.000000", FHIRTime(hour: 14, minute: 15, second: 17.0)),
+            ("09:41:60.0001", FHIRTime(hour: 9, minute: 41, second: 60.0001))
 		]
 		
 		for (string, expected) in successes {
@@ -99,7 +100,9 @@ class FHIRTimeTests: XCTestCase {
 		let secondThrowers = [
 			("09:41:71", 6),
 			("09:41:50.", 9),
-			("09:41:60.0001", 9),
+            ("09:41:0", 6),
+            ("09:41:0", 6),
+            ("09:41:000", 6)
 		]
 		for (string, location) in secondThrowers {
 			do {
@@ -119,8 +122,6 @@ class FHIRTimeTests: XCTestCase {
 			("019:00:00", 3),
 			("09:2:30", 4),
 			("09:022:30", 6),
-			("09:41:0", 7),
-			("09:41:000", 9),
 			("09 41 50", 2),
 			("09-41-50", 2),
 			("09:41 50", 5),

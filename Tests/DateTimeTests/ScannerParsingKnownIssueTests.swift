@@ -34,21 +34,24 @@ import Testing
  `DateTime.init`), each path gets its own `withKnownIssue` block so that a partial fix is flagged
  rather than silently swallowed by the still-failing sibling.
  */
-@Suite(.serialized)
+@Suite(
+    .serialized,
+//    .enabled(if: DateTimeParser.self == ScannerDateTimeParser.self)
+)
 struct ScannerParsingKnownIssues {
 
 	/// `TimeZone.hs_parseComponents` scans the prefix as a *run* of the character set "+-Z", so
 	/// multi-character prefixes like "+-", "--", "Z+", "Z-" slip through: the "Z" comparison fails,
 	/// the sign comparison `"-" == tzPrefix` also fails for anything but exactly "-", and the offset
 	/// is parsed as *positive*. All of these must be rejected.
-	@Test(arguments: ["+-05:00", "--05:00", "Z+01:00", "Z-05:00"])
-	func timeZoneSignPrefixRunScan(malformedOffset: String) {
-		withKnownIssue("'+-Z' run-scan: TimeZone accepts '\(malformedOffset)' as a positive offset") {
+    @Test(arguments: ["+-05:00", "--05:00", "Z+01:00", "Z-05:00"])
+	func timeZoneSignPrefixRunScan(malformedOffset: String) throws {
+        try expectFailureIfScannerEnabled("'+-Z' run-scan: TimeZone accepts '\(malformedOffset)' as a positive offset") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR(malformedOffset, as: TimeZone.self)
 			}
 		}
-		withKnownIssue("'+-Z' run-scan: DateTime accepts '…\(malformedOffset)' as a positive offset") {
+        try expectFailureIfScannerEnabled("'+-Z' run-scan: DateTime accepts '…\(malformedOffset)' as a positive offset") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR("2015-02-07T13:28:17" + malformedOffset, as: DateTime.self)
 			}
@@ -59,8 +62,8 @@ struct ScannerParsingKnownIssues {
 	/// and `TimeZone.init(_:)` doesn't either — so trailing garbage after a standalone timezone string
 	/// is silently ignored. (`DateTime`/`Instant` are unaffected: their own end-of-input check catches it.)
 	@Test(arguments: ["Zfoo", "+05:00abc", "Z "])
-	func timeZoneTrailingCharacters(malformedOffset: String) {
-		withKnownIssue("TimeZone.init accepts and ignores trailing characters") {
+	func timeZoneTrailingCharacters(malformedOffset: String) throws {
+        try expectFailureIfScannerEnabled("TimeZone.init accepts and ignores trailing characters") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR(malformedOffset, as: TimeZone.self)
 			}
@@ -71,13 +74,13 @@ struct ScannerParsingKnownIssues {
 	/// accepted — and `description` then normalizes it to 'T', silently rewriting the value.
 	/// The FHIR regex only permits uppercase 'T'. DateTime and Instant are independent call sites.
 	@Test
-	func lowercaseTimeSeparatorAccepted() {
-		withKnownIssue("case-insensitive scanString: DateTime accepts 't' as the date/time separator") {
+	func lowercaseTimeSeparatorAccepted() throws {
+        try expectFailureIfScannerEnabled("case-insensitive scanString: DateTime accepts 't' as the date/time separator") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR("2015-02-07t13:28:17Z", as: DateTime.self)
 			}
 		}
-		withKnownIssue("case-insensitive scanString: Instant accepts 't' as the date/time separator") {
+        try expectFailureIfScannerEnabled("case-insensitive scanString: Instant accepts 't' as the date/time separator") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR("2017-12-09t09:30:51Z", as: Instant.self)
 			}
@@ -88,8 +91,8 @@ struct ScannerParsingKnownIssues {
 	/// accepts a year- or month-precision date followed by a time. (`Instant` correctly rejects these,
 	/// see InstantTests.)
 	@Test(arguments: ["2015-02T13:28:17Z", "2015T13:28:17Z"])
-	func partialDateWithTimeAccepted(malformedDateTime: String) {
-		withKnownIssue("DateTime accepts a partial date followed by a time") {
+	func partialDateWithTimeAccepted(malformedDateTime: String) throws {
+        try expectFailureIfScannerEnabled("DateTime accepts a partial date followed by a time") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR(malformedDateTime, as: DateTime.self)
 			}
@@ -101,8 +104,8 @@ struct ScannerParsingKnownIssues {
 	/// accepted (second == 17, the invalid spelling round-tripping verbatim via `originalSecondsString`).
 	/// Integer fields are safe because their ASCII-only `Int`/`UInt8` conversions fail.
 	@Test
-	func nonASCIIFractionalSecondsAccepted() {
-		withKnownIssue("Unicode Nd digits accepted in fractional seconds") {
+	func nonASCIIFractionalSecondsAccepted() throws {
+        try expectFailureIfScannerEnabled("Unicode Nd digits accepted in fractional seconds") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR("13:28:17.٢٣٩", as: FHIRTime.self)
 			}
@@ -113,13 +116,13 @@ struct ScannerParsingKnownIssues {
 	/// flat 31 and never validate it against the month (or leap years). The two types have separate
 	/// parse implementations, hence separate blocks.
 	@Test(arguments: ["2015-02-30", "2015-04-31", "2015-02-29", "2016-02-30"])
-	func calendarInvalidDatesAccepted(invalidDate: String) {
-		withKnownIssue("FHIRDate does not validate day-of-month against month/year") {
+	func calendarInvalidDatesAccepted(invalidDate: String) throws {
+        try expectFailureIfScannerEnabled("FHIRDate does not validate day-of-month against month/year") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR(invalidDate, as: FHIRDate.self)
 			}
 		}
-		withKnownIssue("InstantDate does not validate day-of-month against month/year") {
+        try expectFailureIfScannerEnabled("InstantDate does not validate day-of-month against month/year") {
 			#expect(throws: (any Error).self) {
 				try parseFHIR(invalidDate, as: InstantDate.self)
 			}
@@ -131,10 +134,21 @@ struct ScannerParsingKnownIssues {
 	/// - Note: FHIRTimeTests currently pins the *opposite* for "09:41:60.0001" (must throw), so
 	///   resolving this requires deciding which behavior the library wants and updating one of the two.
 	@Test
-	func fractionalLeapSecondRejected() {
-		withKnownIssue("seconds are capped at 60.0; the R4 regex allows 60.<fraction>") {
+	func fractionalLeapSecondRejected() throws {
+        try expectFailureIfScannerEnabled("seconds are capped at 60.0; the R4 regex allows 60.<fraction>") {
 			let time = try parseFHIR("23:59:60.5", as: FHIRTime.self)
 			#expect(time.second == Decimal(string: "60.5"))
 		}
 	}
+    
+    
+    private func expectFailureIfScannerEnabled(_ comment: Comment? = nil, _ operation: () throws -> Void) throws {
+        if DateTimeParser.self == ScannerDateTimeParser.self {
+            withKnownIssue {
+                try operation()
+            }
+        } else {
+            try operation()
+        }
+    }
 }

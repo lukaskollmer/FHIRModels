@@ -19,6 +19,7 @@
 import FMCore
 import Foundation
 import ModelsR5
+import struct ModelsR4.FHIRTime
 import Testing
 
 /// The FHIR date/time primitives are `ExpressibleByStringLiteral`, and Swift resolves `T("some literal")`
@@ -29,12 +30,14 @@ protocol ThrowingStringParseable {
 	init(_ string: String) throws
 }
 
-extension FHIRDate: ThrowingStringParseable {}
-extension FHIRTime: ThrowingStringParseable {}
-extension DateTime: ThrowingStringParseable {}
-extension Instant: ThrowingStringParseable {}
-extension InstantDate: ThrowingStringParseable {}
 extension TimeZone: ThrowingStringParseable {}
+extension ModelsR5.FHIRDate: ThrowingStringParseable {}
+extension ModelsR5.DateTime: ThrowingStringParseable {}
+extension ModelsR5.Instant: ThrowingStringParseable {}
+extension ModelsR5.InstantDate: ThrowingStringParseable {}
+extension ModelsR5.FHIRTime: ThrowingStringParseable {}
+extension ModelsR4.FHIRTime: ThrowingStringParseable {}
+
 
 func parseFHIR<T: ThrowingStringParseable>(_ string: String, as type: T.Type) throws -> T {
 	try T(string)

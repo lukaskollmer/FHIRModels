@@ -68,7 +68,7 @@ public struct FHIRTime: FHIRPrimitiveType {
 	}
 	
 	public init(_ originalString: String) throws {
-		let parsed = try DateTimeParser.timeComponents(from: originalString)
+		let parsed = try DateTimeParser.timeComponents(from: originalString, config: .r5)
 		self.init(hour: parsed.hour, minute: parsed.minute, second: parsed.second, originalSecondsString: parsed.originalSecondsString)
 	}
 	

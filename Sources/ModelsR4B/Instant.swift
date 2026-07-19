@@ -60,7 +60,7 @@ public struct Instant: FHIRPrimitiveType {
 	}
 	
 	public init(_ originalString: String) throws {
-		let parsed = try DateTimeParser.instantComponents(from: originalString)
+		let parsed = try DateTimeParser.instantComponents(from: originalString, config: .r4b)
 		let date = InstantDate(year: parsed.date.year, month: parsed.date.month, day: parsed.date.day)
 		let parsedTime = parsed.time.time
 		let time = FHIRTime(hour: parsedTime.hour, minute: parsedTime.minute, second: parsedTime.second, originalSecondsString: parsedTime.originalSecondsString)

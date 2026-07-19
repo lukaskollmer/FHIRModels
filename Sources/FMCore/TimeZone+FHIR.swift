@@ -22,7 +22,7 @@ public extension TimeZone {
 	
     @available(*, deprecated, message: "TODO check who calls this and if they need the lax/strict parsing validation!")
 	init(_ originalString: String) throws {
-		let parsed = try DateTimeParser.timeZoneComponents(from: originalString)
+        let parsed = try DateTimeParser.timeZoneComponents(from: originalString, config: .r4)
 		self.init(secondsFromGMT: parsed.secondsFromGMT)!
 	}
 	

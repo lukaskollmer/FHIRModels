@@ -18,6 +18,7 @@
 
 import FMCore
 import Foundation
+import struct ModelsR4.FHIRTime
 import ModelsR5
 import Testing
 

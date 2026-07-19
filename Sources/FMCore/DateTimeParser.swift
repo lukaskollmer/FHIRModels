@@ -22,6 +22,33 @@ import Foundation
 package typealias DateTimeParser = NewDateTimeParser
 
 
+package struct DateTimeParserConfig {
+    let allowedYears: Range<Int>
+    let allowLeapSecond60: Bool
+    let maxFractionalSecondDigits: Int?
+}
+
+extension DateTimeParserConfig {
+    package static let dstu2 = Self(
+        allowedYears: -9999..<10000,
+        allowLeapSecond60: false,
+        maxFractionalSecondDigits: nil
+    )
+    package static let stu3 = dstu2
+    package static let r4 = Self(
+        allowedYears: 1..<10000,
+        allowLeapSecond60: true,
+        maxFractionalSecondDigits: nil
+    )
+    package static let r4b = r4
+    package static let r5 = Self(
+        allowedYears: 1..<10000,
+        allowLeapSecond60: true,
+        maxFractionalSecondDigits: 9
+    )
+    package static let r6 = r5
+}
+
 /// A parsing engine for the string representations of the FHIR date/time primitive types
 /// (`FHIRDate`, `FHIRTime`, `DateTime`, `Instant`, `InstantDate`) and their timezone offsets.
 ///
@@ -42,28 +69,30 @@ package protocol DateTimeParserProtocol: ~Copyable, SendableMetatype {
 
     /// Parses a FHIR "date" string: `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`.
     /// Omitted components are `nil` (reduced precision), which is semantically distinct from any value.
-    static func dateComponents(from input: some StringProtocol) throws -> ParsedDate
+    static func dateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDate
 
     /// Parses a FHIR "date" string for use in `Instant`, requiring all of `YYYY-MM-DD` to be present.
-    static func instantDateComponents(from input: some StringProtocol) throws -> ParsedInstant.Date
+    static func instantDateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant.Date
 
     /// Parses a FHIR "time" string: `hh:mm:ss` with an optional fractional-seconds suffix.
     /// The verbatim seconds spelling (including trailing zeros) is preserved in
     /// ``ParsedTime/originalSecondsString``.
-    static func timeComponents(from input: some StringProtocol) throws -> ParsedTime
+    static func timeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTime
 
     /// Parses a FHIR "dateTime" string: a (possibly partial) date, optionally followed by
     /// `'T'` + time + timezone offset.
-    static func dateTimeComponents(from input: some StringProtocol) throws -> ParsedDateTime
+    static func dateTimeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDateTime
 
     /// Parses a FHIR "instant" string: a full date, `'T'`, a seconds-precision time, and a
     /// mandatory timezone offset.
-    static func instantComponents(from input: some StringProtocol) throws -> ParsedInstant
+    static func instantComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant
 
     /// Parses a standalone timezone string: `Z` or `±hh:mm` within `-14:00...+14:00`.
     /// The verbatim spelling (e.g. `+00:00` vs `Z`) is preserved in ``ParsedTimeZone/timeZoneString``.
-    static func timeZoneComponents(from input: some StringProtocol) throws -> ParsedTimeZone
+    static func timeZoneComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTimeZone
 }
+
+
 
 
 package struct ParsedDate: Hashable {
@@ -105,12 +134,14 @@ package struct ParsedTime: Hashable {
     package let hour: UInt8
     package let minute: UInt8
     package let second: Decimal
+    package let secondIntegerPart: UInt8
     package let originalSecondsString: String
 
-    package init(hour: UInt8, minute: UInt8, second: Decimal, originalSecondsString: String) {
+    package init(hour: UInt8, minute: UInt8, second: Decimal, secondIntegerPart: UInt8, originalSecondsString: String) {
         self.hour = hour
         self.minute = minute
         self.second = second
+        self.secondIntegerPart = secondIntegerPart
         self.originalSecondsString = originalSecondsString
     }
 }

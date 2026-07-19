@@ -59,7 +59,7 @@ public struct DateTime: FHIRPrimitiveType {
 	}
 	
 	public init(_ originalString: String) throws {
-		let parsed = try DateTimeParser.dateTimeComponents(from: originalString)
+		let parsed = try DateTimeParser.dateTimeComponents(from: originalString, config: .r5)
 		let date = FHIRDate(year: parsed.date.year, month: parsed.date.month, day: parsed.date.day)
 		let time = parsed.time.map {
 			FHIRTime(hour: $0.time.hour, minute: $0.time.minute, second: $0.time.second, originalSecondsString: $0.time.originalSecondsString)

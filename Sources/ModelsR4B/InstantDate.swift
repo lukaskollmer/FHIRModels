@@ -54,7 +54,7 @@ public struct InstantDate: FHIRPrimitiveType {
 	}
 	
 	public init(_ originalString: String) throws {
-		let parsed = try DateTimeParser.instantDateComponents(from: originalString)
+		let parsed = try DateTimeParser.instantDateComponents(from: originalString, config: .r4b)
 		self.init(year: parsed.year, month: parsed.month, day: parsed.day)
 	}
 	

@@ -62,7 +62,7 @@ public struct FHIRDate: FHIRPrimitiveType {
 	}
 	
 	public init(_ originalString: String) throws {
-		let parsed = try DateTimeParser.dateComponents(from: originalString)
+		let parsed = try DateTimeParser.dateComponents(from: originalString, config: .dstu2)
 		self.init(year: parsed.year, month: parsed.month, day: parsed.day)
 	}
 	
