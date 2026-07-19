@@ -75,19 +75,16 @@ package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
     private var current: Character? {
         input[safe: position]
     }
-    private var next: Character? {
-        input[safe: input.index(after: position)]
-    }
     private var isAtEnd: Bool {
         position >= input.endIndex
     }
-    private var numRemainingTokens: Int {
-        input.distance(from: position, to: input.endIndex)
-    }
-    
     
     private mutating func consume(_ count: Int = 1) {
         input.formIndex(&position, offsetBy: count)
+    }
+    
+    private func makeError(_ kind: ParseError.Kind, in range: Range<Input.Index>) -> ParseError {
+        ParseError(input: input, range: range, kind: kind)
     }
     
     private func makeError(_ kind: ParseError.Kind, at position: Input.Index) -> ParseError {
@@ -96,10 +93,6 @@ package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
             range: (position < input.endIndex ? position : input.endIndex)..<(position < input.endIndex ? input.index(after: position) : input.endIndex),
             kind: kind
         )
-    }
-    
-    private func makeError(_ kind: ParseError.Kind, in range: Range<Input.Index>) -> ParseError {
-        ParseError(input: input, range: range, kind: kind)
     }
     
     /// Checks that the current token is equal to the specified expected value.
@@ -608,113 +601,59 @@ extension ParsedInstant: ValidatableParseResult {
 }
 
 
-
-// MARK: DateTimeParserProtocol
-
-extension DateTimeLiteralParser.ParseError {
-    /// Converts a `ParseError` into an equivalent `FHIRDateParserError`, for backward compatibility.
-    ///
-    /// This will preserve the kind 1:1 and the UTF-16 offset of the error's start.
-    var fhirDateParserError: FHIRDateParserError {
-        let location = input.utf16.distance(from: input.utf16.startIndex, to: range.lowerBound)
-        let position = FHIRDateParserErrorPosition(string: input, location: location)
-        return switch kind {
-        case .invalidSeparator: .invalidSeparator(position)
-        case .invalidYear: .invalidYear(position)
-        case .invalidMonth: .invalidMonth(position)
-        case .invalidDay: .invalidDay(position)
-        case .invalidHour: .invalidHour(position)
-        case .invalidMinute: .invalidMinute(position)
-        case .invalidSecond: .invalidSecond(position)
-        case .invalidTimeZonePrefix: .invalidTimeZonePrefix(position)
-        case .invalidTimeZoneHour: .invalidTimeZoneHour(position)
-        case .invalidTimeZoneMinute: .invalidTimeZoneMinute(position)
-        case .additionalCharacters: .additionalCharacters(position)
-        case .invalidInput, .unsupportedLiteral:
-            // Fallback for the generic kinds; the classified FHIR entry points only reach this
-            // on composite validity failures.
-            .additionalCharacters(position)
-        }
-    }
-}
-
 package enum NewDateTimeParser: DateTimeParserProtocol {
-    @specialized(where S == String)
-    @specialized(where S == Substring)
-    package static func dateComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedDate {
-        do {
-            var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
-            let date = try parser.parseDate()
-            try parser.expectIsAtEnd()
-            return date
-        } catch {
-            throw error.fhirDateParserError
-        }
+    @specialized(where Input == String)
+    @specialized(where Input == Substring)
+    package static func dateComponents<Input: StringProtocol>(from input: Input, config: DateTimeParserConfig) throws -> ParsedDate {
+        var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
+        let date = try parser.parseDate()
+        try parser.expectIsAtEnd()
+        return date
     }
-
-    @specialized(where S == String)
-    @specialized(where S == Substring)
-    package static func instantDateComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedInstant.Date {
-        do {
-            var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
-            let date = try parser.parseInstantDate()
-            try parser.expectIsAtEnd()
-            return date
-        } catch {
-            throw error.fhirDateParserError
-        }
+    
+    @specialized(where Input == String)
+    @specialized(where Input == Substring)
+    package static func instantDateComponents<Input: StringProtocol>(from input: Input, config: DateTimeParserConfig) throws -> ParsedInstant.Date {
+        var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
+        let date = try parser.parseInstantDate()
+        try parser.expectIsAtEnd()
+        return date
     }
-
-    @specialized(where S == String)
-    @specialized(where S == Substring)
-    package static func timeComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedTime {
-        do {
-            var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
-            let time = try parser.parseTime()
-            try parser.expectIsAtEnd()
-            return time
-        } catch {
-            throw error.fhirDateParserError
-        }
+    
+    @specialized(where Input == String)
+    @specialized(where Input == Substring)
+    package static func timeComponents<Input: StringProtocol>(from input: Input, config: DateTimeParserConfig) throws -> ParsedTime {
+        var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
+        let time = try parser.parseTime()
+        try parser.expectIsAtEnd()
+        return time
     }
-
-    @specialized(where S == String)
-    @specialized(where S == Substring)
-    package static func dateTimeComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedDateTime {
-        do {
-            var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
-            let result = try parser.parseDateTime()
-            try parser.expectIsAtEnd()
-            return result
-        } catch {
-            throw error.fhirDateParserError
-        }
+    
+    @specialized(where Input == String)
+    @specialized(where Input == Substring)
+    package static func dateTimeComponents<Input: StringProtocol>(from input: Input, config: DateTimeParserConfig) throws -> ParsedDateTime {
+        var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
+        let result = try parser.parseDateTime()
+        try parser.expectIsAtEnd()
+        return result
     }
-
-    @specialized(where S == String)
-    @specialized(where S == Substring)
-    package static func instantComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedInstant {
-        do {
-            var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
-            let instant = try parser.parseInstant()
-            try parser.expectIsAtEnd()
-            return instant
-        } catch {
-            throw error.fhirDateParserError
-        }
+    
+    @specialized(where Input == String)
+    @specialized(where Input == Substring)
+    package static func instantComponents<Input: StringProtocol>(from input: Input, config: DateTimeParserConfig) throws -> ParsedInstant {
+        var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
+        let instant = try parser.parseInstant()
+        try parser.expectIsAtEnd()
+        return instant
     }
-
-    @specialized(where S == String)
-    @specialized(where S == Substring)
-    package static func timeZoneComponents<S: StringProtocol>(from input: S, config: DateTimeParserConfig) throws -> ParsedTimeZone {
-        do {
-            var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
-            let result = try parser.parseTimeZoneComponent(validation: .strict)
-            try parser.expectIsAtEnd()
-            return ParsedTimeZone(secondsFromGMT: result.secondsFromGMT, timeZoneString: String(result.timeZoneString))
-        } catch {
-            throw error.fhirDateParserError
-        }
+    
+    @specialized(where Input == String)
+    @specialized(where Input == Substring)
+    package static func timeZoneComponents<Input: StringProtocol>(from input: Input, config: DateTimeParserConfig) throws -> ParsedTimeZone {
+        var parser = DateTimeLiteralParser(config: config, input: input, position: input.startIndex)
+        let result = try parser.parseTimeZoneComponent(validation: .strict)
+        try parser.expectIsAtEnd()
+        return ParsedTimeZone(secondsFromGMT: result.secondsFromGMT, timeZoneString: String(result.timeZoneString))
     }
 }
 
@@ -723,7 +662,7 @@ package enum NewDateTimeParser: DateTimeParserProtocol {
 // MARK: Utilities
 
 extension Collection {
-    subscript(safe idx: Index) -> Element? {
+    fileprivate subscript(safe idx: Index) -> Element? {
         idx >= startIndex && idx < endIndex ? self[idx] : nil
     }
 }

@@ -18,8 +18,8 @@
 
 import Foundation
 
-package typealias DateTimeParser = ScannerDateTimeParser
-//package typealias DateTimeParser = NewDateTimeParser
+//package typealias DateTimeParser = ScannerDateTimeParser
+package typealias DateTimeParser = NewDateTimeParser
 
 
 /// Controls the ``NewDateTimeParser``'s behaviour.
@@ -70,29 +70,35 @@ extension DateTimeParserConfig {
 ///
 /// not actually used directly except in the tests. main purpose is to ensure that the 2 parsers (``ScannerDateTimeParser`` and ``NewDateTimeParser``) share a common interface.
 package protocol DateTimeParserProtocol: ~Copyable, SendableMetatype {
-    /// Parses a FHIR "date" string: `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`.
-    /// Omitted components are `nil` (reduced precision), which is semantically distinct from any value.
-    static func dateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDate
-
-    /// Parses a FHIR "date" string for use in `Instant`, requiring all of `YYYY-MM-DD` to be present.
-    static func instantDateComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant.Date
-
-    /// Parses a FHIR "time" string: `hh:mm:ss` with an optional fractional-seconds suffix.
-    /// The verbatim seconds spelling (including trailing zeros) is preserved in
-    /// ``ParsedTime/originalSecondsString``.
-    static func timeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTime
-
-    /// Parses a FHIR "dateTime" string: a (possibly partial) date, optionally followed by
-    /// `'T'` + time + timezone offset.
-    static func dateTimeComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedDateTime
-
-    /// Parses a FHIR "instant" string: a full date, `'T'`, a seconds-precision time, and a
-    /// mandatory timezone offset.
-    static func instantComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedInstant
-
-    /// Parses a standalone timezone string: `Z` or `±hh:mm` within `-14:00...+14:00`.
-    /// The verbatim spelling (e.g. `+00:00` vs `Z`) is preserved in ``ParsedTimeZone/timeZoneString``.
-    static func timeZoneComponents(from input: some StringProtocol, config: DateTimeParserConfig) throws -> ParsedTimeZone
+    static func dateComponents(
+        from input: some StringProtocol,
+        config: DateTimeParserConfig
+    ) throws -> ParsedDate
+    
+    static func instantDateComponents(
+        from input: some StringProtocol,
+        config: DateTimeParserConfig
+    ) throws -> ParsedInstant.Date
+    
+    static func timeComponents(
+        from input: some StringProtocol,
+        config: DateTimeParserConfig
+    ) throws -> ParsedTime
+    
+    static func dateTimeComponents(
+        from input: some StringProtocol,
+        config: DateTimeParserConfig
+    ) throws -> ParsedDateTime
+    
+    static func instantComponents(
+        from input: some StringProtocol,
+        config: DateTimeParserConfig
+    ) throws -> ParsedInstant
+    
+    static func timeZoneComponents(
+        from input: some StringProtocol,
+        config: DateTimeParserConfig
+    ) throws -> ParsedTimeZone
 }
 
 
