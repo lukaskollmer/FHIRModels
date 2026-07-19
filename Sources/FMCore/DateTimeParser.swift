@@ -18,44 +18,57 @@
 
 import Foundation
 
-//package typealias DateTimeParser = ScannerDateTimeParser
-package typealias DateTimeParser = NewDateTimeParser
+package typealias DateTimeParser = ScannerDateTimeParser
+//package typealias DateTimeParser = NewDateTimeParser
 
 
-//enum DateTimeParserValidationStrategy {
-//    /// apply no validation, and decode and all values as-is.
-//    case skip
-//}
-
+/// Controls the ``NewDateTimeParser``'s behaviour.
 package struct DateTimeParserConfig {
+    /// The range of allowed years, e.g. `0001..<10_000`
     let allowedYears: Range<Int>
+    /// Whether the parser should allow leap seconds, expressed as a seconds component with value `60`.
     let allowLeapSecond60: Bool
+    /// The maximum number of fractional digits allowed in a seconds component.
     let maxFractionalSecondDigits: Int?
 }
 
+
 extension DateTimeParserConfig {
+    /// Parser config suitable for parsing DSTU2 Date/Time/DateTime/Instant values.
     package static let dstu2 = Self(
         allowedYears: -9999..<10000,
         allowLeapSecond60: false,
         maxFractionalSecondDigits: nil
     )
+    
+    /// Parser config suitable for parsing STU3 Date/Time/DateTime/Instant values.
     package static let stu3 = dstu2
+    
+    /// Parser config suitable for parsing R4 Date/Time/DateTime/Instant values.
     package static let r4 = Self(
         allowedYears: 1..<10000,
         allowLeapSecond60: true,
         maxFractionalSecondDigits: nil
     )
+    
+    /// Parser config suitable for parsing R4B Date/Time/DateTime/Instant values.
     package static let r4b = r4
+    
+    /// Parser config suitable for parsing R5 Date/Time/DateTime/Instant values.
     package static let r5 = Self(
         allowedYears: 1..<10000,
         allowLeapSecond60: true,
         maxFractionalSecondDigits: 9
     )
+    
+    /// Parser config suitable for parsing R6 Date/Time/DateTime/Instant values.
     package static let r6 = r5
 }
 
 
-// temporary protocol to allow switching parser implementations
+/// temporary protocol to allow switching parser implementations
+///
+/// not actually used directly except in the tests. main purpose is to ensure that the 2 parsers (``ScannerDateTimeParser`` and ``NewDateTimeParser``) share a common interface.
 package protocol DateTimeParserProtocol: ~Copyable, SendableMetatype {
     /// Parses a FHIR "date" string: `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`.
     /// Omitted components are `nil` (reduced precision), which is semantically distinct from any value.

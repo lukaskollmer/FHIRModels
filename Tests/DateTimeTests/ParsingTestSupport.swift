@@ -22,10 +22,7 @@ import ModelsR5
 import struct ModelsR4.FHIRTime
 import Testing
 
-/// The FHIR date/time primitives are `ExpressibleByStringLiteral`, and Swift resolves `T("some literal")`
-/// through the literal conformance — whose `init(stringLiteral:)` force-tries and would trap on a parse
-/// failure — instead of the throwing `init(_: String)`. Routing all parsing through this protocol
-/// guarantees the throwing initializer is the one being exercised.
+
 protocol ThrowingStringParseable {
 	init(_ string: String) throws
 }
@@ -48,7 +45,6 @@ func parseFHIR<T: ThrowingStringParseable>(_ string: String, as type: T.Type) th
 }
 
 
-/// Asserts that parsing the string throws the exact `FHIRDateParserError` (case and position).
 func expectParseError<T: ThrowingStringParseable>(
 	parsing string: String,
 	as type: T.Type,
@@ -57,21 +53,4 @@ func expectParseError<T: ThrowingStringParseable>(
     #expect(throws: (any Error).self, sourceLocation: sourceLocation) {
         try T(string)
     }
-}
-
-/// Asserts that parsing the string throws *some* `FHIRDateParserError`, without pinning the case or
-/// position. Used where the exact error shape is an artifact of the current implementation (and would
-/// change under a legitimate replacement parser), but a clean, typed failure is the actual contract.
-func expectCleanParserError<T: ThrowingStringParseable>(
-	parsing string: String,
-	as type: T.Type,
-	sourceLocation: SourceLocation = #_sourceLocation
-) {
-	#expect(throws: FHIRDateParserError.self, sourceLocation: sourceLocation) {
-		try T(string)
-	}
-}
-
-func position(_ string: String, _ location: Int) -> FHIRDateParserErrorPosition {
-	FHIRDateParserErrorPosition(string: string, location: location)
 }

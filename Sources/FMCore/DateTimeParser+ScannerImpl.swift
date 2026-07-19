@@ -18,18 +18,8 @@
 
 import Foundation
 
-/// The `Scanner`-based parsing engine for the FHIR date/time primitive types.
-///
-/// The `FHIRDate`/`FHIRTime`/`DateTime`/`Instant`/`InstantDate` types are byte-identical across all model
-/// targets and defer to this single implementation; their public `parse(from:expectAtEnd:)` and
-/// `parseComponents(from:expectAtEnd:)` methods are thin wrappers around it.
-///
-/// The observable behavior of this engine — accepted inputs, component values, and the exact
-/// `FHIRDateParserError` case and position for rejected inputs — is pinned by the
-/// ScannerParsingCharacterization/KnownIssue test suites; behavioral changes here must be reflected there.
+/// legacy parser
 package enum ScannerDateTimeParser: DateTimeParserProtocol {
-
-	// MARK: - Date
 
 	/// Parse valid "date" strings.
 	/// See http://hl7.org/fhir/datatypes.html#date

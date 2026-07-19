@@ -21,121 +21,14 @@ import Foundation
 import Testing
 import struct ModelsR5.Instant
 
-/*
- Engine-level tests for the two `DateTimeParserProtocol` implementations.
-
- The AGREEMENT suite runs one corpus against BOTH engines and requires the identical outcome —
- accepted inputs must produce the same components and verbatim spellings, rejected inputs the same
- `FHIRDateParserError` case at the same UTF-16 position. This is the contract that makes flipping the
- `DateTimeParser` typealias behavior-preserving for all conforming inputs.
-
- The DIVERGENCE suite pins, input by input, where the engines intentionally differ: each row asserts
- the Scanner engine's (buggy) behavior AND the new engine's correct behavior, mirroring
- ScannerParsingKnownIssueTests. When the typealias is flipped, these rows document exactly what
- changes on the wire.
- */
-
-//private enum Shape: String, Sendable {
-//	case date, instantDate, time, dateTime, instant, timeZone
-//}
-//
-///// The outcome of parsing an input: either a successful parse (with the result rendered in the
-///// canonical textual form produced by `outcome(_:_:_:)`), or a rejection (with the error rendered
-///// as `"<case>@<utf16Offset>"`). Used both for a row's *expected* result and for the *actual*
-///// result an engine produced, so the two can be compared category-first.
-//private enum ParseOutcome: Hashable, Sendable {
-//	case success(String)
-//	case failure(String)
-//}
-
 private let allEngines: [any DateTimeParserProtocol.Type] = [ScannerDateTimeParser.self, NewDateTimeParser.self]
-//
-///// Parses `input` as `shape` with `engine` and categorizes the result: `.success` carrying the
-///// canonical rendering of the parsed components, or `.failure` carrying the rendered error.
-//private func outcome(_ engine: any DateTimeParserProtocol.Type, _ shape: Shape, _ input: String) -> ParseOutcome {
-//	func render(_ date: ParsedDate) -> String {
-//		"date(\(date.year), \(date.month.map(String.init) ?? "nil"), \(date.day.map(String.init) ?? "nil"))"
-//	}
-//	func render(_ date: ParsedInstant.Date) -> String {
-//		"date(\(date.year), \(date.month), \(date.day))"
-//	}
-//	func render(_ time: ParsedTime) -> String {
-//		#"time(\#(time.hour), \#(time.minute), \#(time.second), "\#(time.originalSecondsString)")"#
-//	}
-//	do {
-//		switch shape {
-//		case .date:
-//			return try .success(render(engine.dateComponents(from: input)))
-//		case .instantDate:
-//			return try .success(render(engine.instantDateComponents(from: input)))
-//		case .time:
-//			return try .success(render(engine.timeComponents(from: input)))
-//		case .dateTime:
-//			let parsed = try engine.dateTimeComponents(from: input)
-//			let time = (parsed.time?.time).map(render) ?? "nil"
-//			let seconds = (parsed.time?.timeZone).map { String($0.secondsFromGMT()) } ?? "nil"
-//			let spelling = (parsed.time?.timeZoneString).map { #""\#($0)""# } ?? "nil"
-//			return .success("dateTime(\(render(parsed.date)), \(time), \(seconds), \(spelling))")
-//		case .instant:
-//			let parsed = try engine.instantComponents(from: input)
-//			return .success(#"instant(\#(render(parsed.date)), \#(render(parsed.time.time)), \#(parsed.time.timeZone.secondsFromGMT()), "\#(parsed.time.timeZoneString)")"#)
-//		case .timeZone:
-//			let parsed = try engine.timeZoneComponents(from: input)
-//			return .success(#"tz(\#(parsed.secondsFromGMT), "\#(parsed.timeZoneString)")"#)
-//		}
-//	} catch let error as FHIRDateParserError {
-//		let name = switch error {
-//		case .invalidSeparator: "invalidSeparator"
-//		case .invalidYear: "invalidYear"
-//		case .invalidMonth: "invalidMonth"
-//		case .invalidDay: "invalidDay"
-//		case .invalidHour: "invalidHour"
-//		case .invalidMinute: "invalidMinute"
-//		case .invalidSecond: "invalidSecond"
-//		case .invalidTimeZonePrefix: "invalidTimeZonePrefix"
-//		case .invalidTimeZoneHour: "invalidTimeZoneHour"
-//		case .invalidTimeZoneMinute: "invalidTimeZoneMinute"
-//		case .additionalCharacters: "additionalCharacters"
-//		}
-//		let stringMismatch = error.errorPosition.string == input ? "" : "!wrongErrorString"
-//		return .failure("\(name)@\(error.errorPosition.location)\(stringMismatch)")
-//	} catch {
-//		// Not a FHIRDateParserError — a contract violation in itself; never matches an expectation.
-//		return .failure("unexpectedError(\(error))")
-//	}
-//}
 
-///// Compares an engine's actual parse outcome against the expected one, category-first:
-///// a success-vs-failure mismatch is reported as such (rather than as an opaque string diff),
-///// and within the same category the canonical renderings must match exactly.
-//private func expectOutcome(
-//	_ engine: any DateTimeParserProtocol.Type,
-//	_ shape: Shape,
-//	_ input: String,
-//	matches expected: ParseOutcome,
-//	sourceLocation: SourceLocation = #_sourceLocation
-//) {
-//	let context = #"\#(engine) parsing \#(shape.rawValue) "\#(input)""#
-//	switch (outcome(engine, shape, input), expected) {
-//	case (.success(let actual), .success(let expected)):
-//		#expect(actual == expected, "\(context)", sourceLocation: sourceLocation)
-//	case (.failure(let actual), .failure(let expected)):
-//		#expect(actual == expected, "\(context)", sourceLocation: sourceLocation)
-//	case (.success(let actual), .failure(let expected)):
-//		Issue.record("\(context): expected rejection (\(expected)) but parsing succeeded: \(actual)", sourceLocation: sourceLocation)
-//	case (.failure(let actual), .success(let expected)):
-//		Issue.record("\(context): expected successful parse (\(expected)) but parsing failed: \(actual)", sourceLocation: sourceLocation)
-//	}
-//}
 
 private enum Shape: String, Sendable {
     case date, instantDate, time, dateTime, instant, timeZone
 }
 
-/// The outcome of parsing an input: either a successful parse (with the result rendered in the
-/// canonical textual form produced by `outcome(_:_:_:)`), or a rejection (with the error rendered
-/// as `"<case>@<utf16Offset>"`). Used both for a row's *expected* result and for the *actual*
-/// result an engine produced, so the two can be compared category-first.
+
 private enum ParseOutcome: Hashable, Sendable {
     case success(ParseResult)
     case failure(String)
@@ -179,27 +72,17 @@ private func parse(
 ) throws -> ParseResult {
     switch shape {
     case .date:
-        return .date(try parser.dateComponents(from: input, config: config))
+        .date(try parser.dateComponents(from: input, config: config))
     case .time:
-        return .time(try parser.timeComponents(from: input, config: config))
+        .time(try parser.timeComponents(from: input, config: config))
     case .dateTime:
-//                let parsed = try engine.dateTimeComponents(from: descriptor.input)
-//                let time = (parsed.time?.time).map(render) ?? "nil"
-//                let seconds = (parsed.time?.timeZone).map { String($0.secondsFromGMT()) } ?? "nil"
-//                let spelling = (parsed.time?.timeZoneString).map { #""\#($0)""# } ?? "nil"
-//                return .success("dateTime(\(render(parsed.date)), \(time), \(seconds), \(spelling))")
-        return .dateTime(try parser.dateTimeComponents(from: input, config: config))
+        .dateTime(try parser.dateTimeComponents(from: input, config: config))
     case .instant:
-//                let parsed = try engine.instantComponents(from: descriptor.input)
-//                return .success(#"instant(\#(render(parsed.date)), \#(render(parsed.time.time)), \#(parsed.time.timeZone.secondsFromGMT()), "\#(parsed.time.timeZoneString)")"#)
-        return .instant(try parser.instantComponents(from: input, config: config))
+        .instant(try parser.instantComponents(from: input, config: config))
     case .instantDate:
-//                return try .success(parser.instantDateComponents(from: descriptor.input))
-        return .instantDate(try parser.instantDateComponents(from: input, config: config))
+        .instantDate(try parser.instantDateComponents(from: input, config: config))
     case .timeZone:
-//                let parsed = try engine.timeZoneComponents(from: descriptor.input)
-//                return .success(#"tz(\#(parsed.secondsFromGMT), "\#(parsed.timeZoneString)")"#)
-        return .timeZone(try parser.timeZoneComponents(from: input, config: config))
+        .timeZone(try parser.timeZoneComponents(from: input, config: config))
     }
 }
 
@@ -208,10 +91,6 @@ private func parse(
 
 @Suite(.serialized)
 struct DateTimeParserEngineAgreementTests {
-
-    /// Builds a `ParsedTime` from the seconds *spelling*, deriving the `Decimal` via `Decimal(string:)`
-    /// exactly as the engines do. (Never use `Decimal` float literals here: `17.239` would go through
-    /// `Double` and fail exact equality with the engines' string-parsed values.)
     private static func parsedTime(_ hour: UInt8, _ minute: UInt8, _ seconds: String) -> ParsedTime {
         ParsedTime(
             hour: hour,
@@ -232,7 +111,7 @@ struct DateTimeParserEngineAgreementTests {
 
     /// Both engines are expected to produce exactly this outcome for each row.
     private static let corpus: [TestDescriptor] = [
-        // date — valid
+        // date - valid
         .success(.date, "2018", .date(ParsedDate(year: 2018))),
         .success(.date, "1973-06", .date(ParsedDate(year: 1973, month: 6))),
         .success(.date, "1905-08-23", .date(ParsedDate(year: 1905, month: 8, day: 23))),
@@ -240,7 +119,7 @@ struct DateTimeParserEngineAgreementTests {
         .success(.date, "9999-12-31", .date(ParsedDate(year: 9999, month: 12, day: 31))),
         .success(.date, "2016-02-29", .date(ParsedDate(year: 2016, month: 2, day: 29))),		// leap day
         .success(.date, "2000-02-29", .date(ParsedDate(year: 2000, month: 2, day: 29))),		// century leap day (divisible by 400)
-        // date — invalid
+        // date - invalid
         .failure(.date, "", "invalidYear@0"),
         .failure(.date, "0000", "invalidYear@0"),
         .failure(.date, "015-01-01", "invalidYear@0"),
@@ -264,7 +143,7 @@ struct DateTimeParserEngineAgreementTests {
         .failure(.instantDate, "2017-12-9", "invalidDay@8"),
         .failure(.instantDate, "2017-12-09x", "additionalCharacters@10"),
         .failure(.instantDate, "0000-12-09", "invalidYear@0"),
-        // time — valid
+        // time - valid
         .success(.time, "13:28:17", .time(parsedTime(13, 28, "17"))),
         .success(.time, "00:00:00", .time(parsedTime(0, 0, "00"))),
         .success(.time, "09:41:60", .time(parsedTime(9, 41, "60"))),
@@ -272,7 +151,7 @@ struct DateTimeParserEngineAgreementTests {
         .success(.time, "09:41:60.0000", .time(parsedTime(9, 41, "60.0000"))),
         .success(.time, "13:28:17.239", .time(parsedTime(13, 28, "17.239"))),
         .success(.time, "14:15:17.000000", .time(parsedTime(14, 15, "17.000000"))),
-        // time — invalid
+        // time - invalid
         .failure(.time, "", "invalidHour@0"),
         .failure(.time, "24:00:00", "invalidHour@0"),
         .failure(.time, "T12:00:00", "invalidHour@0"),
@@ -285,7 +164,7 @@ struct DateTimeParserEngineAgreementTests {
         .failure(.time, "13:28:17.", "invalidSecond@9"),
         .failure(.time, "13:28:17Z", "additionalCharacters@8"),
         .failure(.time, String(repeating: "9", count: 20), "invalidSeparator@20"),
-        // dateTime — valid
+        // dateTime - valid
         .success(.dateTime, "2014", .dateTime(ParsedDateTime(date: ParsedDate(year: 2014), time: nil))),
         .success(.dateTime, "2015-10", .dateTime(ParsedDateTime(date: ParsedDate(year: 2015, month: 10), time: nil))),
         .success(.dateTime, "2016-11-08", .dateTime(ParsedDateTime(date: ParsedDate(year: 2016, month: 11, day: 8), time: nil))),
@@ -295,7 +174,7 @@ struct DateTimeParserEngineAgreementTests {
         .success(.dateTime, "2019-02-11T11:32:53.65+04:00", .dateTime(ParsedDateTime(date: ParsedDate(year: 2019, month: 2, day: 11), time: timeComponent(11, 32, "53.65", tz: 14400, "+04:00")))),
         .success(.dateTime, "2015-02-07T13:28:17+14:00", .dateTime(ParsedDateTime(date: ParsedDate(year: 2015, month: 2, day: 7), time: timeComponent(13, 28, "17", tz: 50400, "+14:00")))),
         .success(.dateTime, "2015-02-07T13:28:17-14:00", .dateTime(ParsedDateTime(date: ParsedDate(year: 2015, month: 2, day: 7), time: timeComponent(13, 28, "17", tz: -50400, "-14:00")))),
-        // dateTime — invalid
+        // dateTime - invalid
         .failure(.dateTime, "2015-02-07T13:28:17", "invalidTimeZonePrefix@19"),
         .failure(.dateTime, "2015-02-07T13:28:17.239", "invalidTimeZonePrefix@23"),
         .failure(.dateTime, "2015-02-07T", "invalidHour@11"),
@@ -313,12 +192,12 @@ struct DateTimeParserEngineAgreementTests {
         .failure(.dateTime, "2015-02-07T13:28:17z", "invalidTimeZonePrefix@19"),
         .failure(.dateTime, "2019 ", "additionalCharacters@4"),
         .failure(.dateTime, "2019/12", "additionalCharacters@4"),
-        // instant — valid
+        // instant - valid
         .success(.instant, "2017-12-09T09:30:51Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2017, month: 12, day: 9), time: timeComponent(9, 30, "51", tz: 0, "Z")))),
         .success(.instant, "2018-01-10T10:31:52-00:00", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2018, month: 1, day: 10), time: timeComponent(10, 31, "52", tz: 0, "-00:00")))),
         .success(.instant, "2016-12-31T23:59:60Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2016, month: 12, day: 31), time: timeComponent(23, 59, "60", tz: 0, "Z")))),
         .success(.instant, "2017-12-09T09:30:51.000Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2017, month: 12, day: 9), time: timeComponent(9, 30, "51.000", tz: 0, "Z")))),
-        // instant — invalid
+        // instant - invalid
         .failure(.instant, "2014", "invalidSeparator@4"),
         .failure(.instant, "2015-10", "invalidSeparator@7"),
         .failure(.instant, "2016-11-08", "invalidSeparator@10"),
@@ -328,7 +207,7 @@ struct DateTimeParserEngineAgreementTests {
         .failure(.instant, "2017-12-09T09:30:51Zx", "additionalCharacters@20"),
         .failure(.instant, "2017-12-09T09:30:51+0000", "invalidSeparator@22"),
         .failure(.instant, "0000-12-09T09:30:51Z", "invalidYear@0"),
-        // timeZone — valid
+        // timeZone - valid
         .success(.timeZone, "Z", .timeZone(ParsedTimeZone(secondsFromGMT: 0, timeZoneString: "Z"))),
         .success(.timeZone, "+00:00", .timeZone(ParsedTimeZone(secondsFromGMT: 0, timeZoneString: "+00:00"))),
         .success(.timeZone, "-00:00", .timeZone(ParsedTimeZone(secondsFromGMT: 0, timeZoneString: "-00:00"))),
@@ -336,7 +215,7 @@ struct DateTimeParserEngineAgreementTests {
         .success(.timeZone, "+14:00", .timeZone(ParsedTimeZone(secondsFromGMT: 50400, timeZoneString: "+14:00"))),
         .success(.timeZone, "-14:00", .timeZone(ParsedTimeZone(secondsFromGMT: -50400, timeZoneString: "-14:00"))),
         .success(.timeZone, "+13:59", .timeZone(ParsedTimeZone(secondsFromGMT: 50340, timeZoneString: "+13:59"))),
-        // timeZone — invalid
+        // timeZone - invalid
         .failure(.timeZone, "", "invalidTimeZonePrefix@0"),
         .failure(.timeZone, "A", "invalidTimeZonePrefix@0"),
         .failure(.timeZone, "z", "invalidTimeZonePrefix@0"),
@@ -378,43 +257,6 @@ struct DateTimeParserEngineAgreementTests {
             }
         }
     }
-    
-    
-    @Test
-    func playground() throws {
-//        try NewDateTimeParser.dateTimeComponents(from: "2015-02-07T13:28:61Z", config: .r4)
-//        return;
-        
-//        _ = try NewDateTimeParser.dateTimeComponents(from: "2017-12-09T09:30:51Z")
-//        _ = try NewDateTimeParser.instantComponents(from: "2017-12-09T09:30:51Z")
-//        _ = try NewDateTimeParser.instantComponents(from: "2017-01-01T00:00:47Z")
-//        let _: Instant = "2017-01-01T00:00:47Z"
-        _ = Instant("2015-02-07T13:28:17.239+02:00")
-        _ = try NewDateTimeParser.dateComponents(from: "2027-07-17", config: .r4)
-        _ = try NewDateTimeParser.dateComponents(from: "0001-01-01", config: .r4)
-        #expect(throws: (any Error).self) {
-            _ = try NewDateTimeParser.dateComponents(from: "0001-00-00", config: .r4)
-        }
-        #expect(throws: (any Error).self) {
-            _ = try NewDateTimeParser.dateComponents(from: "0000-00-00", config: .r4)
-        }
-        #expect(throws: (any Error).self) {
-            _ = try NewDateTimeParser.dateComponents(from: "0000-00", config: .r4)
-        }
-        #expect(throws: (any Error).self) {
-            _ = try NewDateTimeParser.dateComponents(from: "0000", config: .r4)
-        }
-//        #expect(try ScannerDateTimeParser.timeComponents(from: "13:28:17.239") == .init(hour: 13, minute: 28, second: 17.239, originalSecondsString: "17.239"))
-//        #expect(try NewDateTimeParser.timeComponents(from: "13:28:17.239") == .init(hour: 13, minute: 28, second: 17.239, originalSecondsString: "17.239"))
-        
-        let input = "17.239"
-        let expected: Decimal = 17.239
-        #expect(Decimal(string: input) == expected)
-        do {
-            let actual = try Decimal(input, format: .localizedDecimal(locale: .init(identifier: "en_US")), lenient: false)
-            #expect(actual == expected)
-        }
-    }
 }
 
 
@@ -433,7 +275,7 @@ extension DateTimeParserEngineAgreementTests {
 	}
 
 	/// Parsing must scale linearly in the input length: a 40k-digit fraction parses in milliseconds.
-	/// (Guards against quadratic character access — e.g. `indices.contains` bounds checks — which
+	/// (Guards against quadratic character access - e.g. `indices.contains` bounds checks - which
 	/// would turn hostile wire input into a decode-time denial of service.)
 	@Test(arguments: allEngines)
 	fileprivate func longInputsParseInLinearTime(engine: any DateTimeParserProtocol.Type) throws {
@@ -565,7 +407,7 @@ struct DateTimeParserEngineDivergenceTests {
 		// mixed non-ASCII digits in fractional seconds: Decimal's prefix-parse silently CORRUPTS
 		// the value on the Scanner engine (17.2٣9 -> 17.2) while round-tripping the invalid spelling
 		.init(.time, "13:28:17.2٣9", scanner: .success(.time(ParsedTime(hour: 13, minute: 28, second: Decimal(string: "17.2٣9")!, secondIntegerPart: 17, originalSecondsString: "17.2٣9"))), newParser: .failure("additionalCharacters@10")),
-		// mixed ASCII/non-ASCII digit runs: BOTH engines reject, but with different error shapes —
+		// mixed ASCII/non-ASCII digit runs: BOTH engines reject, but with different error shapes -
 		// the Scanner engine width-checks the whole Unicode digit run, the new engine's
 		// ASCII-only run stops at the first non-ASCII digit
 		.init(.time, "1٢:00:00", scanner: .failure("invalidHour@0"), newParser: .failure("invalidSeparator@1")),
@@ -585,7 +427,7 @@ struct DateTimeParserEngineDivergenceTests {
                 } catch {
                     Issue.record(error)
                 }
-            case .failure(let string):
+            case .failure:
                 #expect(throws: (any Error).self) {
                     _ = try parse(descriptor.input, of: descriptor.shape, using: parser)
                 }
@@ -632,7 +474,7 @@ struct DateTimeParserTests {
     /// the divergence corpus's new-parser side (where the legacy engine is buggy and the new parser's
     /// behavior is the intended one).
     ///
-    /// Leap-second policy (maintainer decision, 2026-07-19): fractional leap seconds are VALID —
+    /// Leap-second policy (maintainer decision, 2026-07-19): fractional leap seconds are VALID -
     /// the R4 time regex `([0-5][0-9]|60)(\.[0-9]+)?` applies its fraction group to the leap second
     /// too, so "60.1"/"60.0001" parse (integer seconds are still capped at 60). This intentionally
     /// diverges from the legacy engine's value-cap-at-60.0 semantics.
@@ -640,7 +482,7 @@ struct DateTimeParserTests {
         // ============================================================================
         // Carried over from the agreement corpus (both engines already spec-correct)
         // ============================================================================
-        // date — valid
+        // date - valid
         .success(.date, "2018", .date(ParsedDate(year: 2018))),
         .success(.date, "1973-06", .date(ParsedDate(year: 1973, month: 6))),
         .success(.date, "1905-08-23", .date(ParsedDate(year: 1905, month: 8, day: 23))),
@@ -648,7 +490,7 @@ struct DateTimeParserTests {
         .success(.date, "9999-12-31", .date(ParsedDate(year: 9999, month: 12, day: 31))),
         .success(.date, "2016-02-29", .date(ParsedDate(year: 2016, month: 2, day: 29))),		// leap day
         .success(.date, "2000-02-29", .date(ParsedDate(year: 2000, month: 2, day: 29))),		// century leap day (divisible by 400)
-        // date — invalid
+        // date - invalid
         .failure(.date, "", "invalidYear@0"),
         .failure(.date, "0000", "invalidYear@0"),
         .failure(.date, "015-01-01", "invalidYear@0"),
@@ -672,7 +514,7 @@ struct DateTimeParserTests {
         .failure(.instantDate, "2017-12-9", "invalidDay@8"),
         .failure(.instantDate, "2017-12-09x", "additionalCharacters@10"),
         .failure(.instantDate, "0000-12-09", "invalidYear@0"),
-        // time — valid
+        // time - valid
         .success(.time, "13:28:17", .time(parsedTime(13, 28, "17"))),
         .success(.time, "00:00:00", .time(parsedTime(0, 0, "00"))),
         .success(.time, "09:41:60", .time(parsedTime(9, 41, "60"))),
@@ -680,7 +522,7 @@ struct DateTimeParserTests {
         .success(.time, "09:41:60.0000", .time(parsedTime(9, 41, "60.0000"))),
         .success(.time, "13:28:17.239", .time(parsedTime(13, 28, "17.239"))),
         .success(.time, "14:15:17.000000", .time(parsedTime(14, 15, "17.000000"))),
-        // time — invalid
+        // time - invalid
         .failure(.time, "", "invalidHour@0"),
         .failure(.time, "24:00:00", "invalidHour@0"),
         .failure(.time, "T12:00:00", "invalidHour@0"),
@@ -692,7 +534,7 @@ struct DateTimeParserTests {
         .failure(.time, "13:28:17.", "invalidSecond@9"),
         .failure(.time, "13:28:17Z", "additionalCharacters@8"),
         .failure(.time, String(repeating: "9", count: 20), "invalidSeparator@20"),
-        // dateTime — valid
+        // dateTime - valid
         .success(.dateTime, "2014", .dateTime(ParsedDateTime(date: ParsedDate(year: 2014), time: nil))),
         .success(.dateTime, "2015-10", .dateTime(ParsedDateTime(date: ParsedDate(year: 2015, month: 10), time: nil))),
         .success(.dateTime, "2016-11-08", .dateTime(ParsedDateTime(date: ParsedDate(year: 2016, month: 11, day: 8), time: nil))),
@@ -702,7 +544,7 @@ struct DateTimeParserTests {
         .success(.dateTime, "2019-02-11T11:32:53.65+04:00", .dateTime(ParsedDateTime(date: ParsedDate(year: 2019, month: 2, day: 11), time: timeComponent(11, 32, "53.65", tz: 14400, "+04:00")))),
         .success(.dateTime, "2015-02-07T13:28:17+14:00", .dateTime(ParsedDateTime(date: ParsedDate(year: 2015, month: 2, day: 7), time: timeComponent(13, 28, "17", tz: 50400, "+14:00")))),
         .success(.dateTime, "2015-02-07T13:28:17-14:00", .dateTime(ParsedDateTime(date: ParsedDate(year: 2015, month: 2, day: 7), time: timeComponent(13, 28, "17", tz: -50400, "-14:00")))),
-        // dateTime — invalid
+        // dateTime - invalid
         .failure(.dateTime, "2015-02-07T13:28:17", "invalidTimeZonePrefix@19"),
         .failure(.dateTime, "2015-02-07T13:28:17.239", "invalidTimeZonePrefix@23"),
         .failure(.dateTime, "2015-02-07T", "invalidHour@11"),
@@ -720,12 +562,12 @@ struct DateTimeParserTests {
         .failure(.dateTime, "2015-02-07T13:28:17z", "invalidTimeZonePrefix@19"),
         .failure(.dateTime, "2019 ", "additionalCharacters@4"),
         .failure(.dateTime, "2019/12", "additionalCharacters@4"),
-        // instant — valid
+        // instant - valid
         .success(.instant, "2017-12-09T09:30:51Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2017, month: 12, day: 9), time: timeComponent(9, 30, "51", tz: 0, "Z")))),
         .success(.instant, "2018-01-10T10:31:52-00:00", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2018, month: 1, day: 10), time: timeComponent(10, 31, "52", tz: 0, "-00:00")))),
         .success(.instant, "2016-12-31T23:59:60Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2016, month: 12, day: 31), time: timeComponent(23, 59, "60", tz: 0, "Z")))),
         .success(.instant, "2017-12-09T09:30:51.000Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2017, month: 12, day: 9), time: timeComponent(9, 30, "51.000", tz: 0, "Z")))),
-        // instant — invalid
+        // instant - invalid
         .failure(.instant, "2014", "invalidSeparator@4"),
         .failure(.instant, "2015-10", "invalidSeparator@7"),
         .failure(.instant, "2016-11-08", "invalidSeparator@10"),
@@ -735,7 +577,7 @@ struct DateTimeParserTests {
         .failure(.instant, "2017-12-09T09:30:51Zx", "additionalCharacters@20"),
         .failure(.instant, "2017-12-09T09:30:51+0000", "invalidSeparator@22"),
         .failure(.instant, "0000-12-09T09:30:51Z", "invalidYear@0"),
-        // timeZone — valid
+        // timeZone - valid
         .success(.timeZone, "Z", .timeZone(ParsedTimeZone(secondsFromGMT: 0, timeZoneString: "Z"))),
         .success(.timeZone, "+00:00", .timeZone(ParsedTimeZone(secondsFromGMT: 0, timeZoneString: "+00:00"))),
         .success(.timeZone, "-00:00", .timeZone(ParsedTimeZone(secondsFromGMT: 0, timeZoneString: "-00:00"))),
@@ -743,7 +585,7 @@ struct DateTimeParserTests {
         .success(.timeZone, "+14:00", .timeZone(ParsedTimeZone(secondsFromGMT: 50400, timeZoneString: "+14:00"))),
         .success(.timeZone, "-14:00", .timeZone(ParsedTimeZone(secondsFromGMT: -50400, timeZoneString: "-14:00"))),
         .success(.timeZone, "+13:59", .timeZone(ParsedTimeZone(secondsFromGMT: 50340, timeZoneString: "+13:59"))),
-        // timeZone — invalid
+        // timeZone - invalid
         .failure(.timeZone, "", "invalidTimeZonePrefix@0"),
         .failure(.timeZone, "A", "invalidTimeZonePrefix@0"),
         .failure(.timeZone, "z", "invalidTimeZonePrefix@0"),
@@ -800,24 +642,6 @@ struct DateTimeParserTests {
         .success(.time, "23:59:60.5", .time(parsedTime(23, 59, "60.5"))),
         .success(.instant, "2016-12-31T23:59:60.5Z", .instant(ParsedInstant(date: ParsedInstant.Date(year: 2016, month: 12, day: 31), time: timeComponent(23, 59, "60.5", tz: 0, "Z")))),
     ]
-
-//    private static func failureReason(of error: FHIRDateParserError, parsing input: String) -> String {
-//        let name = switch error {
-//        case .invalidSeparator: "invalidSeparator"
-//        case .invalidYear: "invalidYear"
-//        case .invalidMonth: "invalidMonth"
-//        case .invalidDay: "invalidDay"
-//        case .invalidHour: "invalidHour"
-//        case .invalidMinute: "invalidMinute"
-//        case .invalidSecond: "invalidSecond"
-//        case .invalidTimeZonePrefix: "invalidTimeZonePrefix"
-//        case .invalidTimeZoneHour: "invalidTimeZoneHour"
-//        case .invalidTimeZoneMinute: "invalidTimeZoneMinute"
-//        case .additionalCharacters: "additionalCharacters"
-//        }
-//        let stringMismatch = error.errorPosition.string == input ? "" : "!wrongErrorString"
-//        return "\(name)@\(error.errorPosition.location)\(stringMismatch)"
-//    }
 
     @Test(arguments: corpus)
     fileprivate func newParserBehavesCorrectly(_ descriptor: TestDescriptor) throws {

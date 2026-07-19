@@ -32,20 +32,6 @@ public struct FHIRDateParserErrorPosition: Hashable, CustomStringConvertible, Se
 	}
 }
 
-//// MARK: - FHIRDateParserErrorPosition
-//
-//extension FHIRDateParserErrorPosition: Equatable {
-//	public static func ==(lhs: FHIRDateParserErrorPosition, rhs: FHIRDateParserErrorPosition) -> Bool {
-//		if lhs.string != rhs.string {
-//			return false
-//		}
-//		if lhs.location != rhs.location {
-//			return false
-//		}
-//		return true
-//	}
-//}
-
 // MARK: - FHIRDateParserError
 
 public enum FHIRDateParserError: LocalizedError, Hashable {

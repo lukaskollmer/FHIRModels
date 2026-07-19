@@ -37,31 +37,6 @@ struct DateTimeParseError: LocalizedError, CustomStringConvertible {
     let input: String
     let range: Range<String.Index>
     let kind: Kind
-
-//    var errorDescription: String? {
-//        // For the component-specific kinds, mirror the legacy `FHIRDateParserError.errorDescription`
-//        // phrasing ("Invalid year at [offset] in “input”", with a UTF-16 offset).
-//        let legacyName: String? = switch kind {
-//        case .unexpectedToken, .invalidInput, .unsupportedLiteral: nil
-//        case .invalidSeparator: "Invalid separator"
-//        case .invalidYear: "Invalid year"
-//        case .invalidMonth: "Invalid month"
-//        case .invalidDay: "Invalid day"
-//        case .invalidHour: "Invalid hour"
-//        case .invalidMinute: "Invalid minute"
-//        case .invalidSecond: "Invalid second"
-//        case .invalidTimeZonePrefix: "Invalid time zone prefix"
-//        case .invalidTimeZoneHour: "Invalid time zone hour"
-//        case .invalidTimeZoneMinute: "Invalid time zone minute"
-//        case .additionalCharacters: "Unexpected characters"
-//        }
-//        guard let legacyName else {
-//            return description
-//        }
-//        let utf16Offset = input.utf16.distance(from: input.utf16.startIndex, to: range.lowerBound)
-//        let preposition = if case .additionalCharacters = kind { "after" } else { "at" }
-//        return "\(legacyName) \(preposition) [\(utf16Offset)] in “\(input)”"
-//    }
     
     var description: String {
         let startOffset = input.distance(from: input.startIndex, to: range.lowerBound)
@@ -83,16 +58,9 @@ struct DateTimeParseError: LocalizedError, CustomStringConvertible {
 }
 
 
-/// Parser for ISO8601 DateTime literals as used in FHIRPath.
-/// Implemented in conformance with the `DATE`, `DATETIME`, and `TIME` rules
-/// [in the FHIRPath grammar](https://hl7.org/fhirpath/N1/grammar.html)
-///
-/// Via its ``DateTimeParserProtocol`` conformance (`Input == String`), this type also serves as a
-/// strict engine for the FHIR primitive date/time string formats — see the conformance extension
-/// at the bottom of this file. (Not `~Copyable`: protocol conformances require copyable types.)
+/// Parser for FHIR `Date`, `Time`, `DateTime`, and `Instant` values.
 package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
     typealias ParseError = DateTimeParseError
-    
     
     private let config: DateTimeParserConfig
     private let input: Input
@@ -141,7 +109,7 @@ package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
         if current == expected {
             consume()
         } else {
-            throw makeError(errorKind ?? .invalidInput(reason: "Expected \(expected); got \(current)"), at: position)
+            throw makeError(errorKind ?? .invalidInput(reason: "Expected \(expected); got \(String(describing: current))"), at: position)
         }
     }
     
@@ -156,7 +124,7 @@ package struct DateTimeLiteralParser<Input: StringProtocol>: ~Copyable {
             return current
         } else {
             throw makeError(
-                errorKind ?? .invalidInput(reason: "Expected \(expected); got \(current)"),
+                errorKind ?? .invalidInput(reason: "Expected \(expected); got \(String(describing: current))"),
                 at: position
             )
         }
@@ -180,7 +148,7 @@ extension DateTimeLiteralParser {
         let startPos = position
         let digits = input[position...].prefix { isAsciiDigit($0) }
         guard !digits.isEmpty else {
-            throw makeError(errorKind ?? .invalidInput(reason: "Expected ASCII digit; found \(current)"), at: position)
+            throw makeError(errorKind ?? .invalidInput(reason: "Expected ASCII digit; found \(String(describing: current))"), at: position)
         }
         consume(digits.count)
         let literalRange = startPos..<position
@@ -274,7 +242,7 @@ extension DateTimeLiteralParser {
 
 
 extension Decimal {
-    /// Creates a decimal from two collections of ASCII digits..
+    /// Creates a `Decimal` from two collections of ASCII digits..
     ///
     /// For example,`"17".utf8` and `"239".utf8` would produce a Decimal with value `17.239`.
     ///
@@ -282,8 +250,8 @@ extension Decimal {
     /// - parameter fractionDigits: The digits making up the decimal's fraction part.
     ///
     /// - Invariant: Both collections must contain only ASCII digits (`0x30...0x39`). No validation is performed.
-//    @_specialize(where I == String.UTF8View, F == String.UTF8View)
-//    @_specialize(where I == Substring.UTF8View, F == Substring.UTF8View)
+    @specialized(where I == String.UTF8View, F == String.UTF8View)
+    @specialized(where I == Substring.UTF8View, F == Substring.UTF8View)
     init<I: Collection<UInt8>, F: Collection<UInt8>>(asciiIntegerDigits integerDigits: I, asciiFractionDigits fractionDigits: F) {
         let fractionCount = fractionDigits.count
         if integerDigits.count + fractionCount <= 19 {
@@ -305,8 +273,6 @@ extension Decimal {
 
 extension DateTimeLiteralParser {
     fileprivate enum TimeZoneValidation {
-//        /// `('Z' | ('+' | '-') [0-9][0-9]':'[0-9][0-9])`
-//        case relaxedSuitableForFHIRPath
         /// `(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))`
         case strict
     }
@@ -325,11 +291,6 @@ extension DateTimeLiteralParser {
         let hours: Int
         let minutes: Int
         switch validation {
-//        case .relaxedSuitableForFHIRPath:
-//            `operator` = try expectAnyOfAndConsume(["+", "-"])
-//            hours = try parseInt(numDigitsRule: .exactly(2))
-//            try expectAndConsume(":")
-//            minutes = try parseInt(numDigitsRule: .exactly(2))
         case .strict:
             // The dedicated field parsers replicate the legacy engine's error kinds and positions,
             // including the ±14:00 range rules.
@@ -346,7 +307,7 @@ extension DateTimeLiteralParser {
         return (offsetInSeconds, timeZoneString)
     }
     
-    /// Parses the 2-digit timezone-offset hour, matching the legacy engine's error shapes (ie, placing  the `invalidSeparator` at `start + min(2, count)` width).
+    /// Parses a 2-digit timezone hour offset.
     private mutating func _parseTimeZoneHour() throws(ParseError) -> Int {
         let start = position
         let digits = input[position...].prefix { isAsciiDigit($0) }
@@ -357,16 +318,14 @@ extension DateTimeLiteralParser {
         guard digits.count == 2 else {
             throw makeError(.invalidSeparator, at: input.index(start, offsetBy: min(2, digits.count)))
         }
-        let value = Int(digits)! // SAFETY: exactly two ASCII digits. swiftlint:disable:this force_unwrapping
+        let value = Int(digits)! // SAFETY: we've verified above that `digits` contains only ASCII digits.
         guard value <= 14 else {
             throw makeError(.invalidTimeZoneHour, in: start..<position)
         }
         return value
     }
     
-    /// Parses the 2-digit timezone-offset minute, matching the legacy engine's error shapes
-    /// (`additionalCharacters` at `start + 2` for over-long runs; `invalidTimeZoneMinute` at the
-    /// field start otherwise, including the "±14:00 requires zero minutes" rule).
+    /// Parses a 2-digit timezone minute offset.
     private mutating func _parseTimeZoneMinute(hours: Int) throws(ParseError) -> Int {
         let start = position
         let digits = input[position...].prefix { isAsciiDigit($0) }
@@ -380,7 +339,7 @@ extension DateTimeLiteralParser {
         guard digits.count == 2 else {
             throw makeError(.invalidTimeZoneMinute, in: start..<position)
         }
-        let value = Int(digits)! // SAFETY: exactly two ASCII digits. swiftlint:disable:this force_unwrapping
+        let value = Int(digits)! // SAFETY: we've verified above that `digits` contains only ASCII digits.
         guard value <= 59, hours < 14 || value == 0 else {
             throw makeError(.invalidTimeZoneMinute, in: start..<position)
         }
@@ -435,9 +394,9 @@ extension DateTimeLiteralParser {
     
     fileprivate mutating func parseTime() throws(ParseError) -> ParsedTime {
         let startPos = position
-        let hour = try parseClockField(max: 23, errorKind: .invalidHour)
+        let hour = try parseClockField(errorKind: .invalidHour)
         try expectAndConsume(":", errorKind: .invalidSeparator)
-        let minute = try parseClockField(max: 59, errorKind: .invalidMinute)
+        let minute = try parseClockField(errorKind: .invalidMinute)
         try expectAndConsume(":", errorKind: .invalidSeparator)
         let secondsStringStart = position
         let second = try parseDecimal(
@@ -446,9 +405,6 @@ extension DateTimeLiteralParser {
             allowOmittingFractionalPart: true,
             errorKind: .invalidSecond
         )
-//        guard (0...(config.allowLeapSecond60 ? 60 : 59)).contains(second.integerPart) else {
-//            throw makeError(.invalidSecond, in: secondsStringStart..<position)
-//        }
         let result = ParsedTime(
             hour: hour,
             minute: minute,
@@ -510,11 +466,7 @@ extension DateTimeLiteralParser {
         }
     }
     
-    /// Parses a 2-digit clock field (hour, minute, or the integer part of the seconds), matching the
-    /// legacy Scanner engine's error shapes: an empty or out-of-range field reports `kind` at the
-    /// field's start, while a non-empty wrong-width digit run reports `invalidSeparator` positioned
-    /// _after_ the scanned digits.
-    private mutating func parseClockField(max: Int, errorKind: ParseError.Kind) throws(ParseError) -> UInt8 {
+    private mutating func parseClockField(errorKind: ParseError.Kind) throws(ParseError) -> UInt8 {
         let start = position
         let digits = input[position...].prefix { isAsciiDigit($0) }
         guard !digits.isEmpty else {
@@ -524,11 +476,7 @@ extension DateTimeLiteralParser {
         guard digits.count == 2 else {
             throw makeError(.invalidSeparator, at: position)
         }
-        let value = UInt8(digits)! // SAFETY: exactly two ASCII digits, i.e. at most 99. swiftlint:disable:this force_unwrapping
-        guard Int(value) <= max else {
-            throw makeError(errorKind, in: start..<position)
-        }
-        return value
+        return UInt8(digits)! // SAFETY: we've verified above that `digits` contains only ASCII digits.
     }
     
     /// Parses a "year" value, and optionally validates it against the current config.

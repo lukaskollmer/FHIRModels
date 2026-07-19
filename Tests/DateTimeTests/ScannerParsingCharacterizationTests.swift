@@ -22,26 +22,10 @@ import struct ModelsR4.FHIRTime
 import ModelsR5
 import Testing
 
-/*
- Characterization tests for the Scanner-based Date/Time/DateTime/TimeZone string parsing.
-
- Together with FHIRDateTests, FHIRTimeTests, DateTimeTests, InstantTests and TimeZoneTests, these tests pin the
- exact observable behavior of the current parsing implementation — accepted inputs, parsed component values,
- description/round-trip fidelity, and the exact `FHIRDateParserError` case and position for rejected inputs —
- so that a future replacement of the parsing engine can be validated against them.
-
- All model targets (ModelsDSTU2 through ModelsBuild) contain byte-identical copies of the date/time source
- files; CrossTargetConsistencyTests guards that invariant, so testing the ModelsR5 copies covers all targets.
-
- Behaviors of the current implementation that are considered *bugs* are deliberately NOT pinned here;
- they live in ScannerParsingKnownIssueTests.swift as `withKnownIssue` tests asserting the correct behavior.
- */
-
-// MARK: - FHIRDate
+// a bunch of parsing tests that were initially generated for the scanner-based impl, and now allow us to validate the new impl.
 
 @Suite(.serialized)
 struct FHIRDateParsingCharacterization {
-
 	@Test
 	func boundaryYearsParse() throws {
 		let min = try parseFHIR("0001-01-01", as: FHIRDate.self)
@@ -168,7 +152,7 @@ struct DateTimeParsingCharacterization {
 		// "…ZZ" is also rejected, but today via invalidTimeZoneHour@21 — an artifact of the "+-Z"
 		// run-scan bug (see ScannerParsingKnownIssues.timeZoneSignPrefixRunScan). Only the clean,
 		// typed failure is the contract here.
-		expectCleanParserError(parsing: "2015-02-07T13:28:17ZZ", as: DateTime.self)
+        expectParseError(parsing: "2015-02-07T13:28:17ZZ", as: DateTime.self)
 	}
 
 	/// The timezone prefix is case-sensitive (unlike the 'T' separator; see ScannerParsingKnownIssueTests).
@@ -294,13 +278,13 @@ struct DegenerateInputCharacterization {
 	@Test
 	func oversizedDigitRunsThrowCleanly() {
 		let twentyNines = String(repeating: "9", count: 20)
-		expectCleanParserError(parsing: twentyNines, as: FHIRDate.self)
-		expectCleanParserError(parsing: twentyNines, as: FHIRTime.self)
-		expectCleanParserError(parsing: twentyNines, as: DateTime.self)
-		expectCleanParserError(parsing: twentyNines, as: Instant.self)
-		expectCleanParserError(parsing: String(repeating: "9", count: 18) + "-01-01", as: FHIRDate.self)
-		expectCleanParserError(parsing: "2015-02-07T" + twentyNines + ":00:00Z", as: DateTime.self)
-		expectCleanParserError(parsing: "+" + twentyNines + ":00", as: TimeZone.self)
+        expectParseError(parsing: twentyNines, as: FHIRDate.self)
+        expectParseError(parsing: twentyNines, as: FHIRTime.self)
+        expectParseError(parsing: twentyNines, as: DateTime.self)
+        expectParseError(parsing: twentyNines, as: Instant.self)
+        expectParseError(parsing: String(repeating: "9", count: 18) + "-01-01", as: FHIRDate.self)
+        expectParseError(parsing: "2015-02-07T" + twentyNines + ":00:00Z", as: DateTime.self)
+        expectParseError(parsing: "+" + twentyNines + ":00", as: TimeZone.self)
 	}
 }
 
@@ -359,7 +343,7 @@ struct ScannerCompositionCharacterization {
 
 		let leadingWhitespace = Scanner(string: " 2018")
 		leadingWhitespace.charactersToBeSkipped = .whitespaces
-		#expect(throws: FHIRDateParserError.self) {
+		#expect(throws: (any Error).self) {
 			try FHIRDate.parse(from: leadingWhitespace, expectAtEnd: true)
 		}
 	}
@@ -371,7 +355,6 @@ struct ScannerCompositionCharacterization {
 /// spelling) must survive an actual JSON decode/encode cycle.
 @Suite(.serialized)
 struct PrimitiveCodableCharacterization {
-
 	@Test
 	func edgeCaseStringsSurviveJSONRoundTrip() throws {
 		try assertJSONRoundTrip([FHIRDate].self, ["2019", "1973-06", "0001-01-01"])

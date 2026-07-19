@@ -73,7 +73,7 @@ struct DateTimeParserBenchmarks {
 		Row("time, 40-digit fraction", .time, ["12:30:45." + String(repeating: "1", count: 40)], iterations: 2_000),
 		Row("error: bad separator", .time, ["13-28-17"]),
 		// Diverges by design: the Scanner engine accepts Feb 30 (no calendar validation),
-		// the new engine rejects it — so this row compares a success path against an error path.
+		// the new engine rejects it, so this row compares a success path against an error path.
 		Row("Feb 30 (Scanner accepts)", .date, ["2015-02-30"], expectAgreement: false),
 		Row("error: missing timezone", .instant, ["2015-02-07T13:28:17"]),
 	]
@@ -141,7 +141,7 @@ struct DateTimeParserBenchmarks {
 	func compareEngines() {
 		var lines: [String] = []
 		#if DEBUG
-		lines.append("WARNING: debug build — run with `swift test -c release` for meaningful numbers")
+		lines.append("WARNING: debug build - run with `swift test -c release` for meaningful numbers")
 		#endif
 		lines.append(Self.pad("input class", 28) + Self.pad("Scanner", 14) + Self.pad("New", 14) + "speedup")
 		lines.append(String(repeating: "-", count: 28 + 14 + 14 + 7))
@@ -149,7 +149,7 @@ struct DateTimeParserBenchmarks {
 			let scanner = Self.measure(row, ScannerDateTimeParser.self)
 			let new = Self.measure(row, NewDateTimeParser.self)
 			if row.expectAgreement {
-				#expect(scanner.checksum == new.checksum, "engines disagree on \"\(row.label)\" — comparison is not meaningful")
+				#expect(scanner.checksum == new.checksum, "engines disagree on \"\(row.label)\" - comparison is not meaningful")
 			}
 			lines.append(
 				Self.pad(row.label, 28)
